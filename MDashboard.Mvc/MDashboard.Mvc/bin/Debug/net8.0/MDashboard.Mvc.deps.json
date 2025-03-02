@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "MDashboard.Mvc/1.0.0": {
+        "runtime": {
+          "MDashboard.Mvc.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MDashboard.Mvc/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
