@@ -1,0 +1,12 @@
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Models\bin\Debug\net8.0\MDashboard.Models.deps.json
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Models\bin\Debug\net8.0\MDashboard.Models.dll
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Models\bin\Debug\net8.0\MDashboard.Models.pdb
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0\MDashboard.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0\MDashboard.Models.AssemblyInfoInputs.cache
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0\MDashboard.Models.AssemblyInfo.cs
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0\MDashboard.Models.csproj.CoreCompileInputs.cache
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0\MDashboard.Models.sourcelink.json
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0\MDashboard.Models.dll
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0\refint\MDashboard.Models.dll
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0\MDashboard.Models.pdb
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0\ref\MDashboard.Models.dll

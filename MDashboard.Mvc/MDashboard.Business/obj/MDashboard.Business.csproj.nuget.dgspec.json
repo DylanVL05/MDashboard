@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\andro\\source\\repos\\MDashboard.Mvc\\MDashboard.Business\\MDashboard.Business.csproj": {}
+    "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Business\\MDashboard.Business.csproj": {}
   },
   "projects": {
-    "C:\\Users\\andro\\source\\repos\\MDashboard.Mvc\\MDashboard.Business\\MDashboard.Business.csproj": {
+    "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Business\\MDashboard.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\andro\\source\\repos\\MDashboard.Mvc\\MDashboard.Business\\MDashboard.Business.csproj",
+        "projectUniqueName": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Business\\MDashboard.Business.csproj",
         "projectName": "MDashboard.Business",
-        "projectPath": "C:\\Users\\andro\\source\\repos\\MDashboard.Mvc\\MDashboard.Business\\MDashboard.Business.csproj",
+        "projectPath": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Business\\MDashboard.Business.csproj",
         "packagesPath": "C:\\Users\\andro\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\andro\\source\\repos\\MDashboard.Mvc\\MDashboard.Business\\obj\\",
+        "outputPath": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Business\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\andro\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -18,4 +18,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MDashboard.Models\MDashboard.Models.csproj" />
+  </ItemGroup>
+
 </Project>

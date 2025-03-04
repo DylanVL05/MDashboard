@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using MDashboard.Models;
 using Microsoft.EntityFrameworkCore;
+using Component = MDashboard.Models.Component;
 
 namespace MDashboard.Data.Models;
 

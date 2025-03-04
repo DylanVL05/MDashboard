@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\andro\\source\\repos\\MDashboard.Mvc\\MDashboard.Services\\MDashboard.Services.csproj",
+      "projectUniqueName": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Services\\MDashboard.Services.csproj",
       "projectName": "MDashboard.Services",
-      "projectPath": "C:\\Users\\andro\\source\\repos\\MDashboard.Mvc\\MDashboard.Services\\MDashboard.Services.csproj",
+      "projectPath": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Services\\MDashboard.Services.csproj",
       "packagesPath": "C:\\Users\\andro\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\andro\\source\\repos\\MDashboard.Mvc\\MDashboard.Services\\obj\\",
+      "outputPath": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Services\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\andro\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1608,6 +1608,16 @@
             "rid": "win"
           }
         }
+      },
+      "MDashboard.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/MDashboard.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MDashboard.Models.dll": {}
+        }
       }
     }
   },
@@ -4724,10 +4734,16 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "MDashboard.Models/1.0.0": {
+      "type": "project",
+      "path": "../MDashboard.Models/MDashboard.Models.csproj",
+      "msbuildProject": "../MDashboard.Models/MDashboard.Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "MDashboard.Models >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 9.0.2",
       "Microsoft.EntityFrameworkCore.SqlServer >= 9.0.2",
       "Microsoft.EntityFrameworkCore.Tools >= 9.0.1"
@@ -4739,11 +4755,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\andro\\source\\repos\\MDashboard.Mvc\\MDashboard.Data\\MDashboard.Data.csproj",
+      "projectUniqueName": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Data\\MDashboard.Data.csproj",
       "projectName": "MDashboard.Data",
-      "projectPath": "C:\\Users\\andro\\source\\repos\\MDashboard.Mvc\\MDashboard.Data\\MDashboard.Data.csproj",
+      "projectPath": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Data\\MDashboard.Data.csproj",
       "packagesPath": "C:\\Users\\andro\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\andro\\source\\repos\\MDashboard.Mvc\\MDashboard.Data\\obj\\",
+      "outputPath": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\andro\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4760,7 +4776,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\MDashboard.Models.csproj": {
+              "projectPath": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\MDashboard.Models.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\andro\\source\\repos\\MDashboard.Mvc\\MDashboard.Repository\\MDashboard.Repository.csproj": {}
+    "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Repository\\MDashboard.Repository.csproj": {}
   },
   "projects": {
-    "C:\\Users\\andro\\source\\repos\\MDashboard.Mvc\\MDashboard.Repository\\MDashboard.Repository.csproj": {
+    "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Repository\\MDashboard.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\andro\\source\\repos\\MDashboard.Mvc\\MDashboard.Repository\\MDashboard.Repository.csproj",
+        "projectUniqueName": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Repository\\MDashboard.Repository.csproj",
         "projectName": "MDashboard.Repository",
-        "projectPath": "C:\\Users\\andro\\source\\repos\\MDashboard.Mvc\\MDashboard.Repository\\MDashboard.Repository.csproj",
+        "projectPath": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Repository\\MDashboard.Repository.csproj",
         "packagesPath": "C:\\Users\\andro\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\andro\\source\\repos\\MDashboard.Mvc\\MDashboard.Repository\\obj\\",
+        "outputPath": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\andro\\AppData\\Roaming\\NuGet\\NuGet.Config",

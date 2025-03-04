@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cecQNS49S30=",
+  "dgSpecHash": "mnNV3VaX89o=",
   "success": true,
-  "projectFilePath": "C:\\Users\\andro\\source\\repos\\MDashboard.Mvc\\MDashboard.Data\\MDashboard.Data.csproj",
+  "projectFilePath": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Data\\MDashboard.Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\andro\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\andro\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
