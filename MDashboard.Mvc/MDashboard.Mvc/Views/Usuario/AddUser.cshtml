@@ -1,0 +1,36 @@
+﻿@model MDashboard.Models.Usuario
+
+@{
+    ViewData["Title"] = "Agregar Usuario";
+}
+
+<h1>Agregar Usuario</h1>
+
+<form asp-action="AddUser" method="post">
+    <div class="form-group">
+        <label asp-for="Nombre" class="control-label">Nombre</label>
+        <input asp-for="Nombre" class="form-control" />
+        <span asp-validation-for="Nombre" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Email" class="control-label">Email</label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="PasswordHash" class="control-label">Contraseña</label>
+        <input asp-for="PasswordHash" type="password" class="form-control" />
+        <span asp-validation-for="PasswordHash" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Rol" class="control-label">Rol</label>
+        <select asp-for="Rol" class="form-control">
+            <option value="">Seleccione un Rol</option>
+            <option value="Admin">Admin</option>
+            <option value="User">Usuario</option>
+        </select>
+        <span asp-validation-for="Rol" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-success">Guardar</button>
+    <a asp-action="Usuarios" class="btn btn-secondary">Cancelar</a>
+</form>

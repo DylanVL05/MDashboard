@@ -1,3 +1,4 @@
+using MDashboard.Business;
 using MDashboard.Business.Factory;
 using MDashboard.Business.Services;
 using MDashboard.Data.Models;
@@ -16,8 +17,9 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddHttpClient(); // Para inyectar HttpClient
 builder.Services.AddScoped<WidgetApiFactory>(); // Para la creación de clientes de API
 builder.Services.AddScoped<IWidgetRepository, WidgetRepository>(); // Repositorio
-builder.Services.AddScoped<WidgetService>();
-
+//.Services.AddScoped<WidgetService>();
+builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>(); // Repositorio de usuario 
+builder.Services.AddScoped<IUsuarioBusiness, UsuarioBusiness>(); // Repositorio de usuario 
 
 
 var app = builder.Build();
