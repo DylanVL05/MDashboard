@@ -119,3 +119,9 @@ C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Mvc\obj\Deb
 C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Mvc\obj\Debug\net8.0\MDashboard.Mvc.pdb
 C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Mvc\obj\Debug\net8.0\MDashboard.Mvc.genruntimeconfig.cache
 C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Mvc\obj\Debug\net8.0\ref\MDashboard.Mvc.dll
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Mvc\bin\Debug\net8.0\MDashboard.Business.dll
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Mvc\bin\Debug\net8.0\MDashboard.Repository.dll
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Mvc\bin\Debug\net8.0\MDashboard.Services.dll
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Mvc\bin\Debug\net8.0\MDashboard.Services.pdb
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Mvc\bin\Debug\net8.0\MDashboard.Business.pdb
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Mvc\bin\Debug\net8.0\MDashboard.Repository.pdb

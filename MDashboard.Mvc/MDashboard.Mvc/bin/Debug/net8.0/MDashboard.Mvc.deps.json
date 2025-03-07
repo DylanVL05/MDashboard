@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v8.0": {
       "MDashboard.Mvc/1.0.0": {
         "dependencies": {
-          "MDashboard.Data": "1.0.0"
+          "MDashboard.Data": "1.0.0",
+          "MDashboard.Services": "1.0.0"
         },
         "runtime": {
           "MDashboard.Mvc.dll": {}
@@ -614,6 +615,17 @@
           }
         }
       },
+      "MDashboard.Business/1.0.0": {
+        "dependencies": {
+          "MDashboard.Models": "1.0.0"
+        },
+        "runtime": {
+          "MDashboard.Business.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "MDashboard.Data/1.0.0": {
         "dependencies": {
           "MDashboard.Models": "1.0.0",
@@ -629,6 +641,30 @@
       "MDashboard.Models/1.0.0": {
         "runtime": {
           "MDashboard.Models.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "MDashboard.Repository/1.0.0": {
+        "dependencies": {
+          "MDashboard.Data": "1.0.0",
+          "MDashboard.Models": "1.0.0"
+        },
+        "runtime": {
+          "MDashboard.Repository.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "MDashboard.Services/1.0.0": {
+        "dependencies": {
+          "MDashboard.Business": "1.0.0",
+          "MDashboard.Repository": "1.0.0"
+        },
+        "runtime": {
+          "MDashboard.Services.dll": {
             "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -1034,12 +1070,27 @@
       "path": "system.windows.extensions/6.0.0",
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
     },
+    "MDashboard.Business/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "MDashboard.Data/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
     "MDashboard.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MDashboard.Repository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MDashboard.Services/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

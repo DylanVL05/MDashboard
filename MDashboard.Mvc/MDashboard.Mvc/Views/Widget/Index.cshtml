@@ -1,0 +1,14 @@
+﻿@model Dictionary<string, string> // Modelo que recibimos desde el controlador
+
+@{
+    ViewData["Title"] = "Widgets Activos";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<ul>
+    @foreach (var widget in Model)
+    {
+        <li>@widget.Key - @widget.Value</li> <!-- Mostrar el nombre y los datos del widget -->
+    }
+</ul>

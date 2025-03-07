@@ -1,0 +1,16 @@
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Business\bin\Debug\net8.0\MDashboard.Business.deps.json
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Business\bin\Debug\net8.0\MDashboard.Business.dll
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Business\bin\Debug\net8.0\MDashboard.Business.pdb
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Business\bin\Debug\net8.0\MDashboard.Models.dll
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Business\bin\Debug\net8.0\MDashboard.Models.pdb
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Business\obj\Debug\net8.0\MDashboard.Business.csproj.AssemblyReference.cache
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Business\obj\Debug\net8.0\MDashboard.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Business\obj\Debug\net8.0\MDashboard.Business.AssemblyInfoInputs.cache
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Business\obj\Debug\net8.0\MDashboard.Business.AssemblyInfo.cs
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Business\obj\Debug\net8.0\MDashboard.Business.csproj.CoreCompileInputs.cache
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Business\obj\Debug\net8.0\MDashboard.Business.sourcelink.json
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Business\obj\Debug\net8.0\MDashboa.43F93DAF.Up2Date
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Business\obj\Debug\net8.0\MDashboard.Business.dll
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Business\obj\Debug\net8.0\refint\MDashboard.Business.dll
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Business\obj\Debug\net8.0\MDashboard.Business.pdb
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Business\obj\Debug\net8.0\ref\MDashboard.Business.dll

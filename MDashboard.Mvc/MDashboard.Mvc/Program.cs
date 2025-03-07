@@ -1,4 +1,7 @@
+using MDashboard.Business.Factory;
+using MDashboard.Business.Services;
 using MDashboard.Data.Models;
+using MDashboard.Repository;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,7 +13,10 @@ builder.Services.AddDbContext<MediaDashboardContext>(options =>
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-
+builder.Services.AddHttpClient(); // Para inyectar HttpClient
+builder.Services.AddScoped<WidgetApiFactory>(); // Para la creación de clientes de API
+builder.Services.AddScoped<IWidgetRepository, WidgetRepository>(); // Repositorio
+builder.Services.AddScoped<WidgetService>();
 
 
 

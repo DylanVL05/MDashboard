@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MDashboard.Business\MDashboard.Business.csproj" />
+    <ProjectReference Include="..\MDashboard.Repository\MDashboard.Repository.csproj" />
+  </ItemGroup>
+
 </Project>

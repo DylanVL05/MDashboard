@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MDashboard.Repository")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4e1ea0c4afb53d304341b99060a502e7b7d4b3fb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fb6158077cd49c72363ecd1ea5f20e5628e3f764")]
 [assembly: System.Reflection.AssemblyProductAttribute("MDashboard.Repository")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MDashboard.Repository")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
