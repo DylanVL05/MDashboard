@@ -17,17 +17,16 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddHttpClient(); // Para inyectar HttpClient
 builder.Services.AddScoped<WidgetApiFactory>(); // Para la creación de clientes de API
 builder.Services.AddScoped<IWidgetRepository, WidgetRepository>(); // Repositorio
-//.Services.AddScoped<WidgetService>();
+builder.Services.AddScoped<WidgetService>();
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>(); // Repositorio de usuario 
 builder.Services.AddScoped<IUsuarioBusiness, UsuarioBusiness>(); // Repositorio de usuario 
 
 
+//Se agrega la sesión (basicamente sirve para la gestion de las sesiones)
+builder.Services.AddSession(/*Aqui se puede realizar las configuraciones de la sesión (Investigar)*/);
+builder.Services.AddHttpContextAccessor();
+
 var app = builder.Build();
-
-
-
-
-
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -41,6 +40,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseSession();
 
 app.UseAuthorization();
 

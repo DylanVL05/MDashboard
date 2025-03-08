@@ -4750,19 +4750,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\andro\\.nuget\\packages\\": {}
+    "C:\\Users\\Ale\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Data\\MDashboard.Data.csproj",
+      "projectUniqueName": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Data\\MDashboard.Data.csproj",
       "projectName": "MDashboard.Data",
-      "projectPath": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Data\\MDashboard.Data.csproj",
-      "packagesPath": "C:\\Users\\andro\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Data\\obj\\",
+      "projectPath": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Data\\MDashboard.Data.csproj",
+      "packagesPath": "C:\\Users\\Ale\\.nuget\\packages\\",
+      "outputPath": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Data\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\andro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Ale\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4777,8 +4782,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\MDashboard.Models.csproj": {
-              "projectPath": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\MDashboard.Models.csproj"
+            "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\MDashboard.Models.csproj": {
+              "projectPath": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\MDashboard.Models.csproj"
             }
           }
         }
@@ -4792,7 +4797,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0": {
@@ -4831,7 +4837,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

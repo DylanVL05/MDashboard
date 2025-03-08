@@ -30,7 +30,7 @@ namespace MDashboard.Mvc.Controllers
         public async Task<IActionResult> FilterUsuarios(string rol)
         {
             var usuarios = (await GetAllUsuarios()).Where(u => u.Rol == rol).ToList();
-            return View("Usuarios", usuarios);
+            return View("UserList", usuarios);
         }
 
         // Eliminar usuario
@@ -103,14 +103,34 @@ namespace MDashboard.Mvc.Controllers
             try
             {
                 var usuario = await IniciarSesion(email, passwordHash);
-                return RedirectToAction("Index");
+
+                if (usuario != null)
+                {
+
+                    HttpContext.Session.SetInt32("Id", usuario.Id);
+                    HttpContext.Session.SetString("Nombre", usuario.Nombre);
+                    HttpContext.Session.SetString("Rol", usuario.Rol);
+
+                    ViewBag.IdUsuario = usuario.Id;
+                    ViewBag.NombreUsuario = usuario.Nombre;
+                    ViewBag.RolUsuario = usuario.Rol;
+
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    ViewBag.MensajePantalla = "Correo o Contraseña incorrecta.";
+                    return View();
+                }
             }
-            catch
+            catch (Exception ex)
             {
-                ModelState.AddModelError(string.Empty, "Credenciales incorrectas.");
+                ViewBag.MensajePantalla = "Ocurrió un error inesperado. Por favor, inténtalo nuevamente.";
                 return View();
             }
         }
+
+
 
         // Vista para registrar usuario
         [HttpGet]
@@ -128,8 +148,11 @@ namespace MDashboard.Mvc.Controllers
             {
                 try
                 {
+                    usuario.Rol = "User";
+                    usuario.FechaRegistro = DateTime.Now;
+
                     await RegistrarUsuario(usuario);
-                    return RedirectToAction(nameof(UserList));
+                    return RedirectToAction(nameof(Login));
                 }
                 catch
                 {
@@ -137,6 +160,13 @@ namespace MDashboard.Mvc.Controllers
                 }
             }
             return View(usuario);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Login", "Usuario");
         }
     }
 }

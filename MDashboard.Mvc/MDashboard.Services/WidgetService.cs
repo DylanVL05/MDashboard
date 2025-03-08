@@ -1,23 +1,17 @@
 ﻿using MDashboard.Business.Factory;
 using MDashboard.Repository;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using System.Xml;
-
 
 namespace MDashboard.Business.Services
 {
-
-
     public class WidgetService
     {
-        private readonly WidgetRepository _widgetRepository;
+
+        private readonly IWidgetRepository _widgetRepository; // Usa la interfaz
         private readonly WidgetApiFactory _apiFactory;
 
-        public WidgetService(WidgetRepository widgetRepository, WidgetApiFactory apiFactory)
+        public WidgetService(IWidgetRepository widgetRepository, WidgetApiFactory apiFactory) // Usa la interfaz
         {
             _widgetRepository = widgetRepository;
             _apiFactory = apiFactory;

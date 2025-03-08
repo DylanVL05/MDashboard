@@ -1,0 +1,51 @@
+﻿@model MDashboard.Models.Usuario
+
+@{
+    ViewBag.Title = "Registro de Usuario";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4">
+            <div class="card shadow">
+                <div class="card-body p-4">
+                    <div class="text-center mb-4">
+                        <h4 class="fw-bold">Registrar Usuario</h4>
+                    </div>
+
+                    @if (ViewData.ModelState.ErrorCount > 0)
+                    {
+                        <div class="alert alert-danger text-center" role="alert">
+                            <ul class="mb-0">
+                                @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                                {
+                                    <li>@error.ErrorMessage</li>
+                                }
+                            </ul>
+                        </div>
+                    }
+
+                    <form method="post" asp-action="Register" asp-controller="Usuario">
+                        <div class="mb-3">
+                            <label for="Nombre" class="form-label">Nombre</label>
+                            <input type="text" id="Nombre" name="Nombre" class="form-control" value="@Model?.Nombre" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="Email" class="form-label">Correo Electrónico</label>
+                            <input type="email" id="Email" name="Email" class="form-control" value="@Model?.Email" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="PasswordHash" class="form-label">Contraseña</label>
+                            <input type="password" id="PasswordHash" name="PasswordHash" class="form-control" required />
+                        </div>
+                        <button type="submit" class="btn btn-dark w-100">Registrar</button>
+                    </form>
+
+                    <div class="text-center mt-3">
+                        <a href="@Url.Action("Login", "Usuario")" class="text-primary">¿Ya tienes una cuenta? Inicia sesión aquí</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

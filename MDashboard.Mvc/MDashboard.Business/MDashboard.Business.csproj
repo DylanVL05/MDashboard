@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MDashboard.Models\MDashboard.Models.csproj" />
+    <ProjectReference Include="..\MDashboard.Repository\MDashboard.Repository.csproj" />
   </ItemGroup>
 
 </Project>

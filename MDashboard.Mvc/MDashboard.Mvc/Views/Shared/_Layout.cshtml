@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -7,7 +10,9 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/MDashboard.Mvc.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
+
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
@@ -28,6 +33,32 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Usuario" asp-action="UserList">lista de Usuarios</a>
                         </li>
+                        
+
+                        @if (HttpContextAccessor.HttpContext.Session.GetString("Nombre") != null)
+                        {
+                            <li class="nav-item">
+                                <span class="nav-link text-dark">Bienvenido, @HttpContextAccessor.HttpContext.Session.GetString("Nombre")</span>
+                            </li>
+                            <li class="nav-item">
+                                <form asp-controller="Usuario" asp-action="Logout" method="post" class="logout-form">
+                                    <button type="submit" class="nav-link text-dark logout-button">
+                                        Cerrar Sesión
+                                    </button>
+                                </form>
+                            </li>
+
+
+
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Usuario" asp-action="Login">Iniciar Sesión</a>
+                            </li>
+                        }
+
+
                     </ul>
                 </div>
             </div>
