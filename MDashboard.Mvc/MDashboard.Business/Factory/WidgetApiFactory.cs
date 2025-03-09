@@ -27,10 +27,18 @@ namespace MDashboard.Business.Factory
             if (widget == null || string.IsNullOrEmpty(widget.UrlApi))
                 throw new ArgumentException("Widget inválido o URL de API faltante");
 
-            return widget.UrlApi.Contains("openweathermap.org")
-                ? new OpenWeatherApiClient(_httpClient, widget.UrlApi, widget.ApiKey ?? "")
-                : new GenericApiClient(_httpClient, widget.UrlApi, widget.ApiKey);
+            // Si la URL contiene openweathermap.org, se considera un widget de OpenWeather
+            if (widget.UrlApi.Contains("openweathermap.org"))
+            {
+                return new OpenWeatherApiClient(_httpClient, widget.UrlApi, widget.ApiKey ?? "");
+            }
+
+            return new GenericApiClient(_httpClient, widget.UrlApi, widget.ApiKey);  // Caso genérico
         }
+
     }
 }
+
+
+
 

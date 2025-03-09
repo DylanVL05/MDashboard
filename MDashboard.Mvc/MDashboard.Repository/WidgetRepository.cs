@@ -20,6 +20,9 @@ namespace MDashboard.Repository
         Task<Widget?> ObtenerWidgetPorIdAsync(int widgetId);
         Task<Widget?> ObtenerWidgetPorNombreAsync(string nombre);
 
+        Task AgregarWidgetAsync(Widget widget);
+
+
     }
     public class WidgetRepository : IWidgetRepository
     {
@@ -54,9 +57,20 @@ namespace MDashboard.Repository
                 .Include(w => w.Component)
                 .FirstOrDefaultAsync(w => w.Nombre == nombre);
         }
+
+
+        public async Task AgregarWidgetAsync(Widget widget)
+        {
+            _context.Widgets.Add(widget);
+            await _context.SaveChangesAsync();
+        }
+
     }
 
-   
+
+
+
+
 }
 
 

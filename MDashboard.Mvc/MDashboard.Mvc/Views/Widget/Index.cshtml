@@ -1,14 +1,39 @@
-﻿@model Dictionary<string, string> // Modelo que recibimos desde el controlador
+﻿@model IEnumerable<MDashboard.Models.Widget>
 
 @{
-    ViewData["Title"] = "Widgets Activos";
+    ViewData["Title"] = "Lista de Widgets";
 }
 
-<h2>@ViewData["Title"]</h2>
+<h2>Lista de Widgets Activos</h2>
 
-<ul>
-    @foreach (var widget in Model)
-    {
-        <li>@widget.Key - @widget.Value</li> <!-- Mostrar el nombre y los datos del widget -->
-    }
-</ul>
+<a asp-action="Create" class="btn btn-success">Agregar Widget</a>
+
+<table class="table table-striped">
+    <thead>
+        
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>URL API</th>
+            <th>Estado</th>
+            <th>Componente</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var widget in Model)
+
+        {
+            <tr>
+                <td>@widget.Id</td>
+                <td>@widget.Nombre</td>
+                <td>@widget.Descripcion</td>
+                <td>@widget.UrlApi</td>
+                <td>@widget.ApiKey</td>
+                <td>@(widget.Estado == true ? "Activo" : "Inactivo")</td>
+                <td>@widget.Component.Id</td>
+            </tr>
+        }
+
+    </tbody>
+</table>
