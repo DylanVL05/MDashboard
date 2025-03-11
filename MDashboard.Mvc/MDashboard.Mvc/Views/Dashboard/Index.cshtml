@@ -1,0 +1,45 @@
+﻿@model IEnumerable<MDashboard.Models.Widget>
+
+<div class="container mt-4">
+    <h2>Dashboard</h2>
+
+    @if (Model != null && Model.Any())
+    {
+        <div class="row">
+            @foreach (var widget in Model)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">@widget.Nombre</h5>
+                            <p>@widget.Descripcion</p>
+
+                            <!-- Formulario para agregar el widget al dashboard -->
+                            <form method="post" action="@Url.Action("AgregarWidget", "Dashboard")">
+                                <input type="hidden" name="widgetId" value="@widget.Id" />
+
+                                <!-- Selección del tipo de componente -->
+                                <div class="form-group">
+                                    <label for="componentType">Seleccionar tipo de componente</label>
+                                    <select class="form-control" name="componentType" required>
+                                        <option value="">Seleccionar...</option>
+                                        <option value="chart_v1">Chart</option>
+                                        <option value="table_1">Table</option>
+                                        <option value="card_v1">Card</option>
+                                        <!-- Agregar más opciones de componentes si es necesario -->
+                                    </select>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">Agregar al Dashboard</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <p>No hay widgets disponibles para agregar.</p>
+    }
+</div>

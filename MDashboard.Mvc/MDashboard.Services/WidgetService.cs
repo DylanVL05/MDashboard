@@ -1,54 +1,35 @@
-﻿using MDashboard.Business.Factory;
+﻿using MDashboard.Repository;
 using MDashboard.Models.ApiModels;
-using MDashboard.Repository;
+using MDashboard.Data.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using MDashboard.Business.Factory;
+using MDashboard.Models;
 
 namespace MDashboard.Business.Services
 {
     public class WidgetService
     {
-
-        private readonly IWidgetRepository _widgetRepository; // Usa la interfaz
+        private readonly IWidgetRepository _widgetRepository;
         private readonly WidgetApiFactory _apiFactory;
 
-        public WidgetService(IWidgetRepository widgetRepository, WidgetApiFactory apiFactory) // Usa la interfaz
+        public WidgetService(IWidgetRepository widgetRepository, WidgetApiFactory apiFactory)
         {
             _widgetRepository = widgetRepository;
             _apiFactory = apiFactory;
         }
 
-        /**
-        public async Task<Dictionary<string, string>> ObtenerDatosDeWidgetsAsync()
-        {
-            var widgets = _widgetRepository.ObtenerWidgetsActivosAsync();
-            var resultados = new Dictionary<string, string>();
-
-            foreach (var widget in await widgets)
-            {
-                var clienteApi = _apiFactory.CrearCliente(widget);
-                var datos = await clienteApi.ObtenerDatosAsync();
-                resultados.Add(widget.Nombre, datos);
-            }
-
-            return resultados;
-        }
-        **/
-
-
-
         public async Task<Dictionary<string, object>> ObtenerDatosDeWidgetsAsync()
         {
-            var widgets = _widgetRepository.ObtenerWidgetsActivosAsync();
+            var widgets = await _widgetRepository.ObtenerWidgetsActivosAsync();
             var resultados = new Dictionary<string, object>();
 
-            foreach (var widget in await widgets)
+            foreach (var widget in widgets)
             {
                 var clienteApi = _apiFactory.CrearCliente(widget);
                 var datos = await clienteApi.ObtenerDatosAsync();
 
-                // En este caso, si es de OpenWeather, deserializas a un tipo específico (Se manejan los datos por la clase OpenWeatherResponse)
                 if (widget.UrlApi.Contains("openweathermap.org"))
                 {
                     var weatherData = JsonConvert.DeserializeObject<OpenWeatherResponse>(datos);
@@ -56,21 +37,27 @@ namespace MDashboard.Business.Services
                 }
                 else
                 {
-                    resultados.Add(widget.Nombre, datos);  // Caso genérico (Probablemente se obtenga todo los datos)
+                    resultados.Add(widget.Nombre, datos);
                 }
             }
 
             return resultados;
         }
 
-
-
-
-
-
-
+        public async Task AgregarWidgetAsync(Widget widget)
+        {
+            await _widgetRepository.AgregarWidgetAsync(widget);
+        }
 
 
 
     }
 }
+
+
+
+
+
+
+
+    

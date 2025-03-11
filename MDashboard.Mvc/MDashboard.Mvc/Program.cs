@@ -20,6 +20,8 @@ builder.Services.AddScoped<IWidgetRepository, WidgetRepository>(); // Repositori
 builder.Services.AddScoped<WidgetService>();
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>(); // Repositorio de usuario 
 builder.Services.AddScoped<IUsuarioBusiness, UsuarioBusiness>(); // Repositorio de usuario 
+builder.Services.AddScoped<IComponentRepository, ComponentRepository>();
+
 
 
 //Se agrega la sesión (basicamente sirve para la gestion de las sesiones)

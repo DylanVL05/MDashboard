@@ -8,6 +8,8 @@ namespace MDashboard.Mvc.Pages.Widget
 {
     public class IndexModel : PageModel
     {
+
+        /**
         private readonly WidgetService _widgetService;
 
         public IndexModel(WidgetService widgetService)
@@ -22,6 +24,6 @@ namespace MDashboard.Mvc.Pages.Widget
         {
             // Llamada al servicio para obtener los datos de los widgets
             WidgetData = await _widgetService.ObtenerDatosDeWidgetsAsync();
-        }
+        }**/
     }
 }

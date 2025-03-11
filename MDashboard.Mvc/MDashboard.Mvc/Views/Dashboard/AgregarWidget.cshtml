@@ -1,0 +1,32 @@
+﻿@model MDashboard.Models.Widget
+
+@{
+    Layout = "_Layout";
+}
+
+<div class="container mt-4">
+    <h2>Agregar Nuevo Widget</h2>
+
+    <form method="post">
+        <div class="mb-3">
+            <label for="Nombre" class="form-label">Nombre del Widget</label>
+            <input type="text" class="form-control" id="Nombre" name="Nombre" required />
+        </div>
+
+        <div class="mb-3">
+            <label for="Tipo" class="form-label">Tipo de Componente</label>
+            <select class="form-select" id="Tipo" name="Tipo" required>
+                <option value="chart_v1">Gráfico</option>
+                <option value="table_1">Tabla</option>
+                <option value="card_v1">Tarjeta</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="UrlApi" class="form-label">URL de la API</label>
+            <input type="url" class="form-control" id="UrlApi" name="UrlApi" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+</div>

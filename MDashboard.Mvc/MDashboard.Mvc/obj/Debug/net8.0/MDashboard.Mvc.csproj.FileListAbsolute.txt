@@ -173,6 +173,7 @@ C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Mvc\bin\Deb
 C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Mvc\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Mvc\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
 C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Mvc\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Mvc\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Mvc\bin\Debug\net8.0\System.ClientModel.dll
 C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Mvc\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
 C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Mvc\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
@@ -226,3 +227,6 @@ C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Mvc\obj\Deb
 C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Mvc\obj\Debug\net8.0\MDashboard.Mvc.pdb
 C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Mvc\obj\Debug\net8.0\MDashboard.Mvc.genruntimeconfig.cache
 C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Mvc\obj\Debug\net8.0\ref\MDashboard.Mvc.dll
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Mvc\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Mvc\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Mvc\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
