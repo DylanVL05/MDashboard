@@ -9,6 +9,7 @@ using System.Net.Http;
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace MDashboard.Business.Factory
 {
@@ -17,6 +18,7 @@ namespace MDashboard.Business.Factory
         private readonly HttpClient _httpClient;
         private readonly string _apiUrl;
         private readonly string _apiKey;
+        public string Name { get; set; }
 
         public OpenWeatherApiClient(HttpClient httpClient, string apiUrl, string apiKey)
         {
@@ -26,7 +28,7 @@ namespace MDashboard.Business.Factory
         }
 
         // Método para obtener datos sin coordenadas (solo datos generales)
-        public async Task<string> ObtenerDatosAsync()
+        public async Task<KeyValuePair<string, object>> ObtenerDatosAsync(string name)
         {
             if (string.IsNullOrEmpty(_apiUrl) || string.IsNullOrEmpty(_apiKey))
             {
@@ -45,7 +47,8 @@ namespace MDashboard.Business.Factory
                 response.EnsureSuccessStatusCode();
 
                 // Retornar el contenido de la respuesta
-                return await response.Content.ReadAsStringAsync();
+                var content = await response.Content.ReadAsStringAsync();
+                return new KeyValuePair<string, object>(name, content);
             }
             catch (Exception ex)
             {

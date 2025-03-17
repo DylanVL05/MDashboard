@@ -3,6 +3,74 @@
   "WorkspaceRootPath": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{4D536AE8-F09E-44B1-94E7-FE1BACE4C834}|MDashboard.Services\\MDashboard.Services.csproj|c:\\users\\andro\\documents\\github\\mdashboard\\mdashboard.mvc\\mdashboard.services\\widgetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D536AE8-F09E-44B1-94E7-FE1BACE4C834}|MDashboard.Services\\MDashboard.Services.csproj|solutionrelative:mdashboard.services\\widgetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|c:\\users\\andro\\documents\\github\\mdashboard\\mdashboard.mvc\\mdashboard.mvc\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|solutionrelative:mdashboard.mvc\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{352509CE-5BAA-4B1D-BCC0-F0CC3143B586}|MDashboard.Repository\\MDashboard.Repository.csproj|c:\\users\\andro\\documents\\github\\mdashboard\\mdashboard.mvc\\mdashboard.repository\\widgetrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{352509CE-5BAA-4B1D-BCC0-F0CC3143B586}|MDashboard.Repository\\MDashboard.Repository.csproj|solutionrelative:mdashboard.repository\\widgetrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{352509CE-5BAA-4B1D-BCC0-F0CC3143B586}|MDashboard.Repository\\MDashboard.Repository.csproj|c:\\users\\andro\\documents\\github\\mdashboard\\mdashboard.mvc\\mdashboard.repository\\componentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{352509CE-5BAA-4B1D-BCC0-F0CC3143B586}|MDashboard.Repository\\MDashboard.Repository.csproj|solutionrelative:mdashboard.repository\\componentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EE1DDD7-4E31-43C0-9B16-13F38CB86975}|MDashboard.Business\\MDashboard.Business.csproj|c:\\users\\andro\\documents\\github\\mdashboard\\mdashboard.mvc\\mdashboard.business\\factory\\iwidgetapiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EE1DDD7-4E31-43C0-9B16-13F38CB86975}|MDashboard.Business\\MDashboard.Business.csproj|solutionrelative:mdashboard.business\\factory\\iwidgetapiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EE1DDD7-4E31-43C0-9B16-13F38CB86975}|MDashboard.Business\\MDashboard.Business.csproj|c:\\users\\andro\\documents\\github\\mdashboard\\mdashboard.mvc\\mdashboard.business\\factory\\genericapiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EE1DDD7-4E31-43C0-9B16-13F38CB86975}|MDashboard.Business\\MDashboard.Business.csproj|solutionrelative:mdashboard.business\\factory\\genericapiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EE1DDD7-4E31-43C0-9B16-13F38CB86975}|MDashboard.Business\\MDashboard.Business.csproj|c:\\users\\andro\\documents\\github\\mdashboard\\mdashboard.mvc\\mdashboard.business\\factory\\openweatherapiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EE1DDD7-4E31-43C0-9B16-13F38CB86975}|MDashboard.Business\\MDashboard.Business.csproj|solutionrelative:mdashboard.business\\factory\\openweatherapiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EE1DDD7-4E31-43C0-9B16-13F38CB86975}|MDashboard.Business\\MDashboard.Business.csproj|c:\\users\\andro\\documents\\github\\mdashboard\\mdashboard.mvc\\mdashboard.business\\factory\\widgetapifactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EE1DDD7-4E31-43C0-9B16-13F38CB86975}|MDashboard.Business\\MDashboard.Business.csproj|solutionrelative:mdashboard.business\\factory\\widgetapifactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97FFF6AA-5B12-4BE3-BE9E-408435668DB2}|MDashboard.Models\\MDashboard.Models.csproj|c:\\users\\andro\\documents\\github\\mdashboard\\mdashboard.mvc\\mdashboard.models\\component.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97FFF6AA-5B12-4BE3-BE9E-408435668DB2}|MDashboard.Models\\MDashboard.Models.csproj|solutionrelative:mdashboard.models\\component.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97FFF6AA-5B12-4BE3-BE9E-408435668DB2}|MDashboard.Models\\MDashboard.Models.csproj|c:\\users\\andro\\documents\\github\\mdashboard\\mdashboard.mvc\\mdashboard.models\\configuracionwidget.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97FFF6AA-5B12-4BE3-BE9E-408435668DB2}|MDashboard.Models\\MDashboard.Models.csproj|solutionrelative:mdashboard.models\\configuracionwidget.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{352509CE-5BAA-4B1D-BCC0-F0CC3143B586}|MDashboard.Repository\\MDashboard.Repository.csproj|c:\\users\\andro\\documents\\github\\mdashboard\\mdashboard.mvc\\mdashboard.repository\\repositorybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{352509CE-5BAA-4B1D-BCC0-F0CC3143B586}|MDashboard.Repository\\MDashboard.Repository.csproj|solutionrelative:mdashboard.repository\\repositorybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{352509CE-5BAA-4B1D-BCC0-F0CC3143B586}|MDashboard.Repository\\MDashboard.Repository.csproj|c:\\users\\andro\\documents\\github\\mdashboard\\mdashboard.mvc\\mdashboard.repository\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{352509CE-5BAA-4B1D-BCC0-F0CC3143B586}|MDashboard.Repository\\MDashboard.Repository.csproj|solutionrelative:mdashboard.repository\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|c:\\users\\andro\\documents\\github\\mdashboard\\mdashboard.mvc\\mdashboard.mvc\\controllers\\widgetcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|solutionrelative:mdashboard.mvc\\controllers\\widgetcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|c:\\users\\andro\\documents\\github\\mdashboard\\mdashboard.mvc\\mdashboard.mvc\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|solutionrelative:mdashboard.mvc\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|c:\\users\\andro\\documents\\github\\mdashboard\\mdashboard.mvc\\mdashboard.mvc\\views\\templates\\chart_v1.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|solutionrelative:mdashboard.mvc\\views\\templates\\chart_v1.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|c:\\users\\andro\\documents\\github\\mdashboard\\mdashboard.mvc\\mdashboard.mvc\\views\\templates\\card_v1.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|solutionrelative:mdashboard.mvc\\views\\templates\\card_v1.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D536AE8-F09E-44B1-94E7-FE1BACE4C834}|MDashboard.Services\\MDashboard.Services.csproj|c:\\users\\andro\\documents\\github\\mdashboard\\mdashboard.mvc\\mdashboard.services\\mdashboard.services.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{4D536AE8-F09E-44B1-94E7-FE1BACE4C834}|MDashboard.Services\\MDashboard.Services.csproj|solutionrelative:mdashboard.services\\mdashboard.services.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|c:\\users\\andro\\documents\\github\\mdashboard\\mdashboard.mvc\\mdashboard.mvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|solutionrelative:mdashboard.mvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -23,40 +91,16 @@
       "RelativeMoniker": "D:0:0:{97FFF6AA-5B12-4BE3-BE9E-408435668DB2}|MDashboard.Models\\MDashboard.Models.csproj|solutionrelative:mdashboard.models\\widget.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|c:\\users\\andro\\documents\\github\\mdashboard\\mdashboard.mvc\\mdashboard.mvc\\controllers\\widgetcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|solutionrelative:mdashboard.mvc\\controllers\\widgetcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|c:\\users\\andro\\documents\\github\\mdashboard\\mdashboard.mvc\\mdashboard.mvc\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|solutionrelative:mdashboard.mvc\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|c:\\users\\andro\\documents\\github\\mdashboard\\mdashboard.mvc\\mdashboard.mvc\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|solutionrelative:mdashboard.mvc\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|c:\\users\\andro\\documents\\github\\mdashboard\\mdashboard.mvc\\mdashboard.mvc\\views\\dashboard\\agregarwidget.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|solutionrelative:mdashboard.mvc\\views\\dashboard\\agregarwidget.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D536AE8-F09E-44B1-94E7-FE1BACE4C834}|MDashboard.Services\\MDashboard.Services.csproj|c:\\users\\andro\\documents\\github\\mdashboard\\mdashboard.mvc\\mdashboard.services\\widgetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D536AE8-F09E-44B1-94E7-FE1BACE4C834}|MDashboard.Services\\MDashboard.Services.csproj|solutionrelative:mdashboard.services\\widgetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|c:\\users\\andro\\documents\\github\\mdashboard\\mdashboard.mvc\\mdashboard.mvc\\views\\widget\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|solutionrelative:mdashboard.mvc\\views\\widget\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{352509CE-5BAA-4B1D-BCC0-F0CC3143B586}|MDashboard.Repository\\MDashboard.Repository.csproj|c:\\users\\andro\\documents\\github\\mdashboard\\mdashboard.mvc\\mdashboard.repository\\widgetrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{352509CE-5BAA-4B1D-BCC0-F0CC3143B586}|MDashboard.Repository\\MDashboard.Repository.csproj|solutionrelative:mdashboard.repository\\widgetrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{352509CE-5BAA-4B1D-BCC0-F0CC3143B586}|MDashboard.Repository\\MDashboard.Repository.csproj|c:\\users\\andro\\documents\\github\\mdashboard\\mdashboard.mvc\\mdashboard.repository\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{352509CE-5BAA-4B1D-BCC0-F0CC3143B586}|MDashboard.Repository\\MDashboard.Repository.csproj|solutionrelative:mdashboard.repository\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{97FFF6AA-5B12-4BE3-BE9E-408435668DB2}|MDashboard.Models\\MDashboard.Models.csproj|c:\\users\\andro\\documents\\github\\mdashboard\\mdashboard.mvc\\mdashboard.models\\configuracionwidget.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97FFF6AA-5B12-4BE3-BE9E-408435668DB2}|MDashboard.Models\\MDashboard.Models.csproj|solutionrelative:mdashboard.models\\configuracionwidget.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{97FFF6AA-5B12-4BE3-BE9E-408435668DB2}|MDashboard.Models\\MDashboard.Models.csproj|c:\\users\\andro\\documents\\github\\mdashboard\\mdashboard.mvc\\mdashboard.models\\permisoswidget.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -67,20 +111,8 @@
       "RelativeMoniker": "D:0:0:{97FFF6AA-5B12-4BE3-BE9E-408435668DB2}|MDashboard.Models\\MDashboard.Models.csproj|solutionrelative:mdashboard.models\\apimodels\\openweatherresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|c:\\users\\andro\\documents\\github\\mdashboard\\mdashboard.mvc\\mdashboard.mvc\\views\\templates\\card_v1.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|solutionrelative:mdashboard.mvc\\views\\templates\\card_v1.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|c:\\users\\andro\\documents\\github\\mdashboard\\mdashboard.mvc\\mdashboard.mvc\\views\\templates\\chart_v1.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|solutionrelative:mdashboard.mvc\\views\\templates\\chart_v1.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|c:\\users\\andro\\documents\\github\\mdashboard\\mdashboard.mvc\\mdashboard.mvc\\views\\templates\\table_1.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|solutionrelative:mdashboard.mvc\\views\\templates\\table_1.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{352509CE-5BAA-4B1D-BCC0-F0CC3143B586}|MDashboard.Repository\\MDashboard.Repository.csproj|c:\\users\\andro\\documents\\github\\mdashboard\\mdashboard.mvc\\mdashboard.repository\\componentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{352509CE-5BAA-4B1D-BCC0-F0CC3143B586}|MDashboard.Repository\\MDashboard.Repository.csproj|solutionrelative:mdashboard.repository\\componentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D687B3D4-287A-45AF-89F4-96811F858552}|MDashboard.Data\\MDashboard.Data.csproj|c:\\users\\andro\\documents\\github\\mdashboard\\mdashboard.mvc\\mdashboard.data\\models\\mediadashboardcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -99,36 +131,8 @@
       "RelativeMoniker": "D:0:0:{352509CE-5BAA-4B1D-BCC0-F0CC3143B586}|MDashboard.Repository\\MDashboard.Repository.csproj|solutionrelative:mdashboard.repository\\mdashboard.repository.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{97FFF6AA-5B12-4BE3-BE9E-408435668DB2}|MDashboard.Models\\MDashboard.Models.csproj|c:\\users\\andro\\documents\\github\\mdashboard\\mdashboard.mvc\\mdashboard.models\\component.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97FFF6AA-5B12-4BE3-BE9E-408435668DB2}|MDashboard.Models\\MDashboard.Models.csproj|solutionrelative:mdashboard.models\\component.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1EE1DDD7-4E31-43C0-9B16-13F38CB86975}|MDashboard.Business\\MDashboard.Business.csproj|c:\\users\\andro\\documents\\github\\mdashboard\\mdashboard.mvc\\mdashboard.business\\factory\\iwidgetapiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1EE1DDD7-4E31-43C0-9B16-13F38CB86975}|MDashboard.Business\\MDashboard.Business.csproj|solutionrelative:mdashboard.business\\factory\\iwidgetapiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1EE1DDD7-4E31-43C0-9B16-13F38CB86975}|MDashboard.Business\\MDashboard.Business.csproj|c:\\users\\andro\\documents\\github\\mdashboard\\mdashboard.mvc\\mdashboard.business\\factory\\widgetapifactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1EE1DDD7-4E31-43C0-9B16-13F38CB86975}|MDashboard.Business\\MDashboard.Business.csproj|solutionrelative:mdashboard.business\\factory\\widgetapifactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1EE1DDD7-4E31-43C0-9B16-13F38CB86975}|MDashboard.Business\\MDashboard.Business.csproj|c:\\users\\andro\\documents\\github\\mdashboard\\mdashboard.mvc\\mdashboard.business\\factory\\openweatherapiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1EE1DDD7-4E31-43C0-9B16-13F38CB86975}|MDashboard.Business\\MDashboard.Business.csproj|solutionrelative:mdashboard.business\\factory\\openweatherapiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1EE1DDD7-4E31-43C0-9B16-13F38CB86975}|MDashboard.Business\\MDashboard.Business.csproj|c:\\users\\andro\\documents\\github\\mdashboard\\mdashboard.mvc\\mdashboard.business\\factory\\genericapiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1EE1DDD7-4E31-43C0-9B16-13F38CB86975}|MDashboard.Business\\MDashboard.Business.csproj|solutionrelative:mdashboard.business\\factory\\genericapiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|c:\\users\\andro\\documents\\github\\mdashboard\\mdashboard.mvc\\mdashboard.mvc\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|solutionrelative:mdashboard.mvc\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|c:\\users\\andro\\documents\\github\\mdashboard\\mdashboard.mvc\\mdashboard.mvc\\views\\widget\\detalles.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|solutionrelative:mdashboard.mvc\\views\\widget\\detalles.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{352509CE-5BAA-4B1D-BCC0-F0CC3143B586}|MDashboard.Repository\\MDashboard.Repository.csproj|c:\\users\\andro\\documents\\github\\mdashboard\\mdashboard.mvc\\mdashboard.repository\\repositorybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{352509CE-5BAA-4B1D-BCC0-F0CC3143B586}|MDashboard.Repository\\MDashboard.Repository.csproj|solutionrelative:mdashboard.repository\\repositorybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{97FFF6AA-5B12-4BE3-BE9E-408435668DB2}|MDashboard.Models\\MDashboard.Models.csproj|c:\\users\\andro\\documents\\github\\mdashboard\\mdashboard.mvc\\mdashboard.models\\mdashboard.models.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -154,7 +158,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 64,
+          "SelectedChildIndex": 60,
           "Children": [
             {
               "$type": "Bookmark",
@@ -382,293 +386,93 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "WidgetService.cs",
-              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Services\\WidgetService.cs",
-              "RelativeDocumentMoniker": "MDashboard.Services\\WidgetService.cs",
-              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Services\\WidgetService.cs",
-              "RelativeToolTip": "MDashboard.Services\\WidgetService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "GenericApiClient.cs",
+              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Business\\Factory\\GenericApiClient.cs",
+              "RelativeDocumentMoniker": "MDashboard.Business\\Factory\\GenericApiClient.cs",
+              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Business\\Factory\\GenericApiClient.cs",
+              "RelativeToolTip": "MDashboard.Business\\Factory\\GenericApiClient.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAArwCAAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-08T01:19:21.703Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-09T10:09:24.849Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
+              "Title": "IWidgetApiClient.cs",
+              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Business\\Factory\\IWidgetApiClient.cs",
+              "RelativeDocumentMoniker": "MDashboard.Business\\Factory\\IWidgetApiClient.cs",
+              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Business\\Factory\\IWidgetApiClient.cs",
+              "RelativeToolTip": "MDashboard.Business\\Factory\\IWidgetApiClient.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-09T10:10:43.104Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "DashboardController.cs",
               "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Controllers\\DashboardController.cs",
               "RelativeDocumentMoniker": "MDashboard.Mvc\\Controllers\\DashboardController.cs",
               "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Controllers\\DashboardController.cs",
               "RelativeToolTip": "MDashboard.Mvc\\Controllers\\DashboardController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwAkAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-10T06:21:09.719Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "WidgetController.cs",
-              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Controllers\\WidgetController.cs",
-              "RelativeDocumentMoniker": "MDashboard.Mvc\\Controllers\\WidgetController.cs",
-              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Controllers\\WidgetController.cs",
-              "RelativeToolTip": "MDashboard.Mvc\\Controllers\\WidgetController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "OpenWeatherApiClient.cs",
+              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Business\\Factory\\OpenWeatherApiClient.cs",
+              "RelativeDocumentMoniker": "MDashboard.Business\\Factory\\OpenWeatherApiClient.cs",
+              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Business\\Factory\\OpenWeatherApiClient.cs",
+              "RelativeToolTip": "MDashboard.Business\\Factory\\OpenWeatherApiClient.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAqwDEAAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T10:06:25.423Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-09T10:43:32.959Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Index.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Widget\\Index.cshtml.cs",
-              "RelativeDocumentMoniker": "MDashboard.Mvc\\Views\\Widget\\Index.cshtml.cs",
-              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Widget\\Index.cshtml.cs",
-              "RelativeToolTip": "MDashboard.Mvc\\Views\\Widget\\Index.cshtml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "WidgetService.cs",
+              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Services\\WidgetService.cs",
+              "RelativeDocumentMoniker": "MDashboard.Services\\WidgetService.cs",
+              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Services\\WidgetService.cs",
+              "RelativeToolTip": "MDashboard.Services\\WidgetService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACIAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T10:08:14.827Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "MDashboard.Mvc\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "MDashboard.Mvc\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-09T10:20:59.524Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Widget\\Index.cshtml",
-              "RelativeDocumentMoniker": "MDashboard.Mvc\\Views\\Widget\\Index.cshtml",
-              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Widget\\Index.cshtml",
-              "RelativeToolTip": "MDashboard.Mvc\\Views\\Widget\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-09T10:08:17.86Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Widget.cs",
-              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\Widget.cs",
-              "RelativeDocumentMoniker": "MDashboard.Models\\Widget.cs",
-              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\Widget.cs",
-              "RelativeToolTip": "MDashboard.Models\\Widget.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T10:09:32.256Z",
+              "WhenOpened": "2025-03-08T01:19:21.703Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "_ViewStart.cshtml",
-              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\_ViewStart.cshtml",
-              "RelativeDocumentMoniker": "MDashboard.Mvc\\Views\\_ViewStart.cshtml",
-              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\_ViewStart.cshtml",
-              "RelativeToolTip": "MDashboard.Mvc\\Views\\_ViewStart.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-09T11:04:01.612Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "MDashboard.Mvc\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "MDashboard.Mvc\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAACUAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-09T11:04:21.617Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Dashboard\\Index.cshtml",
-              "RelativeDocumentMoniker": "MDashboard.Mvc\\Views\\Dashboard\\Index.cshtml",
-              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Dashboard\\Index.cshtml",
-              "RelativeToolTip": "MDashboard.Mvc\\Views\\Dashboard\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAABLAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-11T19:26:04.258Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
               "Title": "WidgetRepository.cs",
               "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Repository\\WidgetRepository.cs",
               "RelativeDocumentMoniker": "MDashboard.Repository\\WidgetRepository.cs",
               "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Repository\\WidgetRepository.cs",
               "RelativeToolTip": "MDashboard.Repository\\WidgetRepository.cs",
-              "ViewState": "AgIAAHEAAAAAAAAAAAAswCIAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAABwAAAAAAAAAAIA8wD0AAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T10:09:42.036Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-09T10:09:42.036Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "AgregarWidget.cshtml",
-              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Dashboard\\AgregarWidget.cshtml",
-              "RelativeDocumentMoniker": "MDashboard.Mvc\\Views\\Dashboard\\AgregarWidget.cshtml",
-              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Dashboard\\AgregarWidget.cshtml",
-              "RelativeToolTip": "MDashboard.Mvc\\Views\\Dashboard\\AgregarWidget.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-11T19:25:51.297Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "ConfiguracionWidget.cs",
-              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\ConfiguracionWidget.cs",
-              "RelativeDocumentMoniker": "MDashboard.Models\\ConfiguracionWidget.cs",
-              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\ConfiguracionWidget.cs",
-              "RelativeToolTip": "MDashboard.Models\\ConfiguracionWidget.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "WidgetApiFactory.cs",
+              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Business\\Factory\\WidgetApiFactory.cs",
+              "RelativeDocumentMoniker": "MDashboard.Business\\Factory\\WidgetApiFactory.cs",
+              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Business\\Factory\\WidgetApiFactory.cs",
+              "RelativeToolTip": "MDashboard.Business\\Factory\\WidgetApiFactory.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAArwCMAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T19:13:59.553Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-09T10:09:16.904Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "PermisosWidget.cs",
-              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\PermisosWidget.cs",
-              "RelativeDocumentMoniker": "MDashboard.Models\\PermisosWidget.cs",
-              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\PermisosWidget.cs",
-              "RelativeToolTip": "MDashboard.Models\\PermisosWidget.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T19:13:57.689Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "card_v1.html",
-              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Templates\\card_v1.html",
-              "RelativeDocumentMoniker": "MDashboard.Mvc\\Views\\Templates\\card_v1.html",
-              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Templates\\card_v1.html",
-              "RelativeToolTip": "MDashboard.Mvc\\Views\\Templates\\card_v1.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-03-11T18:34:59.254Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "chart_v1.html",
-              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Templates\\chart_v1.html",
-              "RelativeDocumentMoniker": "MDashboard.Mvc\\Views\\Templates\\chart_v1.html",
-              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Templates\\chart_v1.html",
-              "RelativeToolTip": "MDashboard.Mvc\\Views\\Templates\\chart_v1.html",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-03-11T18:33:29.094Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "table_1.html",
-              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Templates\\table_1.html",
-              "RelativeDocumentMoniker": "MDashboard.Mvc\\Views\\Templates\\table_1.html",
-              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Templates\\table_1.html",
-              "RelativeToolTip": "MDashboard.Mvc\\Views\\Templates\\table_1.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-03-11T18:34:09.624Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "UsuarioRepository.cs",
-              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Repository\\UsuarioRepository.cs",
-              "RelativeDocumentMoniker": "MDashboard.Repository\\UsuarioRepository.cs",
-              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Repository\\UsuarioRepository.cs",
-              "RelativeToolTip": "MDashboard.Repository\\UsuarioRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-08T01:21:47.242Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "MediaDashboardContext.cs",
-              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Data\\Models\\MediaDashboardContext.cs",
-              "RelativeDocumentMoniker": "MDashboard.Data\\Models\\MediaDashboardContext.cs",
-              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Data\\Models\\MediaDashboardContext.cs",
-              "RelativeToolTip": "MDashboard.Data\\Models\\MediaDashboardContext.cs",
-              "ViewState": "AgIAAFQAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T10:02:40.36Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "OpenWeatherResponse.cs",
-              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\ApiModels\\OpenWeatherResponse.cs",
-              "RelativeDocumentMoniker": "MDashboard.Models\\ApiModels\\OpenWeatherResponse.cs",
-              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\ApiModels\\OpenWeatherResponse.cs",
-              "RelativeToolTip": "MDashboard.Models\\ApiModels\\OpenWeatherResponse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T06:47:18.699Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Program.cs",
-              "RelativeDocumentMoniker": "MDashboard.Mvc\\Program.cs",
-              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Program.cs",
-              "RelativeToolTip": "MDashboard.Mvc\\Program.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABYAAABIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-08T00:51:15.368Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "MDashboard.Repository.csproj",
-              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Repository\\MDashboard.Repository.csproj",
-              "RelativeDocumentMoniker": "MDashboard.Repository\\MDashboard.Repository.csproj",
-              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Repository\\MDashboard.Repository.csproj",
-              "RelativeToolTip": "MDashboard.Repository\\MDashboard.Repository.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-03-10T06:37:55.55Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 3,
               "Title": "ComponentRepository.cs",
               "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Repository\\ComponentRepository.cs",
               "RelativeDocumentMoniker": "MDashboard.Repository\\ComponentRepository.cs",
@@ -676,25 +480,11 @@
               "RelativeToolTip": "MDashboard.Repository\\ComponentRepository.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABsAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T15:56:06.011Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-11T15:56:06.011Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Widget\\Create.cshtml",
-              "RelativeDocumentMoniker": "MDashboard.Mvc\\Views\\Widget\\Create.cshtml",
-              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Widget\\Create.cshtml",
-              "RelativeToolTip": "MDashboard.Mvc\\Views\\Widget\\Create.cshtml",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAACAAAABGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-09T10:21:31.906Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 8,
               "Title": "Component.cs",
               "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\Component.cs",
               "RelativeDocumentMoniker": "MDashboard.Models\\Component.cs",
@@ -702,64 +492,71 @@
               "RelativeToolTip": "MDashboard.Models\\Component.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T06:38:20.533Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-10T06:38:20.533Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "IWidgetApiClient.cs",
-              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Business\\Factory\\IWidgetApiClient.cs",
-              "RelativeDocumentMoniker": "MDashboard.Business\\Factory\\IWidgetApiClient.cs",
-              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Business\\Factory\\IWidgetApiClient.cs",
-              "RelativeToolTip": "MDashboard.Business\\Factory\\IWidgetApiClient.cs",
+              "DocumentIndex": 9,
+              "Title": "ConfiguracionWidget.cs",
+              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\ConfiguracionWidget.cs",
+              "RelativeDocumentMoniker": "MDashboard.Models\\ConfiguracionWidget.cs",
+              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\ConfiguracionWidget.cs",
+              "RelativeToolTip": "MDashboard.Models\\ConfiguracionWidget.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T10:10:43.104Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-11T19:13:59.553Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "WidgetApiFactory.cs",
-              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Business\\Factory\\WidgetApiFactory.cs",
-              "RelativeDocumentMoniker": "MDashboard.Business\\Factory\\WidgetApiFactory.cs",
-              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Business\\Factory\\WidgetApiFactory.cs",
-              "RelativeToolTip": "MDashboard.Business\\Factory\\WidgetApiFactory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 15,
+              "Title": "card_v1.html",
+              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Templates\\card_v1.html",
+              "RelativeDocumentMoniker": "MDashboard.Mvc\\Views\\Templates\\card_v1.html",
+              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Templates\\card_v1.html",
+              "RelativeToolTip": "MDashboard.Mvc\\Views\\Templates\\card_v1.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-03-11T18:34:59.254Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "RepositoryBase.cs",
+              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Repository\\RepositoryBase.cs",
+              "RelativeDocumentMoniker": "MDashboard.Repository\\RepositoryBase.cs",
+              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Repository\\RepositoryBase.cs",
+              "RelativeToolTip": "MDashboard.Repository\\RepositoryBase.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T10:09:16.904Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-09T10:20:16.068Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "OpenWeatherApiClient.cs",
-              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Business\\Factory\\OpenWeatherApiClient.cs",
-              "RelativeDocumentMoniker": "MDashboard.Business\\Factory\\OpenWeatherApiClient.cs",
-              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Business\\Factory\\OpenWeatherApiClient.cs",
-              "RelativeToolTip": "MDashboard.Business\\Factory\\OpenWeatherApiClient.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 11,
+              "Title": "UsuarioRepository.cs",
+              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Repository\\UsuarioRepository.cs",
+              "RelativeDocumentMoniker": "MDashboard.Repository\\UsuarioRepository.cs",
+              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Repository\\UsuarioRepository.cs",
+              "RelativeToolTip": "MDashboard.Repository\\UsuarioRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T10:43:32.959Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-08T01:21:47.242Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "GenericApiClient.cs",
-              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Business\\Factory\\GenericApiClient.cs",
-              "RelativeDocumentMoniker": "MDashboard.Business\\Factory\\GenericApiClient.cs",
-              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Business\\Factory\\GenericApiClient.cs",
-              "RelativeToolTip": "MDashboard.Business\\Factory\\GenericApiClient.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 12,
+              "Title": "WidgetController.cs",
+              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Controllers\\WidgetController.cs",
+              "RelativeDocumentMoniker": "MDashboard.Mvc\\Controllers\\WidgetController.cs",
+              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Controllers\\WidgetController.cs",
+              "RelativeToolTip": "MDashboard.Mvc\\Controllers\\WidgetController.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAowA0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T10:09:24.849Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-09T10:06:25.423Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 13,
               "Title": "UsuarioController.cs",
               "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Controllers\\UsuarioController.cs",
               "RelativeDocumentMoniker": "MDashboard.Mvc\\Controllers\\UsuarioController.cs",
@@ -771,7 +568,211 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "chart_v1.html",
+              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Templates\\chart_v1.html",
+              "RelativeDocumentMoniker": "MDashboard.Mvc\\Views\\Templates\\chart_v1.html",
+              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Templates\\chart_v1.html",
+              "RelativeToolTip": "MDashboard.Mvc\\Views\\Templates\\chart_v1.html",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-03-11T18:33:29.094Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "MDashboard.Services.csproj",
+              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Services\\MDashboard.Services.csproj",
+              "RelativeDocumentMoniker": "MDashboard.Services\\MDashboard.Services.csproj",
+              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Services\\MDashboard.Services.csproj",
+              "RelativeToolTip": "MDashboard.Services\\MDashboard.Services.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-03-12T23:18:17.715Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Widget.cs",
+              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\Widget.cs",
+              "RelativeDocumentMoniker": "MDashboard.Models\\Widget.cs",
+              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\Widget.cs",
+              "RelativeToolTip": "MDashboard.Models\\Widget.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-09T10:09:32.256Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Widget\\Index.cshtml",
+              "RelativeDocumentMoniker": "MDashboard.Mvc\\Views\\Widget\\Index.cshtml",
+              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Widget\\Index.cshtml",
+              "RelativeToolTip": "MDashboard.Mvc\\Views\\Widget\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-09T10:08:17.86Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "MDashboard.Mvc\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "MDashboard.Mvc\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-09T10:20:59.524Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "MDashboard.Mvc\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "MDashboard.Mvc\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAACUAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-09T11:04:21.617Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Index.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Widget\\Index.cshtml.cs",
+              "RelativeDocumentMoniker": "MDashboard.Mvc\\Views\\Widget\\Index.cshtml.cs",
+              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Widget\\Index.cshtml.cs",
+              "RelativeToolTip": "MDashboard.Mvc\\Views\\Widget\\Index.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-09T10:08:14.827Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "MDashboard.Mvc\\Views\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "MDashboard.Mvc\\Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-09T11:04:01.612Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Dashboard\\Index.cshtml",
+              "RelativeDocumentMoniker": "MDashboard.Mvc\\Views\\Dashboard\\Index.cshtml",
+              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Dashboard\\Index.cshtml",
+              "RelativeToolTip": "MDashboard.Mvc\\Views\\Dashboard\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-11T19:26:04.258Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "AgregarWidget.cshtml",
+              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Dashboard\\AgregarWidget.cshtml",
+              "RelativeDocumentMoniker": "MDashboard.Mvc\\Views\\Dashboard\\AgregarWidget.cshtml",
+              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Dashboard\\AgregarWidget.cshtml",
+              "RelativeToolTip": "MDashboard.Mvc\\Views\\Dashboard\\AgregarWidget.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-11T19:25:51.297Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "PermisosWidget.cs",
+              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\PermisosWidget.cs",
+              "RelativeDocumentMoniker": "MDashboard.Models\\PermisosWidget.cs",
+              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\PermisosWidget.cs",
+              "RelativeToolTip": "MDashboard.Models\\PermisosWidget.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-11T19:13:57.689Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "table_1.html",
+              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Templates\\table_1.html",
+              "RelativeDocumentMoniker": "MDashboard.Mvc\\Views\\Templates\\table_1.html",
+              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Templates\\table_1.html",
+              "RelativeToolTip": "MDashboard.Mvc\\Views\\Templates\\table_1.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-03-11T18:34:09.624Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "MediaDashboardContext.cs",
+              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Data\\Models\\MediaDashboardContext.cs",
+              "RelativeDocumentMoniker": "MDashboard.Data\\Models\\MediaDashboardContext.cs",
+              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Data\\Models\\MediaDashboardContext.cs",
+              "RelativeToolTip": "MDashboard.Data\\Models\\MediaDashboardContext.cs",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-09T10:02:40.36Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "OpenWeatherResponse.cs",
+              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\ApiModels\\OpenWeatherResponse.cs",
+              "RelativeDocumentMoniker": "MDashboard.Models\\ApiModels\\OpenWeatherResponse.cs",
+              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\ApiModels\\OpenWeatherResponse.cs",
+              "RelativeToolTip": "MDashboard.Models\\ApiModels\\OpenWeatherResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T06:47:18.699Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 30,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Program.cs",
+              "RelativeDocumentMoniker": "MDashboard.Mvc\\Program.cs",
+              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Program.cs",
+              "RelativeToolTip": "MDashboard.Mvc\\Program.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABYAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-08T00:51:15.368Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "MDashboard.Repository.csproj",
+              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Repository\\MDashboard.Repository.csproj",
+              "RelativeDocumentMoniker": "MDashboard.Repository\\MDashboard.Repository.csproj",
+              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Repository\\MDashboard.Repository.csproj",
+              "RelativeToolTip": "MDashboard.Repository\\MDashboard.Repository.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-03-10T06:37:55.55Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Widget\\Create.cshtml",
+              "RelativeDocumentMoniker": "MDashboard.Mvc\\Views\\Widget\\Create.cshtml",
+              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Widget\\Create.cshtml",
+              "RelativeToolTip": "MDashboard.Mvc\\Views\\Widget\\Create.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACAAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-09T10:21:31.906Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
               "Title": "Detalles.cshtml",
               "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Widget\\Detalles.cshtml",
               "RelativeDocumentMoniker": "MDashboard.Mvc\\Views\\Widget\\Detalles.cshtml",
@@ -783,19 +784,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "RepositoryBase.cs",
-              "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Repository\\RepositoryBase.cs",
-              "RelativeDocumentMoniker": "MDashboard.Repository\\RepositoryBase.cs",
-              "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Repository\\RepositoryBase.cs",
-              "RelativeToolTip": "MDashboard.Repository\\RepositoryBase.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T10:20:16.068Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "MDashboard.Models.csproj",
               "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\MDashboard.Models.csproj",
               "RelativeDocumentMoniker": "MDashboard.Models\\MDashboard.Models.csproj",
@@ -807,7 +796,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 34,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "MDashboard.Mvc\\Controllers\\HomeController.cs",
@@ -819,7 +808,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 35,
               "Title": "AddUser.cshtml",
               "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Usuario\\AddUser.cshtml",
               "RelativeDocumentMoniker": "MDashboard.Mvc\\Views\\Usuario\\AddUser.cshtml",
@@ -831,7 +820,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 36,
               "Title": "MainController.cs",
               "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Controllers\\MainController.cs",
               "RelativeDocumentMoniker": "MDashboard.Mvc\\Controllers\\MainController.cs",

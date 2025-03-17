@@ -2,6 +2,7 @@
 {
     public interface IWidgetApiClient
     {
-        Task<string> ObtenerDatosAsync();
+        string Name { get; set; }
+        Task<KeyValuePair<string, object>> ObtenerDatosAsync(string name);
     }
 }

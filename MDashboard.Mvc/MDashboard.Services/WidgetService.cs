@@ -25,6 +25,15 @@ namespace MDashboard.Business.Services
             var widgets = await _widgetRepository.ObtenerWidgetsActivosAsync();
             var resultados = new Dictionary<string, object>();
 
+            await Parallel.ForEachAsync(
+                widgets.Select(any => new {
+                    client = _apiFactory.CrearCliente(any),
+                    widget = any,
+                }), async (x, _) => {
+                var result = await x.client.ObtenerDatosAsync(x.widget.Nombre);
+                resultados.Add(result.Key, result.Value); 
+            });
+            /*
             foreach (var widget in widgets)
             {
                 var clienteApi = _apiFactory.CrearCliente(widget);
@@ -39,7 +48,7 @@ namespace MDashboard.Business.Services
                 {
                     resultados.Add(widget.Nombre, datos);
                 }
-            }
+            }*/
 
             return resultados;
         }
