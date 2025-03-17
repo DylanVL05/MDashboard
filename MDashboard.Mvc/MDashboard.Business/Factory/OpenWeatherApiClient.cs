@@ -31,7 +31,8 @@ namespace MDashboard.Business.Factory
                 string lang = "es"; // Idioma de la respuesta
 
                 // Construcción de la URL
-                var url = $"{_apiUrl}?lat={lat}&lon={lon}&units={units}&lang={lang}&appid={_apiKey}";
+                var url = $"{_apiUrl}?lat=40.7128&lon=-74.0060&appid={_apiKey}&units=metric";
+                Console.WriteLine($"URL utilizada: {url}");
 
                 // Realizar solicitud HTTP GET
                 var response = await _httpClient.GetAsync(url);

@@ -17,19 +17,25 @@
                             <!-- Mostrar datos dinámicos si están disponibles -->
                             @if (ViewBag.DynamicData != null && ViewBag.DynamicData.ContainsKey(widget.Nombre))
                             {
-                                var dynamicData = (MDashboard.Models.ApiModels.OpenWeatherResponse)ViewBag.DynamicData[widget.Nombre];
-                                <p><strong>Datos del Clima:</strong></p>
-                                <ul>
-                                    <li>🌡️ <strong>Temperatura:</strong> @dynamicData.Current.Temp °C</li>
-                                    <li>💧 <strong>Humedad:</strong> @dynamicData.Current.Humidity %</li>
-                                    <li>☁️ <strong>Condición:</strong> @dynamicData.Current.Weather[0].Description</li>
-                                </ul>
+                                var dynamicData = (MDashboard.Models.ApiModels.WeatherData)ViewBag.DynamicData[widget.Nombre];
+                                if (dynamicData != null)
+                                {
+                                    <p><strong>Datos del Clima:</strong></p>
+                                    <ul>
+                                        <li>🌡️ <strong>Temperatura:</strong> @dynamicData.Temp °C</li>
+                                        <li>💧 <strong>Humedad:</strong> @dynamicData.Humidity %</li>
+                                        <li>☁️ <strong>Condición:</strong> @dynamicData.Weather[0]?.Description</li>
+                                    </ul>
+                                }
+                                else
+                                {
+                                    <p><em>El clima actual no está disponible para este widget.</em></p>
+                                }
                             }
                             else
                             {
                                 <p><em>No hay datos dinámicos disponibles para este widget.</em></p>
                             }
-
 
                             <!-- Formulario para agregar el widget al dashboard -->
                             <form method="post" action="@Url.Action("AgregarWidget", "Dashboard")">

@@ -3,6 +3,7 @@ using MDashboard.Models.ApiModels;
 using MDashboard.Data.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using MDashboard.Business.Factory;
 using MDashboard.Models;
@@ -25,27 +26,53 @@ namespace MDashboard.Business.Services
             var widgets = await _widgetRepository.ObtenerWidgetsActivosAsync();
             var resultados = new Dictionary<string, object>();
 
-            // Usamos Parallel.ForEachAsync para recorrer los widgets en paralelo
+            // Procesar los widgets en paralelo
             await Parallel.ForEachAsync(
-                widgets.Select(any => new {
-                    client = _apiFactory.CrearCliente(any),
-                    widget = any,
-                }), async (x, _) => {
-                    // Obtener los datos desde el cliente de la API
-                    var result = await x.client.ObtenerDatosAsync(x.widget.Nombre);
+                widgets.Select(widget => new
+                {
+                    client = _apiFactory.CrearCliente(widget),
+                    widget
+                }), async (x, _) =>
+                {
+                    try
+                    {
+                        // Obtener los datos desde la API correspondiente
+                        var result = await x.client.ObtenerDatosAsync(x.widget.Nombre);
 
-                    // Si la URL de la API contiene "openweathermap.org", deserializamos los datos
-                    if (x.widget.UrlApi.Contains("openweathermap.org"))
-                    {
-                        // Deserializamos la respuesta a un objeto de tipo OpenWeatherResponse
-                        var weatherData = JsonConvert.DeserializeObject<OpenWeatherResponse>(result.Value.ToString());
-                        // Agregar la respuesta deserializada al diccionario
-                        resultados.Add(result.Key, weatherData);
+                        if (result.Value != null)
+                        {
+                            Console.WriteLine($"Datos obtenidos para {x.widget.Nombre}: {result.Value}");
+
+                            // Deserialización específica para OpenWeather API
+                            if (x.widget.UrlApi.Contains("openweathermap.org"))
+                            {
+                                var weatherResponse = JsonConvert.DeserializeObject<OpenWeatherResponse>(result.Value.ToString());
+
+                                if (weatherResponse != null && weatherResponse.Data != null && weatherResponse.Data.Any())
+                                {
+                                    // Tomar el primer elemento de la lista "data"
+                                    var weatherData = weatherResponse.Data.FirstOrDefault();
+                                    resultados.Add(result.Key, weatherData);
+                                }
+                                else
+                                {
+                                    Console.WriteLine($"No se encontraron datos válidos en la respuesta para {x.widget.Nombre}");
+                                }
+                            }
+                            else
+                            {
+                                // Otros casos (datos genéricos)
+                                resultados.Add(result.Key, result.Value);
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine($"No se obtuvieron datos para {x.widget.Nombre}");
+                        }
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        // Si no es OpenWeather, agregamos los datos tal cual están
-                        resultados.Add(result.Key, result.Value);
+                        Console.WriteLine($"Error procesando widget {x.widget.Nombre}: {ex.Message}");
                     }
                 });
 
@@ -56,16 +83,5 @@ namespace MDashboard.Business.Services
         {
             await _widgetRepository.AgregarWidgetAsync(widget);
         }
-
-
-
     }
 }
-
-
-
-
-
-
-
-    

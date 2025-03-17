@@ -28,11 +28,9 @@ namespace MDashboard.Controllers
                 // Obtener widgets almacenados en la base de datos
                 var widgets = await _widgetRepository.ObtenerWidgetsActivosAsync();
 
-                // Obtener datos dinámicos desde las APIs (por ejemplo, OpenWeather)
                 var dynamicData = await _widgetService.ObtenerDatosDeWidgetsAsync();
+                ViewBag.DynamicData = dynamicData ?? new Dictionary<string, object>();
 
-                // Pasar los datos estáticos y dinámicos a la vista
-                ViewBag.DynamicData = dynamicData;
 
                 return View(widgets);
             }
