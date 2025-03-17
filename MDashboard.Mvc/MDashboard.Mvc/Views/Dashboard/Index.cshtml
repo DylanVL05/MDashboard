@@ -14,6 +14,23 @@
                             <h5 class="card-title">@widget.Nombre</h5>
                             <p>@widget.Descripcion</p>
 
+                            <!-- Mostrar datos dinámicos si están disponibles -->
+                            @if (ViewBag.DynamicData != null && ViewBag.DynamicData.ContainsKey(widget.Nombre))
+                            {
+                                var dynamicData = (MDashboard.Models.ApiModels.OpenWeatherResponse)ViewBag.DynamicData[widget.Nombre];
+                                <p><strong>Datos del Clima:</strong></p>
+                                <ul>
+                                    <li>🌡️ <strong>Temperatura:</strong> @dynamicData.Current.Temp °C</li>
+                                    <li>💧 <strong>Humedad:</strong> @dynamicData.Current.Humidity %</li>
+                                    <li>☁️ <strong>Condición:</strong> @dynamicData.Current.Weather[0].Description</li>
+                                </ul>
+                            }
+                            else
+                            {
+                                <p><em>No hay datos dinámicos disponibles para este widget.</em></p>
+                            }
+
+
                             <!-- Formulario para agregar el widget al dashboard -->
                             <form method="post" action="@Url.Action("AgregarWidget", "Dashboard")">
                                 <input type="hidden" name="widgetId" value="@widget.Id" />
@@ -26,7 +43,6 @@
                                         <option value="chart_v1">Chart</option>
                                         <option value="table_1">Table</option>
                                         <option value="card_v1">Card</option>
-                                        <!-- Agregar más opciones de componentes si es necesario -->
                                     </select>
                                 </div>
 

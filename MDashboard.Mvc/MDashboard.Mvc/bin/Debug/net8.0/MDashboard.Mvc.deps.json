@@ -669,7 +669,7 @@
         },
         "runtime": {
           "MDashboard.Business.dll": {
-            "assemblyVersion": "1.0.0",
+            "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
@@ -681,7 +681,7 @@
         },
         "runtime": {
           "MDashboard.Data.dll": {
-            "assemblyVersion": "1.0.0",
+            "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
@@ -689,7 +689,7 @@
       "MDashboard.Models/1.0.0": {
         "runtime": {
           "MDashboard.Models.dll": {
-            "assemblyVersion": "1.0.0",
+            "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
@@ -703,7 +703,7 @@
         },
         "runtime": {
           "MDashboard.Repository.dll": {
-            "assemblyVersion": "1.0.0",
+            "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
@@ -716,7 +716,7 @@
         },
         "runtime": {
           "MDashboard.Services.dll": {
-            "assemblyVersion": "1.0.0",
+            "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
         }

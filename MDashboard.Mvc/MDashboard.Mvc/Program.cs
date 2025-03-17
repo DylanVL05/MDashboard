@@ -22,7 +22,8 @@ builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>(); // Reposito
 builder.Services.AddScoped<IUsuarioBusiness, UsuarioBusiness>(); // Repositorio de usuario 
 builder.Services.AddScoped<IComponentRepository, ComponentRepository>();
 
-
+//Soporte para los controladores y vistas.
+builder.Services.AddControllersWithViews();
 
 //Se agrega la sesión (basicamente sirve para la gestion de las sesiones)
 builder.Services.AddSession(/*Aqui se puede realizar las configuraciones de la sesión (Investigar)*/);

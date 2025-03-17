@@ -1,15 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using System.Net.Http;
-
-using System;
 using System.Net.Http;
 using System.Threading.Tasks;
-using System.IdentityModel.Tokens.Jwt;
 
 namespace MDashboard.Business.Factory
 {
@@ -23,37 +15,43 @@ namespace MDashboard.Business.Factory
         public OpenWeatherApiClient(HttpClient httpClient, string apiUrl, string apiKey)
         {
             _httpClient = httpClient;
-            _apiUrl = apiUrl;
-            _apiKey = apiKey;
+            _apiUrl = apiUrl ?? throw new ArgumentNullException(nameof(apiUrl), "La URL de la API no puede ser nula.");
+            _apiKey = apiKey ?? throw new ArgumentNullException(nameof(apiKey), "La clave API no puede ser nula.");
         }
 
-        // Método para obtener datos sin coordenadas (solo datos generales)
+        // Método para obtener datos dinámicos desde OpenWeather API
         public async Task<KeyValuePair<string, object>> ObtenerDatosAsync(string name)
         {
-            if (string.IsNullOrEmpty(_apiUrl) || string.IsNullOrEmpty(_apiKey))
-            {
-                throw new ArgumentException("La URL de la API o la clave API no pueden estar vacías.");
-            }
-
             try
             {
-                // Construcción de la URL con la API Key
-                var url = $"{_apiUrl}?appid={_apiKey}";
+                // Coordenadas de ejemplo (Nueva York, modificables)
+                double lat = 40.7128;  // Latitud
+                double lon = -74.0060; // Longitud
+                string units = "metric"; // Unidades (metric, imperial o standard)
+                string lang = "es"; // Idioma de la respuesta
 
-                // Realizar la solicitud HTTP GET
+                // Construcción de la URL
+                var url = $"{_apiUrl}?lat={lat}&lon={lon}&units={units}&lang={lang}&appid={_apiKey}";
+
+                // Realizar solicitud HTTP GET
                 var response = await _httpClient.GetAsync(url);
 
-                // Asegurarse de que la respuesta fue exitosa
+                // Asegurarse de que la solicitud fue exitosa
                 response.EnsureSuccessStatusCode();
 
-                // Retornar el contenido de la respuesta
+                // Leer el contenido de la respuesta
                 var content = await response.Content.ReadAsStringAsync();
+
+                // Devolver los datos obtenidos como un KeyValuePair
                 return new KeyValuePair<string, object>(name, content);
+            }
+            catch (HttpRequestException ex)
+            {
+                throw new Exception($"Error al realizar la solicitud a la API de OpenWeather: {ex.Message}", ex);
             }
             catch (Exception ex)
             {
-                // Manejar cualquier error que ocurra en la solicitud HTTP
-                throw new Exception("Error al obtener los datos de OpenWeather", ex);
+                throw new Exception($"Error inesperado al obtener datos de OpenWeather: {ex.Message}", ex);
             }
         }
     }

@@ -25,30 +25,29 @@ namespace MDashboard.Business.Services
             var widgets = await _widgetRepository.ObtenerWidgetsActivosAsync();
             var resultados = new Dictionary<string, object>();
 
+            // Usamos Parallel.ForEachAsync para recorrer los widgets en paralelo
             await Parallel.ForEachAsync(
                 widgets.Select(any => new {
                     client = _apiFactory.CrearCliente(any),
                     widget = any,
                 }), async (x, _) => {
-                var result = await x.client.ObtenerDatosAsync(x.widget.Nombre);
-                resultados.Add(result.Key, result.Value); 
-            });
-            /*
-            foreach (var widget in widgets)
-            {
-                var clienteApi = _apiFactory.CrearCliente(widget);
-                var datos = await clienteApi.ObtenerDatosAsync();
+                    // Obtener los datos desde el cliente de la API
+                    var result = await x.client.ObtenerDatosAsync(x.widget.Nombre);
 
-                if (widget.UrlApi.Contains("openweathermap.org"))
-                {
-                    var weatherData = JsonConvert.DeserializeObject<OpenWeatherResponse>(datos);
-                    resultados.Add(widget.Nombre, weatherData);
-                }
-                else
-                {
-                    resultados.Add(widget.Nombre, datos);
-                }
-            }*/
+                    // Si la URL de la API contiene "openweathermap.org", deserializamos los datos
+                    if (x.widget.UrlApi.Contains("openweathermap.org"))
+                    {
+                        // Deserializamos la respuesta a un objeto de tipo OpenWeatherResponse
+                        var weatherData = JsonConvert.DeserializeObject<OpenWeatherResponse>(result.Value.ToString());
+                        // Agregar la respuesta deserializada al diccionario
+                        resultados.Add(result.Key, weatherData);
+                    }
+                    else
+                    {
+                        // Si no es OpenWeather, agregamos los datos tal cual están
+                        resultados.Add(result.Key, result.Value);
+                    }
+                });
 
             return resultados;
         }

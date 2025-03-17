@@ -3,6 +3,7 @@ using MDashboard.Repository;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;  // Para autorización
 using System.Threading.Tasks;
+using MDashboard.Business.Services;
 
 namespace MDashboard.Controllers
 {
@@ -10,19 +11,37 @@ namespace MDashboard.Controllers
     public class DashboardController : Controller
     {
         private readonly IWidgetRepository _widgetRepository;
+        private readonly WidgetService _widgetService;
 
-        public DashboardController(IWidgetRepository widgetRepository)
+        public DashboardController(IWidgetRepository widgetRepository, WidgetService widgetService)
         {
             _widgetRepository = widgetRepository;
+            _widgetService = widgetService;
         }
 
         // Acción para mostrar el dashboard con los widgets existentes
+        [HttpGet]
         public async Task<IActionResult> Index()
         {
-            // Obtener todos los widgets activos que han sido creados previamente
-            var widgets = await _widgetRepository.ObtenerWidgetsActivosAsync();
-            return View(widgets);  // Pasar los widgets a la vista
+            try
+            {
+                // Obtener widgets almacenados en la base de datos
+                var widgets = await _widgetRepository.ObtenerWidgetsActivosAsync();
+
+                // Obtener datos dinámicos desde las APIs (por ejemplo, OpenWeather)
+                var dynamicData = await _widgetService.ObtenerDatosDeWidgetsAsync();
+
+                // Pasar los datos estáticos y dinámicos a la vista
+                ViewBag.DynamicData = dynamicData;
+
+                return View(widgets);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error al cargar el dashboard: {ex.Message}");
+            }
         }
+
 
         // Acción para agregar un widget preexistente al dashboard
         [HttpPost]

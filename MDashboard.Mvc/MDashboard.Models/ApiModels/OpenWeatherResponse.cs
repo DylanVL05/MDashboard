@@ -1,17 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MDashboard.Models.ApiModels
 {
     public class OpenWeatherResponse
     {
-        public string Description { get; set; } // Descripción del clima (soleado, lluvioso, etc.)
-        public double Temperature { get; set; } // Temperatura en grados Celsius
-        public double Humidity { get; set; } // Humedad en porcentaje
-        public double WindSpeed { get; set; } // Velocidad del viento en metros por segundo
-                                              // Puedes añadir más propiedades si es necesario, como la presión, las condiciones de lluvia, etc.
+        public double Lat { get; set; } // Latitud
+        public double Lon { get; set; } // Longitud
+        public string Timezone { get; set; } // Zona horaria
+        public int Timezone_Offset { get; set; } // Desplazamiento de la zona horaria en segundos
+        public CurrentWeather Current { get; set; } // Clima actual
+    }
+
+    public class CurrentWeather
+    {
+        public double Temp { get; set; } // Temperatura
+        public int Humidity { get; set; } // Humedad (%)
+        public List<WeatherDescription> Weather { get; set; } // Descripción del clima
+    }
+
+    public class WeatherDescription
+    {
+        public string Main { get; set; } // Categoría del clima (Rain, Snow, etc.)
+        public string Description { get; set; } // Descripción detallada (lluvia ligera, nublado, etc.)
+        public string Icon { get; set; } // ID del icono del clima
     }
 }
