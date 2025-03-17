@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;  // Para autorización
 using System.Threading.Tasks;
 using MDashboard.Business.Services;
+using Newtonsoft.Json;
 
 namespace MDashboard.Controllers
 {
@@ -28,9 +29,17 @@ namespace MDashboard.Controllers
                 // Obtener widgets almacenados en la base de datos
                 var widgets = await _widgetRepository.ObtenerWidgetsActivosAsync();
 
+                // Obtener los datos de los widgets
                 var dynamicData = await _widgetService.ObtenerDatosDeWidgetsAsync();
-                ViewBag.DynamicData = dynamicData ?? new Dictionary<string, object>();
 
+                // Debugging: Ver los datos de los widgets
+                Console.WriteLine("Datos de los widgets:");
+                foreach (var item in dynamicData)
+                {
+                    Console.WriteLine($"{item.Key}: {JsonConvert.SerializeObject(item.Value)}");
+                }
+
+                ViewBag.DynamicData = dynamicData ?? new Dictionary<string, object>();
 
                 return View(widgets);
             }

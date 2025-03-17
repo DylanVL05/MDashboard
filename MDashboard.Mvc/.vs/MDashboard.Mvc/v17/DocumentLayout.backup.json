@@ -3,48 +3,28 @@
   "WorkspaceRootPath": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1EE1DDD7-4E31-43C0-9B16-13F38CB86975}|MDashboard.Business\\MDashboard.Business.csproj|d:\\proyectosvisualstudio2022\\msdashboard\\mdashboard\\mdashboard.mvc\\mdashboard.business\\factory\\openweatherapiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1EE1DDD7-4E31-43C0-9B16-13F38CB86975}|MDashboard.Business\\MDashboard.Business.csproj|solutionrelative:mdashboard.business\\factory\\openweatherapiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4D536AE8-F09E-44B1-94E7-FE1BACE4C834}|MDashboard.Services\\MDashboard.Services.csproj|d:\\proyectosvisualstudio2022\\msdashboard\\mdashboard\\mdashboard.mvc\\mdashboard.services\\widgetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D536AE8-F09E-44B1-94E7-FE1BACE4C834}|MDashboard.Services\\MDashboard.Services.csproj|solutionrelative:mdashboard.services\\widgetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|d:\\proyectosvisualstudio2022\\msdashboard\\mdashboard\\mdashboard.mvc\\mdashboard.mvc\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|solutionrelative:mdashboard.mvc\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D536AE8-F09E-44B1-94E7-FE1BACE4C834}|MDashboard.Services\\MDashboard.Services.csproj|d:\\proyectosvisualstudio2022\\msdashboard\\mdashboard\\mdashboard.mvc\\mdashboard.services\\widgetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D536AE8-F09E-44B1-94E7-FE1BACE4C834}|MDashboard.Services\\MDashboard.Services.csproj|solutionrelative:mdashboard.services\\widgetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{352509CE-5BAA-4B1D-BCC0-F0CC3143B586}|MDashboard.Repository\\MDashboard.Repository.csproj|d:\\proyectosvisualstudio2022\\msdashboard\\mdashboard\\mdashboard.mvc\\mdashboard.repository\\widgetrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{352509CE-5BAA-4B1D-BCC0-F0CC3143B586}|MDashboard.Repository\\MDashboard.Repository.csproj|solutionrelative:mdashboard.repository\\widgetrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|d:\\proyectosvisualstudio2022\\msdashboard\\mdashboard\\mdashboard.mvc\\mdashboard.mvc\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|solutionrelative:mdashboard.mvc\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{1EE1DDD7-4E31-43C0-9B16-13F38CB86975}|MDashboard.Business\\MDashboard.Business.csproj|d:\\proyectosvisualstudio2022\\msdashboard\\mdashboard\\mdashboard.mvc\\mdashboard.business\\factory\\openweatherapiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EE1DDD7-4E31-43C0-9B16-13F38CB86975}|MDashboard.Business\\MDashboard.Business.csproj|solutionrelative:mdashboard.business\\factory\\openweatherapiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{97FFF6AA-5B12-4BE3-BE9E-408435668DB2}|MDashboard.Models\\MDashboard.Models.csproj|d:\\proyectosvisualstudio2022\\msdashboard\\mdashboard\\mdashboard.mvc\\mdashboard.models\\apimodels\\openweatherresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{97FFF6AA-5B12-4BE3-BE9E-408435668DB2}|MDashboard.Models\\MDashboard.Models.csproj|solutionrelative:mdashboard.models\\apimodels\\openweatherresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{352509CE-5BAA-4B1D-BCC0-F0CC3143B586}|MDashboard.Repository\\MDashboard.Repository.csproj|d:\\proyectosvisualstudio2022\\msdashboard\\mdashboard\\mdashboard.mvc\\mdashboard.repository\\widgetrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{352509CE-5BAA-4B1D-BCC0-F0CC3143B586}|MDashboard.Repository\\MDashboard.Repository.csproj|solutionrelative:mdashboard.repository\\widgetrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1EE1DDD7-4E31-43C0-9B16-13F38CB86975}|MDashboard.Business\\MDashboard.Business.csproj|d:\\proyectosvisualstudio2022\\msdashboard\\mdashboard\\mdashboard.mvc\\mdashboard.business\\factory\\widgetapifactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1EE1DDD7-4E31-43C0-9B16-13F38CB86975}|MDashboard.Business\\MDashboard.Business.csproj|solutionrelative:mdashboard.business\\factory\\widgetapifactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1EE1DDD7-4E31-43C0-9B16-13F38CB86975}|MDashboard.Business\\MDashboard.Business.csproj|d:\\proyectosvisualstudio2022\\msdashboard\\mdashboard\\mdashboard.mvc\\mdashboard.business\\factory\\iwidgetapiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1EE1DDD7-4E31-43C0-9B16-13F38CB86975}|MDashboard.Business\\MDashboard.Business.csproj|solutionrelative:mdashboard.business\\factory\\iwidgetapiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|d:\\proyectosvisualstudio2022\\msdashboard\\mdashboard\\mdashboard.mvc\\mdashboard.mvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|solutionrelative:mdashboard.mvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|d:\\proyectosvisualstudio2022\\msdashboard\\mdashboard\\mdashboard.mvc\\mdashboard.mvc\\views\\widget\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|solutionrelative:mdashboard.mvc\\views\\widget\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|d:\\proyectosvisualstudio2022\\msdashboard\\mdashboard\\mdashboard.mvc\\mdashboard.mvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|solutionrelative:mdashboard.mvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 60,
+          "SelectedChildIndex": 58,
           "Children": [
             {
               "$type": "Bookmark",
@@ -282,91 +262,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Dashboard\\Index.cshtml",
-              "RelativeDocumentMoniker": "MDashboard.Mvc\\Views\\Dashboard\\Index.cshtml",
-              "ToolTip": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Dashboard\\Index.cshtml",
-              "RelativeToolTip": "MDashboard.Mvc\\Views\\Dashboard\\Index.cshtml",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAIwBsAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-17T17:46:09.522Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
               "Title": "DashboardController.cs",
               "DocumentMoniker": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Controllers\\DashboardController.cs",
               "RelativeDocumentMoniker": "MDashboard.Mvc\\Controllers\\DashboardController.cs",
               "ToolTip": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Controllers\\DashboardController.cs",
               "RelativeToolTip": "MDashboard.Mvc\\Controllers\\DashboardController.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAADwvy0AAABEAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAwwCAAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T17:05:51.761Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Program.cs",
-              "RelativeDocumentMoniker": "MDashboard.Mvc\\Program.cs",
-              "ToolTip": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Program.cs",
-              "RelativeToolTip": "MDashboard.Mvc\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T17:35:15.567Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Widget\\Index.cshtml",
-              "RelativeDocumentMoniker": "MDashboard.Mvc\\Views\\Widget\\Index.cshtml",
-              "ToolTip": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Widget\\Index.cshtml",
-              "RelativeToolTip": "MDashboard.Mvc\\Views\\Widget\\Index.cshtml",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAIwCcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-17T17:33:59.066Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "OpenWeatherApiClient.cs",
-              "DocumentMoniker": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Business\\Factory\\OpenWeatherApiClient.cs",
-              "RelativeDocumentMoniker": "MDashboard.Business\\Factory\\OpenWeatherApiClient.cs",
-              "ToolTip": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Business\\Factory\\OpenWeatherApiClient.cs",
-              "RelativeToolTip": "MDashboard.Business\\Factory\\OpenWeatherApiClient.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAQwCIAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T17:13:29.657Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "WidgetService.cs",
-              "DocumentMoniker": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Services\\WidgetService.cs",
-              "RelativeDocumentMoniker": "MDashboard.Services\\WidgetService.cs",
-              "ToolTip": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Services\\WidgetService.cs",
-              "RelativeToolTip": "MDashboard.Services\\WidgetService.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAAAB0AAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T17:06:12.943Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "WidgetRepository.cs",
-              "DocumentMoniker": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Repository\\WidgetRepository.cs",
-              "RelativeDocumentMoniker": "MDashboard.Repository\\WidgetRepository.cs",
-              "ToolTip": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Repository\\WidgetRepository.cs",
-              "RelativeToolTip": "MDashboard.Repository\\WidgetRepository.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAADwvy4AAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T17:53:52.074Z",
+              "WhenOpened": "2025-03-17T19:21:45.049Z",
               "EditorCaption": ""
             },
             {
@@ -377,27 +281,40 @@
               "RelativeDocumentMoniker": "MDashboard.Models\\ApiModels\\OpenWeatherResponse.cs",
               "ToolTip": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\ApiModels\\OpenWeatherResponse.cs",
               "RelativeToolTip": "MDashboard.Models\\ApiModels\\OpenWeatherResponse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAIwAsAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T18:09:07.89Z",
+              "WhenOpened": "2025-03-17T19:17:00.021Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "MDashboard.Mvc\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "MDashboard.Mvc\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAACcAAAByAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-17T17:49:32.602Z",
+              "DocumentIndex": 0,
+              "Title": "WidgetService.cs",
+              "DocumentMoniker": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Services\\WidgetService.cs",
+              "RelativeDocumentMoniker": "MDashboard.Services\\WidgetService.cs",
+              "ToolTip": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Services\\WidgetService.cs",
+              "RelativeToolTip": "MDashboard.Services\\WidgetService.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAiwBgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T19:14:08.762Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 3,
+              "Title": "OpenWeatherApiClient.cs",
+              "DocumentMoniker": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Business\\Factory\\OpenWeatherApiClient.cs",
+              "RelativeDocumentMoniker": "MDashboard.Business\\Factory\\OpenWeatherApiClient.cs",
+              "ToolTip": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Business\\Factory\\OpenWeatherApiClient.cs",
+              "RelativeToolTip": "MDashboard.Business\\Factory\\OpenWeatherApiClient.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAtwBcAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T19:13:43.412Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "IWidgetApiClient.cs",
               "DocumentMoniker": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Business\\Factory\\IWidgetApiClient.cs",
               "RelativeDocumentMoniker": "MDashboard.Business\\Factory\\IWidgetApiClient.cs",
@@ -405,20 +322,20 @@
               "RelativeToolTip": "MDashboard.Business\\Factory\\IWidgetApiClient.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T17:42:05.803Z",
+              "WhenOpened": "2025-03-17T19:13:38.907Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "WidgetApiFactory.cs",
-              "DocumentMoniker": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Business\\Factory\\WidgetApiFactory.cs",
-              "RelativeDocumentMoniker": "MDashboard.Business\\Factory\\WidgetApiFactory.cs",
-              "ToolTip": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Business\\Factory\\WidgetApiFactory.cs",
-              "RelativeToolTip": "MDashboard.Business\\Factory\\WidgetApiFactory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "WidgetRepository.cs",
+              "DocumentMoniker": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Repository\\WidgetRepository.cs",
+              "RelativeDocumentMoniker": "MDashboard.Repository\\WidgetRepository.cs",
+              "ToolTip": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Repository\\WidgetRepository.cs",
+              "RelativeToolTip": "MDashboard.Repository\\WidgetRepository.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAkwC4AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T17:17:00.621Z",
+              "WhenOpened": "2025-03-17T19:13:14.807Z",
               "EditorCaption": ""
             }
           ]

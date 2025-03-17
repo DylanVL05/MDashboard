@@ -20,13 +20,11 @@ namespace MDashboard.Business.Services
             _widgetRepository = widgetRepository;
             _apiFactory = apiFactory;
         }
-
         public async Task<Dictionary<string, object>> ObtenerDatosDeWidgetsAsync()
         {
             var widgets = await _widgetRepository.ObtenerWidgetsActivosAsync();
             var resultados = new Dictionary<string, object>();
 
-            // Procesar los widgets en paralelo
             await Parallel.ForEachAsync(
                 widgets.Select(widget => new
                 {
@@ -43,26 +41,44 @@ namespace MDashboard.Business.Services
                         {
                             Console.WriteLine($"Datos obtenidos para {x.widget.Nombre}: {result.Value}");
 
-                            // Deserialización específica para OpenWeather API
+                            // Si el widget pertenece a OpenWeather, procesar y deserializar los datos
                             if (x.widget.UrlApi.Contains("openweathermap.org"))
                             {
                                 var weatherResponse = JsonConvert.DeserializeObject<OpenWeatherResponse>(result.Value.ToString());
 
+                                // Validar si la lista `Data` existe y contiene elementos
                                 if (weatherResponse != null && weatherResponse.Data != null && weatherResponse.Data.Any())
                                 {
-                                    // Tomar el primer elemento de la lista "data"
+                                    // Extraer el primer elemento de `Data`
                                     var weatherData = weatherResponse.Data.FirstOrDefault();
-                                    resultados.Add(result.Key, weatherData);
+
+                                    if (weatherData != null)
+                                    {
+                                        // Preparar los datos relevantes para el diccionario
+                                        var weatherInfo = new
+                                        {
+                                            Temperature = weatherData.Temp, // Temperatura
+                                            Humidity = weatherData.Humidity, // Humedad
+                                            WeatherCondition = weatherData.Weather.FirstOrDefault()?.Description // Descripción del clima
+                                        };
+
+                                        // Agregar los datos procesados al diccionario
+                                        resultados.Add(x.widget.Nombre, weatherInfo);
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine($"No se encontraron datos válidos en 'Data' para {x.widget.Nombre}");
+                                    }
                                 }
                                 else
                                 {
-                                    Console.WriteLine($"No se encontraron datos válidos en la respuesta para {x.widget.Nombre}");
+                                    Console.WriteLine($"La respuesta de OpenWeather para {x.widget.Nombre} no contiene información válida");
                                 }
                             }
                             else
                             {
-                                // Otros casos (datos genéricos)
-                                resultados.Add(result.Key, result.Value);
+                                // Si el widget no pertenece a OpenWeather, agregar los datos sin procesar
+                                resultados.Add(x.widget.Nombre, result.Value);
                             }
                         }
                         else
@@ -78,6 +94,7 @@ namespace MDashboard.Business.Services
 
             return resultados;
         }
+
 
         public async Task AgregarWidgetAsync(Widget widget)
         {
