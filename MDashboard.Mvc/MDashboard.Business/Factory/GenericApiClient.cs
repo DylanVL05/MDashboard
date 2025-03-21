@@ -29,7 +29,7 @@ namespace MDashboard.Business.Factory
             var requestUrl = string.IsNullOrEmpty(_apiKey) ? _url : $"{_url}?apiKey={_apiKey}";
             var response = await _httpClient.GetAsync(requestUrl);
             var data = await response.Content.ReadAsStringAsync();
-            var deserialized = JsonConvert.DeserializeObject<OpenWeatherResponse>(data);
+            var deserialized = JsonConvert.DeserializeObject<ClimaResponse>(data);
             return new KeyValuePair<string, object>(name, deserialized);
         }
 

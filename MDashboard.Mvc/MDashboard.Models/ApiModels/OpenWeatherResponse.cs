@@ -1,40 +1,79 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 
 namespace MDashboard.Models.ApiModels
 {
-    public class OpenWeatherResponse
+    public class ClimaResponse
     {
-        public double Lat { get; set; } // Latitud
-        public double Lon { get; set; } // Longitud
-        public string Timezone { get; set; } // Zona horaria
-        public int Timezone_Offset { get; set; } // Desplazamiento horario en segundos
-        public List<WeatherData> Data { get; set; } // Lista de datos del clima
+        public Coord Coord { get; set; }
+        public List<Weather> Weather { get; set; }
+        public MainInfo Main { get; set; }
+        public Wind Wind { get; set; }
+        public Clouds Clouds { get; set; }
+        public Rain Rain { get; set; }
+        public Sys Sys { get; set; }
+        public string Base { get; set; }
+        public int Visibility { get; set; }
+        public int Dt { get; set; }
+        public int Timezone { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public int Cod { get; set; }
     }
 
-    public class WeatherData
+    public class Coord
     {
-        public int Dt { get; set; } // Marca de tiempo en formato UNIX
-        public int Sunrise { get; set; } // Hora de salida del sol
-        public int Sunset { get; set; } // Hora de puesta del sol
-        public double Temp { get; set; } // Temperatura
-        public double Feels_Like { get; set; } // Sensación térmica
-        public int Pressure { get; set; } // Presión
-        public int Humidity { get; set; } // Humedad
-        public double Dew_Point { get; set; } // Punto de rocío
-        public double Uvi { get; set; } // Índice UV
-        public int Clouds { get; set; } // Nubosidad
-        public int Visibility { get; set; } // Visibilidad
-        public double Wind_Speed { get; set; } // Velocidad del viento
-        public int Wind_Deg { get; set; } // Dirección del viento
-        public List<WeatherDescription> Weather { get; set; } // Lista de descripciones del clima
+        public double Lon { get; set; }
+        public double Lat { get; set; }
     }
 
-    public class WeatherDescription
+    public class Weather
     {
-        public int Id { get; set; } // ID de la condición del clima
-        public string Main { get; set; } // Grupo principal del clima (Clear, Rain, etc.)
-        public string Description { get; set; } // Descripción del clima (cielo despejado, etc.)
-        public string Icon { get; set; } // Icono del clima
+        public int Id { get; set; }
+        public string Main { get; set; }
+        public string Description { get; set; }
+        public string Icon { get; set; }
     }
+
+    public class MainInfo
+    {
+        public double Temp { get; set; }
+        public double Feels_Like { get; set; }
+        public double Temp_Min { get; set; }
+        public double Temp_Max { get; set; }
+        public int Pressure { get; set; }
+        public int Humidity { get; set; }
+        public int Sea_Level { get; set; }
+        public int Grnd_Level { get; set; }
+    }
+
+    public class Wind
+    {
+        public double Speed { get; set; }
+        public int Deg { get; set; }
+        public double Gust { get; set; }
+    }
+
+    public class Clouds
+    {
+        public int All { get; set; }
+    }
+
+    public class Rain
+    {
+        [JsonProperty("1h")]
+        public double OneHour { get; set; }
+    }
+
+    public class Sys
+    {
+        public int Type { get; set; }
+        public int Id { get; set; }
+        public string Country { get; set; }
+        public int Sunrise { get; set; }
+        public int Sunset { get; set; }
+    }
+
+
 }

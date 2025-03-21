@@ -22,6 +22,7 @@ namespace MDashboard.Business.Services
         }
         public async Task<Dictionary<string, object>> ObtenerDatosDeWidgetsAsync()
         {
+            //Aqui llega muerto.
             var widgets = await _widgetRepository.ObtenerWidgetsActivosAsync();
             var resultados = new Dictionary<string, object>();
 
@@ -44,46 +45,36 @@ namespace MDashboard.Business.Services
                             // Si el widget pertenece a OpenWeather, procesar y deserializar los datos
                             if (x.widget.UrlApi.Contains("openweathermap.org"))
                             {
-                                var weatherResponse = JsonConvert.DeserializeObject<OpenWeatherResponse>(result.Value.ToString());
-
-                                // Validar si la lista `Data` existe y contiene elementos
-                                if (weatherResponse != null && weatherResponse.Data != null && weatherResponse.Data.Any())
+                                try
                                 {
-                                    // Extraer el primer elemento de `Data`
-                                    var weatherData = weatherResponse.Data.FirstOrDefault();
+                                    var weatherResponse = JsonConvert.DeserializeObject<ClimaResponse>(result.Value.ToString());
 
-                                    if (weatherData != null)
+                                    if (weatherResponse != null)
                                     {
-                                        // Preparar los datos relevantes para el diccionario
-                                        var weatherInfo = new
+                                        var weatherInfo = new MainInfo
                                         {
-                                            Temperature = weatherData.Temp, // Temperatura
-                                            Humidity = weatherData.Humidity, // Humedad
-                                            WeatherCondition = weatherData.Weather.FirstOrDefault()?.Description // Descripción del clima
+                                            Temp = weatherResponse.Main?.Temp ?? 0,
+                                            Humidity = weatherResponse.Main?.Humidity ?? 0,
+                                            Pressure = weatherResponse.Main?.Pressure ?? 0
                                         };
 
-                                        // Agregar los datos procesados al diccionario
                                         resultados.Add(x.widget.Nombre, weatherInfo);
+
                                     }
                                     else
                                     {
-                                        Console.WriteLine($"No se encontraron datos válidos en 'Data' para {x.widget.Nombre}");
+                                        Console.WriteLine($"Error: No se pudo deserializar el JSON para {x.widget.Nombre}");
                                     }
                                 }
-                                else
+                                catch (JsonSerializationException ex)
                                 {
-                                    Console.WriteLine($"La respuesta de OpenWeather para {x.widget.Nombre} no contiene información válida");
+                                    Console.WriteLine($"Error de deserialización para {x.widget.Nombre}: {ex.Message}");
+                                }
+                                catch (Exception ex)
+                                {
+                                    Console.WriteLine($"Error inesperado para {x.widget.Nombre}: {ex.Message}");
                                 }
                             }
-                            else
-                            {
-                                // Si el widget no pertenece a OpenWeather, agregar los datos sin procesar
-                                resultados.Add(x.widget.Nombre, result.Value);
-                            }
-                        }
-                        else
-                        {
-                            Console.WriteLine($"No se obtuvieron datos para {x.widget.Nombre}");
                         }
                     }
                     catch (Exception ex)
@@ -94,7 +85,6 @@ namespace MDashboard.Business.Services
 
             return resultados;
         }
-
 
         public async Task AgregarWidgetAsync(Widget widget)
         {

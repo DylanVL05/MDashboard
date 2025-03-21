@@ -17,15 +17,16 @@
                             <!-- Mostrar datos dinámicos si están disponibles -->
                             @if (ViewBag.DynamicData != null && ViewBag.DynamicData.ContainsKey(widget.Nombre))
                             {
-                                var dynamicData = (MDashboard.Models.ApiModels.WeatherData)ViewBag.DynamicData[widget.Nombre];
+                                
+                                var dynamicData = ViewBag.DynamicData[widget.Nombre];
                                 if (dynamicData != null)
                                 {
                                     <p><strong>Datos del Clima:</strong></p>
                                     <ul>
                                         <li>🌡️ <strong>Temperatura:</strong> @dynamicData.Temp °C</li>
                                         <li>💧 <strong>Humedad:</strong> @dynamicData.Humidity %</li>
-                                        <li>☁️ <strong>Condición:</strong> @dynamicData.Weather[0]?.Description</li>
                                     </ul>
+
                                 }
                                 else
                                 {
