@@ -10,10 +10,19 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/MDashboard.Mvc.styles.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/layout.css" asp-append-version="true" />
 </head>
 
 <body>
+    <!-- Sidebar solo visible en desktop -->
+    <div class="sidebar">
+        <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+        <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        <a asp-area="" asp-controller="Usuario" asp-action="UserList">Lista de Usuarios</a>
+        <a asp-area="" asp-controller="Widget" asp-action="index">WidgetApiClient</a>
+        <a asp-area="" asp-controller="Dashboard" asp-action="Index">Dashboard</a>
+    </div>
+
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
@@ -24,24 +33,27 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
+                        <!-- Elementos del navbar (visibles en desktop) -->
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Usuario" asp-action="UserList">lista de Usuarios</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Widget" asp-action="index">WidgetApiClient</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Dashboard" asp-action="Index">Dashboard</a>
+                            <a class="nav-link text-dark" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
 
+                        <!-- Dropdown para elementos específicos en responsive -->
+                        <li class="nav-item dropdown d-block d-sm-none">
+                            <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Menú
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" asp-controller="Usuario" asp-action="UserList">Lista de Usuarios</a></li>
+                                <li><a class="dropdown-item" asp-controller="Widget" asp-action="index">WidgetApiClient</a></li>
+                                <li><a class="dropdown-item" asp-controller="Dashboard" asp-action="Index">Dashboard</a></li>
+                            </ul>
+                        </li>
 
-
+                        <!-- Sesión del usuario -->
                         @if (HttpContextAccessor.HttpContext.Session.GetString("Nombre") != null)
                         {
                             <li class="nav-item">
@@ -54,9 +66,6 @@
                                     </button>
                                 </form>
                             </li>
-
-
-
                         }
                         else
                         {
@@ -64,14 +73,13 @@
                                 <a class="nav-link text-dark" asp-controller="Usuario" asp-action="Login">Iniciar Sesión</a>
                             </li>
                         }
-
-
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
+
+    <div class="container-fluid">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>

@@ -1,0 +1,111 @@
+﻿/* Custom CSS for Black with Lime Green Theme */
+body {
+    background-color: #a087ac;
+    color: #2d2b42; /* Lime Green */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+    body::before {
+        content: "";
+        background-image: url('/images/background.jpg'); /* Ruta de tu imagen */
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        filter: blur(8px); /* Ajusta el valor para más o menos desenfoque */
+        z-index: -1; /* Coloca la imagen detrás del contenido */
+    }
+
+/* Estilos para el sidebar */
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(17, 17, 17, 0.56); /* Fondo semitransparente */
+    padding-top: 20px;
+    z-index: 1000; /* Asegura que el sidebar esté sobre el navbar */
+    transition: left 0.3s ease; /* Transición suave */
+}
+
+    /* Estilos para los enlaces del sidebar */
+    .sidebar a {
+        padding: 10px 15px;
+        text-decoration: none;
+        font-size: 18px;
+        color: #996da8;
+        display: block;
+    }
+
+        .sidebar a:hover {
+            background-color: rgba(51, 51, 51, 0.8); /* Fondo semitransparente al hacer hover */
+        }
+
+/* Media query para ocultar el sidebar en dispositivos móviles */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none; /* Oculta el sidebar en dispositivos móviles */
+    }
+
+    .container-fluid {
+        padding-left: 20px; /* Ajusta el padding para dispositivos móviles */
+    }
+}
+
+.navbar {
+    background-color: rgba(17, 17, 17, 0.8) !important; /* Fondo semitransparente */
+    border-bottom: 1px solid #00FF00;
+    z-index: 1; /* Asegura que la barra de navegación esté sobre el fondo */
+}
+
+.navbar-brand, .nav-link {
+    color: #ffffff !important;
+}
+
+.navbar-toggler-icon {
+    background-color: rgb(17, 17, 17, 0.56);
+}
+
+.container-fluid {
+    padding-left: 270px; /* Ajuste para el sidebar en desktop */
+    position: relative;
+    z-index: 1; /* Asegura que el contenido esté sobre el fondo */
+}
+
+@media (max-width: 768px) {
+    .container-fluid {
+        padding-left: 20px; /* Ajuste para dispositivos móviles */
+    }
+}
+
+.footer {
+    background-color: rgba(17, 17, 17, 0.8); /* Fondo semitransparente */
+    border-top: 1px solid #00FF00;
+    color: #00FF00;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 1; /* Asegura que el footer esté sobre el fondo */
+}
+
+.logout-button {
+    background: none;
+    border: none;
+    color: #00FF00;
+    cursor: pointer;
+}
+
+    .logout-button:hover {
+        text-decoration: underline;
+    }
