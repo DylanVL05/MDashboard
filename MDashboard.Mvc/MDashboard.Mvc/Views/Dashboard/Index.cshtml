@@ -3,66 +3,120 @@
 <div class="container mt-4">
     <h2>Dashboard</h2>
 
-    @if (Model != null && Model.Any())
-    {
-        <div class="row">
+    <!-- Dropdown para controlar la visibilidad de widgets -->
+    <div class="dropdown mb-3">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="widgetVisibilityDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            Mostrar/Ocultar Widgets
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="widgetVisibilityDropdown" id="widgetVisibilityMenu">
             @foreach (var widget in Model)
             {
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">@widget.Nombre</h5>
-                            <p>@widget.Descripcion</p>
+                <li>
+                    <div class="form-check dropdown-item">
+                        <input class="form-check-input widget-visibility" type="checkbox"
+                               value="@widget.Id" id="widget-@widget.Id"
+                               data-widget-id="@widget.Id" checked>
+                        <label class="form-check-label" for="widget-@widget.Id">
+                            @widget.Nombre
+                        </label>
+                    </div>
+                </li>
+            }
+        </ul>
+    </div>
 
-                            <!-- Mostrar datos dinámicos si están disponibles -->
-                            @if (ViewBag.DynamicData != null && ViewBag.DynamicData.ContainsKey(widget.Nombre))
+    <div class="row" id="widgetsContainer">
+        @foreach (var widget in Model)
+        {
+            <div class="col-md-4 mb-4 widget-item" data-widget-id="@widget.Id">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">@widget.Nombre</h5>
+                        <p>@widget.Descripcion</p>
+
+                        @if (ViewBag.DynamicData != null && ViewBag.DynamicData.ContainsKey(widget.Nombre))
+                        {
+                            var dynamicData = ViewBag.DynamicData[widget.Nombre];
+                            if (dynamicData != null)
                             {
-                                
-                                var dynamicData = ViewBag.DynamicData[widget.Nombre];
-                                if (dynamicData != null)
-                                {
-                                    <p><strong>Datos del Clima:</strong></p>
-                                    <ul>
-                                        <li>🌡️ <strong>Temperatura:</strong> @dynamicData.Temp °C</li>
-                                        <li>💧 <strong>Humedad:</strong> @dynamicData.Humidity %</li>
-                                    </ul>
-
-                                }
-                                else
-                                {
-                                    <p><em>El clima actual no está disponible para este widget.</em></p>
-                                }
+                                <p><strong>Datos del Clima:</strong></p>
+                                <ul>
+                                    <li>🌡️ <strong>Temperatura:</strong> @dynamicData.Temp °C</li>
+                                    <li>💧 <strong>Humedad:</strong> @dynamicData.Humidity %</li>
+                                </ul>
                             }
                             else
                             {
-                                <p><em>No hay datos dinámicos disponibles para este widget.</em></p>
+                                <p><em>El clima actual no está disponible para este widget.</em></p>
                             }
+                        }
+                        else
+                        {
+                            <p><em>No hay datos dinámicos disponibles para este widget.</em></p>
+                        }
 
-                            <!-- Formulario para agregar el widget al dashboard -->
-                            <form method="post" action="@Url.Action("AgregarWidget", "Dashboard")">
-                                <input type="hidden" name="widgetId" value="@widget.Id" />
-
-                                <!-- Selección del tipo de componente -->
-                                <div class="form-group">
-                                    <label for="componentType">Seleccionar tipo de componente</label>
-                                    <select class="form-control" name="componentType" required>
-                                        <option value="">Seleccionar...</option>
-                                        <option value="chart_v1">Chart</option>
-                                        <option value="table_1">Table</option>
-                                        <option value="card_v1">Card</option>
-                                    </select>
-                                </div>
-
-                                <button type="submit" class="btn btn-primary">Agregar al Dashboard</button>
-                            </form>
-                        </div>
+                        <form method="post" action="@Url.Action("AgregarWidget", "Dashboard")">
+                            <input type="hidden" name="widgetId" value="@widget.Id" />
+                            <div class="form-group">
+                                <label for="componentType">Seleccionar tipo de componente</label>
+                                <select class="form-control" name="componentType" required>
+                                    <option value="">Seleccionar...</option>
+                                    <option value="chart_v1">Chart</option>
+                                    <option value="table_1">Table</option>
+                                    <option value="card_v1">Card</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Agregar al Dashboard</button>
+                        </form>
                     </div>
                 </div>
-            }
-        </div>
-    }
-    else
-    {
-        <p>No hay widgets disponibles para agregar.</p>
-    }
+            </div>
+        }
+    </div>
 </div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            // Manejar cambios en los checkboxes de visibilidad
+            $('.widget-visibility').change(function () {
+                const widgetId = $(this).data('widget-id');
+                const isVisible = $(this).is(':checked');
+
+                // Mostrar u ocultar el widget correspondiente
+                $(`.widget-item[data-widget-id="${widgetId}"]`).toggle(isVisible);
+
+                // Opcional: Guardar el estado en localStorage para persistencia
+                localStorage.setItem(`widget-${widgetId}-visible`, isVisible);
+
+                // Opcional: Enviar el estado al servidor via AJAX
+                $.ajax({
+                    url: '@Url.Action("UpdateWidgetVisibility", "Dashboard")',
+                    type: 'POST',
+                    data: {
+                        widgetId: widgetId,
+                        isVisible: isVisible
+                    },
+                    success: function (response) {
+                        console.log('Visibilidad actualizada');
+                    },
+                    error: function (xhr, status, error) {
+                        console.error('Error al actualizar visibilidad:', error);
+                    }
+                });
+            });
+
+            // Cargar estados guardados al cargar la página
+            $('.widget-visibility').each(function () {
+                const widgetId = $(this).data('widget-id');
+                const savedState = localStorage.getItem(`widget-${widgetId}-visible`);
+
+                if (savedState !== null) {
+                    const isVisible = savedState === 'true';
+                    $(this).prop('checked', isVisible);
+                    $(`.widget-item[data-widget-id="${widgetId}"]`).toggle(isVisible);
+                }
+            });
+        });
+    </script>
+}

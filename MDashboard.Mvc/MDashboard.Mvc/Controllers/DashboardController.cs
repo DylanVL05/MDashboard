@@ -50,6 +50,30 @@ namespace MDashboard.Controllers
         }
 
 
+        [HttpPost]
+        public async Task<IActionResult> UpdateWidgetVisibility(int widgetId, bool isVisible)
+        {
+            try
+            {
+                // Aquí puedes guardar el estado de visibilidad en tu base de datos si lo necesitas
+                // Por ejemplo:
+                //var widget = await _widgetRepository.ObtenerWidgetPorIdAsync(widgetId);
+                // if (widget != null) {
+                //     widget.IsVisible = isVisible;
+                //     await _widgetRepository.ActualizarWidgetAsync(widget);
+                // }
+
+                return Json(new { success = true });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, error = ex.Message });
+            }
+        }
+
+
+
+
         // Acción para agregar un widget preexistente al dashboard
         [HttpPost]
         public async Task<IActionResult> AgregarWidget(int widgetId)
