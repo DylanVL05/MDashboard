@@ -1,4 +1,5 @@
-﻿@model IEnumerable<MDashboard.Models.Widget>
+﻿@using Newtonsoft.Json
+@model IEnumerable<MDashboard.Models.Widget>
 
 <div class="container mt-4">
     <h2>Dashboard</h2>
@@ -29,51 +30,115 @@
         @foreach (var widget in Model)
         {
             <div class="col-md-4 mb-4 widget-item" data-widget-id="@widget.Id">
-                <div class="card">
-                    <div class="card-body">
+                <div class="card h-100">
+                    <div class="card-body d-flex flex-column">
                         <h5 class="card-title">@widget.Nombre</h5>
-                        <p>@widget.Descripcion</p>
+                        <p class="card-text">@widget.Descripcion</p>
 
                         @if (ViewBag.DynamicData != null && ViewBag.DynamicData.ContainsKey(widget.Nombre))
                         {
                             var dynamicData = ViewBag.DynamicData[widget.Nombre];
-                            if (dynamicData != null)
+
+                            if (widget.UrlApi.Contains("openweathermap.org"))
                             {
-                                <p><strong>Datos del Clima:</strong></p>
-                                <ul>
-                                    <li>🌡️ <strong>Temperatura:</strong> @dynamicData.Temp °C</li>
-                                    <li>💧 <strong>Humedad:</strong> @dynamicData.Humidity %</li>
-                                </ul>
+                                <!-- Widget de Clima -->
+                                <div class="weather-widget mt-auto">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="fas fa-cloud-sun fs-3 me-2"></i>
+                                        <span class="fs-5 fw-bold">Condiciones Actuales</span>
+                                    </div>
+                                    <ul class="list-unstyled">
+                                        <li class="py-1">
+                                            <i class="fas fa-temperature-high me-2"></i>
+                                            <strong>Temperatura:</strong> @dynamicData.Temp °C
+                                        </li>
+                                        <li class="py-1">
+                                            <i class="fas fa-tint me-2"></i>
+                                            <strong>Humedad:</strong> @dynamicData.Humidity %
+                                        </li>
+                                        <li class="py-1">
+                                            <i class="fas fa-tachometer-alt me-2"></i>
+                                            <strong>Presión:</strong> @dynamicData.Pressure hPa
+                                        </li>
+                                    </ul>
+                                </div>
+                            }
+                            else if (widget.UrlApi.Contains("exchangerate-api.com"))
+                            {
+                                <!-- Widget de Tipo de Cambio -->
+                                <div class="exchange-widget mt-auto">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="fas fa-money-bill-wave fs-3 me-2"></i>
+                                        <span class="fs-5 fw-bold">Tasas de Cambio</span>
+                                    </div>
+                                    <p class="text-muted small mb-3">
+                                        <i class="fas fa-sync-alt me-1"></i>
+                                        Actualizado: @dynamicData.LastUpdate
+                                    </p>
+
+                                    <div class="exchange-rates-grid mb-3">
+                                        @foreach (var rate in dynamicData.FeaturedRates)
+                                        {
+                                            <div class="rate-item">
+                                                <span class="currency-flag me-2" data-currency="@rate.Key"></span>
+                                                <strong>@rate.Key:</strong>
+                                                <span class="rate-value">@rate.Value.ToString("0.0000")</span>
+                                            </div>
+                                        }
+                                    </div>
+
+                                    <button class="btn btn-sm btn-outline-primary w-100 mt-2"
+                                            type="button"
+                                            data-bs-toggle="collapse"
+                                            data-bs-target="#allRates-@widget.Id">
+                                        <i class="fas fa-list me-1"></i> Ver todas las tasas
+                                    </button>
+
+                                    <div class="collapse mt-3" id="allRates-@widget.Id">
+                                        <div class="all-rates-container">
+                                            @foreach (var rate in dynamicData.AllRates)
+                                            {
+                                                <div class="rate-item small">
+                                                    <span class="currency-flag me-2" data-currency="@rate.Key"></span>
+                                                    <strong>@rate.Key:</strong>
+                                                    <span class="rate-value">@rate.Value.ToString("0.0000")</span>
+                                                </div>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
                             }
                             else
                             {
-                                <p><em>El clima actual no está disponible para este widget.</em></p>
+                                <!-- Widget genérico -->
+                                <div class="generic-widget mt-auto">
+                                    <pre class="p-2 bg-light rounded">@JsonConvert.SerializeObject(dynamicData, Formatting.Indented)</pre>
+                                </div>
                             }
                         }
                         else
                         {
-                            <p><em>No hay datos dinámicos disponibles para este widget.</em></p>
+                            <div class="alert alert-warning mt-auto">
+                                <i class="fas fa-exclamation-triangle me-2"></i>
+                                No hay datos disponibles
+                            </div>
                         }
 
-                        <form method="post" action="@Url.Action("AgregarWidget", "Dashboard")">
-                            <input type="hidden" name="widgetId" value="@widget.Id" />
-                            <div class="form-group">
-                                <label for="componentType">Seleccionar tipo de componente</label>
-                                <select class="form-control" name="componentType" required>
-                                    <option value="">Seleccionar...</option>
-                                    <option value="chart_v1">Chart</option>
-                                    <option value="table_1">Table</option>
-                                    <option value="card_v1">Card</option>
-                                </select>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Agregar al Dashboard</button>
-                        </form>
+                        <div class="mt-3 pt-2 border-top">
+                            <form method="post" action="@Url.Action("AgregarWidget", "Dashboard")">
+                                <input type="hidden" name="widgetId" value="@widget.Id" />
+                                <button type="submit" class="btn btn-primary btn-sm w-100">
+                                    <i class="fas fa-plus me-1"></i> Agregar al Dashboard
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         }
     </div>
 </div>
+
 
 @section Scripts {
     <script>
@@ -86,10 +151,10 @@
                 // Mostrar u ocultar el widget correspondiente
                 $(`.widget-item[data-widget-id="${widgetId}"]`).toggle(isVisible);
 
-                // Opcional: Guardar el estado en localStorage para persistencia
+                // Guardar el estado en localStorage para persistencia
                 localStorage.setItem(`widget-${widgetId}-visible`, isVisible);
 
-                // Opcional: Enviar el estado al servidor via AJAX
+                // Enviar el estado al servidor via AJAX
                 $.ajax({
                     url: '@Url.Action("UpdateWidgetVisibility", "Dashboard")',
                     type: 'POST',
@@ -102,6 +167,9 @@
                     },
                     error: function (xhr, status, error) {
                         console.error('Error al actualizar visibilidad:', error);
+                        // Revertir el cambio si falla
+                        $(this).prop('checked', !isVisible);
+                        $(`.widget-item[data-widget-id="${widgetId}"]`).toggle(!isVisible);
                     }
                 });
             });
@@ -115,6 +183,14 @@
                     const isVisible = savedState === 'true';
                     $(this).prop('checked', isVisible);
                     $(`.widget-item[data-widget-id="${widgetId}"]`).toggle(isVisible);
+                }
+            });
+
+            // Añadir banderas para otras monedas dinámicamente
+            $('.rate-item').each(function () {
+                const currency = $(this).find('.currency-flag').data('currency');
+                if (currency && !$(this).find('.currency-flag').css('background-image').includes('url')) {
+                    $(this).find('.currency-flag').css('background-image', `url('https://flagcdn.com/16x12/${currency.toLowerCase()}.png')`);
                 }
             });
         });
