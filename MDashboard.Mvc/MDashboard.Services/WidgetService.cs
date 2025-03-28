@@ -53,6 +53,11 @@ namespace MDashboard.Business.Services
                             {
                                 ProcesarExchangeRateResponse(x.widget.Nombre, result.Value.ToString(), resultados);
                             }
+
+                            else if (x.widget.UrlApi.Contains("newsapi.org"))
+                            {
+                                ProcesarNewsApiResponse(x.widget.Nombre, result.Value.ToString(), resultados);
+                            }
                             // Caso genérico para otras APIs
                             else
                             {
@@ -141,7 +146,54 @@ namespace MDashboard.Business.Services
             {
                 Console.WriteLine($"Error inesperado para {widgetNombre}: {ex.Message}");
             }
+
+
+
+
+
+
         }
+
+        private void ProcesarNewsApiResponse(string widgetNombre, string jsonResponse, Dictionary<string, object> resultados)
+        {
+            try
+            {
+                var newsResponse = JsonConvert.DeserializeObject<NewsApiResponse>(jsonResponse);
+
+                if (newsResponse != null && newsResponse.Status == "ok")
+                {
+                    var newsInfo = new
+                    {
+                        TotalNoticias = newsResponse.TotalResults,
+                        UltimasNoticias = newsResponse.Articles.Take(3).Select(a => new
+                        {
+                            Fuente = a.Source?.Name,
+                            Titulo = a.Title,
+                            Imagen = a.UrlToImage,
+                            Fecha = a.PublishedAt.ToString("g"),
+                            Resumen = a.Description
+                        }).ToList()
+                    };
+
+                    resultados.Add(widgetNombre, newsInfo);
+                }
+                else
+                {
+                    Console.WriteLine($"Error: Respuesta inválida de NewsAPI para {widgetNombre}");
+                }
+            }
+            catch (JsonSerializationException ex)
+            {
+                Console.WriteLine($"Error de deserialización para {widgetNombre}: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error inesperado para {widgetNombre}: {ex.Message}");
+            }
+        }
+
+
+
 
         public async Task AgregarWidgetAsync(Widget widget)
         {

@@ -21,7 +21,6 @@ namespace MDashboard.Business.Factory
         {
             _httpClient = httpClient;
         }
-
         public IWidgetApiClient CrearCliente(Widget widget)
         {
             if (widget == null || string.IsNullOrEmpty(widget.UrlApi))
@@ -33,12 +32,15 @@ namespace MDashboard.Business.Factory
             }
             else if (widget.UrlApi.Contains("exchangerate-api.com"))
             {
-                return new ExchangeRateApiClient(_httpClient, widget); // Pasamos el widget completo
+                return new ExchangeRateApiClient(_httpClient, widget);
+            }
+            else if (widget.UrlApi.Contains("newsapi.org"))
+            {
+                return new NewsApiClient(_httpClient, widget);
             }
 
             return new GenericApiClient(_httpClient, widget.UrlApi, widget.ApiKey);
         }
-
     }
 }
 
