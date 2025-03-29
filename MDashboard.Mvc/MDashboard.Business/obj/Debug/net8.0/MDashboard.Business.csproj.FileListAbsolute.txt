@@ -38,3 +38,23 @@ C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Business\ob
 C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Business\obj\Debug\net8.0\refint\MDashboard.Business.dll
 C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Business\obj\Debug\net8.0\MDashboard.Business.pdb
 C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Business\obj\Debug\net8.0\ref\MDashboard.Business.dll
+D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Business\bin\Debug\net8.0\MDashboard.Business.deps.json
+D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Business\bin\Debug\net8.0\MDashboard.Business.dll
+D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Business\bin\Debug\net8.0\MDashboard.Business.pdb
+D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Business\bin\Debug\net8.0\MDashboard.Data.dll
+D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Business\bin\Debug\net8.0\MDashboard.Models.dll
+D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Business\bin\Debug\net8.0\MDashboard.Repository.dll
+D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Business\bin\Debug\net8.0\MDashboard.Models.pdb
+D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Business\bin\Debug\net8.0\MDashboard.Repository.pdb
+D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Business\bin\Debug\net8.0\MDashboard.Data.pdb
+D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Business\obj\Debug\net8.0\MDashboard.Business.csproj.AssemblyReference.cache
+D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Business\obj\Debug\net8.0\MDashboard.Business.GeneratedMSBuildEditorConfig.editorconfig
+D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Business\obj\Debug\net8.0\MDashboard.Business.AssemblyInfoInputs.cache
+D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Business\obj\Debug\net8.0\MDashboard.Business.AssemblyInfo.cs
+D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Business\obj\Debug\net8.0\MDashboard.Business.csproj.CoreCompileInputs.cache
+D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Business\obj\Debug\net8.0\MDashboard.Business.sourcelink.json
+D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Business\obj\Debug\net8.0\MDashboa.43F93DAF.Up2Date
+D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Business\obj\Debug\net8.0\MDashboard.Business.dll
+D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Business\obj\Debug\net8.0\refint\MDashboard.Business.dll
+D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Business\obj\Debug\net8.0\MDashboard.Business.pdb
+D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Business\obj\Debug\net8.0\ref\MDashboard.Business.dll

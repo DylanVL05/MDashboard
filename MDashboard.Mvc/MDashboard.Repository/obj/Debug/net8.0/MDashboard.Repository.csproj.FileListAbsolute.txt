@@ -34,3 +34,21 @@ C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Repository\
 C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\refint\MDashboard.Repository.dll
 C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\MDashboard.Repository.pdb
 C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\ref\MDashboard.Repository.dll
+D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Repository\bin\Debug\net8.0\MDashboard.Repository.deps.json
+D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Repository\bin\Debug\net8.0\MDashboard.Repository.dll
+D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Repository\bin\Debug\net8.0\MDashboard.Repository.pdb
+D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Repository\bin\Debug\net8.0\MDashboard.Data.dll
+D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Repository\bin\Debug\net8.0\MDashboard.Models.dll
+D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Repository\bin\Debug\net8.0\MDashboard.Data.pdb
+D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Repository\bin\Debug\net8.0\MDashboard.Models.pdb
+D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\MDashboard.Repository.csproj.AssemblyReference.cache
+D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\MDashboard.Repository.GeneratedMSBuildEditorConfig.editorconfig
+D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\MDashboard.Repository.AssemblyInfoInputs.cache
+D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\MDashboard.Repository.AssemblyInfo.cs
+D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\MDashboard.Repository.csproj.CoreCompileInputs.cache
+D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\MDashboard.Repository.sourcelink.json
+D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\MDashboa.08782A7F.Up2Date
+D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\MDashboard.Repository.dll
+D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\refint\MDashboard.Repository.dll
+D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\MDashboard.Repository.pdb
+D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\ref\MDashboard.Repository.dll
