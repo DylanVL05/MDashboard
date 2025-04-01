@@ -79,7 +79,11 @@ namespace MDashboard.Business.Services
                             {
                                 ProcesarDogMeowFactsApiResponse(x.widget.Nombre, result.Value as DogApiResponse, resultados);
                             }
-
+                            else if (x.widget.UrlApi.Contains("logotypes.dev"))
+                            {
+                                ProcesarLogotypeApiResponse(x.widget.Nombre, result.Value as LogotypesApiResponse, resultados);
+                            }
+                            
                             // Caso genérico para otras APIs
                             else
                             {
@@ -270,6 +274,26 @@ namespace MDashboard.Business.Services
                 {
                     Message = dogResponse.Message,
                     Status = dogResponse.Status
+                });
+            }
+            else
+            {
+                Console.WriteLine($"Error: El modelo NasaApodResponse es nulo para {widgetNombre}");
+            }
+        }
+
+        private void ProcesarLogotypeApiResponse(string widgetNombre, LogotypesApiResponse logotypeResponse, Dictionary<string, object> resultados)
+        {
+            if (logotypeResponse != null)
+            {
+                resultados.Add(widgetNombre, new LogotypesApiResponse
+                {
+                    Example_description = logotypeResponse.Example_description,
+                    Example_title = logotypeResponse.Example_title,
+                    Logo = logotypeResponse.Logo,
+                    Name = logotypeResponse.Name,
+                    Variant = logotypeResponse.Variant,
+                    Version = logotypeResponse.Version
                 });
             }
             else

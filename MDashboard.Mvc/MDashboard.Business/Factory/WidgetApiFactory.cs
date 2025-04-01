@@ -57,7 +57,10 @@ namespace MDashboard.Business.Factory
             {
                 return new DogApiClient(_httpClient, widget);
             }
-
+            else if (widget.UrlApi.Contains("logotypes.dev"))
+            {
+                return new LogotypesApiClient(_httpClient, widget);
+            }
 
             return new GenericApiClient(_httpClient, widget.UrlApi, widget.ApiKey);
         }
