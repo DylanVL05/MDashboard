@@ -45,6 +45,14 @@ namespace MDashboard.Business.Factory
             {
                 return new RickAndMortyApiClient(_httpClient, widget);
             }
+            else if (widget.UrlApi.Contains("v2.jokeapi.dev"))
+            {
+                return new JokeApiClient(_httpClient, widget);
+            }
+            else if (widget.UrlApi.Contains("meowfacts"))
+            {
+                return new MeowFactsAPIClient(_httpClient, widget);
+            }
 
 
             return new GenericApiClient(_httpClient, widget.UrlApi, widget.ApiKey);

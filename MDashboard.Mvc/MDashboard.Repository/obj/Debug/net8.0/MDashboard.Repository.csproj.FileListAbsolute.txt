@@ -34,24 +34,6 @@ D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\ne
 D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\refint\MDashboard.Repository.dll
 D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\MDashboard.Repository.pdb
 D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\ref\MDashboard.Repository.dll
-D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Repository\bin\Debug\net8.0\MDashboard.Repository.deps.json
-D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Repository\bin\Debug\net8.0\MDashboard.Repository.dll
-D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Repository\bin\Debug\net8.0\MDashboard.Repository.pdb
-D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Repository\bin\Debug\net8.0\MDashboard.Data.dll
-D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Repository\bin\Debug\net8.0\MDashboard.Models.dll
-D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Repository\bin\Debug\net8.0\MDashboard.Data.pdb
-D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Repository\bin\Debug\net8.0\MDashboard.Models.pdb
-D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\MDashboard.Repository.csproj.AssemblyReference.cache
-D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\MDashboard.Repository.GeneratedMSBuildEditorConfig.editorconfig
-D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\MDashboard.Repository.AssemblyInfoInputs.cache
-D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\MDashboard.Repository.AssemblyInfo.cs
-D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\MDashboard.Repository.csproj.CoreCompileInputs.cache
-D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\MDashboard.Repository.sourcelink.json
-D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\MDashboa.08782A7F.Up2Date
-D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\MDashboard.Repository.dll
-D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\refint\MDashboard.Repository.dll
-D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\MDashboard.Repository.pdb
-D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\ref\MDashboard.Repository.dll
 C:\Users\LENOVO\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Repository\bin\Debug\net8.0\MDashboard.Repository.deps.json
 C:\Users\LENOVO\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Repository\bin\Debug\net8.0\MDashboard.Repository.dll
 C:\Users\LENOVO\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Repository\bin\Debug\net8.0\MDashboard.Repository.pdb
@@ -70,3 +52,21 @@ C:\Users\LENOVO\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Repository
 C:\Users\LENOVO\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\refint\MDashboard.Repository.dll
 C:\Users\LENOVO\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\MDashboard.Repository.pdb
 C:\Users\LENOVO\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\ref\MDashboard.Repository.dll
+D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Repository\bin\Debug\net8.0\MDashboard.Repository.deps.json
+D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Repository\bin\Debug\net8.0\MDashboard.Repository.dll
+D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Repository\bin\Debug\net8.0\MDashboard.Repository.pdb
+D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Repository\bin\Debug\net8.0\MDashboard.Data.dll
+D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Repository\bin\Debug\net8.0\MDashboard.Models.dll
+D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Repository\bin\Debug\net8.0\MDashboard.Data.pdb
+D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Repository\bin\Debug\net8.0\MDashboard.Models.pdb
+D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\MDashboard.Repository.csproj.AssemblyReference.cache
+D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\MDashboard.Repository.GeneratedMSBuildEditorConfig.editorconfig
+D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\MDashboard.Repository.AssemblyInfoInputs.cache
+D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\MDashboard.Repository.AssemblyInfo.cs
+D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\MDashboard.Repository.csproj.CoreCompileInputs.cache
+D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\MDashboard.Repository.sourcelink.json
+D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\MDashboa.08782A7F.Up2Date
+D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\MDashboard.Repository.dll
+D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\refint\MDashboard.Repository.dll
+D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\MDashboard.Repository.pdb
+D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\ref\MDashboard.Repository.dll

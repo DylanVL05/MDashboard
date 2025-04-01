@@ -67,6 +67,14 @@ namespace MDashboard.Business.Services
                             {
                                 ProcesarRickAndMortyApiResponse(x.widget.Nombre, result.Value as RickAndMortyApiResponse, resultados);
                             }
+                            else if (x.widget.UrlApi.Contains("v2.jokeapi.dev"))
+                            {
+                                ProcesarJokeApiResponse(x.widget.Nombre, result.Value as JokeApiResponse, resultados);
+                            }
+                            else if (x.widget.UrlApi.Contains("meowfacts"))
+                            {
+                                ProcesarMeowFactsApiResponse(x.widget.Nombre, result.Value as MeowFactsAPIResponse, resultados);
+                            }
 
                             // Caso genérico para otras APIs
                             else
@@ -178,10 +186,7 @@ namespace MDashboard.Business.Services
         }
 
 
-        private void ProcesarRickAndMortyApiResponse(
-    string widgetNombre,
-    RickAndMortyApiResponse rickResponse,
-    Dictionary<string, object> resultados)
+        private void ProcesarRickAndMortyApiResponse(string widgetNombre, RickAndMortyApiResponse rickResponse, Dictionary<string, object> resultados)
         {
             if (rickResponse != null && rickResponse.Results != null)
             {
@@ -193,6 +198,65 @@ namespace MDashboard.Business.Services
             }
         }
 
+        private void ProcesarJokeApiResponse(string widgetNombre, JokeApiResponse jokeResponse, Dictionary<string, object> resultados)
+        {
+            try
+            {
+                if (jokeResponse != null && !jokeResponse.Error)
+                {
+                    string chiste;
+
+                    if (jokeResponse.Type == "single")
+                    {
+                        chiste = jokeResponse.Joke;
+                    }
+                    else if (jokeResponse.Type == "twopart")
+                    {
+                        chiste = $"{jokeResponse.Setup} {jokeResponse.Delivery}";
+                    }
+                    else
+                    {
+                        chiste = "Tipo de chiste desconocido.";
+                    }
+
+                    var jokeInfo = new
+                    {
+                        Categoria = jokeResponse.Category,
+                        Chiste = chiste,
+                        type = jokeResponse.Type,
+                        Seguro = jokeResponse.Safe,
+                        Setup = jokeResponse.Setup ?? "N/A",
+                        Delivery = jokeResponse.Delivery ?? "N/A",
+                        Idioma = jokeResponse.Lang
+                    };
+
+                    resultados.Add(widgetNombre, jokeInfo);
+                }
+                else
+                {
+                    Console.WriteLine($"Error: No se encontró un chiste válido para {widgetNombre}.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error inesperado para {widgetNombre}: {ex.Message}");
+            }
+        }
+
+        private void ProcesarMeowFactsApiResponse(string widgetNombre, MeowFactsAPIResponse meowResponse, Dictionary<string, object> resultados)
+        {
+            if (meowResponse != null)
+            {
+                resultados.Add(widgetNombre, new MeowFactsAPIResponse
+                {
+                    Data = meowResponse.Data
+                });
+            }
+            else
+            {
+                Console.WriteLine($"Error: El modelo NasaApodResponse es nulo para {widgetNombre}");
+            }
+        }
 
         private void ProcesarNewsApiResponse(string widgetNombre, string jsonResponse, Dictionary<string, object> resultados)
         {
@@ -231,9 +295,6 @@ namespace MDashboard.Business.Services
                 Console.WriteLine($"Error inesperado para {widgetNombre}: {ex.Message}");
             }
         }
-
-
-
 
 
 
