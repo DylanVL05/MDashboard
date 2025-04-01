@@ -1,7 +1,32 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4D536AE8-F09E-44B1-94E7-FE1BACE4C834}|MDashboard.Services\\MDashboard.Services.csproj|d:\\proyectosvisualstudio2022\\msdashboard\\mdashboard\\mdashboard.mvc\\mdashboard.services\\widgetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D536AE8-F09E-44B1-94E7-FE1BACE4C834}|MDashboard.Services\\MDashboard.Services.csproj|solutionrelative:mdashboard.services\\widgetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EE1DDD7-4E31-43C0-9B16-13F38CB86975}|MDashboard.Business\\MDashboard.Business.csproj|d:\\proyectosvisualstudio2022\\msdashboard\\mdashboard\\mdashboard.mvc\\mdashboard.business\\factory\\rickandmortyapiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EE1DDD7-4E31-43C0-9B16-13F38CB86975}|MDashboard.Business\\MDashboard.Business.csproj|solutionrelative:mdashboard.business\\factory\\rickandmortyapiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|d:\\proyectosvisualstudio2022\\msdashboard\\mdashboard\\mdashboard.mvc\\mdashboard.mvc\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|solutionrelative:mdashboard.mvc\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97FFF6AA-5B12-4BE3-BE9E-408435668DB2}|MDashboard.Models\\MDashboard.Models.csproj|d:\\proyectosvisualstudio2022\\msdashboard\\mdashboard\\mdashboard.mvc\\mdashboard.models\\apimodels\\rickandmortyapiresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97FFF6AA-5B12-4BE3-BE9E-408435668DB2}|MDashboard.Models\\MDashboard.Models.csproj|solutionrelative:mdashboard.models\\apimodels\\rickandmortyapiresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EE1DDD7-4E31-43C0-9B16-13F38CB86975}|MDashboard.Business\\MDashboard.Business.csproj|d:\\proyectosvisualstudio2022\\msdashboard\\mdashboard\\mdashboard.mvc\\mdashboard.business\\factory\\widgetapifactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EE1DDD7-4E31-43C0-9B16-13F38CB86975}|MDashboard.Business\\MDashboard.Business.csproj|solutionrelative:mdashboard.business\\factory\\widgetapifactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EE1DDD7-4E31-43C0-9B16-13F38CB86975}|MDashboard.Business\\MDashboard.Business.csproj|d:\\proyectosvisualstudio2022\\msdashboard\\mdashboard\\mdashboard.mvc\\mdashboard.business\\factory\\newsapiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EE1DDD7-4E31-43C0-9B16-13F38CB86975}|MDashboard.Business\\MDashboard.Business.csproj|solutionrelative:mdashboard.business\\factory\\newsapiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 56,
           "Children": [
             {
               "$type": "Bookmark",
@@ -234,6 +259,84 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "WidgetService.cs",
+              "DocumentMoniker": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Services\\WidgetService.cs",
+              "RelativeDocumentMoniker": "MDashboard.Services\\WidgetService.cs",
+              "ToolTip": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Services\\WidgetService.cs",
+              "RelativeToolTip": "MDashboard.Services\\WidgetService.cs",
+              "ViewState": "AgIAAJ8AAAAAAAAAAAAWwLUAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T04:28:03.989Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RickAndMortyApiResponse.cs",
+              "DocumentMoniker": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\ApiModels\\RickAndMortyApiResponse.cs",
+              "RelativeDocumentMoniker": "MDashboard.Models\\ApiModels\\RickAndMortyApiResponse.cs",
+              "ToolTip": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\ApiModels\\RickAndMortyApiResponse.cs",
+              "RelativeToolTip": "MDashboard.Models\\ApiModels\\RickAndMortyApiResponse.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAowDkAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T04:27:29.594Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "NewsApiClient.cs",
+              "DocumentMoniker": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Business\\Factory\\NewsApiClient.cs",
+              "RelativeDocumentMoniker": "MDashboard.Business\\Factory\\NewsApiClient.cs",
+              "ToolTip": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Business\\Factory\\NewsApiClient.cs",
+              "RelativeToolTip": "MDashboard.Business\\Factory\\NewsApiClient.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T04:22:20.961Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RickAndMortyApiClient.cs",
+              "DocumentMoniker": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Business\\Factory\\RickAndMortyApiClient.cs",
+              "RelativeDocumentMoniker": "MDashboard.Business\\Factory\\RickAndMortyApiClient.cs",
+              "ToolTip": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Business\\Factory\\RickAndMortyApiClient.cs",
+              "RelativeToolTip": "MDashboard.Business\\Factory\\RickAndMortyApiClient.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T04:17:45.353Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Dashboard\\Index.cshtml",
+              "RelativeDocumentMoniker": "MDashboard.Mvc\\Views\\Dashboard\\Index.cshtml",
+              "ToolTip": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Dashboard\\Index.cshtml",
+              "RelativeToolTip": "MDashboard.Mvc\\Views\\Dashboard\\Index.cshtml",
+              "ViewState": "AgIAAIYAAAAAAAAAAAAwwJQAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-01T04:36:06.834Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "WidgetApiFactory.cs",
+              "DocumentMoniker": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Business\\Factory\\WidgetApiFactory.cs",
+              "RelativeDocumentMoniker": "MDashboard.Business\\Factory\\WidgetApiFactory.cs",
+              "ToolTip": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Business\\Factory\\WidgetApiFactory.cs",
+              "RelativeToolTip": "MDashboard.Business\\Factory\\WidgetApiFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T04:26:17.502Z",
+              "EditorCaption": ""
             }
           ]
         },

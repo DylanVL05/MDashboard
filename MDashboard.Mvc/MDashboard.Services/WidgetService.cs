@@ -63,6 +63,10 @@ namespace MDashboard.Business.Services
                             {
                                 ProcesarNasaApiResponse(x.widget.Nombre, result.Value as NasaApodResponse, resultados);
                             }
+                            else if (x.widget.UrlApi.Contains("rickandmortyapi"))
+                            {
+                                ProcesarRickAndMortyApiResponse(x.widget.Nombre, result.Value as RickAndMortyApiResponse, resultados);
+                            }
 
                             // Caso genérico para otras APIs
                             else
@@ -173,6 +177,27 @@ namespace MDashboard.Business.Services
             }
         }
 
+
+        private void ProcesarRickAndMortyApiResponse(string widgetNombre, RickAndMortyApiResponse rickResponse, Dictionary<string, object> resultados)
+        {
+            if (rickResponse != null)
+            {
+                var personajes = rickResponse.Results.Select(character => new
+                {
+                    character.Id,
+                    character.Name,
+                    character.Species,
+                    character.Gender,
+                    character.Image
+                }).ToList();
+
+                resultados.Add(widgetNombre, personajes);
+            }
+            else
+            {
+                Console.WriteLine($"Error: El modelo RickAndMortyApiResponse es nulo para {widgetNombre}");
+            }
+        }
 
 
         private void ProcesarNewsApiResponse(string widgetNombre, string jsonResponse, Dictionary<string, object> resultados)

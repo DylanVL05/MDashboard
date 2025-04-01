@@ -41,6 +41,11 @@ namespace MDashboard.Business.Factory
             {
                 return new NasaApiClient(_httpClient, widget);
             }
+            else if (widget.UrlApi.Contains("rickandmortyapi"))
+            {
+                return new RickAndMortyApiClient(_httpClient, widget);
+            }
+
 
             return new GenericApiClient(_httpClient, widget.UrlApi, widget.ApiKey);
         }
