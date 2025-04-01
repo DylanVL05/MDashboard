@@ -124,6 +124,15 @@
             background: #00b5cc;
             transform: scale(1.2);
         }
+
+    #apiContainer {
+        display: flex;
+        flex-direction: column;
+        max-height: 400px; /* Ajusta según el espacio disponible */
+        overflow-y: auto;
+        gap: 10px; /* Espaciado entre APIs */
+    }
+
 </style>
 
 <div class="container mt-4">
@@ -400,5 +409,7 @@
                 });
             });
         });
+
+
     </script>
 }

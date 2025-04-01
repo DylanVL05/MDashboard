@@ -53,6 +53,10 @@ namespace MDashboard.Business.Factory
             {
                 return new MeowFactsAPIClient(_httpClient, widget);
             }
+            else if (widget.UrlApi.Contains("dog.ceo"))
+            {
+                return new DogApiClient(_httpClient, widget);
+            }
 
 
             return new GenericApiClient(_httpClient, widget.UrlApi, widget.ApiKey);

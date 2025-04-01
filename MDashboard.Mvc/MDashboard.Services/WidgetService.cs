@@ -75,6 +75,10 @@ namespace MDashboard.Business.Services
                             {
                                 ProcesarMeowFactsApiResponse(x.widget.Nombre, result.Value as MeowFactsAPIResponse, resultados);
                             }
+                            else if (x.widget.UrlApi.Contains("dog.ceo"))
+                            {
+                                ProcesarDogMeowFactsApiResponse(x.widget.Nombre, result.Value as DogApiResponse, resultados);
+                            }
 
                             // Caso genérico para otras APIs
                             else
@@ -250,6 +254,22 @@ namespace MDashboard.Business.Services
                 resultados.Add(widgetNombre, new MeowFactsAPIResponse
                 {
                     Data = meowResponse.Data
+                });
+            }
+            else
+            {
+                Console.WriteLine($"Error: El modelo NasaApodResponse es nulo para {widgetNombre}");
+            }
+        }
+
+        private void ProcesarDogMeowFactsApiResponse(string widgetNombre, DogApiResponse dogResponse, Dictionary<string, object> resultados)
+        {
+            if (dogResponse != null)
+            {
+                resultados.Add(widgetNombre, new DogApiResponse
+                {
+                    Message = dogResponse.Message,
+                    Status = dogResponse.Status
                 });
             }
             else
