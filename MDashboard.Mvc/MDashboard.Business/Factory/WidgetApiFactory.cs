@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System;
 using System.Net.Http;
-
 using System;
 using System.Net.Http;
 using MDashboard.Models;
@@ -37,6 +36,10 @@ namespace MDashboard.Business.Factory
             else if (widget.UrlApi.Contains("newsapi.org"))
             {
                 return new NewsApiClient(_httpClient, widget);
+            }
+            else if (widget.UrlApi.Contains("api.nasa.gov"))
+            {
+                return new NasaApiClient(_httpClient, widget);
             }
 
             return new GenericApiClient(_httpClient, widget.UrlApi, widget.ApiKey);

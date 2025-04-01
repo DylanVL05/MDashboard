@@ -1,16 +1,3 @@
-D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Models\bin\Debug\net8.0\MDashboard.Models.deps.json
-D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Models\bin\Debug\net8.0\MDashboard.Models.dll
-D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Models\bin\Debug\net8.0\MDashboard.Models.pdb
-D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0\MDashboard.Models.GeneratedMSBuildEditorConfig.editorconfig
-D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0\MDashboard.Models.AssemblyInfoInputs.cache
-D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0\MDashboard.Models.AssemblyInfo.cs
-D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0\MDashboard.Models.csproj.CoreCompileInputs.cache
-D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0\MDashboard.Models.sourcelink.json
-D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0\MDashboard.Models.dll
-D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0\refint\MDashboard.Models.dll
-D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0\MDashboard.Models.pdb
-D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0\ref\MDashboard.Models.dll
-D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0\MDashboard.Models.csproj.AssemblyReference.cache
 C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Models\bin\Debug\net8.0\MDashboard.Models.deps.json
 C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Models\bin\Debug\net8.0\MDashboard.Models.dll
 C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Models\bin\Debug\net8.0\MDashboard.Models.pdb
@@ -37,3 +24,16 @@ D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0
 D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0\refint\MDashboard.Models.dll
 D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0\MDashboard.Models.pdb
 D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0\ref\MDashboard.Models.dll
+D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Models\bin\Debug\net8.0\MDashboard.Models.deps.json
+D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Models\bin\Debug\net8.0\MDashboard.Models.dll
+D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Models\bin\Debug\net8.0\MDashboard.Models.pdb
+D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0\MDashboard.Models.csproj.AssemblyReference.cache
+D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0\MDashboard.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0\MDashboard.Models.AssemblyInfoInputs.cache
+D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0\MDashboard.Models.AssemblyInfo.cs
+D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0\MDashboard.Models.csproj.CoreCompileInputs.cache
+D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0\MDashboard.Models.sourcelink.json
+D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0\MDashboard.Models.dll
+D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0\refint\MDashboard.Models.dll
+D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0\MDashboard.Models.pdb
+D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0\ref\MDashboard.Models.dll

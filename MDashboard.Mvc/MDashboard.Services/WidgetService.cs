@@ -53,11 +53,17 @@ namespace MDashboard.Business.Services
                             {
                                 ProcesarExchangeRateResponse(x.widget.Nombre, result.Value.ToString(), resultados);
                             }
-
+                            // Procesamiento para News API
                             else if (x.widget.UrlApi.Contains("newsapi.org"))
                             {
                                 ProcesarNewsApiResponse(x.widget.Nombre, result.Value.ToString(), resultados);
                             }
+                            // Procesamiento para Nasa API
+                            else if (x.widget.UrlApi.Contains("api.nasa.gov"))
+                            {
+                                ProcesarNasaApiResponse(x.widget.Nombre, result.Value as NasaApodResponse, resultados);
+                            }
+
                             // Caso genérico para otras APIs
                             else
                             {
@@ -116,12 +122,12 @@ namespace MDashboard.Business.Services
                 {
                     // Seleccionamos algunas monedas importantes para mostrar
                     var featuredRates = new Dictionary<string, decimal>
-            {
-                { "EUR", exchangeResponse.ConversionRates["EUR"] },
-                { "GBP", exchangeResponse.ConversionRates["GBP"] },
-                { "JPY", exchangeResponse.ConversionRates["JPY"] },
-                { "MXN", exchangeResponse.ConversionRates["MXN"] }
-            };
+    {
+        { "EUR", exchangeResponse.ConversionRates["EUR"] },
+        { "GBP", exchangeResponse.ConversionRates["GBP"] },
+        { "JPY", exchangeResponse.ConversionRates["JPY"] },
+        { "MXN", exchangeResponse.ConversionRates["MXN"] }
+    };
 
                     var exchangeInfo = new ExchangeRateInfo
                     {
@@ -146,13 +152,28 @@ namespace MDashboard.Business.Services
             {
                 Console.WriteLine($"Error inesperado para {widgetNombre}: {ex.Message}");
             }
-
-
-
-
-
-
         }
+
+        private void ProcesarNasaApiResponse(string widgetNombre, NasaApodResponse nasaResponse, Dictionary<string, object> resultados)
+        {
+            if (nasaResponse != null)
+            {
+                resultados.Add(widgetNombre, new NasaApodResponse
+                {
+                    Title = nasaResponse.Title,
+                    Date = nasaResponse.Date,
+                    Explanation = nasaResponse.Explanation,
+                    MediaType = nasaResponse.MediaType,
+                    Url = nasaResponse.Url
+                });
+            }
+            else
+            {
+                Console.WriteLine($"Error: El modelo NasaApodResponse es nulo para {widgetNombre}");
+            }
+        }
+
+
 
         private void ProcesarNewsApiResponse(string widgetNombre, string jsonResponse, Dictionary<string, object> resultados)
         {
@@ -191,6 +212,8 @@ namespace MDashboard.Business.Services
                 Console.WriteLine($"Error inesperado para {widgetNombre}: {ex.Message}");
             }
         }
+
+
 
 
 

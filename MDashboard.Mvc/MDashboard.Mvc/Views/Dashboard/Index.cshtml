@@ -15,8 +15,8 @@
                 <li>
                     <div class="form-check dropdown-item">
                         <input class="form-check-input widget-visibility" type="checkbox"
-                               value="@widget.Id" id="widget-@widget.Id"
-                               data-widget-id="@widget.Id" checked>
+                        value="@widget.Id" id="widget-@widget.Id"
+                        data-widget-id="@widget.Id" checked>
                         <label class="form-check-label" for="widget-@widget.Id">
                             @widget.Nombre
                         </label>
@@ -88,9 +88,9 @@
                                     </div>
 
                                     <button class="btn btn-sm btn-outline-primary w-100 mt-2"
-                                            type="button"
-                                            data-bs-toggle="collapse"
-                                            data-bs-target="#allRates-@widget.Id">
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#allRates-@widget.Id">
                                         <i class="fas fa-list me-1"></i> Ver todas las tasas
                                     </button>
 
@@ -107,6 +107,44 @@
                                         </div>
                                     </div>
                                 </div>
+                            }
+                            else if (widget.UrlApi.Contains("api.nasa.gov"))
+                            {
+                                    <!-- Widget NASA -->
+                                    <div class="nasa-widget mt-auto">
+                                        <h5 class="card-title">NASA APOD</h5>
+                                        @if (ViewBag.DynamicData[widget.Nombre] != null)
+                                        {
+                                            var nasaData = ViewBag.DynamicData[widget.Nombre];
+
+                                            <p class="text-muted">Fecha: @nasaData.Date</p>
+                                            <h6>@nasaData.Title</h6>
+                                            <p>@nasaData.Explanation</p>
+
+                                            @if (nasaData.MediaType == "image")
+                                            {
+                                                <img src="@nasaData.Url" alt="Imagen APOD" class="img-fluid rounded shadow-sm" />
+                                            }
+                                            else if (nasaData.MediaType == "video")
+                                            {
+                                                <div class="ratio ratio-16x9">
+                                                    <iframe src="@nasaData.Url" frameborder="0" allowfullscreen></iframe>
+                                                </div>
+                                            }
+                                            else
+                                            {
+                                                <p class="text-danger">Tipo de contenido no compatible.</p>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <div class="alert alert-warning">
+                                                <i class="fas fa-exclamation-triangle me-2"></i>
+                                                No hay datos disponibles para el widget de NASA.
+                                            </div>
+                                        }
+                                    </div>
+                                
                             }
 
                             else
@@ -150,10 +188,10 @@
                 const isVisible = $(this).is(':checked');
 
                 // Mostrar u ocultar el widget correspondiente
-                $(`.widget-item[data-widget-id="${widgetId}"]`).toggle(isVisible);
+                $(.widget-item[data-widget-id="${widgetId}"]).toggle(isVisible);
 
                 // Guardar el estado en localStorage para persistencia
-                localStorage.setItem(`widget-${widgetId}-visible`, isVisible);
+                localStorage.setItem(widget-${widgetId}-visible, isVisible);
 
                 // Enviar el estado al servidor via AJAX
                 $.ajax({
@@ -170,7 +208,7 @@
                         console.error('Error al actualizar visibilidad:', error);
                         // Revertir el cambio si falla
                         $(this).prop('checked', !isVisible);
-                        $(`.widget-item[data-widget-id="${widgetId}"]`).toggle(!isVisible);
+                        $(.widget-item[data-widget-id="${widgetId}"]).toggle(!isVisible);
                     }
                 });
             });
@@ -178,12 +216,12 @@
             // Cargar estados guardados al cargar la página
             $('.widget-visibility').each(function () {
                 const widgetId = $(this).data('widget-id');
-                const savedState = localStorage.getItem(`widget-${widgetId}-visible`);
+                const savedState = localStorage.getItem(widget-${widgetId}-visible);
 
                 if (savedState !== null) {
                     const isVisible = savedState === 'true';
                     $(this).prop('checked', isVisible);
-                    $(`.widget-item[data-widget-id="${widgetId}"]`).toggle(isVisible);
+                    $(.widget-item[data-widget-id="${widgetId}"]).toggle(isVisible);
                 }
             });
 
@@ -191,7 +229,7 @@
             $('.rate-item').each(function () {
                 const currency = $(this).find('.currency-flag').data('currency');
                 if (currency && !$(this).find('.currency-flag').css('background-image').includes('url')) {
-                    $(this).find('.currency-flag').css('background-image', `url('https://flagcdn.com/16x12/${currency.toLowerCase()}.png')`);
+                    $(this).find('.currency-flag').css('background-image', url('https://flagcdn.com/16x12/${currency.toLowerCase()}.png'));
                 }
             });
         });

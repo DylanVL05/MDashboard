@@ -3097,23 +3097,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jose1\\.nuget\\packages\\": {},
+    "C:\\Users\\Ale\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Vs code Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\MDashboard.Mvc.csproj",
+      "projectUniqueName": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\MDashboard.Mvc.csproj",
       "projectName": "MDashboard.Mvc",
-      "projectPath": "D:\\Vs code Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\MDashboard.Mvc.csproj",
-      "packagesPath": "C:\\Users\\jose1\\.nuget\\packages\\",
-      "outputPath": "D:\\Vs code Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\obj\\",
+      "projectPath": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\MDashboard.Mvc.csproj",
+      "packagesPath": "C:\\Users\\Ale\\.nuget\\packages\\",
+      "outputPath": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\jose1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Ale\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3129,11 +3129,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Vs code Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Data\\MDashboard.Data.csproj": {
-              "projectPath": "D:\\Vs code Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Data\\MDashboard.Data.csproj"
+            "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Data\\MDashboard.Data.csproj": {
+              "projectPath": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Data\\MDashboard.Data.csproj"
             },
-            "D:\\Vs code Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Services\\MDashboard.Services.csproj": {
-              "projectPath": "D:\\Vs code Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Services\\MDashboard.Services.csproj"
+            "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Services\\MDashboard.Services.csproj": {
+              "projectPath": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Services\\MDashboard.Services.csproj"
             }
           }
         }
@@ -3172,7 +3172,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

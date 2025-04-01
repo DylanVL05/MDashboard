@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Vs code Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\MDashboard.Models.csproj": {}
+    "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\MDashboard.Models.csproj": {}
   },
   "projects": {
-    "D:\\Vs code Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\MDashboard.Models.csproj": {
+    "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\MDashboard.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Vs code Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\MDashboard.Models.csproj",
+        "projectUniqueName": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\MDashboard.Models.csproj",
         "projectName": "MDashboard.Models",
-        "projectPath": "D:\\Vs code Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\MDashboard.Models.csproj",
-        "packagesPath": "C:\\Users\\jose1\\.nuget\\packages\\",
-        "outputPath": "D:\\Vs code Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\obj\\",
+        "projectPath": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\MDashboard.Models.csproj",
+        "packagesPath": "C:\\Users\\Ale\\.nuget\\packages\\",
+        "outputPath": "D:\\ProyectosVisualStudio2022\\MSDashboard\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\jose1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Ale\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -72,7 +72,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
