@@ -178,24 +178,18 @@ namespace MDashboard.Business.Services
         }
 
 
-        private void ProcesarRickAndMortyApiResponse(string widgetNombre, RickAndMortyApiResponse rickResponse, Dictionary<string, object> resultados)
+        private void ProcesarRickAndMortyApiResponse(
+    string widgetNombre,
+    RickAndMortyApiResponse rickResponse,
+    Dictionary<string, object> resultados)
         {
-            if (rickResponse != null)
+            if (rickResponse != null && rickResponse.Results != null)
             {
-                var personajes = rickResponse.Results.Select(character => new
-                {
-                    character.Id,
-                    character.Name,
-                    character.Species,
-                    character.Gender,
-                    character.Image
-                }).ToList();
-
-                resultados.Add(widgetNombre, personajes);
+                resultados.Add(widgetNombre, rickResponse.Results);
             }
             else
             {
-                Console.WriteLine($"Error: El modelo RickAndMortyApiResponse es nulo para {widgetNombre}");
+                Console.WriteLine($"Error: Respuesta inválida para {widgetNombre}");
             }
         }
 

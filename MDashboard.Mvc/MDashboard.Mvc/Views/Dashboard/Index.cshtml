@@ -38,6 +38,92 @@
         max-height: 200px;
         object-fit: cover;
     }
+
+    .rick-carousel {
+        position: relative;
+        overflow: hidden;
+        padding: 1rem 0;
+    }
+
+    .rick-slider {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        gap: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .rick-card {
+        min-width: 100%;
+        flex: 0 0 auto;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        overflow: hidden;
+    }
+
+        .rick-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 2px solid #00b5cc;
+        }
+
+    .rick-card-body {
+        padding: 1rem;
+        background: #1a1a1a;
+        color: white;
+    }
+
+    .rick-nav-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0,181,204,0.8);
+        color: white;
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        z-index: 10;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+        .rick-nav-button:hover {
+            background: #00b5cc;
+        }
+
+    .rick-prev {
+        left: 10px;
+    }
+
+    .rick-next {
+        right: 10px;
+    }
+
+    .rick-indicators {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 5px;
+        z-index: 10;
+    }
+
+    .rick-indicator {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.5);
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+        .rick-indicator.active {
+            background: #00b5cc;
+            transform: scale(1.2);
+        }
 </style>
 
 <div class="container mt-4">
@@ -185,6 +271,49 @@
                                         }
                                     </div>
                                 }
+                                else if (widget.UrlApi.Contains("rickandmortyapi"))
+                                {
+                                    var rickData = ViewBag.DynamicData[widget.Nombre] as List<MDashboard.Models.ApiModels.Character>;
+
+                                    <!-- Widget Rick and Morty -->
+                                    <div class="rick-widget mt-auto">
+                                        <h5 class="card-title text-center mb-3">Personajes de Rick and Morty</h5>
+                                        <div class="rick-carousel">
+                                            <button class="rick-nav-button rick-prev">❮</button>
+                                            <button class="rick-nav-button rick-next">❯</button>
+                                            <div class="rick-slider">
+                                                @foreach (var character in rickData)
+                                                {
+                                                    <div class="rick-card">
+                                                        <img src="@character.Image" alt="@character.Name">
+                                                        <div class="rick-card-body">
+                                                            <h6 class="mb-2">@character.Name</h6>
+                                                            <div class="small">
+                                                                <div class="d-flex justify-content-between">
+                                                                    <span>Especie:</span>
+                                                                    <strong>@character.Species</strong>
+                                                                </div>
+                                                                <div class="d-flex justify-content-between">
+                                                                    <span>Género:</span>
+                                                                    <strong>@character.Gender</strong>
+                                                                </div>
+                                                                <div class="d-flex justify-content-between">
+                                                                    <span>Estado:</span>
+                                                                    <strong>@character.Status</strong>
+                                                                </div>
+                                                                <div class="d-flex justify-content-between">
+                                                                    <span>Origen:</span>
+                                                                    <strong>@character.Origin?.Name</strong>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                }
+                                            </div>
+                                            <div class="rick-indicators"></div>
+                                        </div>
+                                    </div>
+                                }
                                 else
                                 {
                                     <!-- Widget genérico -->
@@ -220,57 +349,52 @@
 
 @section Scripts {
     <script>
-        $(document).ready(function () {
-            // Manejar cambios en los checkboxes de visibilidad
-            $('.widget-visibility').change(function () {
-                const widgetId = $(this).data('widget-id');
-                const isVisible = $(this).is(':checked');
+        $(document).ready(function() {
+            // Inicializar carrusel de Rick
+            $('.rick-carousel').each(function() {
+                const carousel = $(this);
+                const slider = carousel.find('.rick-slider');
+                const cards = slider.children();
+                const indicatorsContainer = carousel.find('.rick-indicators');
+                let currentIndex = 0;
 
-                // Mostrar u ocultar el widget correspondiente
-                $(`.widget-item[data-widget-id="${widgetId}"]`).toggle(isVisible);
+                // Crear indicadores
+                cards.each((index) => {
+                    indicatorsContainer.append(
+                        `<div class="rick-indicator ${index === 0 ? 'active' : ''}"></div>`
+                    );
+                });
 
-                // Guardar el estado en localStorage
-                localStorage.setItem(`widget-${widgetId}-visible`, isVisible);
+                // Actualizar indicadores
+                const updateIndicators = () => {
+                    indicatorsContainer.find('.rick-indicator')
+                        .removeClass('active')
+                        .eq(currentIndex).addClass('active');
+                };
 
-                // Enviar el estado al servidor
-                $.ajax({
-                    url: '@Url.Action("UpdateWidgetVisibility", "Dashboard")',
-                    type: 'POST',
-                    data: { widgetId: widgetId, isVisible: isVisible },
-                    success: function () {
-                        console.log('Visibilidad actualizada');
-                    },
-                    error: function (xhr) {
-                        console.error('Error:', xhr.responseText);
-                        $(this).prop('checked', !isVisible);
-                        $(`.widget-item[data-widget-id="${widgetId}"]`).toggle(!isVisible);
+                // Navegación
+                carousel.find('.rick-prev').click(() => {
+                    if (currentIndex > 0) {
+                        currentIndex--;
+                        slider.css('transform', `translateX(-${currentIndex * 100}%)`);
+                        updateIndicators();
                     }
                 });
-            });
 
-            // Cargar estados guardados
-            $('.widget-visibility').each(function () {
-                const widgetId = $(this).data('widget-id');
-                const savedState = localStorage.getItem(`widget-${widgetId}-visible`);
-                if (savedState !== null) {
-                    $(this).prop('checked', savedState === 'true');
-                    $(`.widget-item[data-widget-id="${widgetId}"]`).toggle(savedState === 'true');
-                }
-            });
+                carousel.find('.rick-next').click(() => {
+                    if (currentIndex < cards.length - 1) {
+                        currentIndex++;
+                        slider.css('transform', `translateX(-${currentIndex * 100}%)`);
+                        updateIndicators();
+                    }
+                });
 
-            // Añadir banderas de divisas
-            $('.rate-item').each(function () {
-                const currency = $(this).find('.currency-flag').data('currency');
-                if (currency) {
-                    $(this).find('.currency-flag').css({
-                        'background-image': `url(https://flagcdn.com/16x12/${currency.toLowerCase()}.png)`,
-                        'background-size': 'contain',
-                        'background-repeat': 'no-repeat',
-                        'width': '24px',
-                        'height': '18px',
-                        'display': 'inline-block'
-                    });
-                }
+                // Indicadores click
+                indicatorsContainer.on('click', '.rick-indicator', function() {
+                    currentIndex = $(this).index();
+                    slider.css('transform', `translateX(-${currentIndex * 100}%)`);
+                    updateIndicators();
+                });
             });
         });
     </script>
