@@ -1,36 +1,173 @@
-html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
+/* Estilos Globales */
 body {
-  margin-bottom: 60px;
+    background-color: #a087ac; /* Color de fondo del body */
+    color: #2d2b42; /* Color del texto */
+    font-family: Arial, sans-serif; /* Fuente del cuerpo */
+    margin: 0; /* Elimina el margen por defecto */
+    padding: 0; /* Elimina el padding por defecto */
+    min-height: 100vh; /* Altura mínima completa de la ventana */
+    height: auto; /* Permite que el contenido determine la altura */
+    overflow: auto; /* Permite el desplazamiento vertical */
+    overflow-x: hidden; /* Previene el desplazamiento horizontal */
+    position: relative; /* Necesario para la posición de elementos absolutos */
+}
+
+    body::before {
+        content: ""; /* Crea un pseudo-elemento para el fondo */
+        background-image: url('/images/background.jpg'); /* Ruta de la imagen de fondo */
+        background-size: cover; /* Asegura que la imagen cubra todo el área */
+        background-position: center; /* Centra la imagen */
+        position: fixed; /* Cambiado a fixed para que se mantenga en la misma posición */
+        top: 0; /* Alinea con la parte superior */
+        left: 0; /* Alinea con el lado izquierdo */
+        width: 100%; /* Ancho completo */
+        height: 100%; /* Altura completa */
+        filter: blur(4px); /* Desenfoque reducido */
+        opacity: 0.8; /* Transparencia añadida */
+        z-index: -1; /* Coloca el pseudo-elemento detrás del contenido */
+    }
+
+/* Estilos para el Sidebar */
+.sidebar {
+    height: 100%; /* Ocupa toda la altura de la pantalla */
+    width: 250px; /* Ancho fijo del sidebar */
+    position: fixed; /* Fija el sidebar en la pantalla */
+    top: 0; /* Alinea al top */
+    left: 0; /* Alinea al left */
+    background-color: rgba(17, 17, 17, 0.56); /* Fondo semitransparente */
+    padding-top: 20px; /* Espaciado superior */
+    z-index: 1010; /* Asegura que el sidebar esté sobre otros elementos */
+    transition: left 0.3s ease; /* Animación suave al mover el sidebar */
+    overflow-y: auto; /* Permite desplazamiento si hay muchos elementos */
+}
+
+    .sidebar a {
+        padding: 10px 15px; /* Espaciado interno de los enlaces */
+        text-decoration: none; /* Elimina subrayado */
+        font-size: 18px; /* Tamaño de fuente de los enlaces */
+        color: #996da8; /* Color de los enlaces */
+        display: block; /* Hace que cada enlace ocupe toda la línea */
+    }
+
+        .sidebar a:hover {
+            background-color: rgba(51, 51, 51, 0.8); /* Fondo oscuro al hacer hover */
+        }
+
+/* Estilos para el Navbar */
+.navbar {
+    background-color: rgba(17, 17, 17, 0.8) !important; /* Fondo semitransparente */
+    border-bottom: 1px solid #00FF00; /* Línea verde al fondo del navbar */
+    z-index: 1005; /* Asegura que el navbar esté sobre el fondo pero debajo del sidebar */
+    position: relative; /* Para la posición correcta */
+}
+
+.navbar-brand, .nav-link {
+    color: #ffffff !important; /* Color blanco para el texto */
+}
+
+.navbar-toggler-icon {
+    background-color: rgba(17, 17, 17, 0.56); /* Icono del navbar con fondo semitransparente */
+}
+
+/* Estilos para el contenedor principal */
+.container-fluid {
+    padding-left: 270px; /* Ajusta el padding a la izquierda para hacer espacio para el sidebar */
+    padding-right: 20px; /* Añade padding a la derecha */
+    padding-bottom: 80px; /* Espacio para el footer */
+    position: relative; /* Necesario para la correcta posición de los elementos */
+    z-index: 1000; /* Asegura que el contenido principal esté sobre el fondo */
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none; /* Oculta el sidebar en dispositivos pequeños */
+    }
+
+    .container-fluid {
+        padding-left: 15px; /* Reduce el padding en dispositivos móviles */
+        padding-right: 15px; /* Equilibra el padding derecho */
+    }
+}
+
+/* Estilos para el Footer */
+.footer {
+    background-color: rgba(17, 17, 17, 0.8); /* Fondo semitransparente */
+    border-top: 1px solid #00FF00; /* Línea verde al top del footer */
+    color: #00FF00; /* Texto verde */
+    padding: 10px 0; /* Espaciado arriba y abajo */
+    position: fixed; /* Fija el footer en la parte inferior */
+    bottom: 0; /* Alinea al bottom */
+    width: 100%; /* Asegura que ocupe todo el ancho */
+    text-align: center; /* Centra el texto */
+    z-index: 1005; /* Asegura que el footer esté sobre el contenido pero debajo del sidebar */
+}
+
+/* Estilos para los botones de logout */
+.logout-button {
+    background: none; /* Elimina el fondo */
+    border: none; /* Elimina el borde */
+    color: #00FF00; /* Color verde */
+    cursor: pointer; /* Hace que el cursor sea un puntero */
+}
+
+    .logout-button:hover {
+        text-decoration: underline; /* Subraya al hacer hover */
+    }
+
+/* Estilos para los elementos enfocados */
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb; /* Añade un borde azul a los elementos enfocados */
+}
+
+/* Ajustes para el Body y los Botones de Logout */
+body {
+    margin-bottom: 60px; /* Añade margen en la parte inferior para el footer */
 }
 
 .logout-form {
-    display: inline;
+    display: inline; /* Muestra el formulario en línea */
 }
 
 .logout-button {
-    padding: 0;
-    margin: 0;
-    border: none;
-    background: none;
-    text-decoration: none;
-    text-align: left;
-    line-height: inherit;
+    padding: 0; /* Elimina el padding */
+    margin: 0; /* Elimina el margin */
+    border: none; /* Elimina el borde */
+    background: none; /* Elimina el fondo */
+    text-decoration: none; /* Elimina el subrayado */
+    text-align: left; /* Alinea el texto a la izquierda */
+    line-height: inherit; /* Hereda el line-height */
+}
+
+/* Estilos para las tarjetas API */
+.card {
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
+    margin-bottom: 20px; /* Espacio entre tarjetas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+/* Estilos para los botones "Agregar al Dashboard" */
+.btn-primary {
+    background-color: #007bff; /* Color azul */
+    border-color: #007bff;
+    margin-top: 10px; /* Espacio arriba del botón */
+}
+
+/* Media Queries para Responsividad */
+@media (min-width: 768px) {
+    html {
+        font-size: 16px; /* Aumenta el tamaño de fuente en pantallas grandes */
+    }
+}
+
+@media (max-width: 576px) {
+    .card {
+        margin-bottom: 15px; /* Menos espacio entre tarjetas en móvil */
+    }
+}
+
+html {
+    font-size: 14px; /* Tamaño de fuente base */
+    position: relative; /* Posición relativa para el elemento html */
+    min-height: 100%; /* Asegura que ocupe toda la altura */
 }
