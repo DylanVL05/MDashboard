@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Projects\\MDashboard\\MDashboard.Mvc\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|c:\\projects\\mdashboard\\mdashboard.mvc\\mdashboard.mvc\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|solutionrelative:mdashboard.mvc\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|c:\\projects\\mdashboard\\mdashboard.mvc\\mdashboard.mvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|solutionrelative:mdashboard.mvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -30,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 57,
+          "SelectedChildIndex": 56,
           "Children": [
             {
               "$type": "Bookmark",
@@ -258,33 +262,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Dashboard\\Index.cshtml",
+              "RelativeDocumentMoniker": "MDashboard.Mvc\\Views\\Dashboard\\Index.cshtml",
+              "ToolTip": "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Dashboard\\Index.cshtml",
+              "RelativeToolTip": "MDashboard.Mvc\\Views\\Dashboard\\Index.cshtml",
+              "ViewState": "AgIAAN8AAAAAAAAAAAAcwPcAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-02T07:43:35.112Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "site.css",
               "DocumentMoniker": "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "MDashboard.Mvc\\wwwroot\\css\\site.css",
               "ToolTip": "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\wwwroot\\css\\site.css",
               "RelativeToolTip": "MDashboard.Mvc\\wwwroot\\css\\site.css",
-              "ViewState": "AgIAAH8AAAAAAAAAAAAIwK0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2025-04-02T05:53:01.488Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "MDashboard.Mvc\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Shared\\_Layout.cshtml*",
-              "RelativeToolTip": "MDashboard.Mvc\\Views\\Shared\\_Layout.cshtml*",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAAAFkAAAAHAAAAAAAAAA==",
+              "ToolTip": "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "MDashboard.Mvc\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAEoAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-04-02T05:52:36.534Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "LogotypesApiResponse.cs",
               "DocumentMoniker": "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\ApiModels\\LogotypesApiResponse.cs",
               "RelativeDocumentMoniker": "MDashboard.Models\\ApiModels\\LogotypesApiResponse.cs",
@@ -292,12 +309,11 @@
               "RelativeToolTip": "MDashboard.Models\\ApiModels\\LogotypesApiResponse.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-01T07:57:56.327Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-01T07:57:56.327Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "MediaDashboardContext.cs",
               "DocumentMoniker": "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Data\\Models\\MediaDashboardContext.cs",
               "RelativeDocumentMoniker": "MDashboard.Data\\Models\\MediaDashboardContext.cs",
@@ -305,12 +321,11 @@
               "RelativeToolTip": "MDashboard.Data\\Models\\MediaDashboardContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-01T07:57:53.567Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-01T07:57:53.567Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "WidgetService.cs",
               "DocumentMoniker": "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Services\\WidgetService.cs",
               "RelativeDocumentMoniker": "MDashboard.Services\\WidgetService.cs",
@@ -318,8 +333,7 @@
               "RelativeToolTip": "MDashboard.Services\\WidgetService.cs",
               "ViewState": "AgIAAAYBAAAAAAAAAADwvycBAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-01T07:57:02.058Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-01T07:57:02.058Z"
             }
           ]
         },

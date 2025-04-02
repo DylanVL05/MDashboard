@@ -1,173 +1,169 @@
 /* Estilos Globales */
+:root {
+    --sidebar-width: 250px;
+    --navbar-height: 56px;
+    --primary-color: #6a5acd;
+    --secondary-color: #5d4e9e;
+    --text-color: #ffffff;
+    --sidebar-bg: rgba(45, 45, 60, 0.9);
+}
+
 body {
-    background-color: #a087ac; /* Color de fondo del body */
-    color: #2d2b42; /* Color del texto */
-    font-family: Arial, sans-serif; /* Fuente del cuerpo */
-    margin: 0; /* Elimina el margen por defecto */
-    padding: 0; /* Elimina el padding por defecto */
-    min-height: 100vh; /* Altura mínima completa de la ventana */
-    height: auto; /* Permite que el contenido determine la altura */
-    overflow: auto; /* Permite el desplazamiento vertical */
-    overflow-x: hidden; /* Previene el desplazamiento horizontal */
-    position: relative; /* Necesario para la posición de elementos absolutos */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: rgb(51, 51, 64);
+    color: #2d2b42;
+    overflow-x: hidden;
+    position: relative;
 }
 
     body::before {
-        content: ""; /* Crea un pseudo-elemento para el fondo */
-        background-image: url('/images/background.jpg'); /* Ruta de la imagen de fondo */
-        background-size: cover; /* Asegura que la imagen cubra todo el área */
-        background-position: center; /* Centra la imagen */
-        position: fixed; /* Cambiado a fixed para que se mantenga en la misma posición */
-        top: 0; /* Alinea con la parte superior */
-        left: 0; /* Alinea con el lado izquierdo */
-        width: 100%; /* Ancho completo */
-        height: 100%; /* Altura completa */
-        filter: blur(4px); /* Desenfoque reducido */
-        opacity: 0.8; /* Transparencia añadida */
-        z-index: -1; /* Coloca el pseudo-elemento detrás del contenido */
+        content: "";
+        background-size: cover;
+        background-position: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        filter: blur(4px);
+        opacity: 0.8;
+        z-index: -1;
     }
 
-/* Estilos para el Sidebar */
-.sidebar {
-    height: 100%; /* Ocupa toda la altura de la pantalla */
-    width: 250px; /* Ancho fijo del sidebar */
-    position: fixed; /* Fija el sidebar en la pantalla */
-    top: 0; /* Alinea al top */
-    left: 0; /* Alinea al left */
-    background-color: rgba(17, 17, 17, 0.56); /* Fondo semitransparente */
-    padding-top: 20px; /* Espaciado superior */
-    z-index: 1010; /* Asegura que el sidebar esté sobre otros elementos */
-    transition: left 0.3s ease; /* Animación suave al mover el sidebar */
-    overflow-y: auto; /* Permite desplazamiento si hay muchos elementos */
-}
-
-    .sidebar a {
-        padding: 10px 15px; /* Espaciado interno de los enlaces */
-        text-decoration: none; /* Elimina subrayado */
-        font-size: 18px; /* Tamaño de fuente de los enlaces */
-        color: #996da8; /* Color de los enlaces */
-        display: block; /* Hace que cada enlace ocupe toda la línea */
-    }
-
-        .sidebar a:hover {
-            background-color: rgba(51, 51, 51, 0.8); /* Fondo oscuro al hacer hover */
-        }
-
-/* Estilos para el Navbar */
+/* Navbar Styles */
 .navbar {
-    background-color: rgba(17, 17, 17, 0.8) !important; /* Fondo semitransparente */
-    border-bottom: 1px solid #00FF00; /* Línea verde al fondo del navbar */
-    z-index: 1005; /* Asegura que el navbar esté sobre el fondo pero debajo del sidebar */
-    position: relative; /* Para la posición correcta */
+    background-color: #050505;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 0 1rem;
+    height: var(--navbar-height);
+    z-index: 1030;
 }
 
-.navbar-brand, .nav-link {
-    color: #ffffff !important; /* Color blanco para el texto */
+.navbar-brand {
+    font-weight: bold;
+    color: var(--text-color) !important;
+    font-size: 1.5rem;
 }
 
-.navbar-toggler-icon {
-    background-color: rgba(17, 17, 17, 0.56); /* Icono del navbar con fondo semitransparente */
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.85);
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
 }
 
-/* Estilos para el contenedor principal */
-.container-fluid {
-    padding-left: 270px; /* Ajusta el padding a la izquierda para hacer espacio para el sidebar */
-    padding-right: 20px; /* Añade padding a la derecha */
-    padding-bottom: 80px; /* Espacio para el footer */
-    position: relative; /* Necesario para la correcta posición de los elementos */
-    z-index: 1000; /* Asegura que el contenido principal esté sobre el fondo */
-}
-
-/* Estilos para dispositivos móviles */
-@media (max-width: 768px) {
-    .sidebar {
-        display: none; /* Oculta el sidebar en dispositivos pequeños */
+    .navbar-dark .navbar-nav .nav-link:hover {
+        color: #ffffff;
+        background-color: rgba(255, 255, 255, 0.1);
     }
 
-    .container-fluid {
-        padding-left: 15px; /* Reduce el padding en dispositivos móviles */
-        padding-right: 15px; /* Equilibra el padding derecho */
-    }
-}
-
-/* Estilos para el Footer */
-.footer {
-    background-color: rgba(17, 17, 17, 0.8); /* Fondo semitransparente */
-    border-top: 1px solid #00FF00; /* Línea verde al top del footer */
-    color: #00FF00; /* Texto verde */
-    padding: 10px 0; /* Espaciado arriba y abajo */
-    position: fixed; /* Fija el footer en la parte inferior */
-    bottom: 0; /* Alinea al bottom */
-    width: 100%; /* Asegura que ocupe todo el ancho */
-    text-align: center; /* Centra el texto */
-    z-index: 1005; /* Asegura que el footer esté sobre el contenido pero debajo del sidebar */
-}
-
-/* Estilos para los botones de logout */
 .logout-button {
-    background: none; /* Elimina el fondo */
-    border: none; /* Elimina el borde */
-    color: #00FF00; /* Color verde */
-    cursor: pointer; /* Hace que el cursor sea un puntero */
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.85);
+    cursor: pointer;
+    transition: color 0.3s ease;
 }
 
     .logout-button:hover {
-        text-decoration: underline; /* Subraya al hacer hover */
+        color: #ffffff;
+        text-decoration: none;
     }
-
-/* Estilos para los elementos enfocados */
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb; /* Añade un borde azul a los elementos enfocados */
-}
-
-/* Ajustes para el Body y los Botones de Logout */
-body {
-    margin-bottom: 60px; /* Añade margen en la parte inferior para el footer */
-}
 
 .logout-form {
-    display: inline; /* Muestra el formulario en línea */
+    display: inline;
 }
 
-.logout-button {
-    padding: 0; /* Elimina el padding */
-    margin: 0; /* Elimina el margin */
-    border: none; /* Elimina el borde */
-    background: none; /* Elimina el fondo */
-    text-decoration: none; /* Elimina el subrayado */
-    text-align: left; /* Alinea el texto a la izquierda */
-    line-height: inherit; /* Hereda el line-height */
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: var(--navbar-height);
+    left: 0;
+    width: var(--sidebar-width);
+    height: calc(100% - var(--navbar-height));
+    background-color:#050505;
+    transition: all 0.3s ease;
+    overflow-y: auto;
+    z-index: 1020;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    padding: 0;
 }
 
-/* Estilos para las tarjetas API */
+.sidebar-header {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+    .sidebar-header h5 {
+        color: var(--text-color);
+        margin: 0;
+        font-size: 1.1rem;
+    }
+
+.sidebar-content {
+    padding: 1rem 0;
+}
+
+.sidebar a {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+    .sidebar a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #ffffff;
+        border-left-color: var(--primary-color);
+    }
+
+    .sidebar a i {
+        margin-right: 0.5rem;
+        width: 20px;
+        text-align: center;
+    }
+
+/* Contenido Principal */
+.main-content {
+    margin-left: var(--sidebar-width);
+    padding: calc(var(--navbar-height) + 1rem) 1.5rem 4rem 1.5rem;
+    min-height: calc(100vh - var(--navbar-height));
+    transition: margin-left 0.3s ease;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: var(--sidebar-bg);
+    color: var(--text-color);
+    text-align: center;
+    padding: 0.75rem 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1010;
+    font-size: 0.9rem;
+}
+
+/* Estilos para las tarjetas de API */
 .card {
-    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
-    margin-bottom: 20px; /* Espacio entre tarjetas */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
 }
 
-/* Estilos para los botones "Agregar al Dashboard" */
-.btn-primary {
-    background-color: #007bff; /* Color azul */
-    border-color: #007bff;
-    margin-top: 10px; /* Espacio arriba del botón */
-}
-
-/* Media Queries para Responsividad */
-@media (min-width: 768px) {
-    html {
-        font-size: 16px; /* Aumenta el tamaño de fuente en pantallas grandes */
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
     }
+
+.card-header {
+    background-color: rgba(106, 90, 205, 0.1);
 }
 
-@media (max-width: 576px) {
-    .card {
-        margin-bottom: 15px; /* Menos espacio entre tarjetas en móvil */
-    }
-}
-
-html {
-    font-size: 14px; /* Tamaño de fuente base */
-    position: relative; /* Posición relativa para el elemento html */
-    min-height: 100%; /* Asegura que ocupe toda la altura */
-}

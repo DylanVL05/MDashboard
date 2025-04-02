@@ -6,61 +6,52 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - MDashboard.Mvc</title>
+    <title>@ViewData["Title"] - MDashboard</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/MDashboard.Mvc.styles.css" asp-append-version="true" />
 </head>
 
 <body>
-    <!-- Sidebar solo visible en desktop -->
-    <div class="sidebar">
-        <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-        <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        <a asp-area="" asp-controller="Usuario" asp-action="UserList">Lista de Usuarios</a>
-        <a asp-area="" asp-controller="Widget" asp-action="index">WidgetApiClient</a>
-        <a asp-area="" asp-controller="Dashboard" asp-action="Index">Dashboard</a>
-    </div>
-
+    <!-- Navbar mejorado -->
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MDashboard.Mvc</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index">MDashboard</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                        aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <!-- Elementos del navbar (visibles en desktop) -->
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
 
-                        <!-- Dropdown para elementos específicos en responsive -->
-                        <li class="nav-item dropdown d-block d-sm-none">
-                            <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Menú
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" asp-controller="Usuario" asp-action="UserList">Lista de Usuarios</a></li>
-                                <li><a class="dropdown-item" asp-controller="Widget" asp-action="index">WidgetApiClient</a></li>
-                                <li><a class="dropdown-item" asp-controller="Dashboard" asp-action="Index">Dashboard</a></li>
-                            </ul>
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <!-- Elementos del navbar para móvil -->
+                    <ul class="navbar-nav d-lg-none">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Usuario" asp-action="UserList">Lista de Usuarios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Widget" asp-action="index">Widgets</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Dashboard" asp-action="Index">Dashboard</a>
+                        </li>
+                    </ul>
 
-                        <!-- Sesión del usuario -->
+                    <!-- Información de usuario y logout -->
+                    <ul class="navbar-nav ms-auto">
                         @if (HttpContextAccessor.HttpContext.Session.GetString("Nombre") != null)
                         {
                             <li class="nav-item">
-                                <span class="nav-link text-dark">Bienvenido, @HttpContextAccessor.HttpContext.Session.GetString("Nombre")</span>
+                                <span class="nav-link">Bienvenido, @HttpContextAccessor.HttpContext.Session.GetString("Nombre")</span>
                             </li>
                             <li class="nav-item">
                                 <form asp-controller="Usuario" asp-action="Logout" method="post" class="logout-form">
-                                    <button type="submit" class="nav-link text-dark logout-button">
+                                    <button type="submit" class="nav-link logout-button">
                                         Cerrar Sesión
                                     </button>
                                 </form>
@@ -69,7 +60,7 @@
                         else
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-controller="Usuario" asp-action="Login">Iniciar Sesión</a>
+                                <a class="nav-link" asp-controller="Usuario" asp-action="Login">Iniciar Sesión</a>
                             </li>
                         }
                     </ul>
@@ -78,14 +69,45 @@
         </nav>
     </header>
 
-    <div class="container-fluid">
+    <!-- Sidebar mejorado -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h5>Menú</h5>
+        </div>
+        <div class="sidebar-content">
+            <a asp-controller="Home" asp-action="Index">
+                <i class="bi bi-house-door"></i> Home
+            </a>
+            <a asp-controller="Dashboard" asp-action="Index">
+                <i class="bi bi-speedometer2"></i> Dashboard
+            </a>
+            <a asp-controller="Widget" asp-action="index">
+                <i class="bi bi-grid"></i> Widgets
+            </a>
+            <a asp-controller="Usuario" asp-action="UserList">
+                <i class="bi bi-people"></i> Usuarios
+            </a>
+        </div>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="main-content">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <span>&copy; @DateTime.Now.Year - MDashboard</span>
+        </div>
+    </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
