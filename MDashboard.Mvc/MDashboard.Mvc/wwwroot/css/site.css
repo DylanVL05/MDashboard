@@ -13,10 +13,11 @@ body {
     padding: 0;
     min-height: 100vh;
     background-color: rgb(51, 51, 64);
-    color: #2d2b42;
+    color: rgb(113, 105, 129);
     overflow-x: hidden;
     position: relative;
 }
+
 
     body::before {
         content: "";
@@ -150,13 +151,14 @@ body {
 
 /* TARJETAS (CARDS) */
 .card {
-    background-color: rgba(255, 255, 255, 0.9);
+    background: linear-gradient(to right, #f7fafc, #e2e8f0); /* gray-100 a gray-300 */
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin-bottom: 1.5rem;
     overflow: hidden;
 }
+
 
     .card:hover {
         transform: translateY(-5px);
@@ -205,4 +207,8 @@ body {
     opacity: 1;
     transform: scale(1);
     transition: all 0.3s ease-in-out;
+}
+
+.table td {
+    color: white;
 }
