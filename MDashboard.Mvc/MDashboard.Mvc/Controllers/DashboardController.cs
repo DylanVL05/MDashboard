@@ -71,6 +71,22 @@ namespace MDashboard.Controllers
             }
         }
 
+        [HttpGet]
+        public async Task<IActionResult> ObtenerWidgetsParciales()
+        {
+            try
+            {
+                var widgets = await _widgetRepository.ObtenerWidgetsActivosAsync();
+                var dynamicData = await _widgetService.ObtenerDatosDeWidgetsAsync();
+                ViewBag.DynamicData = dynamicData ?? new Dictionary<string, object>();
+
+                return PartialView("_WidgetPartial", widgets); // nueva vista parcial
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error al actualizar los widgets: {ex.Message}");
+            }
+        }
 
 
 
