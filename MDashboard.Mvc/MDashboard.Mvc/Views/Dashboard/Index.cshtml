@@ -359,56 +359,43 @@
 </div>
 
 @section Scripts {
-    <script>
-        $(document).ready(function() {
-            // Inicializar carrusel de Rick
-            $('.rick-carousel').each(function() {
-                const carousel = $(this);
-                const slider = carousel.find('.rick-slider');
-                const cards = slider.children();
-                const indicatorsContainer = carousel.find('.rick-indicators');
-                let currentIndex = 0;
 
-                // Crear indicadores
-                cards.each((index) => {
-                    indicatorsContainer.append(
-                        `<div class="rick-indicator ${index === 0 ? 'active' : ''}"></div>`
-                    );
-                });
+<script>
+    function actualizarWidgets() {
+        $.ajax({
+            url: '@Url.Action("ObtenerWidgetsParciales", "Dashboard")',
+            type: 'GET',
+            success: function (html) {
+                const $container = $('#widgetsContainer');
 
-                // Actualizar indicadores
-                const updateIndicators = () => {
-                    indicatorsContainer.find('.rick-indicator')
-                        .removeClass('active')
-                        .eq(currentIndex).addClass('active');
-                };
+                // Animación de salida
+                $container.addClass('fade-scale-out');
 
-                // Navegación
-                carousel.find('.rick-prev').click(() => {
-                    if (currentIndex > 0) {
-                        currentIndex--;
-                        slider.css('transform', `translateX(-${currentIndex * 100}%)`);
-                        updateIndicators();
-                    }
-                });
+                setTimeout(() => {
+                    $container.html(html); // Reemplazar contenido
 
-                carousel.find('.rick-next').click(() => {
-                    if (currentIndex < cards.length - 1) {
-                        currentIndex++;
-                        slider.css('transform', `translateX(-${currentIndex * 100}%)`);
-                        updateIndicators();
-                    }
-                });
+                    // Animación de entrada
+                    $container.removeClass('fade-scale-out').addClass('fade-scale-in');
 
-                // Indicadores click
-                indicatorsContainer.on('click', '.rick-indicator', function() {
-                    currentIndex = $(this).index();
-                    slider.css('transform', `translateX(-${currentIndex * 100}%)`);
-                    updateIndicators();
-                });
-            });
+                    // Limpiar clase tras animación
+                    setTimeout(() => {
+                        $container.removeClass('fade-scale-in');
+
+                        //  Re-inicializar carruseles de Rick and Morty
+                        inicializarRickCarousels();
+
+                    }, 300); // duración entrada
+                }, 300); // duración salida
+            },
+            error: function () {
+                console.error("Error al actualizar los widgets");
+            }
         });
+    }
 
+    // Refrescar cada 30 segundos
+    setInterval(actualizarWidgets, 30000);
+</script>
+}
 
-    </script>
 }
