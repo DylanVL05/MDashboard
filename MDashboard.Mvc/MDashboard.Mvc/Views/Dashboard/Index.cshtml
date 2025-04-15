@@ -235,9 +235,7 @@
                         <div class="card-body d-flex flex-column">
                             <div class="scrollable-content">
                                 <h5 class="card-title">@widget.Nombre</h5>
-                                <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#configModal-@widget.Id">
-                                    <i class="fas fa-cog"></i>
-                                </button>
+                                
 
                                 @if (ViewBag.DynamicData != null && ViewBag.DynamicData.ContainsKey(widget.Nombre))
                                 {
@@ -642,12 +640,9 @@
 
                             <div class="sticky-button-container mt-3">
                                 <div class="d-flex gap-2">
-                                    <form method="post" action="@Url.Action("AgregarWidget", "Dashboard")" class="w-100">
-                                        <input type="hidden" name="widgetId" value="@widget.Id" />
-                                        <button type="submit" class="btn btn-primary btn-sm w-100">
-                                            <i class="fas fa-plus me-1"></i> Agregar al Dashboard
-                                        </button>
-                                    </form>
+                                    <button class="btn btn-primary btn-sm w-100" data-bs-toggle="modal" data-bs-target="#configModal-@widget.Id">
+                                        <i class="fas fa-plus me-1"></i> Configurar Widget
+                                    </button>
                                     <button class="btn btn-danger btn-sm w-100" onclick="ocultarWidget(@widget.Id)">
                                         <i class="fas fa-eye-slash me-1"></i> Ocultar
                                     </button>
@@ -659,6 +654,8 @@
             }
         </div>
     </div>
+
+
 
     <!-- Secci처n de widgets ocultos -->
     <div class="mb-4">

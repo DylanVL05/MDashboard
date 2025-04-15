@@ -202,8 +202,24 @@ namespace MDashboard.Mvc.Controllers
             if (ModelState.IsValid)
             {
                 await _usuarioBusiness.UpdateUsuarioByAsync(userId, usuario);
-                ViewBag.MensajePantalla = "Perfil actualizado correctamente";
+
+                // 🚀 ACTUALIZA LA IDENTIDAD CON EL NUEVO NOMBRE
+                var claims = new List<Claim>
+ {
+     new Claim(ClaimTypes.NameIdentifier, usuario.Id.ToString()),
+     new Claim(ClaimTypes.Name, usuario.Nombre), // Nombre actualizado
+     new Claim(ClaimTypes.Email, usuario.Email),
+     new Claim(ClaimTypes.Role, usuario.Rol)
+ };
+
+                var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                var principal = new ClaimsPrincipal(identity);
+
+                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
+
+                TempData["MensajePantalla"] = "Perfil actualizado correctamente";
                 return RedirectToAction("MiPerfil");
+                // o: return RedirectToAction("Index", "Dashboard");
             }
 
             return View("MiPerfil", usuario);

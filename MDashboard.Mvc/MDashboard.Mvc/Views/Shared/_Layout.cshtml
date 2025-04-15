@@ -49,15 +49,13 @@
                         @if (User.Identity != null && User.Identity.IsAuthenticated)
                         {
                             <li class="nav-item d-flex align-items-center">
-                                <span class="nav-link">
-                                    <a href="@Url.Action("MiPerfil", "Usuario")">
+                                <a href="@Url.Action("MiPerfil", "Usuario")" class="text-white text-decoration-none">
                                     <i class="bi bi-person-circle"></i> @User.Identity.Name
-                                    </a>
-                                </span>
+                                </a>
                             </li>
-                            <li class="nav-item">
-                                <form asp-controller="Usuario" asp-action="CerrarSession" method="post" class="logout-form">
-                                    <button type="submit" class="nav-link btn btn-link text-white logout-button">
+                            <li class="nav-item d-flex align-items-center ms-3">
+                                <form asp-controller="Usuario" asp-action="CerrarSession" method="post" class="m-0 p-0">
+                                    <button type="submit" class="border-0 bg-transparent text-white p-0 m-0">
                                         <i class="bi bi-box-arrow-right"></i> Cerrar Sesión
                                     </button>
                                 </form>
