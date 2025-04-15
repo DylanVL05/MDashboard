@@ -358,8 +358,7 @@
               "RelativeToolTip": "MDashboard.Services\\WidgetService.cs",
               "ViewState": "AgIAACIAAAAAAAAAAAAuwDUAAABXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-08T01:19:21.703Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-08T01:19:21.703Z"
             },
             {
               "$type": "Document",
@@ -371,8 +370,7 @@
               "RelativeToolTip": "MDashboard.Repository\\WidgetRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T10:09:42.036Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-09T10:09:42.036Z"
             },
             {
               "$type": "Document",
@@ -384,8 +382,7 @@
               "RelativeToolTip": "MDashboard.Mvc\\Views\\Widget\\Create.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-09T10:21:31.906Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-09T10:21:31.906Z"
             },
             {
               "$type": "Document",
@@ -397,8 +394,7 @@
               "RelativeToolTip": "MDashboard.Mvc\\Views\\Widget\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-09T10:08:17.86Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-09T10:08:17.86Z"
             },
             {
               "$type": "Document",
@@ -410,8 +406,7 @@
               "RelativeToolTip": "MDashboard.Mvc\\Controllers\\UsuarioController.cs",
               "ViewState": "AgIAADkAAAAAAAAAAAAmwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T10:06:16.935Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-09T10:06:16.935Z"
             },
             {
               "$type": "Document",
@@ -423,8 +418,7 @@
               "RelativeToolTip": "MDashboard.Mvc\\Controllers\\WidgetController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T10:06:25.423Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-09T10:06:25.423Z"
             },
             {
               "$type": "Document",
@@ -436,8 +430,7 @@
               "RelativeToolTip": "MDashboard.Business\\Factory\\WidgetApiFactory.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T10:09:16.904Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-09T10:09:16.904Z"
             },
             {
               "$type": "Document",
@@ -449,8 +442,7 @@
               "RelativeToolTip": "MDashboard.Mvc\\Controllers\\DashboardController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T06:21:09.719Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-10T06:21:09.719Z"
             },
             {
               "$type": "Document",
@@ -460,7 +452,7 @@
               "RelativeDocumentMoniker": "MDashboard.Models\\ApiModels\\OpenWeatherResponse.cs",
               "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\ApiModels\\OpenWeatherResponse.cs",
               "RelativeToolTip": "MDashboard.Models\\ApiModels\\OpenWeatherResponse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-10T06:47:18.699Z",
               "EditorCaption": ""
@@ -475,8 +467,7 @@
               "RelativeToolTip": "MDashboard.Mvc\\Views\\Widget\\Detalles.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-09T10:08:18.476Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-09T10:08:18.476Z"
             },
             {
               "$type": "Document",
@@ -488,21 +479,19 @@
               "RelativeToolTip": "MDashboard.Repository\\RepositoryBase.cs",
               "ViewState": "AgIAACAAAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T10:20:16.068Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-09T10:20:16.068Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "MDashboard.Models",
+              "Title": "MDashboard.Models.csproj",
               "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\MDashboard.Models.csproj",
               "RelativeDocumentMoniker": "MDashboard.Models\\MDashboard.Models.csproj",
               "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\MDashboard.Models.csproj",
               "RelativeToolTip": "MDashboard.Models\\MDashboard.Models.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-03-10T06:46:35.982Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-10T06:46:35.982Z"
             },
             {
               "$type": "Document",
@@ -514,21 +503,19 @@
               "RelativeToolTip": "MDashboard.Models\\Component.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T06:38:20.533Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-10T06:38:20.533Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "MDashboard.Repository",
+              "Title": "MDashboard.Repository.csproj",
               "DocumentMoniker": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Repository\\MDashboard.Repository.csproj",
               "RelativeDocumentMoniker": "MDashboard.Repository\\MDashboard.Repository.csproj",
               "ToolTip": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Repository\\MDashboard.Repository.csproj",
               "RelativeToolTip": "MDashboard.Repository\\MDashboard.Repository.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-03-10T06:37:55.55Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-10T06:37:55.55Z"
             },
             {
               "$type": "Document",
@@ -540,8 +527,7 @@
               "RelativeToolTip": "MDashboard.Models\\Widget.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAA5wAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T10:09:32.256Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-09T10:09:32.256Z"
             },
             {
               "$type": "Document",
@@ -553,8 +539,7 @@
               "RelativeToolTip": "MDashboard.Mvc\\Views\\Home\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-09T10:20:59.524Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-09T10:20:59.524Z"
             },
             {
               "$type": "Document",
@@ -566,8 +551,7 @@
               "RelativeToolTip": "MDashboard.Mvc\\Controllers\\HomeController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T06:22:04.731Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-10T06:22:04.731Z"
             },
             {
               "$type": "Document",
@@ -579,8 +563,7 @@
               "RelativeToolTip": "MDashboard.Business\\Factory\\IWidgetApiClient.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T10:10:43.104Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-09T10:10:43.104Z"
             },
             {
               "$type": "Document",
@@ -592,8 +575,7 @@
               "RelativeToolTip": "MDashboard.Business\\Factory\\GenericApiClient.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T10:09:24.849Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-09T10:09:24.849Z"
             },
             {
               "$type": "Document",
@@ -605,8 +587,7 @@
               "RelativeToolTip": "MDashboard.Business\\Factory\\OpenWeatherApiClient.cs",
               "ViewState": "AgIAACQAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T10:43:32.959Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-09T10:43:32.959Z"
             },
             {
               "$type": "Document",
@@ -618,8 +599,7 @@
               "RelativeToolTip": "MDashboard.Mvc\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAACAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-09T11:04:21.617Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-09T11:04:21.617Z"
             },
             {
               "$type": "Document",

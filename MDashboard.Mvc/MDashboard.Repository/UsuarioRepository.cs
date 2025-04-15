@@ -35,7 +35,7 @@ namespace MDashboard.Repository
         // Eliminar usuario
         public async Task<bool> DeleteUsuarioAsync(int id)
         {
-            var usuario = await GetUsuarioByIdAsync(id);
+            var usuario = await GetUsuarioByIdAsync(id);    
             if (usuario != null)
             {
                 return await DeleteAsync(usuario);
