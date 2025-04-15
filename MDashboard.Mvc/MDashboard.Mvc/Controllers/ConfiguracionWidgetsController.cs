@@ -1,11 +1,13 @@
 ﻿using MDashboard.Business;
 using MDashboard.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
 
 namespace MDashboard.Controllers
 {
+    [Authorize]
     public class ConfiguracionWidgetsController : Controller
     {
         private readonly IConfiguracionWidgetsBusiness _configBusiness;

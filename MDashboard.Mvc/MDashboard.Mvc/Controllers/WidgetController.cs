@@ -1,10 +1,12 @@
 ﻿using MDashboard.Models;
 using MDashboard.Repository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
 namespace MDashboard.Controllers
 {
+    [Authorize]
     public class WidgetController : Controller
     {
         private readonly IWidgetRepository _widgetRepository;

@@ -40,6 +40,9 @@
                         <li class="nav-item">
                             <a class="nav-link" asp-controller="Dashboard" asp-action="Index">Dashboard</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="ConfiguracionWidgets" asp-action="Index">Configuracion de Widgets</a>
+                        </li>
                     </ul>
 
                     <ul class="navbar-nav ms-auto">
@@ -47,7 +50,9 @@
                         {
                             <li class="nav-item d-flex align-items-center">
                                 <span class="nav-link">
+                                    <a href="@Url.Action("MiPerfil", "Usuario")">
                                     <i class="bi bi-person-circle"></i> @User.Identity.Name
+                                    </a>
                                 </span>
                             </li>
                             <li class="nav-item">
@@ -81,6 +86,9 @@
             </a>
             <a asp-controller="Usuario" asp-action="UserList">
                 <i class="bi bi-people"></i> Usuarios
+            </a>
+            <a asp-controller="ConfiguracionWidgets" asp-action="Index">
+                <i class="bi bi-people"></i> Configuracion de Widgets
             </a>
         </div>
     </div>

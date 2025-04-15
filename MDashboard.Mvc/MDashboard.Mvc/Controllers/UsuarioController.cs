@@ -13,11 +13,13 @@ namespace MDashboard.Mvc.Controllers
     public class UsuarioController : MainUsuarioController
     {
         private readonly ILogger<UsuarioController> _logger;
+        private readonly IUsuarioBusiness _usuarioBusiness;
 
         public UsuarioController(ILogger<UsuarioController> logger, IUsuarioBusiness usuarioBusiness)
             : base(usuarioBusiness)
         {
             _logger = logger;
+            _usuarioBusiness = usuarioBusiness;
         }
 
         // Vista con la lista de usuarios
@@ -179,5 +181,33 @@ namespace MDashboard.Mvc.Controllers
             await HttpContext.SignOutAsync("Cookies"); // aquí va "Cookies"
             return RedirectToAction("Login", "Usuario");
         }
+
+        [HttpGet]
+        public async Task<IActionResult> MiPerfil()
+        {
+            var userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            var usuario = await _usuarioBusiness.GetUsuarioByIdAsync(userId);
+            return View(usuario);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ActualizarPerfil(Usuario usuario)
+        {
+            var userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+
+            if (userId != usuario.Id)
+                return Unauthorized();
+
+            if (ModelState.IsValid)
+            {
+                await _usuarioBusiness.UpdateUsuarioByAsync(userId, usuario);
+                ViewBag.MensajePantalla = "Perfil actualizado correctamente";
+                return RedirectToAction("MiPerfil");
+            }
+
+            return View("MiPerfil", usuario);
+        }
+
     }
 }

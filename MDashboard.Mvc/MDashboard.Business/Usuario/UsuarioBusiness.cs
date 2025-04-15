@@ -18,6 +18,7 @@ namespace MDashboard.Business
         // Autenticación y registro:
         Task<Usuario> IniciarSesionAsync(string email, string passwordHash);
         Task<bool> RegistrarUsuarioAsync(Usuario usuario);
+        Task<Usuario> GetUsuarioByIdAsync(int id);
     }
 
     public class UsuarioBusiness : IUsuarioBusiness
@@ -70,6 +71,10 @@ namespace MDashboard.Business
         public async Task<bool> RegistrarUsuarioAsync(Usuario usuario)
         {
             return await _usuarioRepository.RegistrarUsuarioAsync(usuario);
+        }
+        public async Task<Usuario> GetUsuarioByIdAsync(int id)
+        {
+            return await _usuarioRepository.GetUsuarioByIdAsync(id);
         }
     }
 }
