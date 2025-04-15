@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using MDashboard.Models;
 using Microsoft.EntityFrameworkCore;
-using Component = MDashboard.Models.Component;
+using MDashboard.Models;
 
 namespace MDashboard.Data.Models;
 
@@ -32,13 +30,13 @@ public partial class MediaDashboardContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=DYLANV;Database=MediaDashboard;Integrated Security=True;TrustServerCertificate=True;");
+        => optionsBuilder.UseSqlServer("Server=ALE\\SQLEXPRESS;Database=MediaDashboard;Trusted_Connection=True;TrustServerCertificate=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Component>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Componen__3214EC074D49F867");
+            entity.HasKey(e => e.Id).HasName("PK__Componen__3214EC07161AFC67");
 
             entity.Property(e => e.Descripcion).HasMaxLength(255);
             entity.Property(e => e.Tipo).HasMaxLength(50);
@@ -46,28 +44,23 @@ public partial class MediaDashboardContext : DbContext
 
         modelBuilder.Entity<ConfiguracionWidget>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Configur__3214EC07049AE018");
+            entity.HasKey(e => e.Id).HasName("PK__Configur__3214EC0727A3137D");
 
             entity.Property(e => e.EsFavorito).HasDefaultValue(false);
             entity.Property(e => e.EsVisible).HasDefaultValue(true);
-            entity.Property(e => e.Posicion).HasDefaultValue(0);
-            entity.Property(e => e.RefrescoSegundos).HasDefaultValue(60);
-            entity.Property(e => e.Tamano)
-                .HasMaxLength(50)
-                .HasDefaultValue("medium");
 
             entity.HasOne(d => d.Usuario).WithMany(p => p.ConfiguracionWidgets)
                 .HasForeignKey(d => d.UsuarioId)
-                .HasConstraintName("FK__Configura__Usuar__47DBAE45");
+                .HasConstraintName("FK__Configura__Usuar__4BAC3F29");
 
             entity.HasOne(d => d.Widget).WithMany(p => p.ConfiguracionWidgets)
                 .HasForeignKey(d => d.WidgetId)
-                .HasConstraintName("FK__Configura__Widge__48CFD27E");
+                .HasConstraintName("FK__Configura__Widge__4CA06362");
         });
 
         modelBuilder.Entity<Log>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Logs__3214EC072D940DAE");
+            entity.HasKey(e => e.Id).HasName("PK__Logs__3214EC0728CA5B84");
 
             entity.Property(e => e.Accion).HasMaxLength(255);
             entity.Property(e => e.Fecha)
@@ -76,12 +69,12 @@ public partial class MediaDashboardContext : DbContext
 
             entity.HasOne(d => d.Usuario).WithMany(p => p.Logs)
                 .HasForeignKey(d => d.UsuarioId)
-                .HasConstraintName("FK__Logs__UsuarioId__534D60F1");
+                .HasConstraintName("FK__Logs__UsuarioId__4D94879B");
         });
 
         modelBuilder.Entity<PermisosWidget>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Permisos__3214EC0745475736");
+            entity.HasKey(e => e.Id).HasName("PK__Permisos__3214EC0702F5FD47");
 
             entity.Property(e => e.PuedeEditar).HasDefaultValue(false);
             entity.Property(e => e.PuedeEliminar).HasDefaultValue(false);
@@ -98,9 +91,9 @@ public partial class MediaDashboardContext : DbContext
 
         modelBuilder.Entity<Usuario>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Usuarios__3214EC07551825E6");
+            entity.HasKey(e => e.Id).HasName("PK__Usuarios__3214EC0793C31C96");
 
-            entity.HasIndex(e => e.Email, "UQ__Usuarios__A9D10534925D3512").IsUnique();
+            entity.HasIndex(e => e.Email, "UQ__Usuarios__A9D10534484EEB84").IsUnique();
 
             entity.Property(e => e.Email).HasMaxLength(100);
             entity.Property(e => e.FechaRegistro)
@@ -115,7 +108,7 @@ public partial class MediaDashboardContext : DbContext
 
         modelBuilder.Entity<Widget>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Widgets__3214EC076EFC0410");
+            entity.HasKey(e => e.Id).HasName("PK__Widgets__3214EC07C5B3FBCF");
 
             entity.Property(e => e.ApiKey)
                 .HasMaxLength(255)
@@ -130,7 +123,7 @@ public partial class MediaDashboardContext : DbContext
 
             entity.HasOne(d => d.Component).WithMany(p => p.Widgets)
                 .HasForeignKey(d => d.ComponentId)
-                .HasConstraintName("FK__Widgets__Compone__403A8C7D");
+                .HasConstraintName("FK__Widgets__Compone__5070F446");
         });
 
         OnModelCreatingPartial(modelBuilder);
