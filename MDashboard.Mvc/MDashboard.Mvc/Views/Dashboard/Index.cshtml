@@ -3,222 +3,221 @@
 @model IEnumerable<MDashboard.Models.Widget>
 <style>
     .card {
-        height: 100%;
-        max-height: 500px;
-        display: flex;
-        flex-direction: column;
+    height: 100%;
+    max-height: 500px;
+    display: flex;
+    flex-direction: column;
     }
 
     .card-body {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        background-color: rgb
-        overflow: hidden;
-        position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
     }
 
     .scrollable-content {
-        flex: 1;
-        overflow-y: auto;
-        padding-bottom: 60px; /* Espacio para el bot처n */
+    flex: 1;
+    overflow-y: auto;
+    padding-bottom: 60px; /* Espacio para el bot처n */
     }
 
     .sticky-button-container {
-        position: sticky;
-        bottom: 0;
-        background: white;
-        padding: 1rem 0;
-        border-top: 1px solid #dee2e6;
-        margin-top: auto;
-        z-index: 1;
+    position: sticky;
+    bottom: 0;
+    background: white;
+    padding: 1rem 0;
+    border-top: 1px solid #dee2e6;
+    margin-top: auto;
+    z-index: 1;
     }
 
     .nasa-widget img,
     .nasa-widget iframe {
-        max-height: 200px;
-        object-fit: cover;
+    max-height: 200px;
+    object-fit: cover;
     }
 
     .rick-carousel {
-        position: relative;
-        overflow: hidden;
-        padding: 1rem 0;
+    position: relative;
+    overflow: hidden;
+    padding: 1rem 0;
     }
 
     .rick-slider {
-        display: flex;
-        transition: transform 0.5s ease-in-out;
-        gap: 1rem;
-        padding-bottom: 1rem;
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 1rem;
+    padding-bottom: 1rem;
     }
 
     .rick-card {
-        min-width: 100%;
-        flex: 0 0 auto;
-        background: white;
-        border-radius: 10px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        overflow: hidden;
+    min-width: 100%;
+    flex: 0 0 auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
     }
 
-        .rick-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-bottom: 2px solid #00b5cc;
-        }
+    .rick-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid #00b5cc;
+    }
 
     .rick-card-body {
-        padding: 1rem;
-        background: #1a1a1a;
-        color: white;
+    padding: 1rem;
+    background: #1a1a1a;
+    color: white;
     }
 
     .rick-nav-button {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: rgba(0,181,204,0.8);
-        color: white;
-        border: none;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        z-index: 10;
-        cursor: pointer;
-        transition: all 0.3s;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,181,204,0.8);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    z-index: 10;
+    cursor: pointer;
+    transition: all 0.3s;
     }
 
-        .rick-nav-button:hover {
-            background: #00b5cc;
-        }
+    .rick-nav-button:hover {
+    background: #00b5cc;
+    }
 
     .rick-prev {
-        left: 10px;
+    left: 10px;
     }
 
     .rick-next {
-        right: 10px;
+    right: 10px;
     }
 
     .rick-indicators {
-        position: absolute;
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        gap: 5px;
-        z-index: 10;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+    z-index: 10;
     }
 
     .rick-indicator {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background: rgba(255,255,255,0.5);
-        cursor: pointer;
-        transition: all 0.3s;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    cursor: pointer;
+    transition: all 0.3s;
     }
 
-        .rick-indicator.active {
-            background: #00b5cc;
-            transform: scale(1.2);
-        }
+    .rick-indicator.active {
+    background: #00b5cc;
+    transform: scale(1.2);
+    }
 
     #apiContainer {
-        display: flex;
-        flex-direction: column;
-        max-height: 400px;
-        overflow-y: auto;
-        gap: 10px;
+    display: flex;
+    flex-direction: column;
+    max-height: 400px;
+    overflow-y: auto;
+    gap: 10px;
     }
     /* Estilos para los widgets */
     .widget-item {
-        transition: all 0.3s ease;
+    transition: all 0.3s ease;
     }
 
     .scrollable-content {
-        max-height: 350px;
-        overflow-y: auto;
+    max-height: 350px;
+    overflow-y: auto;
     }
 
     /* Estilos para los widgets ocultos */
     #widgetsOcultos .card {
-        transition: all 0.3s ease;
-        border-left: 3px solid #6c757d;
+    transition: all 0.3s ease;
+    border-left: 3px solid #6c757d;
     }
 
-        #widgetsOcultos .card:hover {
-            opacity: 1 !important;
-            transform: translateY(-5px);
-            border-left: 3px solid #28a745;
-        }
+    #widgetsOcultos .card:hover {
+    opacity: 1 !important;
+    transform: translateY(-5px);
+    border-left: 3px solid #28a745;
+    }
 
     /* Estilos para el carrusel de Rick & Morty */
     .rick-carousel {
-        position: relative;
-        width: 100%;
-        overflow: hidden;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
     }
 
     .rick-slider {
-        display: flex;
-        transition: transform 0.5s ease;
+    display: flex;
+    transition: transform 0.5s ease;
     }
 
     .rick-card {
-        min-width: 100%;
-        padding: 10px;
+    min-width: 100%;
+    padding: 10px;
     }
 
-        .rick-card img {
-            width: 100%;
-            border-radius: 8px;
-        }
+    .rick-card img {
+    width: 100%;
+    border-radius: 8px;
+    }
 
     .rick-indicators {
-        display: flex;
-        justify-content: center;
-        margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
     }
 
     .rick-indicator {
-        width: 10px;
-        height: 10px;
-        background-color: #ddd;
-        border-radius: 50%;
-        margin: 0 5px;
-        cursor: pointer;
+    width: 10px;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
     }
 
-        .rick-indicator.active {
-            background-color: #007bff;
-        }
+    .rick-indicator.active {
+    background-color: #007bff;
+    }
 
     .rick-nav-button {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: rgba(0,0,0,0.5);
-        color: white;
-        border: none;
-        border-radius: 50%;
-        width: 30px;
-        height: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 10;
-        cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    cursor: pointer;
     }
 
     .rick-prev {
-        left: 5px;
+    left: 5px;
     }
 
     .rick-next {
-        right: 5px;
+    right: 5px;
     }
 </style>
 
@@ -236,140 +235,394 @@
                         <div class="card-body d-flex flex-column">
                             <div class="scrollable-content">
                                 <h5 class="card-title">@widget.Nombre</h5>
+                                <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#configModal-@widget.Id">
+                                    <i class="fas fa-cog"></i>
+                                </button>
 
                                 @if (ViewBag.DynamicData != null && ViewBag.DynamicData.ContainsKey(widget.Nombre))
                                 {
                                     var dynamicData = ViewBag.DynamicData[widget.Nombre];
 
                                     if (widget.UrlApi.Contains("openweathermap.org"))
-                                    {
-                                        <div class="weather-widget mt-auto">
-                                            <div class="d-flex align-items-center mb-2">
-                                                <i class="fas fa-cloud-sun fs-3 me-2"></i>
-                                                <span class="fs-5 fw-bold">Condiciones Actuales</span>
-                                            </div>
-                                            <ul class="list-unstyled">
-                                                <li class="py-1">
-                                                    <i class="fas fa-temperature-high me-2"></i>
-                                                    <strong>Temperatura:</strong> @dynamicData.Temp 째C
-                                                </li>
-                                                <li class="py-1">
-                                                    <i class="fas fa-tint me-2"></i>
-                                                    <strong>Humedad:</strong> @dynamicData.Humidity %
-                                                </li>
-                                                <li class="py-1">
-                                                    <i class="fas fa-tachometer-alt me-2"></i>
-                                                    <strong>Presi처n:</strong> @dynamicData.Pressure hPa
-                                                </li>
-                                            </ul>
-                                        </div>
+                                    {@switch (widget.ComponentId)
+                                        {
+                                            case 1:
+                                                <div class="weather-widget mt-auto">
+                                                    <div class="d-flex align-items-center mb-2">
+                                                        <i class="fas fa-cloud-sun fs-3 me-2"></i>
+                                                        <span class="fs-5 fw-bold">Condiciones Actuales</span>
+                                                    </div>
+                                                    <ul class="list-unstyled">
+                                                        <li class="py-1">
+                                                            <i class="fas fa-temperature-high me-2"></i>
+                                                            <strong>Temperatura:</strong> @dynamicData.Temp °C
+                                                        </li>
+                                                        <li class="py-1">
+                                                            <i class="fas fa-tint me-2"></i>
+                                                            <strong>Humedad:</strong> @dynamicData.Humidity %
+                                                        </li>
+                                                        <li class="py-1">
+                                                            <i class="fas fa-tachometer-alt me-2"></i>
+                                                            <strong>Presión:</strong> @dynamicData.Pressure hPa
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                break;
+
+                                            case 2:
+                                                <table class="table table-striped mt-auto">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Parámetro</th>
+                                                            <th>Valor</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>🌡️ Temperatura</td>
+                                                            <td>@dynamicData.Temp °C</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>💧 Humedad</td>
+                                                            <td>@dynamicData.Humidity %</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>🔽 Presión</td>
+                                                            <td>@dynamicData.Pressure hPa</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                break;
+
+                                            case 3:
+                                                <div class="custom-weather-widget mt-auto text-center p-3 border rounded bg-light">
+                                                    <h5 class="fw-bold">🌍 Datos Climatológicos</h5>
+                                                    <div class="d-flex justify-content-center">
+                                                        <div class="p-2">
+                                                            <i class="fas fa-temperature-high fs-3"></i>
+                                                            <p><strong>Temperatura:</strong> @dynamicData.Temp °C</p>
+                                                        </div>
+                                                        <div class="p-2">
+                                                            <i class="fas fa-tint fs-3"></i>
+                                                            <p><strong>Humedad:</strong> @dynamicData.Humidity %</p>
+                                                        </div>
+                                                        <div class="p-2">
+                                                            <i class="fas fa-tachometer-alt fs-3"></i>
+                                                            <p><strong>Presión:</strong> @dynamicData.Pressure hPa</p>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text-muted">Fuente: OpenWeatherMap API</p>
+                                                </div>
+                                                break;
+
+                                            default:
+                                                <p class="text-warning">No hay una configuración válida para este `ComponentId`.</p>
+                                                break;
+                                        }
                                     }
                                     else if (widget.UrlApi.Contains("exchangerate-api.com"))
                                     {
-                                        <!-- Widget de Tipo de Cambio -->
-                                        <div class="exchange-widget mt-auto">
-                                            <div class="d-flex align-items-center mb-2">
-                                                <i class="fas fa-money-bill-wave fs-3 me-2"></i>
-                                                <span class="fs-5 fw-bold">Tasas de Cambio</span>
-                                            </div>
-                                            <p class="text-muted small mb-3">
-                                                <i class="fas fa-sync-alt me-1"></i>
-                                                Actualizado: @dynamicData.LastUpdate
-                                            </p>
 
-                                            <div class="exchange-rates-grid mb-3">
-                                                @foreach (var rate in dynamicData.FeaturedRates)
-                                                {
-                                                    <div class="rate-item">
-                                                        <span class="currency-flag me-2" data-currency="@rate.Key"></span>
-                                                        <strong>@rate.Key:</strong>
-                                                        <span class="rate-value">@rate.Value.ToString("0.0000")</span>
+                                        @switch (widget.ComponentId)
+                                        {
+                                            case 1:
+                                                <!-- 🌍 Vista Clásica con Lista -->
+                                                <div class="exchange-widget mt-auto text-center p-3 border rounded bg-light">
+                                                    <h5 class="fw-bold">💰 Tasas de Cambio</h5>
+                                                    <p class="text-muted small">
+                                                        <i class="fas fa-sync-alt me-1"></i> Última actualización: @dynamicData.LastUpdate
+                                                    </p>
+
+                                                    <div class="d-flex justify-content-around">
+                                                        @foreach (var rate in dynamicData.FeaturedRates)
+                                                        {
+                                                            <div class="p-2">
+                                                                <i class="fas fa-coins fs-3"></i>
+                                                                <p><strong>@rate.Key:</strong> @rate.Value.ToString("0.0000")</p>
+                                                            </div>
+                                                        }
                                                     </div>
-                                                }
-                                            </div>
 
-                                            <button class="btn btn-sm btn-outline-primary w-100 mt-2"
-                                                    type="button"
-                                                    data-bs-toggle="collapse"
-                                                    data-bs-target="#allRates-@widget.Id">
-                                                <i class="fas fa-list me-1"></i> Ver todas las tasas
-                                            </button>
-
-                                            <div class="collapse mt-3" id="allRates-@widget.Id">
-                                                <div class="all-rates-container">
-                                                    @foreach (var rate in dynamicData.AllRates)
-                                                    {
-                                                        <div class="rate-item small">
-                                                            <span class="currency-flag me-2" data-currency="@rate.Key"></span>
-                                                            <strong>@rate.Key:</strong>
-                                                            <span class="rate-value">@rate.Value.ToString("0.0000")</span>
-                                                        </div>
-                                                    }
+                                                    <p class="text-muted">Fuente: ExchangeRate API</p>
                                                 </div>
-                                            </div>
-                                        </div>
+                                                break;
+
+                                            case 2:
+                                                <!-- 📊 Vista en Tabla -->
+                                                <div class="exchange-table mt-auto text-center p-3 border rounded bg-light">
+                                                    <h5 class="fw-bold">📊 Tasas de Cambio</h5>
+                                                    <table class="table table-striped">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Moneda</th>
+                                                                <th>Valor</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            @foreach (var rate in dynamicData.FeaturedRates)
+                                                            {
+                                                                <tr>
+                                                                    <td>@rate.Key</td>
+                                                                    <td>@rate.Value.ToString("0.0000")</td>
+                                                                </tr>
+                                                            }
+                                                        </tbody>
+                                                    </table>
+                                                    <p class="text-muted">Fuente: ExchangeRate API</p>
+                                                </div>
+                                                break;
+
+                                            case 3:
+                                                <!-- 💵 Diseño Personalizado -->
+                                                <div class="custom-exchange-widget mt-auto text-center p-3 border rounded bg-light">
+                                                    <h5 class="fw-bold">🌍 Conversión Rápida</h5>
+                                                    <p class="text-muted small">
+                                                        <i class="fas fa-sync-alt me-1"></i> Última actualización: @dynamicData.LastUpdate
+                                                    </p>
+
+                                                    <div class="d-flex justify-content-around">
+                                                        @foreach (var rate in dynamicData.FeaturedRates.Take(3))
+                                                        {
+                                                            <div class="p-2">
+                                                                <i class="fas fa-hand-holding-usd fs-3"></i>
+                                                                <p><strong>@rate.Key:</strong> @rate.Value.ToString("0.0000")</p>
+                                                            </div>
+                                                        }
+                                                    </div>
+
+                                                    <button class="btn btn-sm btn-outline-primary w-100 mt-2"
+                                                            type="button"
+                                                            data-bs-toggle="collapse"
+                                                            data-bs-target="#allRates-@widget.Id">
+                                                        <i class="fas fa-list me-1"></i> Ver Todas las Monedas
+                                                    </button>
+
+                                                    <div class="collapse mt-3" id="allRates-@widget.Id">
+                                                        <div class="all-rates-container">
+                                                            @foreach (var rate in dynamicData.AllRates)
+                                                            {
+                                                                <div class="rate-item small">
+                                                                    <strong>@rate.Key:</strong> @rate.Value.ToString("0.0000")
+                                                                </div>
+                                                            }
+                                                        </div>
+                                                    </div>
+
+                                                    <p class="text-muted">Fuente: ExchangeRate API</p>
+                                                </div>
+                                                break;
+
+                                            default:
+                                                <p class="text-warning">⚠️ No hay una configuración válida para `ComponentId`.</p>
+                                                break;
+                                        }
                                     }
                                     else if (widget.UrlApi.Contains("api.nasa.gov"))
                                     {
                                         var nasaData = ViewBag.DynamicData[widget.Nombre];
 
-                                        <div class="nasa-widget mt-auto">
-                                            <p class="text-muted">Fecha: @nasaData.Date</p>
-                                            <h6>@nasaData.Title</h6>
-                                            @if (nasaData.MediaType == "image")
-                                            {
-                                                <img src="@nasaData.Url" alt="Imagen APOD" class="img-fluid rounded shadow-sm" />
-                                            }
-                                            else if (nasaData.MediaType == "video")
-                                            {
-                                                <div class="ratio ratio-16x9">
-                                                    <iframe src="@nasaData.Url" frameborder="0" allowfullscreen></iframe>
+                                        @switch (widget.ComponentId)
+                                        {
+                                            case 1:
+                                                <!-- 🌌 Estilo clásico con imagen o video -->
+                                                <div class="nasa-widget mt-auto text-center p-3 border rounded bg-light">
+                                                    <p class="text-muted">📅 Fecha: @nasaData.Date</p>
+                                                    <h6 class="fw-bold">@nasaData.Title</h6>
+
+                                                    @if (nasaData.MediaType == "image")
+                                                    {
+                                                        <img src="@nasaData.Url" alt="Imagen APOD" class="img-fluid rounded shadow-sm" />
+                                                    }
+                                                    else if (nasaData.MediaType == "video")
+                                                    {
+                                                        <div class="ratio ratio-16x9">
+                                                            <iframe src="@nasaData.Url" frameborder="0" allowfullscreen></iframe>
+                                                        </div>
+                                                    }
+
+                                                    <p class="mt-3">@nasaData.Explanation</p>
+                                                    <p class="text-muted small">Fuente: NASA API</p>
                                                 </div>
-                                            }
-                                            <p>@nasaData.Explanation</p>
-                                        </div>
+                                                break;
+
+                                            case 2:
+                                                <!-- 🪐 Vista en Tabla con detalles -->
+                                                <div class="nasa-table mt-auto text-center p-3 border rounded bg-light">
+                                                    <h5 class="fw-bold">🔭 NASA APOD</h5>
+                                                    <table class="table table-striped">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Fecha</th>
+                                                                <th>Título</th>
+                                                                <th>Tipo</th>
+                                                                <th>Fuente</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>@nasaData.Date</td>
+                                                                <td>@nasaData.Title</td>
+                                                                <td>@nasaData.MediaType</td>
+                                                                <td><a href="@nasaData.Url" target="_blank">Ver contenido</a></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                break;
+
+                                            case 3:
+                                                <!-- 🚀 Diseño con tarjetas interactivas -->
+                                                <div class="custom-nasa-widget mt-auto text-center p-3 border rounded bg-light">
+                                                    <h5 class="fw-bold">✨ Exploración Espacial</h5>
+                                                    <p class="text-muted small">Última actualización: @nasaData.Date</p>
+
+                                                    <div class="d-flex justify-content-center">
+                                                        <div class="p-2">
+                                                            <i class="fas fa-rocket fs-3"></i>
+                                                            <p><strong>Misión:</strong> @nasaData.Title</p>
+                                                        </div>
+                                                        <div class="p-2">
+                                                            <i class="fas fa-globe fs-3"></i>
+                                                            <p><strong>Tipo:</strong> @nasaData.MediaType</p>
+                                                        </div>
+                                                    </div>
+
+                                                    @if (nasaData.MediaType == "image")
+                                                    {
+                                                        <img src="@nasaData.Url" alt="Imagen NASA" class="img-fluid rounded shadow-sm mt-3" />
+                                                    }
+                                                    else if (nasaData.MediaType == "video")
+                                                    {
+                                                        <div class="ratio ratio-16x9 mt-3">
+                                                            <iframe src="@nasaData.Url" frameborder="0" allowfullscreen></iframe>
+                                                        </div>
+                                                    }
+
+                                                    <button class="btn btn-sm btn-outline-primary w-100 mt-2"
+                                                            type="button"
+                                                            data-bs-toggle="collapse"
+                                                            data-bs-target="#nasaDetails-@widget.Id">
+                                                        <i class="fas fa-info-circle me-1"></i> Ver más detalles
+                                                    </button>
+
+                                                    <div class="collapse mt-3" id="nasaDetails-@widget.Id">
+                                                        <p>@nasaData.Explanation</p>
+                                                    </div>
+
+                                                    <p class="text-muted small mt-2">Fuente: NASA API</p>
+                                                </div>
+                                                break;
+
+                                            default:
+                                                <p class="text-warning">⚠️ No hay una configuración válida para `ComponentId`.</p>
+                                                break;
+                                        }
                                     }
                                     else if (widget.UrlApi.Contains("rickandmortyapi"))
                                     {
                                         var rickData = ViewBag.DynamicData[widget.Nombre] as List<MDashboard.Models.ApiModels.Character>;
 
-                                        <div class="rick-widget mt-auto">
-                                            <h5 class="card-title text-center mb-3">Personajes de Rick and Morty</h5>
-                                            <div class="rick-carousel">
-                                                <button class="rick-nav-button rick-prev">��</button>
-                                                <button class="rick-nav-button rick-next">��</button>
-                                                <div class="rick-slider">
-                                                    @foreach (var character in rickData)
-                                                    {
-                                                        <div class="rick-card">
-                                                            <img src="@character.Image" alt="@character.Name">
-                                                            <div class="rick-card-body">
-                                                                <h6 class="mb-2">@character.Name</h6>
-                                                                <div class="small">
-                                                                    <div class="d-flex justify-content-between">
-                                                                        <span>Especie:</span>
-                                                                        <strong>@character.Species</strong>
-                                                                    </div>
-                                                                    <div class="d-flex justify-content-between">
-                                                                        <span>G챕nero:</span>
-                                                                        <strong>@character.Gender</strong>
-                                                                    </div>
-                                                                    <div class="d-flex justify-content-between">
-                                                                        <span>Estado:</span>
-                                                                        <strong>@character.Status</strong>
-                                                                    </div>
-                                                                    <div class="d-flex justify-content-between">
-                                                                        <span>Origen:</span>
-                                                                        <strong>@character.Origin?.Name</strong>
+                                        @switch (widget.ComponentId)
+                                        {
+                                            case 1:
+                                                <!-- 🎭 Vista Clásica en Carrusel -->
+                                                <div class="rick-widget mt-auto text-center p-3 border rounded bg-light">
+                                                    <h5 class="fw-bold">🌀 Personajes de Rick and Morty</h5>
+                                                    <div class="rick-carousel">
+                                                        <button class="rick-nav-button rick-prev">⬅️</button>
+                                                        <button class="rick-nav-button rick-next">➡️</button>
+                                                        <div class="rick-slider">
+                                                            @foreach (var character in rickData)
+                                                            {
+                                                                <div class="rick-card">
+                                                                    <img src="@character.Image" alt="@character.Name" class="img-fluid rounded shadow-sm" />
+                                                                    <div class="rick-card-body">
+                                                                        <h6 class="mb-2">@character.Name</h6>
+                                                                        <p class="text-muted">@character.Status | @character.Species | @character.Gender</p>
                                                                     </div>
                                                                 </div>
-                                                            </div>
+                                                            }
                                                         </div>
-                                                    }
+                                                    </div>
+                                                    <div class="rick-indicators"></div>
                                                 </div>
-                                                <div class="rick-indicators"></div>
-                                            </div>
-                                        </div>
+                                                break;
+
+                                            case 2:
+                                                <!-- 📊 Tabla con Información Detallada -->
+                                                <div class="rick-table mt-auto text-center p-3 border rounded bg-light">
+                                                    <h5 class="fw-bold">📋 Lista de Personajes</h5>
+                                                    <table class="table table-striped">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Imagen</th>
+                                                                <th>Nombre</th>
+                                                                <th>Especie</th>
+                                                                <th>Género</th>
+                                                                <th>Estado</th>
+                                                                <th>Origen</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            @foreach (var character in rickData)
+                                                            {
+                                                                <tr>
+                                                                    <td><img src="@character.Image" alt="@character.Name" class="img-thumbnail" width="50"></td>
+                                                                    <td>@character.Name</td>
+                                                                    <td>@character.Species</td>
+                                                                    <td>@character.Gender</td>
+                                                                    <td>@character.Status</td>
+                                                                    <td>@character.Origin?.Name</td>
+                                                                </tr>
+                                                            }
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                break;
+
+                                            case 3:
+                                                <!-- 🚀 Tarjetas con Estilos Personalizados -->
+                                                <div class="custom-rick-widget mt-auto text-center p-3 border rounded bg-light">
+                                                    <h5 class="fw-bold">💥 Dimensiones Alternativas</h5>
+                                                    <div class="d-flex flex-wrap justify-content-center">
+                                                        @foreach (var character in rickData.Take(6))
+                                                        {
+                                                            <div class="p-2 m-1 border rounded shadow-sm bg-dark text-white">
+                                                                <img src="@character.Image" alt="@character.Name" class="img-fluid rounded mb-2" width="100" />
+                                                                <p><strong>@character.Name</strong></p>
+                                                                <p class="small">@character.Species | @character.Gender</p>
+                                                            </div>
+                                                        }
+                                                    </div>
+
+                                                    <button class="btn btn-sm btn-outline-light w-100 mt-2"
+                                                            type="button"
+                                                            data-bs-toggle="collapse"
+                                                            data-bs-target="#rickDetails-@widget.Id">
+                                                        <i class="fas fa-info-circle me-1"></i> Ver más personajes
+                                                    </button>
+
+                                                    <div class="collapse mt-3" id="rickDetails-@widget.Id">
+                                                        <div class="d-flex flex-wrap justify-content-center">
+                                                            @foreach (var character in rickData.Skip(6))
+                                                            {
+                                                                <div class="p-2 m-1 border rounded shadow-sm bg-dark text-white">
+                                                                    <img src="@character.Image" alt="@character.Name" class="img-fluid rounded mb-2" width="100" />
+                                                                    <p><strong>@character.Name</strong></p>
+                                                                    <p class="small">@character.Species | @character.Gender</p>
+                                                                </div>
+                                                            }
+                                                        </div>
+                                                    </div>
+
+                                                    <p class="text-muted small mt-2">Fuente: Rick and Morty API</p>
+                                                </div>
+                                                break;
+
+                                            default:
+                                                <p class="text-warning">⚠️ No hay una configuración válida para `ComponentId`.</p>
+                                                break;
+                                        }
                                     }
                                     else
                                     {
