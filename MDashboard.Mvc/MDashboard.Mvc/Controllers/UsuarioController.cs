@@ -4,6 +4,9 @@ using MDashboard.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace MDashboard.Mvc.Controllers
 {
@@ -92,10 +95,13 @@ namespace MDashboard.Mvc.Controllers
         [HttpGet]
         public IActionResult Login()
         {
+            if (User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Index", "Dashboard");
+            }
             return View();
         }
 
-        // Método para iniciar sesión
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(string email, string passwordHash)
@@ -106,16 +112,20 @@ namespace MDashboard.Mvc.Controllers
 
                 if (usuario != null)
                 {
+                    var claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.NameIdentifier, usuario.Id.ToString()),
+                new Claim(ClaimTypes.Name, usuario.Nombre),
+                new Claim(ClaimTypes.Email, usuario.Email),
+                new Claim(ClaimTypes.Role, usuario.Rol),
+            };
 
-                    HttpContext.Session.SetInt32("Id", usuario.Id);
-                    HttpContext.Session.SetString("Nombre", usuario.Nombre);
-                    HttpContext.Session.SetString("Rol", usuario.Rol);
+                    var identity = new ClaimsIdentity(claims, "CookieAuth");
+                    var principal = new ClaimsPrincipal(identity);
 
-                    ViewBag.IdUsuario = usuario.Id;
-                    ViewBag.NombreUsuario = usuario.Nombre;
-                    ViewBag.RolUsuario = usuario.Rol;
+                    await HttpContext.SignInAsync("Cookies", principal);
 
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Dashboard");
                 }
                 else
                 {
@@ -123,12 +133,13 @@ namespace MDashboard.Mvc.Controllers
                     return View();
                 }
             }
-            catch (Exception ex)
+            catch
             {
                 ViewBag.MensajePantalla = "Ocurrió un error inesperado. Por favor, inténtalo nuevamente.";
                 return View();
             }
         }
+
 
 
 
@@ -163,9 +174,9 @@ namespace MDashboard.Mvc.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Logout()
+        public async Task<IActionResult> CerrarSession()
         {
-            HttpContext.Session.Clear();
+            await HttpContext.SignOutAsync("Cookies"); // aquí va "Cookies"
             return RedirectToAction("Login", "Usuario");
         }
     }

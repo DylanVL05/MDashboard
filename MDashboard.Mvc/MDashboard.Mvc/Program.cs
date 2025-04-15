@@ -3,41 +3,48 @@ using MDashboard.Business.Factory;
 using MDashboard.Business.Services;
 using MDashboard.Data.Models;
 using MDashboard.Repository;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Configuración de la base de datos
 builder.Services.AddDbContext<MediaDashboardContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
 );
 
-// Add services to the container.
-builder.Services.AddControllersWithViews();
-
-builder.Services.AddHttpClient(); // Para inyectar HttpClient
-builder.Services.AddScoped<WidgetApiFactory>(); // Para la creación de clientes de API
-builder.Services.AddScoped<IWidgetRepository, WidgetRepository>(); // Repositorio
+// Inyección de dependencias
+builder.Services.AddScoped<WidgetApiFactory>();
+builder.Services.AddScoped<IWidgetRepository, WidgetRepository>();
 builder.Services.AddScoped<WidgetService>();
-builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>(); // Repositorio de usuario 
-builder.Services.AddScoped<IUsuarioBusiness, UsuarioBusiness>(); // Repositorio de usuario 
+builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+builder.Services.AddScoped<IUsuarioBusiness, UsuarioBusiness>();
 builder.Services.AddScoped<IComponentRepository, ComponentRepository>();
 builder.Services.AddScoped<IConfiguracionWidgetsBusiness, ConfiguracionWidgetsBusiness>();
 builder.Services.AddScoped<IConfiguracionWidgetsRepository, ConfiguracionWidgetsRepository>();
 
-//Soporte para los controladores y vistas.
+builder.Services.AddHttpClient();
+builder.Services.AddHttpContextAccessor();
 builder.Services.AddControllersWithViews();
 
-//Se agrega la sesión (basicamente sirve para la gestion de las sesiones)
-builder.Services.AddSession(/*Aqui se puede realizar las configuraciones de la sesión (Investigar)*/);
-builder.Services.AddHttpContextAccessor();
+// Sesión
+builder.Services.AddSession();
+
+// AUTENTICACIÓN CON COOKIES Y CLAIMS
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/Usuario/Login";
+        options.LogoutPath = "/Usuario/Logout";
+        options.AccessDeniedPath = "/Usuario/AccessDenied"; // Puedes crear esta vista si deseas
+    });
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Middleware
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
@@ -48,10 +55,19 @@ app.UseRouting();
 
 app.UseSession();
 
+// AUTENTICACIÓN Y AUTORIZACIÓN
+app.UseAuthentication(); // <- ¡IMPORTANTE!
 app.UseAuthorization();
 
+// Rutas protegidas
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Usuario}/{action=Login}/{id?}");
+
+// Routes that require authorization
+app.MapControllerRoute(
+    name: "authenticated",
+    pattern: "{controller=Dashboard}/{action=Index}/{id?}")
+    .RequireAuthorization();
 
 app.Run();

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MDashboard.Mvc")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e0511c02728557a4c12db50306918e72ddbfedfb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bf82c1679983404e79bb3319cc660cb5cfc473af")]
 [assembly: System.Reflection.AssemblyProductAttribute("MDashboard.Mvc")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MDashboard.Mvc")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -42,25 +42,20 @@
                         </li>
                     </ul>
 
-                    <!-- Información de usuario y logout -->
                     <ul class="navbar-nav ms-auto">
-                        @if (HttpContextAccessor.HttpContext.Session.GetString("Nombre") != null)
+                        @if (User.Identity != null && User.Identity.IsAuthenticated)
                         {
-                            <li class="nav-item">
-                                <span class="nav-link">Bienvenido, @HttpContextAccessor.HttpContext.Session.GetString("Nombre")</span>
+                            <li class="nav-item d-flex align-items-center">
+                                <span class="nav-link">
+                                    <i class="bi bi-person-circle"></i> @User.Identity.Name
+                                </span>
                             </li>
                             <li class="nav-item">
-                                <form asp-controller="Usuario" asp-action="Logout" method="post" class="logout-form">
-                                    <button type="submit" class="nav-link logout-button">
-                                        Cerrar Sesión
+                                <form asp-controller="Usuario" asp-action="CerrarSession" method="post" class="logout-form">
+                                    <button type="submit" class="nav-link btn btn-link text-white logout-button">
+                                        <i class="bi bi-box-arrow-right"></i> Cerrar Sesión
                                     </button>
                                 </form>
-                            </li>
-                        }
-                        else
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link" asp-controller="Usuario" asp-action="Login">Iniciar Sesión</a>
                             </li>
                         }
                     </ul>

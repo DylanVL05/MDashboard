@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 
 namespace MDashboard.Controllers
 {
-    //[Authorize(Roles = "User")]  // Solo accesible para usuarios con rol 'User'
+    [Authorize]
     public class DashboardController : Controller
     {
         private readonly IWidgetRepository _widgetRepository;

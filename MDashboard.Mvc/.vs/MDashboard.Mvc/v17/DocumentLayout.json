@@ -1,12 +1,207 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\ProyectosVisual\\MDashboard\\MDashboard.Mvc\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|d:\\proyectosvisual\\mdashboard\\mdashboard.mvc\\mdashboard.mvc\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|solutionrelative:mdashboard.mvc\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|d:\\proyectosvisual\\mdashboard\\mdashboard.mvc\\mdashboard.mvc\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|solutionrelative:mdashboard.mvc\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|d:\\proyectosvisual\\mdashboard\\mdashboard.mvc\\mdashboard.mvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|solutionrelative:mdashboard.mvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|d:\\proyectosvisual\\mdashboard\\mdashboard.mvc\\mdashboard.mvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|solutionrelative:mdashboard.mvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|d:\\proyectosvisual\\mdashboard\\mdashboard.mvc\\mdashboard.mvc\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|solutionrelative:mdashboard.mvc\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D536AE8-F09E-44B1-94E7-FE1BACE4C834}|MDashboard.Services\\MDashboard.Services.csproj|d:\\proyectosvisual\\mdashboard\\mdashboard.mvc\\mdashboard.services\\widgetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D536AE8-F09E-44B1-94E7-FE1BACE4C834}|MDashboard.Services\\MDashboard.Services.csproj|solutionrelative:mdashboard.services\\widgetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{352509CE-5BAA-4B1D-BCC0-F0CC3143B586}|MDashboard.Repository\\MDashboard.Repository.csproj|d:\\proyectosvisual\\mdashboard\\mdashboard.mvc\\mdashboard.repository\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{352509CE-5BAA-4B1D-BCC0-F0CC3143B586}|MDashboard.Repository\\MDashboard.Repository.csproj|solutionrelative:mdashboard.repository\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97FFF6AA-5B12-4BE3-BE9E-408435668DB2}|MDashboard.Models\\MDashboard.Models.csproj|d:\\proyectosvisual\\mdashboard\\mdashboard.mvc\\mdashboard.models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97FFF6AA-5B12-4BE3-BE9E-408435668DB2}|MDashboard.Models\\MDashboard.Models.csproj|solutionrelative:mdashboard.models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EE1DDD7-4E31-43C0-9B16-13F38CB86975}|MDashboard.Business\\MDashboard.Business.csproj|d:\\proyectosvisual\\mdashboard\\mdashboard.mvc\\mdashboard.business\\usuario\\usuariobusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EE1DDD7-4E31-43C0-9B16-13F38CB86975}|MDashboard.Business\\MDashboard.Business.csproj|solutionrelative:mdashboard.business\\usuario\\usuariobusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D687B3D4-287A-45AF-89F4-96811F858552}|MDashboard.Data\\MDashboard.Data.csproj|d:\\proyectosvisual\\mdashboard\\mdashboard.mvc\\mdashboard.data\\models\\mediadashboardcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D687B3D4-287A-45AF-89F4-96811F858552}|MDashboard.Data\\MDashboard.Data.csproj|solutionrelative:mdashboard.data\\models\\mediadashboardcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D687B3D4-287A-45AF-89F4-96811F858552}|MDashboard.Data\\MDashboard.Data.csproj|d:\\proyectosvisual\\mdashboard\\mdashboard.mvc\\mdashboard.data\\mdashboard.data.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{D687B3D4-287A-45AF-89F4-96811F858552}|MDashboard.Data\\MDashboard.Data.csproj|solutionrelative:mdashboard.data\\mdashboard.data.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DashboardController.cs",
+              "DocumentMoniker": "D:\\ProyectosVisual\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Controllers\\DashboardController.cs",
+              "RelativeDocumentMoniker": "MDashboard.Mvc\\Controllers\\DashboardController.cs",
+              "ToolTip": "D:\\ProyectosVisual\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Controllers\\DashboardController.cs",
+              "RelativeToolTip": "MDashboard.Mvc\\Controllers\\DashboardController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T09:06:41.871Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\ProyectosVisual\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Dashboard\\Index.cshtml",
+              "RelativeDocumentMoniker": "MDashboard.Mvc\\Views\\Dashboard\\Index.cshtml",
+              "ToolTip": "D:\\ProyectosVisual\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Dashboard\\Index.cshtml",
+              "RelativeToolTip": "MDashboard.Mvc\\Views\\Dashboard\\Index.cshtml",
+              "ViewState": "AgIAAGABAAAAAAAAAAAswHEBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-15T09:06:34.218Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "WidgetService.cs",
+              "DocumentMoniker": "D:\\ProyectosVisual\\MDashboard\\MDashboard.Mvc\\MDashboard.Services\\WidgetService.cs",
+              "RelativeDocumentMoniker": "MDashboard.Services\\WidgetService.cs",
+              "ToolTip": "D:\\ProyectosVisual\\MDashboard\\MDashboard.Mvc\\MDashboard.Services\\WidgetService.cs",
+              "RelativeToolTip": "MDashboard.Services\\WidgetService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T09:06:14.19Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UsuarioRepository.cs",
+              "DocumentMoniker": "D:\\ProyectosVisual\\MDashboard\\MDashboard.Mvc\\MDashboard.Repository\\UsuarioRepository.cs",
+              "RelativeDocumentMoniker": "MDashboard.Repository\\UsuarioRepository.cs",
+              "ToolTip": "D:\\ProyectosVisual\\MDashboard\\MDashboard.Mvc\\MDashboard.Repository\\UsuarioRepository.cs",
+              "RelativeToolTip": "MDashboard.Repository\\UsuarioRepository.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAswGQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T09:06:03.823Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\ProyectosVisual\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Program.cs",
+              "RelativeDocumentMoniker": "MDashboard.Mvc\\Program.cs",
+              "ToolTip": "D:\\ProyectosVisual\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Program.cs",
+              "RelativeToolTip": "MDashboard.Mvc\\Program.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAswEYAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T09:05:13.115Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\ProyectosVisual\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "MDashboard.Mvc\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\ProyectosVisual\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "MDashboard.Mvc\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAADsAAAAAAAAAAAAswFQAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-15T09:05:03.282Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UsuarioController.cs",
+              "DocumentMoniker": "D:\\ProyectosVisual\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Controllers\\UsuarioController.cs",
+              "RelativeDocumentMoniker": "MDashboard.Mvc\\Controllers\\UsuarioController.cs",
+              "ToolTip": "D:\\ProyectosVisual\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Controllers\\UsuarioController.cs",
+              "RelativeToolTip": "MDashboard.Mvc\\Controllers\\UsuarioController.cs",
+              "ViewState": "AgIAAIoAAAAAAAAAAAAgwLcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T09:04:22.947Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "D:\\ProyectosVisual\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\Usuario.cs",
+              "RelativeDocumentMoniker": "MDashboard.Models\\Usuario.cs",
+              "ToolTip": "D:\\ProyectosVisual\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\Usuario.cs",
+              "RelativeToolTip": "MDashboard.Models\\Usuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T09:04:01.662Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UsuarioBusiness.cs",
+              "DocumentMoniker": "D:\\ProyectosVisual\\MDashboard\\MDashboard.Mvc\\MDashboard.Business\\Usuario\\UsuarioBusiness.cs",
+              "RelativeDocumentMoniker": "MDashboard.Business\\Usuario\\UsuarioBusiness.cs",
+              "ToolTip": "D:\\ProyectosVisual\\MDashboard\\MDashboard.Mvc\\MDashboard.Business\\Usuario\\UsuarioBusiness.cs",
+              "RelativeToolTip": "MDashboard.Business\\Usuario\\UsuarioBusiness.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAswEsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T09:03:42.513Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "MediaDashboardContext.cs",
+              "DocumentMoniker": "D:\\ProyectosVisual\\MDashboard\\MDashboard.Mvc\\MDashboard.Data\\Models\\MediaDashboardContext.cs",
+              "RelativeDocumentMoniker": "MDashboard.Data\\Models\\MediaDashboardContext.cs",
+              "ToolTip": "D:\\ProyectosVisual\\MDashboard\\MDashboard.Mvc\\MDashboard.Data\\Models\\MediaDashboardContext.cs",
+              "RelativeToolTip": "MDashboard.Data\\Models\\MediaDashboardContext.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAkwCAAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T09:00:53.471Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "MDashboard.Data",
+              "DocumentMoniker": "D:\\ProyectosVisual\\MDashboard\\MDashboard.Mvc\\MDashboard.Data\\MDashboard.Data.csproj",
+              "RelativeDocumentMoniker": "MDashboard.Data\\MDashboard.Data.csproj",
+              "ToolTip": "D:\\ProyectosVisual\\MDashboard\\MDashboard.Mvc\\MDashboard.Data\\MDashboard.Data.csproj",
+              "RelativeToolTip": "MDashboard.Data\\MDashboard.Data.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-04-15T09:00:49.169Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
