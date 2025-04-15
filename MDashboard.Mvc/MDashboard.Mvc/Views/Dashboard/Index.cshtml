@@ -599,32 +599,33 @@
         // Función para actualizar los widgets parciales mediante Ajax
         function actualizarWidgets() {
             $.ajax({
-                url: '@Url.Action("ObtenerWidgetsParciales", "Dashboard")',
+                url: '@Url.Action("Index", "Dashboard")',
                 type: 'GET',
-                success: function (html) {
+                data: { partial: true },
+                success: function (response) {
+                    const tempDiv = $('<div>').html(response.html);
+                    const newWidgets = tempDiv.find('#widgetsContainer').html();
+
                     const $container = $('#widgetsContainer');
 
-                    // Animación de salida
                     $container.addClass('fade-scale-out');
 
                     setTimeout(() => {
-                        $container.html(html); // Reemplazar contenido
-
-                        // Animación de entrada
+                        $container.html(newWidgets);
                         $container.removeClass('fade-scale-out').addClass('fade-scale-in');
 
-                        // Limpiar la clase tras la animación y re-inicializar carruseles
                         setTimeout(() => {
                             $container.removeClass('fade-scale-in');
                             inicializarRickCarousels();
-                        }, 300); // duración de la animación de entrada
-                    }, 300); // duración de la animación de salida
+                        }, 300);
+                    }, 300);
                 },
                 error: function () {
                     console.error("Error al actualizar los widgets");
                 }
             });
         }
+
 
         // Actualizar los widgets cada 30 segundos
         setInterval(actualizarWidgets, 30000);

@@ -11,6 +11,8 @@ using Newtonsoft.Json;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using MDashboard.Data.Models;
+using MDashboard.Helpers;
+
 
 namespace MDashboard.Controllers
 {
@@ -30,44 +32,43 @@ namespace MDashboard.Controllers
 
         // Acción para mostrar el dashboard con los widgets existentes
         [HttpGet]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(bool partial = false)
         {
             try
             {
                 int usuarioId = ObtenerUsuarioActual();
 
-                // Obtener todos los widgets activos
                 var todosLosWidgets = await _widgetRepository.ObtenerWidgetsActivosAsync();
 
-                // Obtener configuraciones del usuario actual
                 var configuracionesUsuario = await _context.ConfiguracionWidgets
                     .Where(c => c.UsuarioId == usuarioId)
                     .ToDictionaryAsync(c => c.WidgetId, c => c);
 
-                // Separar widgets en visibles y ocultos según la configuración guardada
                 var widgetsVisibles = new List<Widget>();
                 var widgetsOcultos = new List<Widget>();
 
                 foreach (var widget in todosLosWidgets)
                 {
-                    // Si existe configuración y está marcado como no visible, lo ponemos en ocultos
                     if (configuracionesUsuario.TryGetValue(widget.Id, out var config) && !config.EsVisible)
                     {
                         widgetsOcultos.Add(widget);
                     }
                     else
                     {
-                        // Si no hay configuración o está marcado como visible
                         widgetsVisibles.Add(widget);
                     }
                 }
 
-                // Obtener los datos dinámicos de los widgets
                 var dynamicData = await _widgetService.ObtenerDatosDeWidgetsAsync();
-
-                // Pasar los datos a la vista
                 ViewBag.DynamicData = dynamicData ?? new Dictionary<string, object>();
                 ViewBag.WidgetsOcultos = widgetsOcultos;
+
+                if (partial && Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+                {
+                    // Renderiza el contenido como string
+                    var html = await this.RenderViewAsync("Index", widgetsVisibles, true);
+                    return Json(new { html });
+                }
 
                 return View(widgetsVisibles);
             }
