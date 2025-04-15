@@ -19,7 +19,7 @@ public partial class ConfiguracionWidget
 
     public bool? EsFavorito { get; set; }
 
-    public bool EsVisible { get; set; }
+    public bool? EsVisible { get; set; }
 
     public virtual Usuario Usuario { get; set; } = null!;
 

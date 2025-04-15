@@ -1,7 +1,6 @@
-﻿
-@using Newtonsoft.Json
-@using Newtonsoft.Json.Linq
+﻿@using Newtonsoft.Json
 @model IEnumerable<MDashboard.Models.Widget>
+
 <style>
     .card {
         height: 100%;
@@ -129,103 +128,128 @@
     #apiContainer {
         display: flex;
         flex-direction: column;
-        max-height: 400px;
+        max-height: 400px; /* Ajusta según el espacio disponible */
         overflow-y: auto;
-        gap: 10px;
+        gap: 10px; /* Espaciado entre APIs */
     }
+
 </style>
+
 <div class="container mt-4">
     <h2>Dashboard</h2>
 
-    <!-- Sección de widgets visibles -->
-    <div class="mb-4">
-        <h4>Widgets Activos</h4>
-        <div class="row row-cols-1 row-cols-md-3 g-4" id="widgetsContainer">
+    <!-- Dropdown para controlar la visibilidad de widgets -->
+    <div class="dropdown mb-3">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="widgetVisibilityDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            Mostrar/Ocultar Widgets
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="widgetVisibilityDropdown" id="widgetVisibilityMenu">
             @foreach (var widget in Model)
             {
-                <div class="col mb-4 widget-item" data-widget-id="@widget.Id" id="widget-@widget.Id">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <div class="scrollable-content">
-                                <h5 class="card-title">@widget.Nombre</h5>
+                <li>
+                    <div class="form-check dropdown-item">
+                        <input class="form-check-input widget-visibility" type="checkbox"
+                               value="@widget.Id" id="widget-@widget.Id"
+                               data-widget-id="@widget.Id" checked>
+                        <label class="form-check-label" for="widget-@widget.Id">
+                            @widget.Nombre
+                        </label>
+                    </div>
+                </li>
+            }
+        </ul>
+    </div>
 
-                                @if (ViewBag.DynamicData != null && ViewBag.DynamicData.ContainsKey(widget.Nombre))
+    <div class="row row-cols-1 row-cols-md-3 g-4" id="widgetsContainer">
+        @foreach (var widget in Model)
+        {
+            <div class="col mb-4 widget-item" data-widget-id="@widget.Id">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex flex-column">
+                        <div class="scrollable-content">
+                            <h5 class="card-title">@widget.Nombre</h5>
+
+                            @if (ViewBag.DynamicData != null && ViewBag.DynamicData.ContainsKey(widget.Nombre))
+                            {
+                                var dynamicData = ViewBag.DynamicData[widget.Nombre];
+
+                                if (widget.UrlApi.Contains("openweathermap.org"))
                                 {
-                                    var dynamicData = ViewBag.DynamicData[widget.Nombre];
-
-                                    if (widget.UrlApi.Contains("openweathermap.org"))
-                                    {
-                                        <div class="weather-widget mt-auto">
-                                            <div class="d-flex align-items-center mb-2">
-                                                <i class="fas fa-cloud-sun fs-3 me-2"></i>
-                                                <span class="fs-5 fw-bold">Condiciones Actuales</span>
-                                            </div>
-                                            <ul class="list-unstyled">
-                                                <li class="py-1">
-                                                    <i class="fas fa-temperature-high me-2"></i>
-                                                    <strong>Temperatura:</strong> @dynamicData.Temp °C
-                                                </li>
-                                                <li class="py-1">
-                                                    <i class="fas fa-tint me-2"></i>
-                                                    <strong>Humedad:</strong> @dynamicData.Humidity %
-                                                </li>
-                                                <li class="py-1">
-                                                    <i class="fas fa-tachometer-alt me-2"></i>
-                                                    <strong>Presión:</strong> @dynamicData.Pressure hPa
-                                                </li>
-                                            </ul>
+                                    <!-- Widget de Clima -->
+                                    <div class="weather-widget mt-auto">
+                                        <div class="d-flex align-items-center mb-2">
+                                            <i class="fas fa-cloud-sun fs-3 me-2"></i>
+                                            <span class="fs-5 fw-bold">Condiciones Actuales</span>
                                         </div>
-                                    }
-                                    else if (widget.UrlApi.Contains("exchangerate-api.com"))
-                                    {
-                                        <!-- Widget de Tipo de Cambio -->
-                                        <div class="exchange-widget mt-auto">
-                                            <div class="d-flex align-items-center mb-2">
-                                                <i class="fas fa-money-bill-wave fs-3 me-2"></i>
-                                                <span class="fs-5 fw-bold">Tasas de Cambio</span>
-                                            </div>
-                                            <p class="text-muted small mb-3">
-                                                <i class="fas fa-sync-alt me-1"></i>
-                                                Actualizado: @dynamicData.LastUpdate
-                                            </p>
+                                        <ul class="list-unstyled">
+                                            <li class="py-1">
+                                                <i class="fas fa-temperature-high me-2"></i>
+                                                <strong>Temperatura:</strong> @dynamicData.Temp °C
+                                            </li>
+                                            <li class="py-1">
+                                                <i class="fas fa-tint me-2"></i>
+                                                <strong>Humedad:</strong> @dynamicData.Humidity %
+                                            </li>
+                                            <li class="py-1">
+                                                <i class="fas fa-tachometer-alt me-2"></i>
+                                                <strong>Presión:</strong> @dynamicData.Pressure hPa
+                                            </li>
+                                        </ul>
+                                    </div>
+                                }
+                                else if (widget.UrlApi.Contains("exchangerate-api.com"))
+                                {
+                                    <!-- Widget de Tipo de Cambio -->
+                                    <div class="exchange-widget mt-auto">
+                                        <div class="d-flex align-items-center mb-2">
+                                            <i class="fas fa-money-bill-wave fs-3 me-2"></i>
+                                            <span class="fs-5 fw-bold">Tasas de Cambio</span>
+                                        </div>
+                                        <p class="text-muted small mb-3">
+                                            <i class="fas fa-sync-alt me-1"></i>
+                                            Actualizado: @dynamicData.LastUpdate
+                                        </p>
 
-                                            <div class="exchange-rates-grid mb-3">
-                                                @foreach (var rate in dynamicData.FeaturedRates)
+                                        <div class="exchange-rates-grid mb-3">
+                                            @foreach (var rate in dynamicData.FeaturedRates)
+                                            {
+                                                <div class="rate-item">
+                                                    <span class="currency-flag me-2" data-currency="@rate.Key"></span>
+                                                    <strong>@rate.Key:</strong>
+                                                    <span class="rate-value">@rate.Value.ToString("0.0000")</span>
+                                                </div>
+                                            }
+                                        </div>
+
+                                        <button class="btn btn-sm btn-outline-primary w-100 mt-2"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#allRates-@widget.Id">
+                                            <i class="fas fa-list me-1"></i> Ver todas las tasas
+                                        </button>
+
+                                        <div class="collapse mt-3" id="allRates-@widget.Id">
+                                            <div class="all-rates-container">
+                                                @foreach (var rate in dynamicData.AllRates)
                                                 {
-                                                    <div class="rate-item">
+                                                    <div class="rate-item small">
                                                         <span class="currency-flag me-2" data-currency="@rate.Key"></span>
                                                         <strong>@rate.Key:</strong>
                                                         <span class="rate-value">@rate.Value.ToString("0.0000")</span>
                                                     </div>
                                                 }
                                             </div>
-
-                                            <button class="btn btn-sm btn-outline-primary w-100 mt-2"
-                                                    type="button"
-                                                    data-bs-toggle="collapse"
-                                                    data-bs-target="#allRates-@widget.Id">
-                                                <i class="fas fa-list me-1"></i> Ver todas las tasas
-                                            </button>
-
-                                            <div class="collapse mt-3" id="allRates-@widget.Id">
-                                                <div class="all-rates-container">
-                                                    @foreach (var rate in dynamicData.AllRates)
-                                                    {
-                                                        <div class="rate-item small">
-                                                            <span class="currency-flag me-2" data-currency="@rate.Key"></span>
-                                                            <strong>@rate.Key:</strong>
-                                                            <span class="rate-value">@rate.Value.ToString("0.0000")</span>
-                                                        </div>
-                                                    }
-                                                </div>
-                                            </div>
                                         </div>
-                                    }
-                                    else if (widget.UrlApi.Contains("api.nasa.gov"))
-                                    {
-                                        var nasaData = ViewBag.DynamicData[widget.Nombre];
+                                    </div>
+                                }
+                                else if (widget.UrlApi.Contains("api.nasa.gov"))
+                                {
+                                    <!-- Widget NASA -->
+                                    <div class="nasa-widget mt-auto">
+                                        @if (ViewBag.DynamicData[widget.Nombre] != null)
+                                        {
+                                            var nasaData = ViewBag.DynamicData[widget.Nombre];
 
-                                        <div class="nasa-widget mt-auto">
                                             <p class="text-muted">Fecha: @nasaData.Date</p>
                                             <h6>@nasaData.Title</h6>
                                             @if (nasaData.MediaType == "image")
@@ -238,125 +262,103 @@
                                                     <iframe src="@nasaData.Url" frameborder="0" allowfullscreen></iframe>
                                                 </div>
                                             }
+                                            else
+                                            {
+                                                <p class="text-danger">Tipo de contenido no compatible.</p>
+                                            }
                                             <p>@nasaData.Explanation</p>
-                                        </div>
-                                    }
-                                    else if (widget.UrlApi.Contains("rickandmortyapi"))
-                                    {
-                                        var rickData = ViewBag.DynamicData[widget.Nombre] as List<MDashboard.Models.ApiModels.Character>;
 
-                                        <div class="rick-widget mt-auto">
-                                            <h5 class="card-title text-center mb-3">Personajes de Rick and Morty</h5>
-                                            <div class="rick-carousel">
-                                                <button class="rick-nav-button rick-prev">❮</button>
-                                                <button class="rick-nav-button rick-next">❯</button>
-                                                <div class="rick-slider">
-                                                    @foreach (var character in rickData)
-                                                    {
-                                                        <div class="rick-card">
-                                                            <img src="@character.Image" alt="@character.Name">
-                                                            <div class="rick-card-body">
-                                                                <h6 class="mb-2">@character.Name</h6>
-                                                                <div class="small">
-                                                                    <div class="d-flex justify-content-between">
-                                                                        <span>Especie:</span>
-                                                                        <strong>@character.Species</strong>
-                                                                    </div>
-                                                                    <div class="d-flex justify-content-between">
-                                                                        <span>Género:</span>
-                                                                        <strong>@character.Gender</strong>
-                                                                    </div>
-                                                                    <div class="d-flex justify-content-between">
-                                                                        <span>Estado:</span>
-                                                                        <strong>@character.Status</strong>
-                                                                    </div>
-                                                                    <div class="d-flex justify-content-between">
-                                                                        <span>Origen:</span>
-                                                                        <strong>@character.Origin?.Name</strong>
-                                                                    </div>
+                                            
+                                        }
+                                        else
+                                        {
+                                            <div class="alert alert-warning">
+                                                <i class="fas fa-exclamation-triangle me-2"></i>
+                                                No hay datos disponibles para el widget de NASA.
+                                            </div>
+                                        }
+                                    </div>
+                                }
+                                else if (widget.UrlApi.Contains("rickandmortyapi"))
+                                {
+                                    var rickData = ViewBag.DynamicData[widget.Nombre] as List<MDashboard.Models.ApiModels.Character>;
+
+                                    <!-- Widget Rick and Morty -->
+                                    <div class="rick-widget mt-auto">
+                                        <h5 class="card-title text-center mb-3">Personajes de Rick and Morty</h5>
+                                        <div class="rick-carousel">
+                                            <button class="rick-nav-button rick-prev">❮</button>
+                                            <button class="rick-nav-button rick-next">❯</button>
+                                            <div class="rick-slider">
+                                                @foreach (var character in rickData)
+                                                {
+                                                    <div class="rick-card">
+                                                        <img src="@character.Image" alt="@character.Name">
+                                                        <div class="rick-card-body">
+                                                            <h6 class="mb-2">@character.Name</h6>
+                                                            <div class="small">
+                                                                <div class="d-flex justify-content-between">
+                                                                    <span>Especie:</span>
+                                                                    <strong>@character.Species</strong>
+                                                                </div>
+                                                                <div class="d-flex justify-content-between">
+                                                                    <span>Género:</span>
+                                                                    <strong>@character.Gender</strong>
+                                                                </div>
+                                                                <div class="d-flex justify-content-between">
+                                                                    <span>Estado:</span>
+                                                                    <strong>@character.Status</strong>
+                                                                </div>
+                                                                <div class="d-flex justify-content-between">
+                                                                    <span>Origen:</span>
+                                                                    <strong>@character.Origin?.Name</strong>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    }
-                                                </div>
-                                                <div class="rick-indicators"></div>
+                                                    </div>
+                                                }
                                             </div>
+                                            <div class="rick-indicators"></div>
                                         </div>
-                                    }
-                                    else
-                                    {
-                                        <div class="generic-widget mt-auto">
-                                            <pre class="p-2 bg-light rounded">@JsonConvert.SerializeObject(dynamicData, Formatting.Indented)</pre>
-                                        </div>
-                                    }
-                                }
-                                else
-                                {
-                                    <div class="alert alert-warning mt-auto">
-                                        <i class="fas fa-exclamation-triangle me-2"></i>
-                                        No hay datos disponibles
                                     </div>
                                 }
-                            </div>
 
-                            <div class="sticky-button-container mt-3">
-                                <div class="d-flex gap-2">
-                                    <form method="post" action="@Url.Action("AgregarWidget", "Dashboard")" class="w-100">
-                                        <input type="hidden" name="widgetId" value="@widget.Id" />
-                                        <button type="submit" class="btn btn-primary btn-sm w-100">
-                                            <i class="fas fa-plus me-1"></i> Agregar al Dashboard
-                                        </button>
-                                    </form>
-                                    <button class="btn btn-danger btn-sm w-100" onclick="ocultarWidget(@widget.Id)">
-                                        <i class="fas fa-eye-slash me-1"></i> Ocultar
-                                    </button>
+                                
+
+                                else
+                                {
+                                    <!-- Widget genérico -->
+                                    <div class="generic-widget mt-auto">
+                                        <pre class="p-2 bg-light rounded">@JsonConvert.SerializeObject(dynamicData, Formatting.Indented)</pre>
+                                    </div>
+                                }
+                            }
+                            else
+                            {
+                                <div class="alert alert-warning mt-auto">
+                                    <i class="fas fa-exclamation-triangle me-2"></i>
+                                    No hay datos disponibles
                                 </div>
-                            </div>
+                            }
+                        </div>
+
+                        <!-- Botón fijo -->
+                        <div class="sticky-button-container">
+                            <form method="post" action="@Url.Action("AgregarWidget", "Dashboard")">
+                                <input type="hidden" name="widgetId" value="@widget.Id" />
+                                <button type="submit" class="btn btn-primary btn-sm w-100">
+                                    <i class="fas fa-plus me-1"></i> Agregar al Dashboard
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>
-            }
-        </div>
-    </div>
-
-    <!-- Sección de widgets ocultos -->
-    <div class="mb-4">
-        <button class="btn btn-outline-secondary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#widgetsOcultosContainer">
-            <i class="fas fa-eye me-1"></i> Mostrar Widgets Ocultos (<span id="contadorOcultos">@(ViewBag.WidgetsOcultos?.Count ?? 0)</span>)
-        </button>
-
-        <div class="collapse" id="widgetsOcultosContainer">
-            <div class="card card-body bg-light">
-                <h4 class="mb-3">Widgets Ocultos</h4>
-                <div class="row row-cols-1 row-cols-md-3 g-4" id="widgetsOcultos">
-                    @if (ViewBag.WidgetsOcultos != null)
-                    {
-                        foreach (var widget in ViewBag.WidgetsOcultos)
-                        {
-                            <div class="col mb-4 widget-item" data-widget-id="@widget.Id" id="widget-oculto-@widget.Id">
-                                <div class="card h-100 shadow-sm opacity-75">
-                                    <div class="card-body d-flex flex-column">
-                                        <h5 class="card-title">@widget.Nombre</h5>
-                                        <p class="card-text">@widget.Descripcion</p>
-
-                                        <div class="sticky-button-container mt-auto">
-                                            <button class="btn btn-success btn-sm w-100" onclick="mostrarWidget(@widget.Id)">
-                                                <i class="fas fa-eye me-1"></i> Mostrar Widget
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        }
-                    }
-                </div>
             </div>
-        </div>
+        }
     </div>
 </div>
 
 @section Scripts {
-<<<<<<< HEAD
 
 <script>
     function actualizarWidgets() {
@@ -371,38 +373,10 @@
 
                 setTimeout(() => {
                     $container.html(html); // Reemplazar contenido
-=======
-    <script>
-        $(document).ready(function () {
-            // Inicialización del carrusel para widgets de Rick & Morty
-            $('.rick-carousel').each(function () {
-                const carousel = $(this);
-                const slider = carousel.find('.rick-slider');
-                const cards = slider.children();
-                const indicatorsContainer = carousel.find('.rick-indicators');
-                let currentIndex = 0;
-
-                cards.each((index) => {
-                    indicatorsContainer.append(`<div class="rick-indicator ${index === 0 ? 'active' : ''}"></div>`);
-                });
-
-                const updateIndicators = () => {
-                    indicatorsContainer.find('.rick-indicator').removeClass('active').eq(currentIndex).addClass('active');
-                };
-
-                carousel.find('.rick-prev').click(() => {
-                    if (currentIndex > 0) {
-                        currentIndex--;
-                        slider.css('transform', `translateX(-${currentIndex * 100}%)`);
-                        updateIndicators();
-                    }
-                });
->>>>>>> AndresS
 
                     // Animación de entrada
                     $container.removeClass('fade-scale-out').addClass('fade-scale-in');
 
-<<<<<<< HEAD
                     // Limpiar clase tras animación
                     setTimeout(() => {
                         $container.removeClass('fade-scale-in');
@@ -415,220 +389,13 @@
             },
             error: function () {
                 console.error("Error al actualizar los widgets");
-=======
-                indicatorsContainer.on('click', '.rick-indicator', function () {
-                    currentIndex = $(this).index();
-                    slider.css('transform', `translateX(-${currentIndex * 100}%)`);
-                    updateIndicators();
-                });
-            });
-
-            // Si hay widgets ocultos, muestra el contador
-            const widgetsOcultosCount = $('#widgetsOcultos .widget-item').length;
-            $('#contadorOcultos').text(widgetsOcultosCount);
-
-            // Si no hay widgets ocultos, ocultar el botón
-            if (widgetsOcultosCount === 0) {
-                $('[data-bs-target="#widgetsOcultosContainer"]').hide();
->>>>>>> AndresS
             }
         });
     }
 
-<<<<<<< HEAD
     // Refrescar cada 30 segundos
     setInterval(actualizarWidgets, 30000);
 </script>
 }
 
 }
-=======
-        // Función para ocultar un widget
-        function ocultarWidget(widgetId) {
-            $.ajax({
-                url: '@Url.Action("ActualizarVisibilidadWidget", "Dashboard")',
-                type: 'POST',
-                data: { widgetId: widgetId, esVisible: false },
-                success: function (response) {
-                    if (response.success) {
-                        // Animación para ocultar el widget
-                        const widgetElement = $('#widget-' + widgetId);
-
-                        // Clonar el widget para la sección de ocultos
-                        const widgetClone = widgetElement.clone();
-
-                        // Simplificar el contenido del clon (solo mostrar título y descripción)
-                        widgetClone.find('.scrollable-content').html(`
-                            <h5 class="card-title">${widgetClone.find('.card-title').text()}</h5>
-                            <p class="card-text">${widgetClone.find('.card-text').text() || 'Widget oculto'}</p>
-                        `);
-
-                        // Cambiar el ID del clon
-                        widgetClone.attr('id', 'widget-oculto-' + widgetId);
-
-                        // Cambiar el botón de ocultar por mostrar
-                        widgetClone.find('.sticky-button-container').html(`
-                            <button class="btn btn-success btn-sm w-100" onclick="mostrarWidget(${widgetId})">
-                                <i class="fas fa-eye me-1"></i> Mostrar Widget
-                            </button>
-                        `);
-
-                        // Ocultar el widget con animación
-                        widgetElement.fadeOut(400, function() {
-                            $(this).remove();
-
-                            // Mostrar la sección de ocultos si estaba escondida
-                            $('#widgetsOcultosContainer').addClass('show');
-
-                            // Añadir el widget a la sección de ocultos
-                            $('#widgetsOcultos').append(widgetClone);
-                            widgetClone.hide().fadeIn();
-
-                            // Actualizar contador
-                            const contadorActual = parseInt($('#contadorOcultos').text()) + 1;
-                            $('#contadorOcultos').text(contadorActual);
-
-                            // Mostrar el botón de widgets ocultos si estaba escondido
-                            $('[data-bs-target="#widgetsOcultosContainer"]').show();
-                        });
-                    } else {
-                        alert('Error al ocultar el widget.');
-                    }
-                },
-                error: function () {
-                    alert('Error al conectar con el servidor.');
-                }
-            });
-        }
-
-        // Función para mostrar un widget
-        function mostrarWidget(widgetId) {
-            $.ajax({
-                url: '@Url.Action("MostrarWidget", "Dashboard")',
-                type: 'POST',
-                data: { widgetId: widgetId },
-                success: function (response) {
-                    if (response.success) {
-                        // Eliminar el widget oculto con animación
-                        const widgetOculto = $('#widget-oculto-' + widgetId);
-
-                        widgetOculto.fadeOut(400, function() {
-                            $(this).remove();
-
-                            // Actualizar contador
-                            const contadorActual = parseInt($('#contadorOcultos').text()) - 1;
-                            $('#contadorOcultos').text(contadorActual);
-
-                            // Ocultar el botón si no hay más widgets ocultos
-                            if (contadorActual === 0) {
-                                $('[data-bs-target="#widgetsOcultosContainer"]').hide();
-                                $('#widgetsOcultosContainer').removeClass('show');
-                            }
-
-                            // Recargar la página para mostrar el widget con sus datos completos
-                            // Esto es más fácil que recrear dinámicamente todo el widget con sus datos
-                            location.reload();
-                        });
-                    } else {
-                        alert('Error al mostrar el widget.');
-                    }
-                },
-                error: function () {
-                    alert('Error al conectar con el servidor.');
-                }
-            });
-        }
-    </script>
-}
-
-<style>
-    /* Estilos para los widgets */
-    .widget-item {
-        transition: all 0.3s ease;
-    }
-
-    .scrollable-content {
-        max-height: 350px;
-        overflow-y: auto;
-    }
-
-    /* Estilos para los widgets ocultos */
-    #widgetsOcultos .card {
-        transition: all 0.3s ease;
-        border-left: 3px solid #6c757d;
-    }
-
-        #widgetsOcultos .card:hover {
-            opacity: 1 !important;
-            transform: translateY(-5px);
-            border-left: 3px solid #28a745;
-        }
-
-    /* Estilos para el carrusel de Rick & Morty */
-    .rick-carousel {
-        position: relative;
-        width: 100%;
-        overflow: hidden;
-    }
-
-    .rick-slider {
-        display: flex;
-        transition: transform 0.5s ease;
-    }
-
-    .rick-card {
-        min-width: 100%;
-        padding: 10px;
-    }
-
-        .rick-card img {
-            width: 100%;
-            border-radius: 8px;
-        }
-
-    .rick-indicators {
-        display: flex;
-        justify-content: center;
-        margin-top: 10px;
-    }
-
-    .rick-indicator {
-        width: 10px;
-        height: 10px;
-        background-color: #ddd;
-        border-radius: 50%;
-        margin: 0 5px;
-        cursor: pointer;
-    }
-
-        .rick-indicator.active {
-            background-color: #007bff;
-        }
-
-    .rick-nav-button {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: rgba(0,0,0,0.5);
-        color: white;
-        border: none;
-        border-radius: 50%;
-        width: 30px;
-        height: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 10;
-        cursor: pointer;
-    }
-
-    .rick-prev {
-        left: 5px;
-    }
-
-    .rick-next {
-        right: 5px;
-    }
-</style>
-
->>>>>>> AndresS
