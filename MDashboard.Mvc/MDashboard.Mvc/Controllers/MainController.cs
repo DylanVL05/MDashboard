@@ -3,6 +3,7 @@ using MDashboard.Business;
 using MDashboard.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication;
 
 namespace MDashboard.Mvc.Controllers
 {
@@ -53,6 +54,14 @@ namespace MDashboard.Mvc.Controllers
         protected async Task<bool> RegistrarUsuario(Usuario usuario)
         {
             return await _usuarioBusiness.RegistrarUsuarioAsync(usuario);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync("CookieAuth");
+            return RedirectToAction("Login", "Usuario");
         }
     }
 }

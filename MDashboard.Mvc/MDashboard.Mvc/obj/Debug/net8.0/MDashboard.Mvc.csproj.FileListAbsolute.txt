@@ -545,3 +545,7 @@ C:\Projects\MDashboard\MDashboard.Mvc\MDashboard.Mvc\obj\Debug\net8.0\refint\MDa
 C:\Projects\MDashboard\MDashboard.Mvc\MDashboard.Mvc\obj\Debug\net8.0\MDashboard.Mvc.pdb
 C:\Projects\MDashboard\MDashboard.Mvc\MDashboard.Mvc\obj\Debug\net8.0\MDashboard.Mvc.genruntimeconfig.cache
 C:\Projects\MDashboard\MDashboard.Mvc\MDashboard.Mvc\obj\Debug\net8.0\ref\MDashboard.Mvc.dll
+C:\Projects\MDashboard\MDashboard.Mvc\MDashboard.Mvc\bin\Debug\net8.0\MDashboard.Mvc.staticwebassets.endpoints.json
+C:\Projects\MDashboard\MDashboard.Mvc\MDashboard.Mvc\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Projects\MDashboard\MDashboard.Mvc\MDashboard.Mvc\obj\Debug\net8.0\staticwebassets\msbuild.MDashboard.Mvc.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Projects\MDashboard\MDashboard.Mvc\MDashboard.Mvc\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
