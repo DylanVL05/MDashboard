@@ -16,6 +16,7 @@ C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Repository\
 C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\refint\MDashboard.Repository.dll
 C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\MDashboard.Repository.pdb
 C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\ref\MDashboard.Repository.dll
+<<<<<<< Updated upstream
 D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Repository\bin\Debug\net8.0\MDashboard.Repository.deps.json
 D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Repository\bin\Debug\net8.0\MDashboard.Repository.dll
 D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Repository\bin\Debug\net8.0\MDashboard.Repository.pdb
@@ -34,3 +35,23 @@ D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Re
 D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\refint\MDashboard.Repository.dll
 D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\MDashboard.Repository.pdb
 D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\ref\MDashboard.Repository.dll
+=======
+D:\ProyectosVisual\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\MDashboard.Repository.csproj.AssemblyReference.cache
+D:\ProyectosVisual\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\MDashboard.Repository.GeneratedMSBuildEditorConfig.editorconfig
+D:\ProyectosVisual\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\MDashboard.Repository.AssemblyInfoInputs.cache
+D:\ProyectosVisual\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\MDashboard.Repository.AssemblyInfo.cs
+D:\ProyectosVisual\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\MDashboard.Repository.csproj.CoreCompileInputs.cache
+D:\ProyectosVisual\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\MDashboard.Repository.sourcelink.json
+D:\ProyectosVisual\MDashboard\MDashboard.Mvc\MDashboard.Repository\bin\Debug\net8.0\MDashboard.Repository.deps.json
+D:\ProyectosVisual\MDashboard\MDashboard.Mvc\MDashboard.Repository\bin\Debug\net8.0\MDashboard.Repository.dll
+D:\ProyectosVisual\MDashboard\MDashboard.Mvc\MDashboard.Repository\bin\Debug\net8.0\MDashboard.Repository.pdb
+D:\ProyectosVisual\MDashboard\MDashboard.Mvc\MDashboard.Repository\bin\Debug\net8.0\MDashboard.Data.dll
+D:\ProyectosVisual\MDashboard\MDashboard.Mvc\MDashboard.Repository\bin\Debug\net8.0\MDashboard.Models.dll
+D:\ProyectosVisual\MDashboard\MDashboard.Mvc\MDashboard.Repository\bin\Debug\net8.0\MDashboard.Data.pdb
+D:\ProyectosVisual\MDashboard\MDashboard.Mvc\MDashboard.Repository\bin\Debug\net8.0\MDashboard.Models.pdb
+D:\ProyectosVisual\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\MDashboa.08782A7F.Up2Date
+D:\ProyectosVisual\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\MDashboard.Repository.dll
+D:\ProyectosVisual\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\refint\MDashboard.Repository.dll
+D:\ProyectosVisual\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\MDashboard.Repository.pdb
+D:\ProyectosVisual\MDashboard\MDashboard.Mvc\MDashboard.Repository\obj\Debug\net8.0\ref\MDashboard.Repository.dll
+>>>>>>> Stashed changes

@@ -10,6 +10,7 @@ C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\
 C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0\refint\MDashboard.Models.dll
 C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0\MDashboard.Models.pdb
 C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0\ref\MDashboard.Models.dll
+<<<<<<< Updated upstream
 D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Models\bin\Debug\net8.0\MDashboard.Models.deps.json
 D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Models\bin\Debug\net8.0\MDashboard.Models.dll
 D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Models\bin\Debug\net8.0\MDashboard.Models.pdb
@@ -22,3 +23,18 @@ D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Mo
 D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0\refint\MDashboard.Models.dll
 D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0\MDashboard.Models.pdb
 D:\ProyectosVisualStudio2022\MSDashboard\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0\ref\MDashboard.Models.dll
+=======
+D:\ProyectosVisual\MDashboard\MDashboard.Mvc\MDashboard.Models\bin\Debug\net8.0\MDashboard.Models.deps.json
+D:\ProyectosVisual\MDashboard\MDashboard.Mvc\MDashboard.Models\bin\Debug\net8.0\MDashboard.Models.dll
+D:\ProyectosVisual\MDashboard\MDashboard.Mvc\MDashboard.Models\bin\Debug\net8.0\MDashboard.Models.pdb
+D:\ProyectosVisual\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0\MDashboard.Models.csproj.AssemblyReference.cache
+D:\ProyectosVisual\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0\MDashboard.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\ProyectosVisual\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0\MDashboard.Models.AssemblyInfoInputs.cache
+D:\ProyectosVisual\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0\MDashboard.Models.AssemblyInfo.cs
+D:\ProyectosVisual\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0\MDashboard.Models.csproj.CoreCompileInputs.cache
+D:\ProyectosVisual\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0\MDashboard.Models.sourcelink.json
+D:\ProyectosVisual\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0\MDashboard.Models.dll
+D:\ProyectosVisual\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0\refint\MDashboard.Models.dll
+D:\ProyectosVisual\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0\MDashboard.Models.pdb
+D:\ProyectosVisual\MDashboard\MDashboard.Mvc\MDashboard.Models\obj\Debug\net8.0\ref\MDashboard.Models.dll
+>>>>>>> Stashed changes

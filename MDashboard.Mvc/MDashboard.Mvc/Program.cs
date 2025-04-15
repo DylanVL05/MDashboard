@@ -21,6 +21,9 @@ builder.Services.AddScoped<WidgetService>();
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>(); // Repositorio de usuario 
 builder.Services.AddScoped<IUsuarioBusiness, UsuarioBusiness>(); // Repositorio de usuario 
 builder.Services.AddScoped<IComponentRepository, ComponentRepository>();
+builder.Services.AddScoped<IConfiguracionWidgetsBusiness, ConfiguracionWidgetsBusiness>();
+builder.Services.AddScoped<IConfiguracionWidgetsRepository, ConfiguracionWidgetsRepository>();
+
 
 //Soporte para los controladores y vistas.
 builder.Services.AddControllersWithViews();

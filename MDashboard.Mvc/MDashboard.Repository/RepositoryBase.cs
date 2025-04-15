@@ -1,6 +1,5 @@
 ﻿using MDashboard.Data.Models;
 using Microsoft.EntityFrameworkCore;
-using MDashboard.Data;
 using System.Collections.Generic;
 
 namespace MDashboard.Repository;

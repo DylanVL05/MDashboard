@@ -11,15 +11,13 @@ public partial class ConfiguracionWidget
 
     public int WidgetId { get; set; }
 
-    public int? Posicion { get; set; }
+    public int? Height { get; set; }
 
-    public string? Tamano { get; set; }
+    public int? Width { get; set; }
 
-    public int? RefrescoSegundos { get; set; }
+    public bool EsFavorito { get; set; }
 
-    public bool? EsFavorito { get; set; }
-
-    public bool? EsVisible { get; set; }
+    public bool EsVisible { get; set; }
 
     public virtual Usuario Usuario { get; set; } = null!;
 
