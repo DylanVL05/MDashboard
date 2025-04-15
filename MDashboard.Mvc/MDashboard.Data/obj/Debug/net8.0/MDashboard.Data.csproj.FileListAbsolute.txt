@@ -12,24 +12,6 @@ C:\Users\andro\source\repos\MDashboard.Mvc\MDashboard.Data\obj\Debug\net8.0\ref\
 C:\Users\andro\source\repos\MDashboard.Mvc\MDashboard.Data\bin\Debug\net8.0\MDashboard.Data.runtimeconfig.json
 C:\Users\andro\source\repos\MDashboard.Mvc\MDashboard.Data\obj\Debug\net8.0\MDashboard.Data.csproj.AssemblyReference.cache
 C:\Users\andro\source\repos\MDashboard.Mvc\MDashboard.Data\obj\Debug\net8.0\MDashboard.Data.genruntimeconfig.cache
-C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Data\bin\Debug\net8.0\MDashboard.Data.deps.json
-C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Data\bin\Debug\net8.0\MDashboard.Data.runtimeconfig.json
-C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Data\bin\Debug\net8.0\MDashboard.Data.dll
-C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Data\bin\Debug\net8.0\MDashboard.Data.pdb
-C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Data\bin\Debug\net8.0\MDashboard.Models.dll
-C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Data\bin\Debug\net8.0\MDashboard.Models.pdb
-C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Data\obj\Debug\net8.0\MDashboard.Data.csproj.AssemblyReference.cache
-C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Data\obj\Debug\net8.0\MDashboard.Data.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Data\obj\Debug\net8.0\MDashboard.Data.AssemblyInfoInputs.cache
-C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Data\obj\Debug\net8.0\MDashboard.Data.AssemblyInfo.cs
-C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Data\obj\Debug\net8.0\MDashboard.Data.csproj.CoreCompileInputs.cache
-C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Data\obj\Debug\net8.0\MDashboard.Data.sourcelink.json
-C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Data\obj\Debug\net8.0\MDashboa.6B73DF20.Up2Date
-C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Data\obj\Debug\net8.0\MDashboard.Data.dll
-C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Data\obj\Debug\net8.0\refint\MDashboard.Data.dll
-C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Data\obj\Debug\net8.0\MDashboard.Data.pdb
-C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Data\obj\Debug\net8.0\MDashboard.Data.genruntimeconfig.cache
-C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Data\obj\Debug\net8.0\ref\MDashboard.Data.dll
 D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Data\bin\Debug\net8.0\MDashboard.Data.deps.json
 D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Data\bin\Debug\net8.0\MDashboard.Data.runtimeconfig.json
 D:\Vs code Projects\MDashboard\MDashboard.Mvc\MDashboard.Data\bin\Debug\net8.0\MDashboard.Data.dll
@@ -102,3 +84,21 @@ C:\Projects\MDashboard\MDashboard.Mvc\MDashboard.Data\obj\Debug\net8.0\refint\MD
 C:\Projects\MDashboard\MDashboard.Mvc\MDashboard.Data\obj\Debug\net8.0\MDashboard.Data.pdb
 C:\Projects\MDashboard\MDashboard.Mvc\MDashboard.Data\obj\Debug\net8.0\MDashboard.Data.genruntimeconfig.cache
 C:\Projects\MDashboard\MDashboard.Mvc\MDashboard.Data\obj\Debug\net8.0\ref\MDashboard.Data.dll
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Data\bin\Debug\net8.0\MDashboard.Data.deps.json
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Data\bin\Debug\net8.0\MDashboard.Data.runtimeconfig.json
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Data\bin\Debug\net8.0\MDashboard.Data.dll
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Data\bin\Debug\net8.0\MDashboard.Data.pdb
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Data\bin\Debug\net8.0\MDashboard.Models.dll
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Data\bin\Debug\net8.0\MDashboard.Models.pdb
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Data\obj\Debug\net8.0\MDashboard.Data.csproj.AssemblyReference.cache
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Data\obj\Debug\net8.0\MDashboard.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Data\obj\Debug\net8.0\MDashboard.Data.AssemblyInfoInputs.cache
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Data\obj\Debug\net8.0\MDashboard.Data.AssemblyInfo.cs
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Data\obj\Debug\net8.0\MDashboard.Data.csproj.CoreCompileInputs.cache
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Data\obj\Debug\net8.0\MDashboard.Data.sourcelink.json
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Data\obj\Debug\net8.0\MDashboa.6B73DF20.Up2Date
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Data\obj\Debug\net8.0\MDashboard.Data.dll
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Data\obj\Debug\net8.0\refint\MDashboard.Data.dll
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Data\obj\Debug\net8.0\MDashboard.Data.pdb
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Data\obj\Debug\net8.0\MDashboard.Data.genruntimeconfig.cache
+C:\Users\andro\Documents\GitHub\MDashboard\MDashboard.Mvc\MDashboard.Data\obj\Debug\net8.0\ref\MDashboard.Data.dll

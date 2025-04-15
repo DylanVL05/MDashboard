@@ -1,4 +1,3 @@
-/* Estilos Globales */
 :root {
     --sidebar-width: 250px;
     --navbar-height: 56px;
@@ -33,7 +32,7 @@ body {
         z-index: -1;
     }
 
-/* Navbar Styles */
+/* NAVBAR */
 .navbar {
     background-color: #050505;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -50,6 +49,7 @@ body {
 
 .navbar-dark .navbar-nav .nav-link {
     color: rgba(255, 255, 255, 0.85);
+    background-color: rgb(52, 68, 81, 0.85);
     padding: 0.5rem 1rem;
     transition: all 0.3s ease;
 }
@@ -76,14 +76,14 @@ body {
     display: inline;
 }
 
-/* Sidebar Styles */
+/* SIDEBAR */
 .sidebar {
     position: fixed;
     top: var(--navbar-height);
     left: 0;
     width: var(--sidebar-width);
     height: calc(100% - var(--navbar-height));
-    background-color:#050505;
+    background-color: #050505;
     transition: all 0.3s ease;
     overflow-y: auto;
     z-index: 1020;
@@ -127,7 +127,7 @@ body {
         text-align: center;
     }
 
-/* Contenido Principal */
+/* CONTENIDO PRINCIPAL */
 .main-content {
     margin-left: var(--sidebar-width);
     padding: calc(var(--navbar-height) + 1rem) 1.5rem 4rem 1.5rem;
@@ -135,7 +135,7 @@ body {
     transition: margin-left 0.3s ease;
 }
 
-/* Footer Styles */
+/* FOOTER */
 .footer {
     background-color: var(--sidebar-bg);
     color: var(--text-color);
@@ -148,7 +148,7 @@ body {
     font-size: 0.9rem;
 }
 
-/* Estilos para las tarjetas de API */
+/* TARJETAS (CARDS) */
 .card {
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 8px;
@@ -167,3 +167,29 @@ body {
     background-color: rgba(106, 90, 205, 0.1);
 }
 
+/* RESPONSIVE: ocultar sidebar y adaptar contenido */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: calc(var(--navbar-height) + 1rem) 1rem 4rem 1rem;
+    }
+
+    #widgetsContainer > .col {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 1rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .dropdown-menu {
+        max-height: 300px;
+        overflow-y: auto;
+    }
+}

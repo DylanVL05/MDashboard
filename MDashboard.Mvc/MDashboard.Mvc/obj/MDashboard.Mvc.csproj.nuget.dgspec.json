@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\MDashboard.Mvc.csproj": {}
+    "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\MDashboard.Mvc.csproj": {}
   },
   "projects": {
-    "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Business\\MDashboard.Business.csproj": {
+    "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Business\\MDashboard.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Business\\MDashboard.Business.csproj",
+        "projectUniqueName": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Business\\MDashboard.Business.csproj",
         "projectName": "MDashboard.Business",
-        "projectPath": "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Business\\MDashboard.Business.csproj",
-        "packagesPath": "C:\\Users\\josea\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Business\\obj\\",
+        "projectPath": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Business\\MDashboard.Business.csproj",
+        "packagesPath": "C:\\Users\\andro\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Business\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\josea\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\andro\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -29,11 +29,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\MDashboard.Models.csproj": {
-                "projectPath": "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\MDashboard.Models.csproj"
+              "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\MDashboard.Models.csproj": {
+                "projectPath": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\MDashboard.Models.csproj"
               },
-              "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Repository\\MDashboard.Repository.csproj": {
-                "projectPath": "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Repository\\MDashboard.Repository.csproj"
+              "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Repository\\MDashboard.Repository.csproj": {
+                "projectPath": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Repository\\MDashboard.Repository.csproj"
               }
             }
           }
@@ -72,17 +72,17 @@
         }
       }
     },
-    "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Data\\MDashboard.Data.csproj": {
+    "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Data\\MDashboard.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Data\\MDashboard.Data.csproj",
+        "projectUniqueName": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Data\\MDashboard.Data.csproj",
         "projectName": "MDashboard.Data",
-        "projectPath": "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Data\\MDashboard.Data.csproj",
-        "packagesPath": "C:\\Users\\josea\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Data\\obj\\",
+        "projectPath": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Data\\MDashboard.Data.csproj",
+        "packagesPath": "C:\\Users\\andro\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\josea\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\andro\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -97,8 +97,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\MDashboard.Models.csproj": {
-                "projectPath": "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\MDashboard.Models.csproj"
+              "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\MDashboard.Models.csproj": {
+                "projectPath": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\MDashboard.Models.csproj"
               }
             }
           }
@@ -155,17 +155,17 @@
         }
       }
     },
-    "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\MDashboard.Models.csproj": {
+    "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\MDashboard.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\MDashboard.Models.csproj",
+        "projectUniqueName": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\MDashboard.Models.csproj",
         "projectName": "MDashboard.Models",
-        "projectPath": "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\MDashboard.Models.csproj",
-        "packagesPath": "C:\\Users\\josea\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\obj\\",
+        "projectPath": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\MDashboard.Models.csproj",
+        "packagesPath": "C:\\Users\\andro\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\josea\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\andro\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -222,17 +222,17 @@
         }
       }
     },
-    "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\MDashboard.Mvc.csproj": {
+    "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\MDashboard.Mvc.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\MDashboard.Mvc.csproj",
+        "projectUniqueName": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\MDashboard.Mvc.csproj",
         "projectName": "MDashboard.Mvc",
-        "projectPath": "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\MDashboard.Mvc.csproj",
-        "packagesPath": "C:\\Users\\josea\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\obj\\",
+        "projectPath": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\MDashboard.Mvc.csproj",
+        "packagesPath": "C:\\Users\\andro\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\josea\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\andro\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -247,11 +247,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Data\\MDashboard.Data.csproj": {
-                "projectPath": "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Data\\MDashboard.Data.csproj"
+              "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Data\\MDashboard.Data.csproj": {
+                "projectPath": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Data\\MDashboard.Data.csproj"
               },
-              "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Services\\MDashboard.Services.csproj": {
-                "projectPath": "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Services\\MDashboard.Services.csproj"
+              "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Services\\MDashboard.Services.csproj": {
+                "projectPath": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Services\\MDashboard.Services.csproj"
               }
             }
           }
@@ -293,17 +293,17 @@
         }
       }
     },
-    "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Repository\\MDashboard.Repository.csproj": {
+    "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Repository\\MDashboard.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Repository\\MDashboard.Repository.csproj",
+        "projectUniqueName": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Repository\\MDashboard.Repository.csproj",
         "projectName": "MDashboard.Repository",
-        "projectPath": "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Repository\\MDashboard.Repository.csproj",
-        "packagesPath": "C:\\Users\\josea\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Repository\\obj\\",
+        "projectPath": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Repository\\MDashboard.Repository.csproj",
+        "packagesPath": "C:\\Users\\andro\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\josea\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\andro\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -318,11 +318,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Data\\MDashboard.Data.csproj": {
-                "projectPath": "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Data\\MDashboard.Data.csproj"
+              "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Data\\MDashboard.Data.csproj": {
+                "projectPath": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Data\\MDashboard.Data.csproj"
               },
-              "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\MDashboard.Models.csproj": {
-                "projectPath": "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\MDashboard.Models.csproj"
+              "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\MDashboard.Models.csproj": {
+                "projectPath": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Models\\MDashboard.Models.csproj"
               }
             }
           }
@@ -371,17 +371,17 @@
         }
       }
     },
-    "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Services\\MDashboard.Services.csproj": {
+    "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Services\\MDashboard.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Services\\MDashboard.Services.csproj",
+        "projectUniqueName": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Services\\MDashboard.Services.csproj",
         "projectName": "MDashboard.Services",
-        "projectPath": "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Services\\MDashboard.Services.csproj",
-        "packagesPath": "C:\\Users\\josea\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Services\\obj\\",
+        "projectPath": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Services\\MDashboard.Services.csproj",
+        "packagesPath": "C:\\Users\\andro\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Services\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\josea\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\andro\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -396,11 +396,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Business\\MDashboard.Business.csproj": {
-                "projectPath": "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Business\\MDashboard.Business.csproj"
+              "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Business\\MDashboard.Business.csproj": {
+                "projectPath": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Business\\MDashboard.Business.csproj"
               },
-              "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Repository\\MDashboard.Repository.csproj": {
-                "projectPath": "C:\\Projects\\MDashboard\\MDashboard.Mvc\\MDashboard.Repository\\MDashboard.Repository.csproj"
+              "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Repository\\MDashboard.Repository.csproj": {
+                "projectPath": "C:\\Users\\andro\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Repository\\MDashboard.Repository.csproj"
               }
             }
           }
