@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using MDashboard.Business.Factory;
 using MDashboard.Models;
 using System;
+using System.Net.Http;
 
 namespace MDashboard.Business.Services
 {
@@ -53,6 +54,11 @@ namespace MDashboard.Business.Services
                             {
                                 ProcesarExchangeRateResponse(x.widget.Nombre, result.Value.ToString(), resultados);
                             }
+                            // In WidgetService.cs, update the ObtenerDatosDeWidgetsAsync method
+                            else if (x.widget.UrlApi.Contains("thequotesapi.onrender.com"))
+                            {
+                                ProcesarQuotesApiResponse(x.widget.Nombre, result.Value, resultados);
+                            }
                             // Procesamiento para News API
                             else if (x.widget.UrlApi.Contains("newsapi.org"))
                             {
@@ -71,6 +77,12 @@ namespace MDashboard.Business.Services
                             {
                                 ProcesarJokeApiResponse(x.widget.Nombre, result.Value as JokeApiResponse, resultados);
                             }
+                            // Add this condition to your existing factory
+                            else if (x.widget.UrlApi.Contains("adviceslip.com"))
+                            {
+                                ProcesarAdviceSlipResponse(x.widget.Nombre, result.Value as AdviceSlipResponse, resultados);
+                            }
+
                             else if (x.widget.UrlApi.Contains("meowfacts"))
                             {
                                 ProcesarMeowFactsApiResponse(x.widget.Nombre, result.Value as MeowFactsAPIResponse, resultados);
@@ -269,7 +281,30 @@ namespace MDashboard.Business.Services
                 Console.WriteLine($"Error: El modelo NasaApodResponse es nulo para {widgetNombre}");
             }
         }
-
+        private void ProcesarQuotesApiResponse(string widgetNombre, object response, Dictionary<string, object> resultados)
+        {
+            try
+            {
+                if (response is QuotesApiResponse quotesResponse)
+                {
+                    var quoteInfo = new
+                    {
+                        Quote = quotesResponse.Quote,
+                        Author = quotesResponse.Author,
+                        Id = quotesResponse.Id
+                    };
+                    resultados.Add(widgetNombre, quoteInfo);
+                }
+                else
+                {
+                    Console.WriteLine($"Error: Tipo de respuesta inesperado para {widgetNombre}");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error procesando respuesta de Quotes API para {widgetNombre}: {ex.Message}");
+            }
+        }
         private void ProcesarDogMeowFactsApiResponse(string widgetNombre, DogApiResponse dogResponse, Dictionary<string, object> resultados)
         {
             if (dogResponse != null)
@@ -303,6 +338,24 @@ namespace MDashboard.Business.Services
             else
             {
                 Console.WriteLine($"Error: El modelo NasaApodResponse es nulo para {widgetNombre}");
+            }
+        }
+        private void ProcesarAdviceSlipResponse(string widgetNombre, AdviceSlipResponse adviceResponse, Dictionary<string, object> resultados)
+        {
+            if (adviceResponse != null && adviceResponse.Slip != null)
+            {
+                resultados.Add(widgetNombre, new AdviceSlipResponse
+                {
+                    Slip = new Slip
+                    {
+                        Id = adviceResponse.Slip.Id,
+                        Advice = adviceResponse.Slip.Advice
+                    }
+                });
+            }
+            else
+            {
+                Console.WriteLine($"Error: El modelo AdviceSlipResponse es nulo para {widgetNombre}");
             }
         }
 
