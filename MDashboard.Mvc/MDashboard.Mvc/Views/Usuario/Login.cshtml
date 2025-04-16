@@ -12,7 +12,6 @@
                         <h4 class="fw-bold">Iniciar Sesión</h4>
                     </div>
 
-                    <!-- Mensaje de error, si aplica -->
                     @if (!string.IsNullOrEmpty(ViewBag.MensajePantalla as string))
                     {
                         <div class="alert alert-danger text-center" role="alert">
@@ -20,7 +19,6 @@
                         </div>
                     }
 
-                    <!-- Formulario de login -->
                     <form method="post" asp-action="Login" asp-controller="Usuario">
                         <div class="mb-3">
                             <label for="email" class="form-label">Correo Electrónico</label>
@@ -33,12 +31,6 @@
                         <button type="submit" class="btn btn-dark w-100">Iniciar Sesión</button>
                     </form>
 
-                    <!-- Recuperación de acceso -->
-                    <div class="text-center mt-3">
-                        <a href="@Url.Action("RecuperarAcceso", "Usuario")" class="text-primary">¿Olvidaste tu contraseña?</a>
-                    </div>
-
-                    <!-- Registro -->
                     <div class="text-center mt-3">
                         <p>¿No tienes una cuenta? <a href="@Url.Action("Register", "Usuario")" class="text-primary">Regístrate aquí</a></p>
                     </div>
