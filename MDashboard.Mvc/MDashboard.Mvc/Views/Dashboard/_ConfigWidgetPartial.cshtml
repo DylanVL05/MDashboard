@@ -1,0 +1,17 @@
+﻿@model MDashboard.Models.Widget
+
+<form id="configForm-@Model.Id">
+    <div class="mb-3">
+        <label class="form-label">Nombre del Widget</label>
+        <input type="text" class="form-control" value="@Model.Nombre" name="Nombre" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">ComponentId</label>
+        <input type="number" class="form-control" value="@Model.ComponentId" name="ComponentId" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">API URL</label>
+        <input type="text" class="form-control" value="@Model.UrlApi" name="UrlApi" />
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+</form>

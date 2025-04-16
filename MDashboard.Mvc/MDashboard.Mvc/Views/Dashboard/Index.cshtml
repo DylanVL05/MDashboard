@@ -231,10 +231,17 @@
             @foreach (var widget in Model)
             {
                 <div class="col mb-4 widget-item" data-widget-id="@widget.Id" id="widget-@widget.Id">
-                    <div class="card h-100 shadow-sm">
+                    <div class="card h-100 shadow-sm position-relative">
+                        <i class="bi bi-gear-fill config-widget-icon text-secondary position-absolute top-0 end-0 m-2"
+                           data-widget-id="@widget.Id"
+                           title="Configuración"
+                           style="z-index: 1; cursor: pointer;"></i>
+
+
                         <div class="card-body d-flex flex-column">
                             <div class="scrollable-content">
                                 <h5 class="card-title">@widget.Nombre</h5>
+                                
                                 
 
                                 @if (ViewBag.DynamicData != null && ViewBag.DynamicData.ContainsKey(widget.Nombre))
@@ -656,6 +663,22 @@
     </div>
 
 
+    <div class="modal fade" id="configModal" tabindex="-1" aria-labelledby="configModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="configModalLabel">Configuración del Widget</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body" id="configModalBody">
+                    <!-- Aquí se cargará el contenido parcial -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
 
     <!-- Secci처n de widgets ocultos -->
     <div class="mb-4">
@@ -692,6 +715,15 @@
         </div>
     </div>
 </div>
+
+
+
+
+
+
+
+
+
 @section Scripts {
     <script>
         $(document).ready(function () {
@@ -755,98 +787,6 @@
             });
         }
 
-        // Función para ocultar un widget
-        function ocultarWidget(widgetId) {
-            $.ajax({
-                url: '@Url.Action("ActualizarVisibilidadWidget", "Dashboard")',
-                type: 'POST',
-                data: { widgetId: widgetId, esVisible: false },
-                success: function (response) {
-                    if (response.success) {
-                        // Animación para ocultar el widget y clonar su contenido
-                        const widgetElement = $('#widget-' + widgetId);
-                        const widgetClone = widgetElement.clone();
-
-                        // Simplificar el contenido del clon (mostrando solo título y descripción)
-                        widgetClone.find('.scrollable-content').html(`
-                            <h5 class="card-title">${widgetClone.find('.card-title').text()}</h5>
-                            <p class="card-text">${widgetClone.find('.card-text').text() || 'Widget oculto'}</p>
-                        `);
-
-                        // Cambiar el ID del clon para diferenciarlo
-                        widgetClone.attr('id', 'widget-oculto-' + widgetId);
-
-                        // Reemplazar el botón de ocultar por uno para mostrar el widget
-                        widgetClone.find('.sticky-button-container').html(`
-                            <button class="btn btn-success btn-sm w-100" onclick="mostrarWidget(${widgetId})">
-                                <i class="fas fa-eye me-1"></i> Mostrar Widget
-                            </button>
-                        `);
-
-                        // Ocultar con animación el widget original y actualizar la sección de ocultos
-                        widgetElement.fadeOut(400, function() {
-                            $(this).remove();
-
-                            // Mostrar la sección de ocultos, si estaba oculta
-                            $('#widgetsOcultosContainer').addClass('show');
-                            // Agregar el widget clonado a la sección de ocultos
-                            $('#widgetsOcultos').append(widgetClone);
-                            widgetClone.hide().fadeIn();
-
-                            // Actualizar el contador de widgets ocultos
-                            const contadorActual = parseInt($('#contadorOcultos').text()) + 1;
-                            $('#contadorOcultos').text(contadorActual);
-
-                            // Asegurarse que el botón para ver widgets ocultos esté visible
-                            $('[data-bs-target="#widgetsOcultosContainer"]').show();
-                        });
-                    } else {
-                        alert('Error al ocultar el widget.');
-                    }
-                },
-                error: function () {
-                    alert('Error al conectar con el servidor.');
-                }
-            });
-        }
-
-        // Función para mostrar un widget oculto
-        function mostrarWidget(widgetId) {
-            $.ajax({
-                url: '@Url.Action("MostrarWidget", "Dashboard")',
-                type: 'POST',
-                data: { widgetId: widgetId },
-                success: function (response) {
-                    if (response.success) {
-                        // Remover el widget oculto con animación
-                        const widgetOculto = $('#widget-oculto-' + widgetId);
-
-                        widgetOculto.fadeOut(400, function() {
-                            $(this).remove();
-
-                            // Actualizar el contador de widgets ocultos
-                            const contadorActual = parseInt($('#contadorOcultos').text()) - 1;
-                            $('#contadorOcultos').text(contadorActual);
-
-                            // Ocultar el botón y la sección si ya no quedan widgets ocultos
-                            if (contadorActual === 0) {
-                                $('[data-bs-target="#widgetsOcultosContainer"]').hide();
-                                $('#widgetsOcultosContainer').removeClass('show');
-                            }
-
-                            // Recargar la página para restaurar el widget con su contenido original
-                            location.reload();
-                        });
-                    } else {
-                        alert('Error al mostrar el widget.');
-                    }
-                },
-                error: function () {
-                    alert('Error al conectar con el servidor.');
-                }
-            });
-        }
-
         // Función para actualizar los widgets parciales mediante Ajax
         function actualizarWidgets() {
             $.ajax({
@@ -858,7 +798,6 @@
                     const newWidgets = tempDiv.find('#widgetsContainer').html();
 
                     const $container = $('#widgetsContainer');
-
                     $container.addClass('fade-scale-out');
 
                     setTimeout(() => {
@@ -868,6 +807,9 @@
                         setTimeout(() => {
                             $container.removeClass('fade-scale-in');
                             inicializarRickCarousels();
+
+                            // Volver a asignar eventos del script de configuración
+                            inicializarConfiguracionWidgets(); // Reasignar eventos
                         }, 300);
                     }, 300);
                 },
@@ -881,4 +823,6 @@
         // Actualizar los widgets cada 30 segundos
         setInterval(actualizarWidgets, 30000);
     </script>
+
+    <script src="~/js/widget-config.js"></script>
 }

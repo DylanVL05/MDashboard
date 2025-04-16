@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using MDashboard.Data.Models;
 using MDashboard.Helpers;
+using MDashboard.Business.Widgets;
 
 
 namespace MDashboard.Controllers
@@ -20,12 +21,14 @@ namespace MDashboard.Controllers
     public class DashboardController : Controller
     {
         private readonly IWidgetRepository _widgetRepository;
+        private readonly IWidgetBusiness _widgetBusiness;
         private readonly WidgetService _widgetService;
         private readonly MediaDashboardContext _context;
 
-        public DashboardController(IWidgetRepository widgetRepository, WidgetService widgetService, MediaDashboardContext context)
+        public DashboardController(IWidgetRepository widgetRepository, WidgetService widgetService, WidgetBusiness widgetBusiness, MediaDashboardContext context)
         {
             _widgetRepository = widgetRepository;
+            _widgetBusiness = widgetBusiness;
             _widgetService = widgetService;
             _context = context;
         }
@@ -201,6 +204,35 @@ namespace MDashboard.Controllers
                 return StatusCode(500, $"Error al actualizar los widgets: {ex.Message}");
             }
         }
+
+
+
+        [HttpPost]
+        public IActionResult UpdateWidget(Widget updatedWidget)
+        {
+            var widget = _context.Widgets.FirstOrDefault(w => w.Id == updatedWidget.Id);
+            if (widget == null) return NotFound();
+
+            widget.Nombre = updatedWidget.Nombre;
+            widget.ComponentId = updatedWidget.ComponentId;
+            widget.UrlApi = updatedWidget.UrlApi;
+
+            _context.SaveChanges();
+            return Ok();
+        }
+
+        public async Task<IActionResult> ConfigWidget(int id)
+        {
+            var widget = await _widgetBusiness.ObtenerWidgetPorIdAsync(id); // <-- await aquí
+
+            if (widget == null)
+            {
+                return NotFound();
+            }
+
+            return PartialView("_ConfigWidgetPartial", widget); // asegúrate de que este nombre esté bien
+        }
+
 
         // Acción para obtener todos los widgets disponibles (visible o no)
         [HttpGet]

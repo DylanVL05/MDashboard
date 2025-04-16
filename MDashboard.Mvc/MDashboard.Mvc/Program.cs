@@ -1,6 +1,7 @@
 using MDashboard.Business;
 using MDashboard.Business.Factory;
 using MDashboard.Business.Services;
+using MDashboard.Business.Widgets;
 using MDashboard.Data.Models;
 using MDashboard.Repository;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -16,6 +17,8 @@ builder.Services.AddDbContext<MediaDashboardContext>(options =>
 // Inyección de dependencias
 builder.Services.AddScoped<WidgetApiFactory>();
 builder.Services.AddScoped<IWidgetRepository, WidgetRepository>();
+builder.Services.AddScoped<IWidgetBusiness, WidgetBusiness>();
+builder.Services.AddScoped<WidgetBusiness>();
 builder.Services.AddScoped<WidgetService>();
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 builder.Services.AddScoped<IUsuarioBusiness, UsuarioBusiness>();
