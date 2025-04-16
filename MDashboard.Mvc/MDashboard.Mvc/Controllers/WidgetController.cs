@@ -33,18 +33,25 @@ namespace MDashboard.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(Widget widget)
         {
-            if (ModelState.IsValid)
-            {
-                // Guardar el widget
-                await _widgetRepository.AgregarWidgetAsync(widget);
-                return RedirectToAction("Index");
-            }
-
-            // Si hay un error, cargar la lista de componentes nuevamente
-            var components = await _componentRepository.ObtenerComponentesAsync();
-            ViewBag.Components = components;
-            return View(widget);
+            await _widgetRepository.AgregarWidgetAsync(widget);
+            return RedirectToAction("Index");
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var widget = await _widgetRepository.ObtenerWidgetPorIdAsync(id);
+            if (widget != null)
+            {
+                await _widgetRepository.EliminarWidgetAsync(widget);
+            }
+            return RedirectToAction("Index");
+        }
+
+
+
+
+
 
 
         // 📌 Acción para listar los widgets

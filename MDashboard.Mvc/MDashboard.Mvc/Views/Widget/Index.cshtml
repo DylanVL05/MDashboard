@@ -26,6 +26,7 @@
             <th>URL API</th>
             <th>Estado</th>
             <th>Componente</th>
+            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -40,6 +41,12 @@
                 <td>@widget.ApiKey</td>
                 <td>@(widget.Estado == true ? "Activo" : "Inactivo")</td>
                 <td>@widget.Component.Id</td>
+                <td>
+                <form asp-action="Delete" method="post">
+                    <input type="hidden" name="id" value="@widget.Id" />
+                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                </form>
+                </td>
             </tr>
         }
 

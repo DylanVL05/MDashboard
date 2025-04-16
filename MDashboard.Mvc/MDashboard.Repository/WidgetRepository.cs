@@ -22,6 +22,7 @@ namespace MDashboard.Repository
         Task<Widget?> ObtenerWidgetPorIdAsync(int widgetId);
         Task<Widget?> ObtenerWidgetPorNombreAsync(string nombre);
 
+        Task EliminarWidgetAsync(Widget widget);
         Task AgregarWidgetAsync(Widget widget);
 
 
@@ -68,6 +69,8 @@ namespace MDashboard.Repository
             _context.Widgets.Add(widget);
             await _context.SaveChangesAsync();
         }
+
+
 
 
 
@@ -165,6 +168,11 @@ namespace MDashboard.Repository
         }
 
 
+        public async Task EliminarWidgetAsync(Widget widget)
+        {
+            _context.Widgets.Remove(widget);
+            await _context.SaveChangesAsync();
+        }
 
 
 

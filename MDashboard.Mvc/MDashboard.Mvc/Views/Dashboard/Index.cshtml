@@ -5,15 +5,12 @@
 <link href="~/css/indexdashboard.css" rel="stylesheet" />
 
 @{
-    // Convertimos el ViewBag.Configuraciones a un diccionario fuertemente tipado.
     var configuraciones = ViewBag.Configuraciones as Dictionary<int, MDashboard.Models.ConfiguracionWidget>
                           ?? new Dictionary<int, MDashboard.Models.ConfiguracionWidget>();
 }
 
 <div class="container mt-4">
     <h2>Dashboard</h2>
-
-    <!-- Secci처n de widgets visibles -->
     <div class="mb-4">
         <h4>Widgets Activos</h4>
         <div class="row row-cols-1 row-cols-md-3 g-4" id="widgetsContainer">
@@ -25,9 +22,9 @@
                     config = configuraciones[widget.Id];
                 }
 
-                // Usar valores predeterminados si no hay configuración
                 int height = config?.Height ?? 300;
                 int width = config?.Width ?? 300;
+
                 <div class="col mb-4 widget-item" data-widget-id="@widget.Id" id="widget-@widget.Id">
                     <div class="card h-100 shadow-sm position-relative" style="width: @width px; height: @height px;">
                         <i class="bi bi-gear-fill config-widget-icon text-secondary position-absolute top-0 end-0 m-2"
@@ -131,7 +128,6 @@
                                         @switch (widget.ComponentId)
                                         {
                                             case 1:
-                                                <!-- 🌍 Vista Clásica con Lista -->
                                                 <div class="exchange-widget mt-auto text-center p-3 border rounded bg-light">
                                                     <h5 class="fw-bold">💰 Tasas de Cambio</h5>
                                                     <p class="text-muted small">
@@ -153,7 +149,6 @@
                                                 break;
 
                                             case 2:
-                                                <!-- 📊 Vista en Tabla -->
                                                 <div class="exchange-table mt-auto text-center p-3 border rounded bg-light">
                                                     <h5 class="fw-bold">📊 Tasas de Cambio</h5>
                                                     <table class="table table-striped">
@@ -178,7 +173,6 @@
                                                 break;
 
                                             case 3:
-                                                <!-- 💵 Diseño Personalizado -->
                                                 <div class="custom-exchange-widget mt-auto text-center p-3 border rounded bg-light">
                                                     <h5 class="fw-bold">🌍 Conversión Rápida</h5>
                                                     <p class="text-muted small">
@@ -229,7 +223,6 @@
                                         @switch (widget.ComponentId)
                                         {
                                             case 1:
-                                                <!-- 🌌 Estilo clásico con imagen o video -->
                                                 <div class="nasa-widget mt-auto text-center p-3 border rounded bg-light">
                                                     <p class="text-muted">📅 Fecha: @nasaData.Date</p>
                                                     <h6 class="fw-bold">@nasaData.Title</h6>
@@ -251,7 +244,6 @@
                                                 break;
 
                                             case 2:
-                                                <!-- 🪐 Vista en Tabla con detalles -->
                                                 <div class="nasa-table mt-auto text-center p-3 border rounded bg-light">
                                                     <h5 class="fw-bold">🔭 NASA APOD</h5>
                                                     <table class="table table-striped">
@@ -276,7 +268,6 @@
                                                 break;
 
                                             case 3:
-                                                <!-- 🚀 Diseño con tarjetas interactivas -->
                                                 <div class="custom-nasa-widget mt-auto text-center p-3 border rounded bg-light">
                                                     <h5 class="fw-bold">✨ Exploración Espacial</h5>
                                                     <p class="text-muted small">Última actualización: @nasaData.Date</p>
@@ -331,7 +322,6 @@
                                         @switch (widget.ComponentId)
                                         {
                                             case 1:
-                                                <!-- 🎭 Vista Clásica en Carrusel -->
                                                 <div class="rick-widget mt-auto text-center p-3 border rounded bg-light">
                                                     <h5 class="fw-bold">🌀 Personajes de Rick and Morty</h5>
                                                     <div class="rick-carousel">
@@ -355,7 +345,6 @@
                                                 break;
 
                                             case 2:
-                                                <!-- 📊 Tabla con Información Detallada -->
                                                 <div class="rick-table mt-auto text-center p-3 border rounded bg-light">
                                                     <h5 class="fw-bold">📋 Lista de Personajes</h5>
                                                     <table class="table table-striped">
@@ -387,7 +376,6 @@
                                                 break;
 
                                             case 3:
-                                                <!-- 🚀 Tarjetas con Estilos Personalizados -->
                                                 <div class="custom-rick-widget mt-auto text-center p-3 border rounded bg-light">
                                                     <h5 class="fw-bold">💥 Dimensiones Alternativas</h5>
                                                     <div class="d-flex flex-wrap justify-content-center">
@@ -436,7 +424,7 @@
 
                                         @switch (widget.ComponentId)
                                         {
-                                            case 1: @* Estilo minimalista *@
+                                            case 1: 
                                                 <div class="meow-widget mt-auto p-3 border rounded bg-light">
                                                     <div class="d-flex align-items-center mb-3">
                                                         <i class="fas fa-paw fs-4 me-2 text-primary"></i>
@@ -446,7 +434,7 @@
                                                 </div>
                                                 break;
 
-                                            case 2: @* Estilo con fondo temático *@
+                                            case 2: 
                                                 <div class="meow-widget mt-auto p-3 rounded text-white" style="background: #8A4F7D;">
                                                     <div class="d-flex align-items-center mb-3">
                                                         <img src="~/img/cat-silhouette.png" width="40" class="me-2">
@@ -458,7 +446,7 @@
                                                 </div>
                                                 break;
 
-                                            case 3: @* Estilo interactivo *@
+                                            case 3: 
                                                 <div class="meow-widget mt-auto p-3 border rounded bg-light">
                                                     <div class="d-flex justify-content-between align-items-center mb-3">
                                                         <h5 class="mb-0">
@@ -486,7 +474,7 @@
 
                                         @switch (widget.ComponentId)
                                         {
-                                            case 1: @* Vista simple con imagen *@
+                                            case 1: 
                                                 <div class="dog-widget mt-auto text-center p-3">
                                                     <h5 class="mb-3">🐶 Foto aleatoria de perro</h5>
                                                     <img src="@dogData.Message" alt="Foto de perro" class="img-fluid rounded shadow" style="max-height: 200px;">
@@ -494,7 +482,7 @@
                                                 </div>
                                                 break;
 
-                                            case 2: @* Vista con tarjeta estilizada *@
+                                            case 2: 
                                                 <div class="dog-widget mt-auto text-center p-3 border rounded" style="background-color: #f8f9fa;">
                                                     <div class="d-flex justify-content-between align-items-center mb-2">
                                                         <h5 class="mb-0">🐕‍🦺 Amigo canino</h5>
@@ -510,7 +498,7 @@
                                                 </div>
                                                 break;
 
-                                            case 3: @* Vista interactiva con efectos *@
+                                            case 3:
                                                 <div class="dog-widget mt-auto text-center p-3 border rounded bg-white shadow-sm">
                                                     <div class="dog-header mb-3">
                                                         <i class="fas fa-dog fa-2x text-warning"></i>
@@ -552,7 +540,7 @@
                                         {
                                             @switch (widget.ComponentId)
                                             {
-                                                case 1: @* Estilo minimalista *@
+                                                case 1: 
                                                     <div class="logo-widget mt-auto p-3 border rounded text-center">
                                                         <img src="@logoData.Logo" alt="@logoData.Name logo" class="img-fluid mb-3" style="max-height: 80px;">
                                                         <h5>@logoData.Name</h5>
@@ -561,7 +549,7 @@
                                                     </div>
                                                     break;
 
-                                                case 2: @* Estilo informativo *@
+                                                case 2: 
                                                     <div class="logo-widget mt-auto p-3 border rounded bg-light">
                                                         <div class="d-flex align-items-center mb-3">
                                                             <img src="@logoData.Logo" alt="@logoData.Name logo" class="img-fluid me-3" style="max-height: 60px;">
@@ -578,7 +566,7 @@
                                                     </div>
                                                     break;
 
-                                                case 3: @* Estilo interactivo con hover *@
+                                                case 3: 
                                                     <div class="logo-widget mt-auto p-4 border rounded text-center position-relative overflow-hidden"
                                                          style="background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);">
                                                         <div class="logo-hover-effect" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div>
@@ -620,13 +608,12 @@
                                                     <h5 class="fw-bold">Chuck Norris Dice:</h5>
                                                     <p class="fs-4">@ChuckData.Value</p>
                                                     <img src="@ChuckData.IconUrl" alt="Icono Chuck Norris" class="img-fluid">
-                                                    <p class="text-muted small">ID de la Frase: @ChuckData.Id</p>  <!-- Usamos el Id de la frase -->
+                                                    <p class="text-muted small">ID de la Frase: @ChuckData.Id</p> 
                                                     <p class="text-muted">Fuente: Chuck Norris API</p>
                                                 </div>
                                                 break;
 
                                             case 2:
-                                                <!-- Diseño en tabla con frase de Chuck Norris -->
                                                 <div class="chuck-norris-table mt-auto text-center p-3 border rounded bg-light">
                                                     <h5 class="fw-bold">Chuck Norris Frase</h5>
                                                     <table class="table table-striped">
@@ -643,7 +630,7 @@
                                                             </tr>
                                                             <tr>
                                                                 <td>ID de la Frase</td>
-                                                                <td>@ChuckData.Id</td>  <!-- Usamos el Id de la frase -->
+                                                                <td>@ChuckData.Id</td> 
                                                             </tr>
                                                             <tr>
                                                                 <td>Icono</td>
@@ -656,12 +643,11 @@
                                                 break;
 
                                             case 3:
-                                                <!-- Diseño personalizado -->
                                                 <div class="custom-chuck-widget mt-auto text-center p-3 border rounded bg-light">
                                                     <h5 class="fw-bold">💥 Chuck Norris</h5>
                                                     <p class="fs-5">"@ChuckData.Value"</p>
                                                     <img src="@ChuckData.IconUrl" alt="Icono Chuck Norris" class="img-fluid" style="max-width: 100px;">
-                                                    <p class="text-muted small">Frase Generada: @ChuckData.Id</p>  <!-- Usamos el Id de la frase -->
+                                                    <p class="text-muted small">Frase Generada: @ChuckData.Id</p> 
                                                     <p class="text-muted">Fuente: Chuck Norris API</p>
                                                 </div>
                                                 break;
@@ -679,7 +665,6 @@
                                             @switch (widget.ComponentId)
                                             {
                                                 case 1:
-                                                    <!-- Vista Clásica: Muestra la categoría y el chiste en un bloque simple -->
                                                     <div class="joke-widget mt-auto text-center p-3 border rounded bg-light">
                                                         <h5 class="fw-bold">😂 Chiste del Día</h5>
                                                         <p><strong>@jokeData.Categoria</strong></p>
@@ -689,7 +674,6 @@
                                                     break;
 
                                                 case 2:
-                                                    <!-- Vista en Tabla: Muestra los detalles del chiste en formato de tabla -->
                                                     <table class="table table-striped mt-auto">
                                                         <thead>
                                                             <tr>
@@ -719,7 +703,6 @@
                                                     break;
 
                                                 case 3:
-                                                    <!-- Diseño Personalizado: Muestra el chiste con detalles adicionales en un formato moderno -->
                                                     <div class="custom-joke-widget mt-auto text-center p-3 border rounded bg-light">
                                                         <h5 class="fw-bold">🎭 ¿Listo para reír?</h5>
                                                         <p><strong>@jokeData.Categoria</strong></p>
@@ -752,14 +735,12 @@
                                                     <h5 class="card-title">@widget.Nombre</h5>
                                                     @if (ViewBag.DynamicData != null && ViewBag.DynamicData.ContainsKey(widget.Nombre))
                                                     {
-                                                        // Se realiza un cast directo a QuoteModel
                                                         var quoteData = ViewBag.DynamicData[widget.Nombre] as MDashboard.Models.ApiModels.QuoteModel;
                                                         if (quoteData != null)
                                                         {
                                                             @switch (widget.ComponentId)
                                                             {
                                                                 case 1:
-                                                                    <!-- Vista Clásica -->
                                                                     <div class="quote-widget text-center">
                                                                         <p class="fs-5">"@quoteData.Quote"</p>
                                                                         <p class="fw-bold">- @quoteData.Author</p>
@@ -767,7 +748,6 @@
                                                                     </div>
                                                                     break;
                                                                 case 2:
-                                                                    <!-- Vista en Tabla -->
                                                                     <table class="table table-striped">
                                                                         <thead>
                                                                             <tr>
@@ -792,7 +772,6 @@
                                                                     </table>
                                                                     break;
                                                                 case 3:
-                                                                    <!-- Diseño Personalizado -->
                                                                     <div class="custom-quote-widget text-center p-3 border rounded bg-light">
                                                                         <h5 class="fw-bold">Quote del Día</h5>
                                                                         <blockquote class="blockquote">
@@ -835,14 +814,12 @@
                                                             @switch (widget.ComponentId)
                                                             {
                                                                 case 1:
-                                                                    <!-- Vista Clásica: Bloque central -->
                                                                     <div class="advice-widget text-center">
                                                                         <p class="fs-5">"@adviceData.Slip.Advice"</p>
                                                                         <p class="text-muted small">ID: @adviceData.Slip.Id</p>
                                                                     </div>
                                                                     break;
                                                                 case 2:
-                                                                    <!-- Vista en Tabla -->
                                                                     <table class="table table-striped">
                                                                         <thead>
                                                                             <tr>
@@ -863,7 +840,6 @@
                                                                     </table>
                                                                     break;
                                                                 case 3:
-                                                                    <!-- Diseño Personalizado -->
                                                                     <div class="custom-advice-widget text-center p-3 border rounded bg-light">
                                                                         <h5 class="fw-bold">Consejo del Día</h5>
                                                                         <blockquote class="blockquote">
@@ -941,13 +917,11 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                 </div>
                 <div class="modal-body" id="configModalBody">
-                    <!-- Aquí se cargará el contenido parcial -->
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Secci처n de widgets ocultos -->
     <div class="mb-4">
         <button class="btn btn-outline-secondary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#widgetsOcultosContainer">
             <i class="fas fa-eye me-1"></i> Mostrar Widgets Ocultos (<span id="contadorOcultos">@(ViewBag.WidgetsOcultos?.Count ?? 0)</span>)
@@ -1018,28 +992,22 @@
 @section Scripts {
     <script>
 
-        //
         $(document).ready(function() {
-            // Agrega un botón de configuración de dimensiones en cada widget
             $('.config-widget-icon').on('click', function(e) {
                 e.preventDefault();
                 const widgetId = $(this).data('widget-id');
 
-                // Obtener dimensiones actuales
                 const widgetElement = $('#widget-' + widgetId);
                 const width = parseInt(widgetElement.css('width')) || 300;
                 const height = parseInt(widgetElement.css('height')) || 300;
 
-                // Establecer valores en el modal
                 $('#dimensiones-widget-id').val(widgetId);
                 $('#widget-width').val(width);
                 $('#widget-height').val(height);
 
-                // Mostrar modal
                 $('#dimensionesModal').modal('show');
             });
 
-            // Manejar el guardado de dimensiones
             $('#guardar-dimensiones').on('click', function() {
                 const widgetId = $('#dimensiones-widget-id').val();
                 const width = $('#widget-width').val();
@@ -1051,16 +1019,13 @@
                     data: { widgetId: widgetId, width: width, height: height },
                     success: function(response) {
                         if (response.success) {
-                            // Actualizar dimensiones visualmente
                             $('#widget-' + widgetId).css({
                                 'width': width + 'px',
                                 'height': height + 'px'
                             });
 
-                            // Cerrar modal
                             $('#dimensionesModal').modal('hide');
 
-                            // Mostrar mensaje de éxito
                             alert('Dimensiones actualizadas correctamente');
                         } else {
                             alert('Error al actualizar dimensiones');
@@ -1076,35 +1041,29 @@
 
                 function mostrarModalDimensiones(widgetId) {
             const widgetElement = $('#widget-' + widgetId);
-            // Obtener dimensiones actuales (quitar 'px' del final)
+
             const width = parseInt(widgetElement.css('width')) || 300;
             const height = parseInt(widgetElement.css('height')) || 300;
 
-            // Establecer valores en el modal
             $('#dimensiones-widget-id').val(widgetId);
             $('#widget-width').val(width);
             $('#widget-height').val(height);
 
-            // Mostrar modal
             $('#dimensionesModal').modal('show');
         }
 
 
         $(document).ready(function () {
-            // Inicializar los carruseles de Rick & Morty y configuraciones iniciales
             inicializarRickCarousels();
 
-            // Si hay widgets ocultos, muestra el contador
             const widgetsOcultosCount = $('#widgetsOcultos .widget-item').length;
             $('#contadorOcultos').text(widgetsOcultosCount);
 
-            // Si no hay widgets ocultos, ocultar el botón correspondiente
             if (widgetsOcultosCount === 0) {
                 $('[data-bs-target="#widgetsOcultosContainer"]').hide();
             }
         });
 
-        // Función para inicializar los carruseles de Rick & Morty
         function inicializarRickCarousels() {
             $('.rick-carousel').each(function () {
                 const carousel = $(this);
@@ -1112,7 +1071,6 @@
                 const cards = slider.children();
                 const indicatorsContainer = carousel.find('.rick-indicators');
 
-                // Reiniciar el contenedor de indicadores antes de asignar
                 indicatorsContainer.empty();
 
                 let currentIndex = 0;
@@ -1142,7 +1100,6 @@
                     }
                 });
 
-                // Vincular la acción de clic en los indicadores
                 indicatorsContainer.off('click', '.rick-indicator').on('click', '.rick-indicator', function () {
                     currentIndex = $(this).index();
                     slider.css('transform', `translateX(-${currentIndex * 100}%)`);
@@ -1151,7 +1108,6 @@
             });
         }
 
-        // Función para ocultar un widget
         function ocultarWidget(widgetId) {
             $.ajax({
                 url: '@Url.Action("ActualizarVisibilidadWidget", "Dashboard")',
@@ -1159,34 +1115,34 @@
                 data: { widgetId: widgetId, esVisible: false },
                 success: function (response) {
                     if (response.success) {
-                        // Animación para ocultar el widget y clonar su contenido
+
                         const widgetElement = $('#widget-' + widgetId);
                         const widgetClone = widgetElement.clone();
-                        // Simplificar el contenido del clon (mostrando solo título y descripción)
+
                         widgetClone.find('.scrollable-content').html(`
         <h5 class="card-title">${widgetClone.find('.card-title').text()}</h5>
         <p class="card-text">${widgetClone.find('.card-text').text() || 'Widget oculto'}</p>
                                  `);
-                        // Cambiar el ID del clon para diferenciarlo
+
                         widgetClone.attr('id', 'widget-oculto-' + widgetId);
-                        // Reemplazar el botón de ocultar por uno para mostrar el widget
+
                         widgetClone.find('.sticky-button-container').html(`
         <button class="btn btn-success btn-sm w-100" onclick="mostrarWidget(${widgetId})">
         <i class="fas fa-eye me-1"></i> Mostrar Widget
         </button>
                                  `);
-                        // Ocultar con animación el widget original y actualizar la sección de ocultos
+
                         widgetElement.fadeOut(400, function () {
                             $(this).remove();
-                            // Mostrar la sección de ocultos, si estaba oculta
+
                             $('#widgetsOcultosContainer').addClass('show');
-                            // Agregar el widget clonado a la sección de ocultos
+
                             $('#widgetsOcultos').append(widgetClone);
                             widgetClone.hide().fadeIn();
-                            // Actualizar el contador de widgets ocultos
+
                             const contadorActual = parseInt($('#contadorOcultos').text()) + 1;
                             $('#contadorOcultos').text(contadorActual);
-                            // Asegurarse que el botón para ver widgets ocultos esté visible
+
                             $('[data-bs-target="#widgetsOcultosContainer"]').show();
                         });
                     } else {
@@ -1198,7 +1154,7 @@
                 }
             });
         }
-        // Función para mostrar un widget oculto
+
         function mostrarWidget(widgetId) {
             $.ajax({
                 url: '@Url.Action("MostrarWidget", "Dashboard")',
@@ -1206,19 +1162,19 @@
                 data: { widgetId: widgetId },
                 success: function (response) {
                     if (response.success) {
-                        // Remover el widget oculto con animación
+
                         const widgetOculto = $('#widget-oculto-' + widgetId);
                         widgetOculto.fadeOut(400, function () {
                             $(this).remove();
-                            // Actualizar el contador de widgets ocultos
+
                             const contadorActual = parseInt($('#contadorOcultos').text()) - 1;
                             $('#contadorOcultos').text(contadorActual);
-                            // Ocultar el botón y la sección si ya no quedan widgets ocultos
+
                             if (contadorActual === 0) {
                                 $('[data-bs-target="#widgetsOcultosContainer"]').hide();
                                 $('#widgetsOcultosContainer').removeClass('show');
                             }
-                            // Recargar la página para restaurar el widget con su contenido original
+
                             location.reload();
                         });
                     } else {
@@ -1230,9 +1186,9 @@
                 }
             });
         }
-        // Función para actualizar los widgets parciales mediante Ajax
+
                 function actualizarWidgets() {
-            // Guardar las dimensiones actuales antes de actualizar
+
             const dimensiones = {};
             $('.widget-item').each(function() {
                 const widgetId = $(this).data('widget-id');
@@ -1256,7 +1212,6 @@
                     setTimeout(() => {
                         $container.html(newWidgets);
 
-                        // Restaurar dimensiones
                         for (const widgetId in dimensiones) {
                             $('#widget-' + widgetId).css({
                                 'width': dimensiones[widgetId].width,
@@ -1279,8 +1234,6 @@
             });
         }
 
-
-        // Actualizar los widgets cada 30 segundos
         setInterval(actualizarWidgets, 30000);
     </script>
 
