@@ -21,4 +21,12 @@ namespace MDashboard.Models.ApiModels
         [JsonProperty("id")]
         public int Id { get; set; }
     }
-}
+
+        public class QuoteModel
+        {
+            public string Quote { get; set; }
+            public string Author { get; set; }
+            public int Id { get; set; }
+        }
+    }
+

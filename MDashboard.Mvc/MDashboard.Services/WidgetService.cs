@@ -288,13 +288,14 @@ namespace MDashboard.Business.Services
             {
                 if (response is QuotesApiResponse quotesResponse)
                 {
-                    var quoteInfo = new
+                    var quoteModel = new QuoteModel
                     {
                         Quote = quotesResponse.Quote,
                         Author = quotesResponse.Author,
                         Id = quotesResponse.Id
                     };
-                    resultados.Add(widgetNombre, quoteInfo);
+
+                    resultados.Add(widgetNombre, quoteModel);
                 }
                 else
                 {
@@ -306,6 +307,7 @@ namespace MDashboard.Business.Services
                 Console.WriteLine($"Error procesando respuesta de Quotes API para {widgetNombre}: {ex.Message}");
             }
         }
+
         private void ProcesarDogMeowFactsApiResponse(string widgetNombre, DogApiResponse dogResponse, Dictionary<string, object> resultados)
         {
             if (dogResponse != null)

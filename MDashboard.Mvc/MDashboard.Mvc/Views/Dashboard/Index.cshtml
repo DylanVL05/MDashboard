@@ -744,6 +744,83 @@
                                         }
                                     }
 
+                                    if (widget.UrlApi.ToLower().Contains("quote"))
+                                    {
+                                        <div class="col">
+                                            <div class="card h-100 shadow-sm">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">@widget.Nombre</h5>
+                                                    @if (ViewBag.DynamicData != null && ViewBag.DynamicData.ContainsKey(widget.Nombre))
+                                                    {
+                                                        // Se realiza un cast directo a QuoteModel
+                                                        var quoteData = ViewBag.DynamicData[widget.Nombre] as MDashboard.Models.ApiModels.QuoteModel;
+                                                        if (quoteData != null)
+                                                        {
+                                                            @switch (widget.ComponentId)
+                                                            {
+                                                                case 1:
+                                                                    <!-- Vista Clásica -->
+                                                                    <div class="quote-widget text-center">
+                                                                        <p class="fs-5">"@quoteData.Quote"</p>
+                                                                        <p class="fw-bold">- @quoteData.Author</p>
+                                                                        <p class="text-muted small">ID: @quoteData.Id</p>
+                                                                    </div>
+                                                                    break;
+                                                                case 2:
+                                                                    <!-- Vista en Tabla -->
+                                                                    <table class="table table-striped">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>Parámetro</th>
+                                                                                <th>Valor</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>Frase</td>
+                                                                                <td>@quoteData.Quote</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Autor</td>
+                                                                                <td>@quoteData.Author</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>ID</td>
+                                                                                <td>@quoteData.Id</td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                    break;
+                                                                case 3:
+                                                                    <!-- Diseño Personalizado -->
+                                                                    <div class="custom-quote-widget text-center p-3 border rounded bg-light">
+                                                                        <h5 class="fw-bold">Quote del Día</h5>
+                                                                        <blockquote class="blockquote">
+                                                                            <p class="mb-0">"@quoteData.Quote"</p>
+                                                                            <footer class="blockquote-footer">@quoteData.Author</footer>
+                                                                        </blockquote>
+                                                                        <p class="text-muted small">ID: @quoteData.Id</p>
+                                                                    </div>
+                                                                    break;
+                                                                default:
+                                                                    <p class="text-warning">No hay una configuración válida para este <code>ComponentId</code>.</p>
+                                                                    break;
+                                                            }
+                                                        }
+                                                        else
+                                                        {
+                                                            <p class="text-danger">Datos dinámicos para este widget (@widget.Nombre) no disponibles.</p>
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        <p class="text-danger">No hay datos dinámicos para este widget (@widget.Nombre).</p>
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+
                                     else
                                     {
                                         <div class="generic-widget mt-auto">
