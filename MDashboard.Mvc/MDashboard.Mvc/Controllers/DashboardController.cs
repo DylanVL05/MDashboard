@@ -264,5 +264,32 @@ namespace MDashboard.Controllers
                 return StatusCode(500, $"Error al obtener widgets: {ex.Message}");
             }
         }
+        [HttpPost]
+        public async Task<IActionResult> GuardarComponentId(Widget request)
+        {
+            try
+            {
+                // Obtener el widget en la base de datos
+                var widget = await _context.Widgets.FirstOrDefaultAsync(w => w.Id == request.Id);
+
+                if (widget != null)
+                {
+                    // Actualizar solo el ComponentId
+                    widget.ComponentId = request.ComponentId;
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction("Index"); // Redirige a la vista principal
+                }
+                else
+                {
+                    return NotFound();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al actualizar ComponentId: {ex.Message}");
+                return StatusCode(500, "Error al actualizar ComponentId");
+            }
+        }
+
     }
 }
