@@ -55,4 +55,16 @@ namespace MDashboard.Models.ApiModels
         [JsonProperty("explicit")]
         public bool Explicit { get; set; }
     }
+        public class JokeModel
+        {
+            public string Categoria { get; set; }
+            public string Chiste { get; set; }
+            public string Tipo { get; set; }
+            public bool Seguro { get; set; }
+            public string Setup { get; set; }
+            public string Delivery { get; set; }
+            public string Idioma { get; set; }
+        }
 }
+
+

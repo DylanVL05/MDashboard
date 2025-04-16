@@ -39,8 +39,8 @@
                         <div class="card-body d-flex flex-column">
                             <div class="scrollable-content">
                                 <h5 class="card-title">@widget.Nombre</h5>
-                                
-                                
+
+
 
                                 @if (ViewBag.DynamicData != null && ViewBag.DynamicData.ContainsKey(widget.Nombre))
                                 {
@@ -123,7 +123,7 @@
                                                 break;
                                         }
                                     }
-                  
+
 
                                     else if (widget.UrlApi.Contains("exchangerate-api.com"))
                                     {
@@ -323,7 +323,7 @@
                                                 break;
                                         }
                                     }
-                                 
+
                                     else if (widget.UrlApi.Contains("rickandmortyapi"))
                                     {
                                         var rickData = ViewBag.DynamicData[widget.Nombre] as List<MDashboard.Models.ApiModels.Character>;
@@ -671,6 +671,79 @@
                                                 break;
                                         }
                                     }
+                                    else if (widget.UrlApi.Contains("jokeapi.dev"))
+                                    {
+                                        var jokeData = ViewBag.DynamicData[widget.Nombre] as MDashboard.Models.ApiModels.JokeModel;
+                                        if (jokeData != null)
+                                        {
+                                            @switch (widget.ComponentId)
+                                            {
+                                                case 1:
+                                                    <!-- Vista Clásica: Muestra la categoría y el chiste en un bloque simple -->
+                                                    <div class="joke-widget mt-auto text-center p-3 border rounded bg-light">
+                                                        <h5 class="fw-bold">😂 Chiste del Día</h5>
+                                                        <p><strong>@jokeData.Categoria</strong></p>
+                                                        <p>@jokeData.Chiste</p>
+                                                        <p class="text-muted">Fuente: Joke API</p>
+                                                    </div>
+                                                    break;
+
+                                                case 2:
+                                                    <!-- Vista en Tabla: Muestra los detalles del chiste en formato de tabla -->
+                                                    <table class="table table-striped mt-auto">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Parámetro</th>
+                                                                <th>Valor</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Categoria</td>
+                                                                <td>@jokeData.Categoria</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Chiste</td>
+                                                                <td>@jokeData.Chiste</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Tipo</td>
+                                                                <td>@jokeData.Tipo</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Idioma</td>
+                                                                <td>@jokeData.Idioma</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    break;
+
+                                                case 3:
+                                                    <!-- Diseño Personalizado: Muestra el chiste con detalles adicionales en un formato moderno -->
+                                                    <div class="custom-joke-widget mt-auto text-center p-3 border rounded bg-light">
+                                                        <h5 class="fw-bold">🎭 ¿Listo para reír?</h5>
+                                                        <p><strong>@jokeData.Categoria</strong></p>
+                                                        <p>@jokeData.Chiste</p>
+                                                        @if (jokeData.Tipo == "twopart")
+                                                        {
+                                                            <p><strong>Setup:</strong> @jokeData.Setup</p>
+                                                            <p><strong>Delivery:</strong> @jokeData.Delivery</p>
+                                                        }
+                                                        <p class="text-muted">Idioma: @jokeData.Idioma</p>
+                                                    </div>
+                                                    break;
+
+                                                default:
+                                                    <p class="text-warning">No hay una configuración válida para este <code>ComponentId</code>.</p>
+                                                    break;
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <p class="text-danger">No hay datos dinámicos para el widget @widget.Nombre.</p>
+                                        }
+                                    }
+
                                     else
                                     {
                                         <div class="generic-widget mt-auto">

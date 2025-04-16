@@ -243,18 +243,18 @@ namespace MDashboard.Business.Services
                         chiste = "Tipo de chiste desconocido.";
                     }
 
-                    var jokeInfo = new
+                    var jokeModel = new JokeModel
                     {
                         Categoria = jokeResponse.Category,
                         Chiste = chiste,
-                        type = jokeResponse.Type,
+                        Tipo = jokeResponse.Type,
                         Seguro = jokeResponse.Safe,
                         Setup = jokeResponse.Setup ?? "N/A",
                         Delivery = jokeResponse.Delivery ?? "N/A",
                         Idioma = jokeResponse.Lang
                     };
 
-                    resultados.Add(widgetNombre, jokeInfo);
+                    resultados.Add(widgetNombre, jokeModel);
                 }
                 else
                 {
@@ -266,6 +266,7 @@ namespace MDashboard.Business.Services
                 Console.WriteLine($"Error inesperado para {widgetNombre}: {ex.Message}");
             }
         }
+
 
         private void ProcesarMeowFactsApiResponse(string widgetNombre, MeowFactsAPIResponse meowResponse, Dictionary<string, object> resultados)
         {
