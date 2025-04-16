@@ -1,0 +1,68 @@
+﻿@model IEnumerable<MDashboard.Models.ConfiguracionWidget>
+
+@{
+    ViewBag.Title = "Configuraciones de Widgets";
+}
+
+<h2>Configuraciones de Widgets</h2>
+
+<!-- Botón para redirigir a la vista Create -->
+<a href="@Url.Action("Create", "ConfiguracionWidgets")" class="btn btn-primary mb-3">
+    Agregar Configuración
+</a>
+
+<!-- Tabla de configuraciones -->
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Usuario ID</th>
+            <th>Widget ID</th>
+            <th>Height</th>
+            <th>Width</th>
+            <th>Es Favorito</th>
+            <th>Es Visible</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var config in Model)
+        {
+            <tr>
+                <td>@config.Id</td>
+                <td>@config.UsuarioId</td>
+                <td>@config.WidgetId</td>
+                <td>@config.Height</td>
+                <td>@config.Width</td>
+                <td>@(config.EsFavorito ? "Sí" : "No")</td>
+                <td>@(config.EsVisible ? "Sí" : "No")</td>
+                <td>
+                    <!-- Botón Editar: redirige a la vista Edit -->
+                    <a class="btn btn-warning" href="@Url.Action("Edit", "ConfiguracionWidgets", new { id = config.Id })">Editar</a>
+
+                    <!-- Botón Eliminar: envuelve el botón en un formulario con confirmación -->
+                    @using (Html.BeginForm("Delete", "ConfiguracionWidgets", new { id = config.Id }, FormMethod.Post, null, new { onsubmit = "return confirm('¿Estás seguro que deseas eliminar esta configuración?')" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts {
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <!-- Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3HfN... (actualiza con el hash correcto)"
+            crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+            integrity="sha384-OgVRvuATP1z7JjHLkuOU1FZW9LkUy4K8q6bd41+0cQ2Gj/ ... (actualiza con el hash correcto)"
+            crossorigin="anonymous"></script>
+}

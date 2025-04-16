@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "Inicio de Sesión";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4">
+            <div class="card shadow">
+                <div class="card-body p-4">
+                    <div class="text-center mb-4">
+                        <h4 class="fw-bold">Iniciar Sesión</h4>
+                    </div>
+
+                    <!-- Mensaje de error, si aplica -->
+                    @if (!string.IsNullOrEmpty(ViewBag.MensajePantalla as string))
+                    {
+                        <div class="alert alert-danger text-center" role="alert">
+                            @ViewBag.MensajePantalla
+                        </div>
+                    }
+
+                    <!-- Formulario de login -->
+                    <form method="post" asp-action="Login" asp-controller="Usuario">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese su correo" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="passwordHash" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="passwordHash" name="passwordHash" placeholder="Ingrese su contraseña" required />
+                        </div>
+                        <button type="submit" class="btn btn-dark w-100">Iniciar Sesión</button>
+                    </form>
+
+                    <!-- Recuperación de acceso -->
+                    <div class="text-center mt-3">
+                        <a href="@Url.Action("RecuperarAcceso", "Usuario")" class="text-primary">¿Olvidaste tu contraseña?</a>
+                    </div>
+
+                    <!-- Registro -->
+                    <div class="text-center mt-3">
+                        <p>¿No tienes una cuenta? <a href="@Url.Action("Register", "Usuario")" class="text-primary">Regístrate aquí</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

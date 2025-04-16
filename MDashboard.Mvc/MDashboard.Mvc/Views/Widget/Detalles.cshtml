@@ -1,0 +1,17 @@
+﻿@model dynamic // Usamos dynamic para manejar el widget que se pasa desde el controlador
+
+@{
+    ViewData["Title"] = "Detalles del Widget";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+@if (Model != null)
+{
+    <h3>@Model.nombre</h3>
+    <p>@Model.datos</p> <!-- Mostrar el nombre y los datos del widget -->
+}
+else
+{
+    <p>No se encontraron detalles para este widget.</p>
+}
