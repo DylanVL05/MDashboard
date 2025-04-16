@@ -43,12 +43,14 @@ namespace MDashboard.Controllers
 
                 var todosLosWidgets = await _widgetRepository.ObtenerWidgetsActivosAsync();
 
+                // Se obtienen las configuraciones para el usuario, asumiendo que incluyen EsFavorito y EsVisible.
                 var configuracionesUsuario = await _context.ConfiguracionWidgets
                     .Where(c => c.UsuarioId == usuarioId)
                     .ToDictionaryAsync(c => c.WidgetId, c => c);
 
-                var widgetsVisibles = new List<Widget>();
                 var widgetsOcultos = new List<Widget>();
+                var favoritos = new List<Widget>();
+                var noFavoritos = new List<Widget>();
 
                 foreach (var widget in todosLosWidgets)
                 {
@@ -56,18 +58,25 @@ namespace MDashboard.Controllers
                     {
                         if (!config.EsVisible)
                         {
-                            widgetsOcultos.Add(widget);
+                            widgetsOcultos.Add(widget); // Widget oculto, no se muestra.
                         }
                         else
                         {
-                            widgetsVisibles.Add(widget);
+                            if (config.EsFavorito)
+                                favoritos.Add(widget);
+                            else
+                                noFavoritos.Add(widget);
                         }
                     }
                     else
                     {
-                        widgetsVisibles.Add(widget);
+                        // Si no hay configuración, consideramos al widget visible y sin favorito.
+                        noFavoritos.Add(widget);
                     }
                 }
+
+                // Juntamos: primero los favoritos y luego los que no lo son.
+                var widgetsVisibles = favoritos.Concat(noFavoritos).ToList();
 
                 var dynamicData = await _widgetService.ObtenerDatosDeWidgetsAsync();
                 ViewBag.DynamicData = dynamicData ?? new Dictionary<string, object>();
@@ -88,6 +97,53 @@ namespace MDashboard.Controllers
                 return StatusCode(500, $"Error al cargar el dashboard: {ex.Message}");
             }
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ToggleFavorite(int widgetId)
+        {
+            try
+            {
+                int usuarioId = ObtenerUsuarioActual();
+
+                // Verificamos si ya existe la configuración para este widget y usuario
+                var configuracion = await _context.ConfiguracionWidgets
+                    .FirstOrDefaultAsync(c => c.UsuarioId == usuarioId && c.WidgetId == widgetId);
+
+                if (configuracion != null)
+                {
+                    // Alternamos el valor de favorito
+                    configuracion.EsFavorito = !configuracion.EsFavorito;
+                    _context.ConfiguracionWidgets.Update(configuracion);
+                }
+                else
+                {
+                    // Si no existe la configuración, creamos una nueva con el widget marcado como favorito
+                    configuracion = new ConfiguracionWidget
+                    {
+                        UsuarioId = usuarioId,
+                        WidgetId = widgetId,
+                        EsVisible = true,  // Valor predeterminado, según convenga
+                        EsFavorito = true
+                    };
+                    _context.ConfiguracionWidgets.Add(configuracion);
+                }
+
+                await _context.SaveChangesAsync();
+
+                // Redirigimos al Index para que se actualice la lista de widgets
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al cambiar el estado de favorito: {ex.Message}");
+                TempData["ErrorMessage"] = $"Error al cambiar el estado de favorito: {ex.Message}";
+                return RedirectToAction("Index");
+            }
+        }
+
+
+
 
 
         // Acción para agregar un widget preexistente al dashboard
