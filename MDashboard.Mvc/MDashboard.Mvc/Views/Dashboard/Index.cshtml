@@ -3,223 +3,235 @@
 @model IEnumerable<MDashboard.Models.Widget>
 <style>
     .card {
-        height: 100%;
-        max-height: 500px;
-        display: flex;
-        flex-direction: column;
+    height: 100%;
+    max-height: 500px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
     }
 
-    .card-body {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-        position: relative;
-    }
-
-    .scrollable-content {
-        flex: 1;
-        overflow-y: auto;
-        padding-bottom: 60px; /* Espacio para el bot처n */
-    }
-
-    .sticky-button-container {
-        position: sticky;
-        bottom: 0;
-        background: white;
-        padding: 1rem 0;
-        border-top: 1px solid #dee2e6;
-        margin-top: auto;
-        z-index: 1;
-    }
-
-    .nasa-widget img,
-    .nasa-widget iframe {
-        max-height: 200px;
-        object-fit: cover;
-    }
-
-    .rick-carousel {
-        position: relative;
-        overflow: hidden;
-        padding: 1rem 0;
-    }
-
-    .rick-slider {
-        display: flex;
-        transition: transform 0.5s ease-in-out;
-        gap: 1rem;
-        padding-bottom: 1rem;
-    }
-
-    .rick-card {
-        min-width: 100%;
-        flex: 0 0 auto;
-        background: white;
-        border-radius: 10px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        overflow: hidden;
-    }
-
-        .rick-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-bottom: 2px solid #00b5cc;
-        }
-
-    .rick-card-body {
-        padding: 1rem;
-        background: #1a1a1a;
-        color: white;
-    }
-
-    .rick-nav-button {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: rgba(0,181,204,0.8);
-        color: white;
-        border: none;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        z-index: 10;
-        cursor: pointer;
-        transition: all 0.3s;
-    }
-
-        .rick-nav-button:hover {
-            background: #00b5cc;
-        }
-
-    .rick-prev {
-        left: 10px;
-    }
-
-    .rick-next {
-        right: 10px;
-    }
-
-    .rick-indicators {
-        position: absolute;
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        gap: 5px;
-        z-index: 10;
-    }
-
-    .rick-indicator {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background: rgba(255,255,255,0.5);
-        cursor: pointer;
-        transition: all 0.3s;
-    }
-
-        .rick-indicator.active {
-            background: #00b5cc;
-            transform: scale(1.2);
-        }
-
-    #apiContainer {
-        display: flex;
-        flex-direction: column;
-        max-height: 400px;
-        overflow-y: auto;
-        gap: 10px;
-    }
-    /* Estilos para los widgets */
     .widget-item {
         transition: all 0.3s ease;
     }
 
+
+    .card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    }
+
     .scrollable-content {
-        max-height: 350px;
-        overflow-y: auto;
+    flex: 1;
+    overflow-y: auto;
+    padding-bottom: 60px; /* Espacio para el bot처n */
+    }
+
+    .sticky-button-container {
+    position: sticky;
+    bottom: 0;
+    background: white;
+    padding: 1rem 0;
+    border-top: 1px solid #dee2e6;
+    margin-top: auto;
+    z-index: 1;
+    }
+
+    .nasa-widget img,
+    .nasa-widget iframe {
+    max-height: 200px;
+    object-fit: cover;
+    }
+
+    .rick-carousel {
+    position: relative;
+    overflow: hidden;
+    padding: 1rem 0;
+    }
+
+    .rick-slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    }
+
+    .rick-card {
+    min-width: 100%;
+    flex: 0 0 auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    }
+
+    .rick-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid #00b5cc;
+    }
+
+    .rick-card-body {
+    padding: 1rem;
+    background: #1a1a1a;
+    color: white;
+    }
+
+    .rick-nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,181,204,0.8);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    z-index: 10;
+    cursor: pointer;
+    transition: all 0.3s;
+    }
+
+    .rick-nav-button:hover {
+    background: #00b5cc;
+    }
+
+    .rick-prev {
+    left: 10px;
+    }
+
+    .rick-next {
+    right: 10px;
+    }
+
+    .rick-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+    z-index: 10;
+    }
+
+    .rick-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    cursor: pointer;
+    transition: all 0.3s;
+    }
+
+    .rick-indicator.active {
+    background: #00b5cc;
+    transform: scale(1.2);
+    }
+
+    #apiContainer {
+    display: flex;
+    flex-direction: column;
+    max-height: 400px;
+    overflow-y: auto;
+    gap: 10px;
+    }
+    /* Estilos para los widgets */
+    .widget-item {
+    transition: all 0.3s ease;
+    }
+
+    .scrollable-content {
+    max-height: 350px;
+    overflow-y: auto;
     }
 
     /* Estilos para los widgets ocultos */
     #widgetsOcultos .card {
-        transition: all 0.3s ease;
-        border-left: 3px solid #6c757d;
+    transition: all 0.3s ease;
+    border-left: 3px solid #6c757d;
     }
 
-        #widgetsOcultos .card:hover {
-            opacity: 1 !important;
-            transform: translateY(-5px);
-            border-left: 3px solid #28a745;
-        }
+    #widgetsOcultos .card:hover {
+    opacity: 1 !important;
+    transform: translateY(-5px);
+    border-left: 3px solid #28a745;
+    }
 
     /* Estilos para el carrusel de Rick & Morty */
     .rick-carousel {
-        position: relative;
-        width: 100%;
-        overflow: hidden;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
     }
 
     .rick-slider {
-        display: flex;
-        transition: transform 0.5s ease;
+    display: flex;
+    transition: transform 0.5s ease;
     }
 
     .rick-card {
-        min-width: 100%;
-        padding: 10px;
+    min-width: 100%;
+    padding: 10px;
     }
 
-        .rick-card img {
-            width: 100%;
-            border-radius: 8px;
-        }
+    .rick-card img {
+    width: 100%;
+    border-radius: 8px;
+    }
 
     .rick-indicators {
-        display: flex;
-        justify-content: center;
-        margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
     }
 
     .rick-indicator {
-        width: 10px;
-        height: 10px;
-        background-color: #ddd;
-        border-radius: 50%;
-        margin: 0 5px;
-        cursor: pointer;
+    width: 10px;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
     }
 
-        .rick-indicator.active {
-            background-color: #007bff;
-        }
+    .rick-indicator.active {
+    background-color: #007bff;
+    }
 
     .rick-nav-button {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: rgba(0,0,0,0.5);
-        color: white;
-        border: none;
-        border-radius: 50%;
-        width: 30px;
-        height: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 10;
-        cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    cursor: pointer;
     }
 
     .rick-prev {
-        left: 5px;
+    left: 5px;
     }
 
     .rick-next {
-        right: 5px;
+    right: 5px;
     }
 </style>
+
+@{
+    // Convertimos el ViewBag.Configuraciones a un diccionario fuertemente tipado.
+    var configuraciones = ViewBag.Configuraciones as Dictionary<int, MDashboard.Models.ConfiguracionWidget>
+                          ?? new Dictionary<int, MDashboard.Models.ConfiguracionWidget>();
+}
 
 <div class="container mt-4">
     <h2>Dashboard</h2>
@@ -230,8 +242,17 @@
         <div class="row row-cols-1 row-cols-md-3 g-4" id="widgetsContainer">
             @foreach (var widget in Model)
             {
+                MDashboard.Models.ConfiguracionWidget config = null;
+                if (configuraciones != null && configuraciones.ContainsKey(widget.Id))
+                {
+                    config = configuraciones[widget.Id];
+                }
+
+                // Usar valores predeterminados si no hay configuración
+                int height = config?.Height ?? 300;
+                int width = config?.Width ?? 300;
                 <div class="col mb-4 widget-item" data-widget-id="@widget.Id" id="widget-@widget.Id">
-                    <div class="card h-100 shadow-sm position-relative">
+                    <div class="card h-100 shadow-sm position-relative" style="width: @width px; height: @height px;">
                         <i class="bi bi-gear-fill config-widget-icon text-secondary position-absolute top-0 end-0 m-2"
                            data-widget-id="@widget.Id"
                            title="Configuración"
@@ -241,8 +262,8 @@
                         <div class="card-body d-flex flex-column">
                             <div class="scrollable-content">
                                 <h5 class="card-title">@widget.Nombre</h5>
-
-
+                                
+                                
 
                                 @if (ViewBag.DynamicData != null && ViewBag.DynamicData.ContainsKey(widget.Nombre))
                                 {
@@ -647,8 +668,8 @@
 
                             <div class="sticky-button-container mt-3">
                                 <div class="d-flex gap-2">
-                                    <button class="btn btn-primary btn-sm w-100" data-bs-toggle="modal" data-bs-target="#configModal-@widget.Id">
-                                        <i class="fas fa-plus me-1"></i> Configurar Widget
+                                    <button class="btn btn-primary btn-sm w-100" onclick="mostrarModalDimensiones(@widget.Id)">
+                                        <i class="fas fa-cog me-1"></i> Configurar Dimensiones
                                     </button>
                                     <button class="btn btn-danger btn-sm w-100" onclick="ocultarWidget(@widget.Id)">
                                         <i class="fas fa-eye-slash me-1"></i> Ocultar
@@ -716,7 +737,31 @@
     </div>
 </div>
 
-
+<div class="modal fade" id="dimensionesModal" tabindex="-1" aria-labelledby="dimensionesModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="dimensionesModalLabel">Configurar dimensiones</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="dimensiones-widget-id">
+                <div class="mb-3">
+                    <label for="widget-width" class="form-label">Ancho (px)</label>
+                    <input type="number" class="form-control" id="widget-width" min="200" max="1200" value="300">
+                </div>
+                <div class="mb-3">
+                    <label for="widget-height" class="form-label">Alto (px)</label>
+                    <input type="number" class="form-control" id="widget-height" min="200" max="800" value="300">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" id="guardar-dimensiones">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
@@ -726,6 +771,79 @@
 
 @section Scripts {
     <script>
+
+        //
+        $(document).ready(function() {
+            // Agrega un botón de configuración de dimensiones en cada widget
+            $('.config-widget-icon').on('click', function(e) {
+                e.preventDefault();
+                const widgetId = $(this).data('widget-id');
+
+                // Obtener dimensiones actuales
+                const widgetElement = $('#widget-' + widgetId);
+                const width = parseInt(widgetElement.css('width')) || 300;
+                const height = parseInt(widgetElement.css('height')) || 300;
+
+                // Establecer valores en el modal
+                $('#dimensiones-widget-id').val(widgetId);
+                $('#widget-width').val(width);
+                $('#widget-height').val(height);
+
+                // Mostrar modal
+                $('#dimensionesModal').modal('show');
+            });
+
+            // Manejar el guardado de dimensiones
+            $('#guardar-dimensiones').on('click', function() {
+                const widgetId = $('#dimensiones-widget-id').val();
+                const width = $('#widget-width').val();
+                const height = $('#widget-height').val();
+
+                $.ajax({
+                    url: '@Url.Action("ActualizarDimensionesWidget", "Dashboard")',
+                    type: 'POST',
+                    data: { widgetId: widgetId, width: width, height: height },
+                    success: function(response) {
+                        if (response.success) {
+                            // Actualizar dimensiones visualmente
+                            $('#widget-' + widgetId).css({
+                                'width': width + 'px',
+                                'height': height + 'px'
+                            });
+
+                            // Cerrar modal
+                            $('#dimensionesModal').modal('hide');
+
+                            // Mostrar mensaje de éxito
+                            alert('Dimensiones actualizadas correctamente');
+                        } else {
+                            alert('Error al actualizar dimensiones');
+                        }
+                    },
+                    error: function() {
+                        alert('Error de conexión al actualizar dimensiones');
+                    }
+                });
+            });
+        });
+
+
+                function mostrarModalDimensiones(widgetId) {
+            const widgetElement = $('#widget-' + widgetId);
+            // Obtener dimensiones actuales (quitar 'px' del final)
+            const width = parseInt(widgetElement.css('width')) || 300;
+            const height = parseInt(widgetElement.css('height')) || 300;
+
+            // Establecer valores en el modal
+            $('#dimensiones-widget-id').val(widgetId);
+            $('#widget-width').val(width);
+            $('#widget-height').val(height);
+
+            // Mostrar modal
+            $('#dimensionesModal').modal('show');
+        }
+
+
         $(document).ready(function () {
             // Inicializar los carruseles de Rick & Morty y configuraciones iniciales
             inicializarRickCarousels();
@@ -867,12 +985,22 @@
             });
         }
         // Función para actualizar los widgets parciales mediante Ajax
-        function actualizarWidgets() {
+                function actualizarWidgets() {
+            // Guardar las dimensiones actuales antes de actualizar
+            const dimensiones = {};
+            $('.widget-item').each(function() {
+                const widgetId = $(this).data('widget-id');
+                dimensiones[widgetId] = {
+                    width: $(this).css('width'),
+                    height: $(this).css('height')
+                };
+            });
+
             $.ajax({
                 url: '@Url.Action("Index", "Dashboard")',
                 type: 'GET',
                 data: { partial: true },
-                success: function (response) {
+                success: function(response) {
                     const tempDiv = $('<div>').html(response.html);
                     const newWidgets = tempDiv.find('#widgetsContainer').html();
 
@@ -881,18 +1009,25 @@
 
                     setTimeout(() => {
                         $container.html(newWidgets);
+
+                        // Restaurar dimensiones
+                        for (const widgetId in dimensiones) {
+                            $('#widget-' + widgetId).css({
+                                'width': dimensiones[widgetId].width,
+                                'height': dimensiones[widgetId].height
+                            });
+                        }
+
                         $container.removeClass('fade-scale-out').addClass('fade-scale-in');
 
                         setTimeout(() => {
                             $container.removeClass('fade-scale-in');
                             inicializarRickCarousels();
-
-                            // Volver a asignar eventos del script de configuración
-                            inicializarConfiguracionWidgets(); // Reasignar eventos
+                            inicializarConfiguracionWidgets();
                         }, 300);
                     }, 300);
                 },
-                error: function () {
+                error: function() {
                     console.error("Error al actualizar los widgets");
                 }
             });

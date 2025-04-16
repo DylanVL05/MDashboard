@@ -52,9 +52,16 @@ namespace MDashboard.Controllers
 
                 foreach (var widget in todosLosWidgets)
                 {
-                    if (configuracionesUsuario.TryGetValue(widget.Id, out var config) && !config.EsVisible)
+                    if (configuracionesUsuario.TryGetValue(widget.Id, out var config))
                     {
-                        widgetsOcultos.Add(widget);
+                        if (!config.EsVisible)
+                        {
+                            widgetsOcultos.Add(widget);
+                        }
+                        else
+                        {
+                            widgetsVisibles.Add(widget);
+                        }
                     }
                     else
                     {
@@ -65,10 +72,10 @@ namespace MDashboard.Controllers
                 var dynamicData = await _widgetService.ObtenerDatosDeWidgetsAsync();
                 ViewBag.DynamicData = dynamicData ?? new Dictionary<string, object>();
                 ViewBag.WidgetsOcultos = widgetsOcultos;
+                ViewBag.Configuraciones = configuracionesUsuario;
 
                 if (partial && Request.Headers["X-Requested-With"] == "XMLHttpRequest")
                 {
-                    // Renderiza el contenido como string
                     var html = await this.RenderViewAsync("Index", widgetsVisibles, true);
                     return Json(new { html });
                 }
@@ -81,6 +88,7 @@ namespace MDashboard.Controllers
                 return StatusCode(500, $"Error al cargar el dashboard: {ex.Message}");
             }
         }
+
 
         // Acción para agregar un widget preexistente al dashboard
         [HttpPost]
@@ -288,6 +296,50 @@ namespace MDashboard.Controllers
             {
                 Console.WriteLine($"Error al actualizar ComponentId: {ex.Message}");
                 return StatusCode(500, "Error al actualizar ComponentId");
+            }
+        }
+
+
+        [HttpPost]
+        public IActionResult ActualizarDimensionesWidget(int widgetId, int width, int height)
+        {
+            try
+            {
+                int usuarioId = ObtenerUsuarioActual();
+
+                var configuracion = _context.ConfiguracionWidgets
+                    .FirstOrDefault(c => c.UsuarioId == usuarioId && c.WidgetId == widgetId);
+
+                if (configuracion != null)
+                {
+                    // Si existe, actualizamos las dimensiones
+                    configuracion.Width = width;
+                    configuracion.Height = height;
+                }
+                else
+                {
+                    // Si no existe, creamos una nueva entrada
+                    _context.ConfiguracionWidgets.Add(new ConfiguracionWidget
+                    {
+                        UsuarioId = usuarioId,
+                        WidgetId = widgetId,
+                        Width = width,
+                        Height = height,
+                        EsVisible = true,
+                        EsFavorito = false
+                    });
+                }
+
+                // Guardar cambios en la base de datos
+                _context.SaveChanges();
+
+                // Retornar una respuesta de éxito
+                return Json(new { success = true, widgetId = widgetId, width = width, height = height });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al actualizar dimensiones del widget: {ex.Message}");
+                return StatusCode(500, "Error al actualizar dimensiones del widget");
             }
         }
 
