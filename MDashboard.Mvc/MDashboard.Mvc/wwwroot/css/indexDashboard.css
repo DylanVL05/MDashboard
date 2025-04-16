@@ -222,3 +222,57 @@
 .rick-next {
     right: 5px;
 }
+
+.meow-widget {
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+    .meow-widget:hover {
+        transform: translateY(-3px);
+    }
+
+.fact-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #ffd700;
+    border-radius: 50%;
+}
+/* Estilos para el widget de perros */
+.dog-widget {
+    transition: all 0.3s ease;
+}
+
+.dog-image-hover {
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+    .dog-image-hover:hover {
+        transform: scale(1.05);
+    }
+
+    .dog-image-hover img {
+        transition: all 0.5s ease;
+        border: 3px solid #ffc107;
+    }
+
+    .dog-image-hover:hover img {
+        transform: rotate(2deg);
+    }
+
+/* Estilos para el botón de actualizar */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.fa-sync-alt.spinning {
+    animation: spin 1s linear infinite;
+}
+

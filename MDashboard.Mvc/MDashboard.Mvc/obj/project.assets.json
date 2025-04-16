@@ -3098,23 +3098,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\alejh\\.nuget\\packages\\": {},
-    "D:\\Visual Studio Community 2022\\Componentes, etc\\NuGetPackages": {}
+    "C:\\Users\\LENOVO\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ProyectosVisual\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\MDashboard.Mvc.csproj",
+      "projectUniqueName": "C:\\Users\\LENOVO\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\MDashboard.Mvc.csproj",
       "projectName": "MDashboard.Mvc",
-      "projectPath": "D:\\ProyectosVisual\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\MDashboard.Mvc.csproj",
-      "packagesPath": "C:\\Users\\alejh\\.nuget\\packages\\",
-      "outputPath": "D:\\ProyectosVisual\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\obj\\",
+      "projectPath": "C:\\Users\\LENOVO\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\MDashboard.Mvc.csproj",
+      "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\LENOVO\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "D:\\Visual Studio Community 2022\\Componentes, etc\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\alejh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3130,11 +3130,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\ProyectosVisual\\MDashboard\\MDashboard.Mvc\\MDashboard.Data\\MDashboard.Data.csproj": {
-              "projectPath": "D:\\ProyectosVisual\\MDashboard\\MDashboard.Mvc\\MDashboard.Data\\MDashboard.Data.csproj"
+            "C:\\Users\\LENOVO\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Data\\MDashboard.Data.csproj": {
+              "projectPath": "C:\\Users\\LENOVO\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Data\\MDashboard.Data.csproj"
             },
-            "D:\\ProyectosVisual\\MDashboard\\MDashboard.Mvc\\MDashboard.Services\\MDashboard.Services.csproj": {
-              "projectPath": "D:\\ProyectosVisual\\MDashboard\\MDashboard.Mvc\\MDashboard.Services\\MDashboard.Services.csproj"
+            "C:\\Users\\LENOVO\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Services\\MDashboard.Services.csproj": {
+              "projectPath": "C:\\Users\\LENOVO\\Documents\\GitHub\\MDashboard\\MDashboard.Mvc\\MDashboard.Services\\MDashboard.Services.csproj"
             }
           }
         }
