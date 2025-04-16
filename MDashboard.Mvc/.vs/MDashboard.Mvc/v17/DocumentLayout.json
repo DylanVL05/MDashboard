@@ -3,20 +3,8 @@
   "WorkspaceRootPath": "D:\\ProyectosVisual\\MDashboard\\MDashboard.Mvc\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|d:\\proyectosvisual\\mdashboard\\mdashboard.mvc\\mdashboard.mvc\\views\\dashboard\\_configwidgetpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|solutionrelative:mdashboard.mvc\\views\\dashboard\\_configwidgetpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|d:\\proyectosvisual\\mdashboard\\mdashboard.mvc\\mdashboard.mvc\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|solutionrelative:mdashboard.mvc\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|d:\\proyectosvisual\\mdashboard\\mdashboard.mvc\\mdashboard.mvc\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|solutionrelative:mdashboard.mvc\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|d:\\proyectosvisual\\mdashboard\\mdashboard.mvc\\mdashboard.mvc\\controllers\\configuracionwidgetscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB525093-C324-4936-8FDB-019EEA1A037F}|MDashboard.Mvc\\MDashboard.Mvc.csproj|solutionrelative:mdashboard.mvc\\controllers\\configuracionwidgetscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -255,53 +243,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "_ConfigWidgetPartial.cshtml",
-              "DocumentMoniker": "D:\\ProyectosVisual\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Dashboard\\_ConfigWidgetPartial.cshtml",
-              "RelativeDocumentMoniker": "MDashboard.Mvc\\Views\\Dashboard\\_ConfigWidgetPartial.cshtml",
-              "ToolTip": "D:\\ProyectosVisual\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Dashboard\\_ConfigWidgetPartial.cshtml",
-              "RelativeToolTip": "MDashboard.Mvc\\Views\\Dashboard\\_ConfigWidgetPartial.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-16T04:24:00.408Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\ProyectosVisual\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Dashboard\\Index.cshtml",
               "RelativeDocumentMoniker": "MDashboard.Mvc\\Views\\Dashboard\\Index.cshtml",
               "ToolTip": "D:\\ProyectosVisual\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Views\\Dashboard\\Index.cshtml",
               "RelativeToolTip": "MDashboard.Mvc\\Views\\Dashboard\\Index.cshtml",
-              "ViewState": "AgIAANgAAAAAAAAAAAAAAO0AAABEAAAAAAAAAA==",
+              "ViewState": "AgIAAE4DAAAAAAAAAAAswGMDAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-16T04:23:21.55Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DashboardController.cs",
-              "DocumentMoniker": "D:\\ProyectosVisual\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Controllers\\DashboardController.cs",
-              "RelativeDocumentMoniker": "MDashboard.Mvc\\Controllers\\DashboardController.cs",
-              "ToolTip": "D:\\ProyectosVisual\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Controllers\\DashboardController.cs",
-              "RelativeToolTip": "MDashboard.Mvc\\Controllers\\DashboardController.cs",
-              "ViewState": "AgIAAPYAAAAAAAAAAAAtwCQBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T04:23:03.141Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ConfiguracionWidgetsController.cs",
-              "DocumentMoniker": "D:\\ProyectosVisual\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Controllers\\ConfiguracionWidgetsController.cs",
-              "RelativeDocumentMoniker": "MDashboard.Mvc\\Controllers\\ConfiguracionWidgetsController.cs",
-              "ToolTip": "D:\\ProyectosVisual\\MDashboard\\MDashboard.Mvc\\MDashboard.Mvc\\Controllers\\ConfiguracionWidgetsController.cs",
-              "RelativeToolTip": "MDashboard.Mvc\\Controllers\\ConfiguracionWidgetsController.cs",
-              "ViewState": "AgIAAEYAAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T04:22:51.447Z",
+              "WhenOpened": "2025-04-16T05:49:58.053Z",
               "EditorCaption": ""
             }
           ]

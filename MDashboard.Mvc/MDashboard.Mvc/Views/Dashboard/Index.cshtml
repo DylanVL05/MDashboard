@@ -3,221 +3,221 @@
 @model IEnumerable<MDashboard.Models.Widget>
 <style>
     .card {
-    height: 100%;
-    max-height: 500px;
-    display: flex;
-    flex-direction: column;
+        height: 100%;
+        max-height: 500px;
+        display: flex;
+        flex-direction: column;
     }
 
     .card-body {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    position: relative;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        position: relative;
     }
 
     .scrollable-content {
-    flex: 1;
-    overflow-y: auto;
-    padding-bottom: 60px; /* Espacio para el bot처n */
+        flex: 1;
+        overflow-y: auto;
+        padding-bottom: 60px; /* Espacio para el bot처n */
     }
 
     .sticky-button-container {
-    position: sticky;
-    bottom: 0;
-    background: white;
-    padding: 1rem 0;
-    border-top: 1px solid #dee2e6;
-    margin-top: auto;
-    z-index: 1;
+        position: sticky;
+        bottom: 0;
+        background: white;
+        padding: 1rem 0;
+        border-top: 1px solid #dee2e6;
+        margin-top: auto;
+        z-index: 1;
     }
 
     .nasa-widget img,
     .nasa-widget iframe {
-    max-height: 200px;
-    object-fit: cover;
+        max-height: 200px;
+        object-fit: cover;
     }
 
     .rick-carousel {
-    position: relative;
-    overflow: hidden;
-    padding: 1rem 0;
+        position: relative;
+        overflow: hidden;
+        padding: 1rem 0;
     }
 
     .rick-slider {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    gap: 1rem;
-    padding-bottom: 1rem;
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        gap: 1rem;
+        padding-bottom: 1rem;
     }
 
     .rick-card {
-    min-width: 100%;
-    flex: 0 0 auto;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    overflow: hidden;
+        min-width: 100%;
+        flex: 0 0 auto;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        overflow: hidden;
     }
 
-    .rick-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-bottom: 2px solid #00b5cc;
-    }
+        .rick-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 2px solid #00b5cc;
+        }
 
     .rick-card-body {
-    padding: 1rem;
-    background: #1a1a1a;
-    color: white;
+        padding: 1rem;
+        background: #1a1a1a;
+        color: white;
     }
 
     .rick-nav-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0,181,204,0.8);
-    color: white;
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    z-index: 10;
-    cursor: pointer;
-    transition: all 0.3s;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0,181,204,0.8);
+        color: white;
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        z-index: 10;
+        cursor: pointer;
+        transition: all 0.3s;
     }
 
-    .rick-nav-button:hover {
-    background: #00b5cc;
-    }
+        .rick-nav-button:hover {
+            background: #00b5cc;
+        }
 
     .rick-prev {
-    left: 10px;
+        left: 10px;
     }
 
     .rick-next {
-    right: 10px;
+        right: 10px;
     }
 
     .rick-indicators {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 5px;
-    z-index: 10;
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 5px;
+        z-index: 10;
     }
 
     .rick-indicator {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.5);
-    cursor: pointer;
-    transition: all 0.3s;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.5);
+        cursor: pointer;
+        transition: all 0.3s;
     }
 
-    .rick-indicator.active {
-    background: #00b5cc;
-    transform: scale(1.2);
-    }
+        .rick-indicator.active {
+            background: #00b5cc;
+            transform: scale(1.2);
+        }
 
     #apiContainer {
-    display: flex;
-    flex-direction: column;
-    max-height: 400px;
-    overflow-y: auto;
-    gap: 10px;
+        display: flex;
+        flex-direction: column;
+        max-height: 400px;
+        overflow-y: auto;
+        gap: 10px;
     }
     /* Estilos para los widgets */
     .widget-item {
-    transition: all 0.3s ease;
+        transition: all 0.3s ease;
     }
 
     .scrollable-content {
-    max-height: 350px;
-    overflow-y: auto;
+        max-height: 350px;
+        overflow-y: auto;
     }
 
     /* Estilos para los widgets ocultos */
     #widgetsOcultos .card {
-    transition: all 0.3s ease;
-    border-left: 3px solid #6c757d;
+        transition: all 0.3s ease;
+        border-left: 3px solid #6c757d;
     }
 
-    #widgetsOcultos .card:hover {
-    opacity: 1 !important;
-    transform: translateY(-5px);
-    border-left: 3px solid #28a745;
-    }
+        #widgetsOcultos .card:hover {
+            opacity: 1 !important;
+            transform: translateY(-5px);
+            border-left: 3px solid #28a745;
+        }
 
     /* Estilos para el carrusel de Rick & Morty */
     .rick-carousel {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
+        position: relative;
+        width: 100%;
+        overflow: hidden;
     }
 
     .rick-slider {
-    display: flex;
-    transition: transform 0.5s ease;
+        display: flex;
+        transition: transform 0.5s ease;
     }
 
     .rick-card {
-    min-width: 100%;
-    padding: 10px;
+        min-width: 100%;
+        padding: 10px;
     }
 
-    .rick-card img {
-    width: 100%;
-    border-radius: 8px;
-    }
+        .rick-card img {
+            width: 100%;
+            border-radius: 8px;
+        }
 
     .rick-indicators {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
     }
 
     .rick-indicator {
-    width: 10px;
-    height: 10px;
-    background-color: #ddd;
-    border-radius: 50%;
-    margin: 0 5px;
-    cursor: pointer;
+        width: 10px;
+        height: 10px;
+        background-color: #ddd;
+        border-radius: 50%;
+        margin: 0 5px;
+        cursor: pointer;
     }
 
-    .rick-indicator.active {
-    background-color: #007bff;
-    }
+        .rick-indicator.active {
+            background-color: #007bff;
+        }
 
     .rick-nav-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0,0,0,0.5);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-    cursor: pointer;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0,0,0,0.5);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+        cursor: pointer;
     }
 
     .rick-prev {
-    left: 5px;
+        left: 5px;
     }
 
     .rick-next {
-    right: 5px;
+        right: 5px;
     }
 </style>
 
@@ -241,8 +241,8 @@
                         <div class="card-body d-flex flex-column">
                             <div class="scrollable-content">
                                 <h5 class="card-title">@widget.Nombre</h5>
-                                
-                                
+
+
 
                                 @if (ViewBag.DynamicData != null && ViewBag.DynamicData.ContainsKey(widget.Nombre))
                                 {
@@ -787,6 +787,85 @@
             });
         }
 
+        // Función para ocultar un widget
+        function ocultarWidget(widgetId) {
+            $.ajax({
+                url: '@Url.Action("ActualizarVisibilidadWidget", "Dashboard")',
+                type: 'POST',
+                data: { widgetId: widgetId, esVisible: false },
+                success: function (response) {
+                    if (response.success) {
+                        // Animación para ocultar el widget y clonar su contenido
+                        const widgetElement = $('#widget-' + widgetId);
+                        const widgetClone = widgetElement.clone();
+                        // Simplificar el contenido del clon (mostrando solo título y descripción)
+                        widgetClone.find('.scrollable-content').html(`
+        <h5 class="card-title">${widgetClone.find('.card-title').text()}</h5>
+        <p class="card-text">${widgetClone.find('.card-text').text() || 'Widget oculto'}</p>
+                                 `);
+                        // Cambiar el ID del clon para diferenciarlo
+                        widgetClone.attr('id', 'widget-oculto-' + widgetId);
+                        // Reemplazar el botón de ocultar por uno para mostrar el widget
+                        widgetClone.find('.sticky-button-container').html(`
+        <button class="btn btn-success btn-sm w-100" onclick="mostrarWidget(${widgetId})">
+        <i class="fas fa-eye me-1"></i> Mostrar Widget
+        </button>
+                                 `);
+                        // Ocultar con animación el widget original y actualizar la sección de ocultos
+                        widgetElement.fadeOut(400, function () {
+                            $(this).remove();
+                            // Mostrar la sección de ocultos, si estaba oculta
+                            $('#widgetsOcultosContainer').addClass('show');
+                            // Agregar el widget clonado a la sección de ocultos
+                            $('#widgetsOcultos').append(widgetClone);
+                            widgetClone.hide().fadeIn();
+                            // Actualizar el contador de widgets ocultos
+                            const contadorActual = parseInt($('#contadorOcultos').text()) + 1;
+                            $('#contadorOcultos').text(contadorActual);
+                            // Asegurarse que el botón para ver widgets ocultos esté visible
+                            $('[data-bs-target="#widgetsOcultosContainer"]').show();
+                        });
+                    } else {
+                        alert('Error al ocultar el widget.');
+                    }
+                },
+                error: function () {
+                    alert('Error al conectar con el servidor.');
+                }
+            });
+        }
+        // Función para mostrar un widget oculto
+        function mostrarWidget(widgetId) {
+            $.ajax({
+                url: '@Url.Action("MostrarWidget", "Dashboard")',
+                type: 'POST',
+                data: { widgetId: widgetId },
+                success: function (response) {
+                    if (response.success) {
+                        // Remover el widget oculto con animación
+                        const widgetOculto = $('#widget-oculto-' + widgetId);
+                        widgetOculto.fadeOut(400, function () {
+                            $(this).remove();
+                            // Actualizar el contador de widgets ocultos
+                            const contadorActual = parseInt($('#contadorOcultos').text()) - 1;
+                            $('#contadorOcultos').text(contadorActual);
+                            // Ocultar el botón y la sección si ya no quedan widgets ocultos
+                            if (contadorActual === 0) {
+                                $('[data-bs-target="#widgetsOcultosContainer"]').hide();
+                                $('#widgetsOcultosContainer').removeClass('show');
+                            }
+                            // Recargar la página para restaurar el widget con su contenido original
+                            location.reload();
+                        });
+                    } else {
+                        alert('Error al mostrar el widget.');
+                    }
+                },
+                error: function () {
+                    alert('Error al conectar con el servidor.');
+                }
+            });
+        }
         // Función para actualizar los widgets parciales mediante Ajax
         function actualizarWidgets() {
             $.ajax({
