@@ -744,7 +744,7 @@
                                         }
                                     }
 
-                                    if (widget.UrlApi.ToLower().Contains("quote"))
+                                    else if (widget.UrlApi.ToLower().Contains("quote"))
                                     {
                                         <div class="col">
                                             <div class="card h-100 shadow-sm">
@@ -810,6 +810,76 @@
                                                         else
                                                         {
                                                             <p class="text-danger">Datos dinámicos para este widget (@widget.Nombre) no disponibles.</p>
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        <p class="text-danger">No hay datos dinámicos para este widget (@widget.Nombre).</p>
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+
+                                    else if (widget.UrlApi.ToLower().Contains("advice"))
+                                    {
+                                        <div class="col">
+                                            <div class="card h-100 shadow-sm">
+                                                <div class="card-body text-center">
+                                                    <h5 class="card-title">@widget.Nombre</h5>
+                                                    @if (ViewBag.DynamicData != null && ViewBag.DynamicData.ContainsKey(widget.Nombre))
+                                                    {
+                                                        var adviceData = ViewBag.DynamicData[widget.Nombre] as MDashboard.Models.ApiModels.AdviceSlipResponse;
+                                                        if (adviceData != null && adviceData.Slip != null)
+                                                        {
+                                                            @switch (widget.ComponentId)
+                                                            {
+                                                                case 1:
+                                                                    <!-- Vista Clásica: Bloque central -->
+                                                                    <div class="advice-widget text-center">
+                                                                        <p class="fs-5">"@adviceData.Slip.Advice"</p>
+                                                                        <p class="text-muted small">ID: @adviceData.Slip.Id</p>
+                                                                    </div>
+                                                                    break;
+                                                                case 2:
+                                                                    <!-- Vista en Tabla -->
+                                                                    <table class="table table-striped">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>Parámetro</th>
+                                                                                <th>Valor</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>Consejo</td>
+                                                                                <td>@adviceData.Slip.Advice</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>ID</td>
+                                                                                <td>@adviceData.Slip.Id</td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                    break;
+                                                                case 3:
+                                                                    <!-- Diseño Personalizado -->
+                                                                    <div class="custom-advice-widget text-center p-3 border rounded bg-light">
+                                                                        <h5 class="fw-bold">Consejo del Día</h5>
+                                                                        <blockquote class="blockquote">
+                                                                            <p class="mb-0">"@adviceData.Slip.Advice"</p>
+                                                                        </blockquote>
+                                                                        <p class="text-muted small">ID: @adviceData.Slip.Id</p>
+                                                                    </div>
+                                                                    break;
+                                                                default:
+                                                                    <p class="text-warning">No hay una configuración válida para este <code>ComponentId</code>.</p>
+                                                                    break;
+                                                            }
+                                                        }
+                                                        else
+                                                        {
+                                                            <p class="text-danger">Datos de Advice Slip no disponibles.</p>
                                                         }
                                                     }
                                                     else
