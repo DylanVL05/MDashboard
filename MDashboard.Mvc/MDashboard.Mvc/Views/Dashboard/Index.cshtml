@@ -607,6 +607,67 @@
                                             }
                                         }
                                     }
+                                    else if (widget.UrlApi.Contains("api.chucknorris.io"))
+                                    {
+                                        var ChuckData = ViewBag.DynamicData[widget.Nombre] as MDashboard.Models.ApiModels.ChuckNorrisApiResponse;
+                                        @switch (widget.ComponentId)
+                                        {
+                                            case 1:
+                                                <div class="chuck-norris-widget mt-auto text-center p-3 border rounded bg-light">
+                                                    <h5 class="fw-bold">Chuck Norris Dice:</h5>
+                                                    <p class="fs-4">@ChuckData.Value</p>
+                                                    <img src="@ChuckData.IconUrl" alt="Icono Chuck Norris" class="img-fluid">
+                                                    <p class="text-muted small">ID de la Frase: @ChuckData.Id</p>  <!-- Usamos el Id de la frase -->
+                                                    <p class="text-muted">Fuente: Chuck Norris API</p>
+                                                </div>
+                                                break;
+
+                                            case 2:
+                                                <!-- Diseño en tabla con frase de Chuck Norris -->
+                                                <div class="chuck-norris-table mt-auto text-center p-3 border rounded bg-light">
+                                                    <h5 class="fw-bold">Chuck Norris Frase</h5>
+                                                    <table class="table table-striped">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Información</th>
+                                                                <th>Valor</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Frase</td>
+                                                                <td>@ChuckData.Value</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ID de la Frase</td>
+                                                                <td>@ChuckData.Id</td>  <!-- Usamos el Id de la frase -->
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Icono</td>
+                                                                <td><img src="@ChuckData.IconUrl" alt="Chuck Norris Icon" class="img-fluid" style="max-width: 50px;"></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <p class="text-muted">Fuente: Chuck Norris API</p>
+                                                </div>
+                                                break;
+
+                                            case 3:
+                                                <!-- Diseño personalizado -->
+                                                <div class="custom-chuck-widget mt-auto text-center p-3 border rounded bg-light">
+                                                    <h5 class="fw-bold">💥 Chuck Norris</h5>
+                                                    <p class="fs-5">"@ChuckData.Value"</p>
+                                                    <img src="@ChuckData.IconUrl" alt="Icono Chuck Norris" class="img-fluid" style="max-width: 100px;">
+                                                    <p class="text-muted small">Frase Generada: @ChuckData.Id</p>  <!-- Usamos el Id de la frase -->
+                                                    <p class="text-muted">Fuente: Chuck Norris API</p>
+                                                </div>
+                                                break;
+
+                                            default:
+                                                <p class="text-warning">⚠️ No hay una configuración válida para `ComponentId` en el Widget de Chuck Norris.</p>
+                                                break;
+                                        }
+                                    }
                                     else
                                     {
                                         <div class="generic-widget mt-auto">

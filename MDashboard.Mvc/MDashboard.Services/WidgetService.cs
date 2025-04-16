@@ -83,7 +83,11 @@ namespace MDashboard.Business.Services
                             {
                                 ProcesarLogotypeApiResponse(x.widget.Nombre, result.Value as LogotypesApiResponse, resultados);
                             }
-                            
+                            else if (x.widget.UrlApi.Contains("api.chucknorris.io"))
+                            {
+                                ProcesarChuckNorrisApiResponse(x.widget.Nombre, result.Value as ChuckNorrisApiResponse, resultados);
+                            }
+
                             // Caso genérico para otras APIs
                             else
                             {
@@ -339,6 +343,28 @@ namespace MDashboard.Business.Services
                 Console.WriteLine($"Error inesperado para {widgetNombre}: {ex.Message}");
             }
         }
+
+        private void ProcesarChuckNorrisApiResponse(string widgetNombre, ChuckNorrisApiResponse chuckResponse, Dictionary<string, object> resultados)
+        {
+            if (chuckResponse != null)
+            {
+                // Verificamos que el id tenga un valor válido
+                if (!string.IsNullOrEmpty(chuckResponse.Id))
+                {
+                    // Almacenamos directamente el objeto ChuckNorrisApiResponse
+                    resultados.Add(widgetNombre, chuckResponse);
+                }
+                else
+                {
+                    Console.WriteLine($"Error: El campo 'id' de la frase está vacío o no tiene un valor válido para {widgetNombre}");
+                }
+            }
+            else
+            {
+                Console.WriteLine($"Error: La respuesta de la API es nula para {widgetNombre}");
+            }
+        }
+
 
 
 

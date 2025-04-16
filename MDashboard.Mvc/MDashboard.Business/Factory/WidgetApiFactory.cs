@@ -61,6 +61,10 @@ namespace MDashboard.Business.Factory
             {
                 return new LogotypesApiClient(_httpClient, widget);
             }
+            else if (widget.UrlApi.Contains("api.chucknorris.io"))
+            {
+                return new ChuckNorrisApiClient(_httpClient, widget);
+            }
 
             return new GenericApiClient(_httpClient, widget.UrlApi, widget.ApiKey);
         }
