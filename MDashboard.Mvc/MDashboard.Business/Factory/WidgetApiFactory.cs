@@ -15,70 +15,44 @@ namespace MDashboard.Business.Factory
     public class WidgetApiFactory
     {
         private readonly HttpClient _httpClient;
+        private readonly List<(Func<string, bool> Match, Func<Widget, IWidgetApiClient> Create)> _strategies;
 
         public WidgetApiFactory(HttpClient httpClient)
         {
             _httpClient = httpClient;
+
+            _strategies = new List<(Func<string, bool>, Func<Widget, IWidgetApiClient>)>
+            {
+                (url => url.Contains("openweathermap.org"), w => new OpenWeatherApiClient(_httpClient, w.UrlApi, w.ApiKey ?? "")),
+                (url => url.Contains("exchangerate-api.com"), w => new ExchangeRateApiClient(_httpClient, w)),
+                (url => url.Contains("newsapi.org"), w => new NewsApiClient(_httpClient, w)),
+                (url => url.Contains("api.nasa.gov"), w => new NasaApiClient(_httpClient, w)),
+                (url => url.Contains("rickandmortyapi"), w => new RickAndMortyApiClient(_httpClient, w)),
+                (url => url.Contains("v2.jokeapi.dev"), w => new JokeApiClient(_httpClient, w)),
+                (url => url.Contains("meowfacts"), w => new MeowFactsAPIClient(_httpClient, w)),
+                (url => url.Contains("thequotesapi.onrender.com"), w => new QuotesApiClient(_httpClient, w)),
+                (url => url.Contains("adviceslip.com"), w => new AdviceSlipApiClient(_httpClient, w)),
+                (url => url.Contains("dog.ceo"), w => new DogApiClient(_httpClient, w)),
+                (url => url.Contains("logotypes.dev"), w => new LogotypesApiClient(_httpClient, w)),
+                (url => url.Contains("api.chucknorris.io"), w => new ChuckNorrisApiClient(_httpClient, w)),
+            };
         }
+
         public IWidgetApiClient CrearCliente(Widget widget)
         {
             if (widget == null || string.IsNullOrEmpty(widget.UrlApi))
                 throw new ArgumentException("Widget inválido o URL de API faltante");
 
-            if (widget.UrlApi.Contains("openweathermap.org"))
+            foreach (var (match, create) in _strategies)
             {
-                return new OpenWeatherApiClient(_httpClient, widget.UrlApi, widget.ApiKey ?? "");
-            }
-            else if (widget.UrlApi.Contains("exchangerate-api.com"))
-            {
-                return new ExchangeRateApiClient(_httpClient, widget);
-            }
-            else if (widget.UrlApi.Contains("newsapi.org"))
-            {
-                return new NewsApiClient(_httpClient, widget);
-            }
-            else if (widget.UrlApi.Contains("api.nasa.gov"))
-            {
-                return new NasaApiClient(_httpClient, widget);
-            }
-            else if (widget.UrlApi.Contains("rickandmortyapi"))
-            {
-                return new RickAndMortyApiClient(_httpClient, widget);
-            }
-            else if (widget.UrlApi.Contains("v2.jokeapi.dev"))
-            {
-                return new JokeApiClient(_httpClient, widget);
-            }
-            else if (widget.UrlApi.Contains("meowfacts"))
-            {
-                return new MeowFactsAPIClient(_httpClient, widget);
-            }
-            else if (widget.UrlApi.Contains("thequotesapi.onrender.com"))
-            {
-                return new QuotesApiClient(_httpClient, widget);
-            }
-            else if (widget.UrlApi.Contains("adviceslip.com"))
-            {
-                return new AdviceSlipApiClient(_httpClient, widget);
-            }
-            else if (widget.UrlApi.Contains("dog.ceo"))
-            {
-                return new DogApiClient(_httpClient, widget);
-            }
-            else if (widget.UrlApi.Contains("logotypes.dev"))
-            {
-                return new LogotypesApiClient(_httpClient, widget);
-            }
-            else if (widget.UrlApi.Contains("api.chucknorris.io"))
-            {
-                return new ChuckNorrisApiClient(_httpClient, widget);
+                if (match(widget.UrlApi))
+                {
+                    return create(widget);
+                }
             }
 
+            // Fallback: cliente genérico
             return new GenericApiClient(_httpClient, widget.UrlApi, widget.ApiKey);
         }
     }
 }
-
-
-
-

@@ -12,7 +12,10 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    background-color: rgb(51, 51, 64);
+    background: #000000; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #434343, #000000); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /*background-color: rgb(51, 51, 64);*/
     color: rgb(113, 105, 129);
     overflow-x: hidden;
     position: relative;
@@ -214,3 +217,24 @@ body {
     transform: scale(1.1); /* Ligero efecto de agrandar */
     transition: all 0.2s ease-in-out;
 }
+
+
+.neu-button {
+    background-color: #e0e0e0;
+    border-radius: 50px;
+    box-shadow: inset 4px 4px 10px #bcbcbc, inset -4px -4px 10px #ffffff;
+    color: #4d4d4d;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 15px 40px;
+    transition: all 0.2s ease-in-out;
+    border: 2px solid rgb(206, 206, 206);
+}
+
+    .neu-button:hover,
+    .neu-button:focus {
+        box-shadow: inset 2px 2px 5px #bcbcbc, inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
+        outline: none;
+    }
+
+
