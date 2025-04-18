@@ -24,9 +24,19 @@
 
                 int height = config?.Height ?? 300;
                 int width = config?.Width ?? 300;
-
+                //En esta parte se puede editar las cards en general 
                 <div class="col mb-4 widget-item" data-widget-id="@widget.Id" id="widget-@widget.Id">
                     <div class="card h-100 shadow-sm position-relative" style="width: @width px; height: @height px;">
+                        @using (Html.BeginForm("ToggleFavorite", "Dashboard", FormMethod.Post))
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.Hidden("widgetId", widget.Id)
+                            <button type="submit" class="btn btn-link p-0 text-warning favorito-toggle" title="Agregar/Quitar favorito">
+                                <i class="bi @(config != null && config.EsFavorito ? "bi-star-fill" : "bi-star") fs-5"></i>
+                            </button>
+
+
+                        }
                         <i class="bi bi-gear-fill config-widget-icon text-secondary position-absolute top-0 end-0 m-2"
                            data-widget-id="@widget.Id"
                            title="Configuración"
@@ -892,16 +902,7 @@
                                     <button class="neu-button w-100" onclick="ocultarWidget(@widget.Id)">
                                         <i class="fas fa-eye-slash me-1"></i> Hide
                                     </button>
-                                    @using (Html.BeginForm("ToggleFavorite", "Dashboard", FormMethod.Post))
-                                    {
-                                        @Html.AntiForgeryToken()
-                                        @Html.Hidden("widgetId", widget.Id)
-                                        <button type="submit" class="btn btn-danger btn-sm w-100 btn-rounded">
-                                            <i class="fas @(config != null && config.EsFavorito ? "fa-star" : "fa-star-o") me-1"></i>
-                                            @(config != null && config.EsFavorito ? "Quitar de favoritos" : "Agregar a favoritos")
-                                        </button>
-
-                                    }
+                               
                                 </div>
                             </div>
                         </div>
