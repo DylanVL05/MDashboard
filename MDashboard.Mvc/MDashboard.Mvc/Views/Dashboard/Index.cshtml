@@ -4,6 +4,8 @@
 
 <link href="~/css/indexdashboard.css" rel="stylesheet" />
 
+
+
 @{
     var configuraciones = ViewBag.Configuraciones as Dictionary<int, MDashboard.Models.ConfiguracionWidget>
                           ?? new Dictionary<int, MDashboard.Models.ConfiguracionWidget>();
@@ -12,7 +14,7 @@
 <div class="container mt-4">
     <h2 style="color: white">Dashboard</h2>
     <div class="mb-4">
-        <div class="row row-cols-1 row-cols-md-3 g-4" id="widgetsContainer">
+        <div class="d-flex flex-wrap gap-3" id="widgetsContainer">
             @foreach (var widget in Model)
             {
                 MDashboard.Models.ConfiguracionWidget config = null;
@@ -21,11 +23,13 @@
                     config = configuraciones[widget.Id];
                 }
 
-                int height = config?.Height ?? 300;
-                int width = config?.Width ?? 300;
-                //En esta parte se puede editar las cards en general
-                <div class="col mb-4 widget-item" data-widget-id="@widget.Id" id="widget-@widget.Id">
-                    <div class="card h-100 shadow-sm position-relative" style="width: @width px; height: @height px;">
+                int height = config?.Height ?? 400;
+                int width = config?.Width ?? 400;
+                <div class="widget-item" data-widget-id="@widget.Id" id="widget-@widget.Id">
+                    <div class="card h-100 shadow-sm position-relative"
+                         style="width: @(width)px; height: @(height)px;"
+                         data-saved-width="@width"
+                         data-saved-height="@height">
                         @using (Html.BeginForm("ToggleFavorite", "Dashboard", FormMethod.Post))
                         {
                             @Html.AntiForgeryToken()
@@ -900,7 +904,7 @@
 
                                     <button class="neu-button w-100" onclick="ocultarWidget(@widget.Id)">
                                         <i class="fas fa-eye-slash me-1"></i> Hide
-                                    </button>   
+                                    </button>
 
                                 </div>
                             </div>
@@ -970,11 +974,8 @@
                 <input type="hidden" id="dimensiones-widget-id">
                 <div class="mb-3">
                     <label for="widget-width" class="form-label">Ancho (px)</label>
-                    <input type="number" class="form-control" id="widget-width" min="200" max="1200" value="300">
-                </div>
-                <div class="mb-3">
-                    <label for="widget-height" class="form-label">Alto (px)</label>
-                    <input type="number" class="form-control" id="widget-height" min="200" max="800" value="300">
+                    <input type="range" class="form-range" id="widget-width-range" min="300" max="1200" step="50" value="400">
+                    <input type="number" class="form-control mt-2" id="widget-width" min="300" max="1200" value="400">
                 </div>
             </div>
             <div class="modal-footer">
@@ -989,82 +990,129 @@
 
 
 
-
-
 @section Scripts {
     <script>
-
         $(document).ready(function() {
+            // Sincronización entre inputs range y number
+            $('#widget-width-range').on('input', function() {
+                $('#widget-width').val($(this).val());
+            });
+
+            $('#widget-width').on('input', function() {
+                $('#widget-width-range').val($(this).val());
+            });
+
+            $('#widget-height-range').on('input', function() {
+                $('#widget-height').val($(this).val());
+            });
+
+            $('#widget-height').on('input', function() {
+                $('#widget-height-range').val($(this).val());
+            });
+
+            // Inicialización de componentes
+            inicializarRickCarousels();
+            actualizarContadorWidgetsOcultos();
+
+            // Manejo del modal de dimensiones
             $('.config-widget-icon').on('click', function(e) {
                 e.preventDefault();
                 const widgetId = $(this).data('widget-id');
-
-                const widgetElement = $('#widget-' + widgetId);
-                const width = parseInt(widgetElement.css('width')) || 300;
-                const height = parseInt(widgetElement.css('height')) || 300;
-
-                $('#dimensiones-widget-id').val(widgetId);
-                $('#widget-width').val(width);
-                $('#widget-height').val(height);
-
-                $('#dimensionesModal').modal('show');
+                mostrarModalDimensiones(widgetId);
             });
 
+            // Guardar dimensiones
             $('#guardar-dimensiones').on('click', function() {
-                const widgetId = $('#dimensiones-widget-id').val();
-                const width = $('#widget-width').val();
-                const height = $('#widget-height').val();
+                guardarDimensionesWidget();
+            });
 
-                $.ajax({
-                    url: '@Url.Action("ActualizarDimensionesWidget", "Dashboard")',
-                    type: 'POST',
-                    data: { widgetId: widgetId, width: width, height: height },
-                    success: function(response) {
-                        if (response.success) {
-                            $('#widget-' + widgetId).css({
-                                'width': width + 'px',
-                                'height': height + 'px'
-                            });
-
-                            $('#dimensionesModal').modal('hide');
-
-                            alert('Dimensiones actualizadas correctamente');
-                        } else {
-                            alert('Error al actualizar dimensiones');
-                        }
-                    },
-                    error: function() {
-                        alert('Error de conexión al actualizar dimensiones');
-                    }
-                });
+            // Validación de inputs
+            $('#widget-width, #widget-height').on('input', function() {
+                validarDimensionesInput(this);
             });
         });
 
-
-                function mostrarModalDimensiones(widgetId) {
+        function mostrarModalDimensiones(widgetId) {
             const widgetElement = $('#widget-' + widgetId);
+            const card = widgetElement.find('.card');
 
-            const width = parseInt(widgetElement.css('width')) || 300;
-            const height = parseInt(widgetElement.css('height')) || 300;
+            // Obtener dimensiones actuales desde los data attributes
+            const savedWidth = card.data('saved-width') || 400;
+            const savedHeight = card.data('saved-height') || 400;
 
             $('#dimensiones-widget-id').val(widgetId);
-            $('#widget-width').val(width);
-            $('#widget-height').val(height);
+            $('#widget-width').val(savedWidth);
+            $('#widget-height').val(savedHeight);
+            $('#widget-width-range').val(savedWidth);
+            $('#widget-height-range').val(savedHeight);
 
             $('#dimensionesModal').modal('show');
         }
 
+        function guardarDimensionesWidget() {
+            const widgetId = $('#dimensiones-widget-id').val();
+            const width = parseInt($('#widget-width').val());
+            const height = parseInt($('#widget-height').val());
 
-        $(document).ready(function () {
-            inicializarRickCarousels();
-
-            const widgetsOcultosCount = $('#widgetsOcultos .widget-item').length;
-            $('#contadorOcultos').text(widgetsOcultosCount);
-
-            if (widgetsOcultosCount === 0) {
-                $('[data-bs-target="#widgetsOcultosContainer"]').hide();
+            // Validación de dimensiones (ahora mínimo 300px)
+            if (width < 300 || width > 1200 || height < 300 || height > 800) {
+                mostrarNotificacion('Las dimensiones deben estar entre 300-1200px (ancho) y 300-800px (alto)', 'error');
+                return;
             }
-        });
+
+            $.ajax({
+                url: '@Url.Action("ActualizarDimensionesWidget", "Dashboard")',
+                type: 'POST',
+                headers: {
+                    'RequestVerificationToken': $('input[name="__RequestVerificationToken"]').val()
+                },
+                data: {
+                    widgetId: widgetId,
+                    width: width,
+                    height: height
+                },
+                success: function(response) {
+                    if (response.success) {
+                        const widgetElement = $('#widget-' + widgetId);
+                        const card = widgetElement.find('.card');
+
+                        // Aplicar las nuevas dimensiones sin cambiar la posición
+                        card.css({
+                            'width': response.width + 'px',
+                            'height': response.height + 'px',
+                            'flex': '0 0 auto', // Esto evita que flexbox intente ajustar el tamaño
+                            'transition': 'all 0.3s ease' // Transición suave
+                        });
+
+                        // Actualizar los data attributes
+                        card.data('saved-width', response.width);
+                        card.data('saved-height', response.height);
+
+                        $('#dimensionesModal').modal('hide');
+                        mostrarNotificacion('Dimensiones actualizadas correctamente');
+                    } else {
+                        mostrarNotificacion(response.error || 'Error al actualizar dimensiones', 'error');
+                    }
+                },
+                error: function(xhr) {
+                    mostrarNotificacion('Error de conexión: ' + xhr.responseText, 'error');
+                }
+            });
+        }
+
+        function validarDimensionesInput(inputElement) {
+            const value = parseInt($(inputElement).val());
+            const min = 300; // Nuevo mínimo
+            const max = $(inputElement).attr('max') || 1200;
+
+            if (isNaN(value) || value < min || value > max) {
+                $(inputElement).addClass('is-invalid');
+                return false;
+            } else {
+                $(inputElement).removeClass('is-invalid');
+                return true;
+            }
+        }
 
         function inicializarRickCarousels() {
             $('.rick-carousel').each(function () {
@@ -1110,49 +1158,54 @@
             });
         }
 
+        function actualizarContadorWidgetsOcultos() {
+            const widgetsOcultosCount = $('#widgetsOcultos .widget-item').length;
+            $('#contadorOcultos').text(widgetsOcultosCount);
+
+            if (widgetsOcultosCount === 0) {
+                $('[data-bs-target="#widgetsOcultosContainer"]').hide();
+            }
+        }
+
         function ocultarWidget(widgetId) {
             $.ajax({
                 url: '@Url.Action("ActualizarVisibilidadWidget", "Dashboard")',
                 type: 'POST',
+                headers: {
+                    'RequestVerificationToken': $('input[name="__RequestVerificationToken"]').val()
+                },
                 data: { widgetId: widgetId, esVisible: false },
                 success: function (response) {
                     if (response.success) {
-
                         const widgetElement = $('#widget-' + widgetId);
                         const widgetClone = widgetElement.clone();
 
                         widgetClone.find('.scrollable-content').html(`
-        <h5 class="card-title">${widgetClone.find('.card-title').text()}</h5>
-        <p class="card-text">${widgetClone.find('.card-text').text() || 'Widget oculto'}</p>
-                                 `);
+                            <h5 class="card-title">${widgetClone.find('.card-title').text()}</h5>
+                            <p class="card-text">${widgetClone.find('.card-text').text() || 'Widget oculto'}</p>
+                        `);
 
                         widgetClone.attr('id', 'widget-oculto-' + widgetId);
-
                         widgetClone.find('.sticky-button-container').html(`
-        <button class="btn btn-success btn-sm w-100" onclick="mostrarWidget(${widgetId})">
-        <i class="fas fa-eye me-1"></i> Mostrar Widget
-        </button>
-                                 `);
+                            <button class="btn btn-success btn-sm w-100" onclick="mostrarWidget(${widgetId})">
+                                <i class="fas fa-eye me-1"></i> Mostrar Widget
+                            </button>
+                        `);
 
                         widgetElement.fadeOut(400, function () {
                             $(this).remove();
 
                             $('#widgetsOcultosContainer').addClass('show');
-
                             $('#widgetsOcultos').append(widgetClone);
                             widgetClone.hide().fadeIn();
-
-                            const contadorActual = parseInt($('#contadorOcultos').text()) + 1;
-                            $('#contadorOcultos').text(contadorActual);
-
-                            $('[data-bs-target="#widgetsOcultosContainer"]').show();
+                            actualizarContadorWidgetsOcultos();
                         });
                     } else {
-                        alert('Error al ocultar el widget.');
+                        mostrarNotificacion('Error al ocultar el widget', 'error');
                     }
                 },
                 error: function () {
-                    alert('Error al conectar con el servidor.');
+                    mostrarNotificacion('Error al conectar con el servidor', 'error');
                 }
             });
         }
@@ -1161,45 +1214,29 @@
             $.ajax({
                 url: '@Url.Action("MostrarWidget", "Dashboard")',
                 type: 'POST',
+                headers: {
+                    'RequestVerificationToken': $('input[name="__RequestVerificationToken"]').val()
+                },
                 data: { widgetId: widgetId },
                 success: function (response) {
                     if (response.success) {
-
                         const widgetOculto = $('#widget-oculto-' + widgetId);
                         widgetOculto.fadeOut(400, function () {
                             $(this).remove();
-
-                            const contadorActual = parseInt($('#contadorOcultos').text()) - 1;
-                            $('#contadorOcultos').text(contadorActual);
-
-                            if (contadorActual === 0) {
-                                $('[data-bs-target="#widgetsOcultosContainer"]').hide();
-                                $('#widgetsOcultosContainer').removeClass('show');
-                            }
-
+                            actualizarContadorWidgetsOcultos();
                             location.reload();
                         });
                     } else {
-                        alert('Error al mostrar el widget.');
+                        mostrarNotificacion('Error al mostrar el widget', 'error');
                     }
                 },
                 error: function () {
-                    alert('Error al conectar con el servidor.');
+                    mostrarNotificacion('Error al conectar con el servidor', 'error');
                 }
             });
         }
 
-                function actualizarWidgets() {
-
-            const dimensiones = {};
-            $('.widget-item').each(function() {
-                const widgetId = $(this).data('widget-id');
-                dimensiones[widgetId] = {
-                    width: $(this).css('width'),
-                    height: $(this).css('height')
-                };
-            });
-
+        function actualizarWidgets() {
             $.ajax({
                 url: '@Url.Action("Index", "Dashboard")',
                 type: 'GET',
@@ -1213,20 +1250,12 @@
 
                     setTimeout(() => {
                         $container.html(newWidgets);
-
-                        for (const widgetId in dimensiones) {
-                            $('#widget-' + widgetId).css({
-                                'width': dimensiones[widgetId].width,
-                                'height': dimensiones[widgetId].height
-                            });
-                        }
-
                         $container.removeClass('fade-scale-out').addClass('fade-scale-in');
 
                         setTimeout(() => {
                             $container.removeClass('fade-scale-in');
                             inicializarRickCarousels();
-                            inicializarConfiguracionWidgets();
+                            actualizarContadorWidgetsOcultos();
                         }, 300);
                     }, 300);
                 },
@@ -1236,8 +1265,12 @@
             });
         }
 
+        function mostrarNotificacion(mensaje, tipo = 'success') {
+            // Implementación básica con alert (puedes reemplazar con Toastr)
+            alert(mensaje);
+        }
+
         setInterval(actualizarWidgets, 30000);
     </script>
-
     <script src="~/js/widget-config.js"></script>
 }

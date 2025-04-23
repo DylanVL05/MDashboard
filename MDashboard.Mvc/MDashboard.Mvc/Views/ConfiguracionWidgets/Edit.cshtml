@@ -4,58 +4,175 @@
     ViewData["Title"] = "Editar Configuración";
 }
 
-<h2>@ViewData["Title"]</h2>
+<div class="container-fluid py-4">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+            <div class="card shadow-dark-lg border-0">
+                <div class="card-header bg-dark-2 border-bottom border-dark">
+                    <h2 class="h4 mb-0 text-light">@ViewData["Title"]</h2>
+                </div>
 
-<form asp-action="Edit" method="post">
-    @Html.AntiForgeryToken()
-    <div class="form-group">
-        <label asp-for="UsuarioId" class="control-label"></label>
-        <input asp-for="UsuarioId" class="form-control" />
-        <span asp-validation-for="UsuarioId" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="WidgetId" class="control-label"></label>
-        <input asp-for="WidgetId" class="form-control" />
-        <span asp-validation-for="WidgetId" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="Height" class="control-label"></label>
-        <input asp-for="Height" class="form-control" />
-        <span asp-validation-for="Height" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="Width" class="control-label"></label>
-        <input asp-for="Width" class="form-control" />
-        <span asp-validation-for="Width" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="EsFavorito" class="control-label"></label>
-        <select asp-for="EsFavorito" class="form-control">
-            <option value="false">No</option>
-            <option value="true">Sí</option>
-        </select>
-        <span asp-validation-for="EsFavorito" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="EsVisible" class="control-label"></label>
-        <select asp-for="EsVisible" class="form-control">
-            <option value="false">No</option>
-            <option value="true">Sí</option>
-        </select>
-        <span asp-validation-for="EsVisible" class="text-danger"></span>
-    </div>
+                <div class="card-body bg-dark-1 p-4">
+                    <form asp-action="Edit" method="post">
+                        @Html.AntiForgeryToken()
 
-    @* Campo oculto para el Id *@
-    <input type="hidden" asp-for="Id" />
+                        <input type="hidden" asp-for="Id" />
 
-    <div class="form-group">
-        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
-        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+                        <div class="form-group-dark mb-4">
+                            <label asp-for="UsuarioId" class="form-label text-light-1"></label>
+                            <input asp-for="UsuarioId" class="form-control bg-dark-2 border-dark text-light" />
+                            <span asp-validation-for="UsuarioId" class="text-warning small"></span>
+                        </div>
+
+                        <div class="form-group-dark mb-4">
+                            <label asp-for="WidgetId" class="form-label text-light-1"></label>
+                            <input asp-for="WidgetId" class="form-control bg-dark-2 border-dark text-light" />
+                            <span asp-validation-for="WidgetId" class="text-warning small"></span>
+                        </div>
+
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="form-group-dark">
+                                    <label asp-for="Height" class="form-label text-light-1"></label>
+                                    <input asp-for="Height" class="form-control bg-dark-2 border-dark text-light" />
+                                    <span asp-validation-for="Height" class="text-warning small"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group-dark">
+                                    <label asp-for="Width" class="form-label text-light-1"></label>
+                                    <input asp-for="Width" class="form-control bg-dark-2 border-dark text-light" />
+                                    <span asp-validation-for="Width" class="text-warning small"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row g-4 mt-2">
+                            <div class="col-md-6">
+                                <div class="form-group-dark">
+                                    <label asp-for="EsFavorito" class="form-label text-light-1"></label>
+                                    <select asp-for="EsFavorito" class="form-select bg-dark-2 border-dark text-light">
+                                        <option value="false" class="bg-dark-2">No</option>
+                                        <option value="true" class="bg-dark-2">Sí</option>
+                                    </select>
+                                    <span asp-validation-for="EsFavorito" class="text-warning small"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group-dark">
+                                    <label asp-for="EsVisible" class="form-label text-light-1"></label>
+                                    <select asp-for="EsVisible" class="form-select bg-dark-2 border-dark text-light">
+                                        <option value="false" class="bg-dark-2">No</option>
+                                        <option value="true" class="bg-dark-2">Sí</option>
+                                    </select>
+                                    <span asp-validation-for="EsVisible" class="text-warning small"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group mt-5 pt-3 border-top border-dark">
+                            <button type="submit" class="btn btn-primary-gradient px-5 py-2">
+                                <i class="fas fa-save me-2"></i>Guardar Cambios
+                            </button>
+                            <a asp-action="Index" class="btn btn-outline-light px-5 py-2 ms-3">
+                                <i class="fas fa-arrow-left me-2"></i>Cancelar
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-</form>
+</div>
+
+
+<style>
+    :root {
+        --dark-1: #1a1a1a;
+        --dark-2: #2d2d2d;
+        --dark-3: #404040;
+        --light-1: #f8f9fa;
+        --light-2: #e9ecef;
+        --accent: #00b4d8;
+    }
+
+    .bg-dark-1 {
+        background-color: var(--dark-1);
+    }
+
+    .bg-dark-2 {
+        background-color: var(--dark-2);
+    }
+
+    .border-dark {
+        border-color: var(--dark-3) !important;
+    }
+
+    .text-light-1 {
+        color: var(--light-1);
+    }
+
+    .text-light-2 {
+        color: var(--light-2);
+    }
+
+    .form-control, .form-select {
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        background-color: var(--dark-2) !important; /* Fijo el fondo oscuro */
+    }
+
+        .form-control:focus, .form-select:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.25);
+            background-color: var(--dark-2) !important; /* Mantiene fondo oscuro al enfocar */
+            outline: none; /* Elimina el contorno predeterminado */
+        }
+
+
+    .btn-primary-gradient {
+        background: linear-gradient(135deg, var(--accent), #0096c7);
+        border: none;
+        color: white;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+        .btn-primary-gradient:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(0, 180, 216, 0.4);
+        }
+
+    .btn-outline-light {
+        border: 2px solid var(--dark-3);
+        transition: all 0.3s ease;
+    }
+
+        .btn-outline-light:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+    .card {
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    .shadow-dark-lg {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+    }
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus {
+        -webkit-text-fill-color: var(--light-1);
+        -webkit-box-shadow: 0 0 0px 1000px var(--dark-2) inset;
+</style>
+
 
 @section Scripts {
-    <!-- Se incluyen los scripts de validación predeterminados -->
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }

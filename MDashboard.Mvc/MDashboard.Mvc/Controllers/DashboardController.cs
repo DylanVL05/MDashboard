@@ -357,25 +357,31 @@ namespace MDashboard.Controllers
 
 
         [HttpPost]
-        public IActionResult ActualizarDimensionesWidget(int widgetId, int width, int height)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ActualizarDimensionesWidget(int widgetId, int width, int height)
         {
             try
             {
                 int usuarioId = ObtenerUsuarioActual();
 
-                var configuracion = _context.ConfiguracionWidgets
-                    .FirstOrDefault(c => c.UsuarioId == usuarioId && c.WidgetId == widgetId);
+                // Validar dimensiones
+                width = Math.Clamp(width, 300, 1200);
+                height = Math.Clamp(height, 300, 800);
+
+                var configuracion = await _context.ConfiguracionWidgets
+                    .FirstOrDefaultAsync(c => c.UsuarioId == usuarioId && c.WidgetId == widgetId);
 
                 if (configuracion != null)
                 {
-                    // Si existe, actualizamos las dimensiones
+                    // Actualizar configuración existente
                     configuracion.Width = width;
                     configuracion.Height = height;
+                    _context.ConfiguracionWidgets.Update(configuracion);
                 }
                 else
                 {
-                    // Si no existe, creamos una nueva entrada
-                    _context.ConfiguracionWidgets.Add(new ConfiguracionWidget
+                    // Crear nueva configuración
+                    configuracion = new ConfiguracionWidget
                     {
                         UsuarioId = usuarioId,
                         WidgetId = widgetId,
@@ -383,19 +389,28 @@ namespace MDashboard.Controllers
                         Height = height,
                         EsVisible = true,
                         EsFavorito = false
-                    });
+                    };
+                    await _context.ConfiguracionWidgets.AddAsync(configuracion);
                 }
 
-                // Guardar cambios en la base de datos
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
 
-                // Retornar una respuesta de éxito
-                return Json(new { success = true, widgetId = widgetId, width = width, height = height });
+                return Json(new
+                {
+                    success = true,
+                    widgetId = widgetId,
+                    width = width,
+                    height = height
+                });
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error al actualizar dimensiones del widget: {ex.Message}");
-                return StatusCode(500, "Error al actualizar dimensiones del widget");
+                Console.WriteLine($"Error al actualizar dimensiones: {ex.Message}");
+                return Json(new
+                {
+                    success = false,
+                    error = "Error al actualizar dimensiones del widget"
+                });
             }
         }
 
