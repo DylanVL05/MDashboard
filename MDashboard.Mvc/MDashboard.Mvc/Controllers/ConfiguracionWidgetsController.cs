@@ -35,9 +35,20 @@ namespace MDashboard.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(ConfiguracionWidget configuracion)
         {
+            var configuracionesUsuario = await _configBusiness.GetConfiguracionesByUsuarioAsync(configuracion.UsuarioId);
+
+            if (configuracionesUsuario.Any(c => c.WidgetId == configuracion.WidgetId))
+            {
+                ModelState.AddModelError(string.Empty, "La configuración para este usuario y widget ya existe.");
+                return View(configuracion);
+            }
+
             await _configBusiness.SaveConfiguracionAsync(configuracion);
             return RedirectToAction(nameof(Index));
         }
+
+
+
 
 
 
