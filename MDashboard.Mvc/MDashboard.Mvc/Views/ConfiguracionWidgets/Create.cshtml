@@ -5,50 +5,67 @@
 }
 
 <div class="container mt-4">
-    <h2>@ViewData["Title"]</h2>
-    <form asp-action="Create" method="post">
-        @Html.AntiForgeryToken()
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-        <div class="form-group">
-            <label asp-for="UsuarioId" class="control-label"></label>
-            <input asp-for="UsuarioId" class="form-control" />
-            <span asp-validation-for="UsuarioId" class="text-danger"></span>
+    <div class="card shadow">
+        <div class="card-header text-center" style="background-color: #000000; color: white;">
+            <h2 class="mb-0">@ViewData["Title"]</h2>
         </div>
+        <div class="card-body" style="background-color: #121212; color: white;">
+            <form asp-action="Create" method="post">
+                @Html.AntiForgeryToken()
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
 
-        <div class="form-group">
-            <label asp-for="WidgetId" class="control-label"></label>
-            <input asp-for="WidgetId" class="form-control" />
-            <span asp-validation-for="WidgetId" class="text-danger"></span>
-        </div>
+                <!-- Campo UsuarioId -->
+                <div class="mb-3">
+                    <label asp-for="UsuarioId" class="form-label"></label>
+                    <input asp-for="UsuarioId" class="form-control"
+                           style="background-color: #ffffff; color: #000000; border-color: #ffffff;" />
+                    <span asp-validation-for="UsuarioId" class="text-danger"></span>
+                </div>
 
-        <div class="form-group">
-            <label asp-for="Width" class="control-label"></label>
-            <input asp-for="Width" class="form-control" />
-            <span asp-validation-for="Width" class="text-danger"></span>
-        </div>
+                <!-- Campo WidgetId -->
+                <div class="mb-3">
+                    <label asp-for="WidgetId" class="form-label"></label>
+                    <input asp-for="WidgetId" class="form-control"
+                           style="background-color: #ffffff; color: #000000; border-color: #ffffff;" />
+                    <span asp-validation-for="WidgetId" class="text-danger"></span>
+                </div>
 
-        <div class="form-group">
-            <label asp-for="Height" class="control-label"></label>
-            <input asp-for="Height" class="form-control" />
-            <span asp-validation-for="Height" class="text-danger"></span>
-        </div>
+                <!-- Campo Width -->
+                <div class="mb-3">
+                    <label asp-for="Width" class="form-label"></label>
+                    <input asp-for="Width" class="form-control"
+                           style="background-color: #ffffff; color: #000000; border-color: #ffffff;" />
+                    <span asp-validation-for="Width" class="text-danger"></span>
+                </div>
 
-        <div class="form-check">
-            <input asp-for="EsFavorito" class="form-check-input" />
-            <label asp-for="EsFavorito" class="form-check-label"></label>
-        </div>
+                <!-- Campo Height -->
+                <div class="mb-3">
+                    <label asp-for="Height" class="form-label"></label>
+                    <input asp-for="Height" class="form-control"
+                           style="background-color: #ffffff; color: #000000; border-color: #ffffff;" />
+                    <span asp-validation-for="Height" class="text-danger"></span>
+                </div>
 
-        <div class="form-check">
-            <input asp-for="EsVisible" class="form-check-input" />
-            <label asp-for="EsVisible" class="form-check-label"></label>
-        </div>
+                <!-- Campo EsFavorito -->
+                <div class="form-check mb-3">
+                    <input asp-for="EsFavorito" class="form-check-input" />
+                    <label asp-for="EsFavorito" class="form-check-label"></label>
+                </div>
 
-        <div class="form-group mt-3">
-            <button type="submit" class="btn btn-primary">Guardar</button>
-            <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+                <!-- Campo EsVisible -->
+                <div class="form-check mb-3">
+                    <input asp-for="EsVisible" class="form-check-input" />
+                    <label asp-for="EsVisible" class="form-check-label"></label>
+                </div>
+
+                <!-- Botones -->
+                <div class="d-flex justify-content-end gap-2">
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+                </div>
+            </form>
         </div>
-    </form>
+    </div>
 </div>
 
 @section Scripts {

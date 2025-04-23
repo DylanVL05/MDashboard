@@ -4,49 +4,87 @@
     ViewData["Title"] = "Crear Widget";
 }
 
-<h2>Crear Nuevo Widget</h2>
+<div class="container mt-4">
+    <div class="card shadow">
+        <!-- Encabezado de la tarjetita -->
+        <div class="card-header text-center" style="background-color: #000000; color: white;">
+            <h2 class="mb-0">Crear Nuevo Widget</h2>
+        </div>
+        <!-- Cuerpo de la tarjeta -->
+        <div class="card-body" style="background-color: #121212; color: white;">
+            <form asp-action="Create" method="post">
+                @Html.AntiForgeryToken()
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
 
-<form asp-action="Create" method="post">
-    <div class="form-group">
-        <label asp-for="Nombre"></label>
-        <input asp-for="Nombre" class="form-control" required />
+                <!-- Campo Nombre -->
+                <div class="mb-3">
+                    <label asp-for="Nombre" class="form-label"></label>
+                    <input asp-for="Nombre" class="form-control" required
+                           style="background-color: #ffffff; color: #000000; border-color: #ffffff;" />
+                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                </div>
+
+                <!-- Campo Descripción -->
+                <div class="mb-3">
+                    <label asp-for="Descripcion" class="form-label"></label>
+                    <input asp-for="Descripcion" class="form-control"
+                           style="background-color: #ffffff; color: #000000; border-color: #ffffff;" />
+                    <span asp-validation-for="Descripcion" class="text-danger"></span>
+                </div>
+
+                <!-- Campo UrlApi -->
+                <div class="mb-3">
+                    <label asp-for="UrlApi" class="form-label"></label>
+                    <input asp-for="UrlApi" class="form-control" required
+                           style="background-color: #ffffff; color: #000000; border-color: #ffffff;" />
+                    <span asp-validation-for="UrlApi" class="text-danger"></span>
+                </div>
+
+                <!-- Campo ApiKey -->
+                <div class="mb-3">
+                    <label asp-for="ApiKey" class="form-label"></label>
+                    <input asp-for="ApiKey" class="form-control" required
+                           style="background-color: #ffffff; color: #000000; border-color: #ffffff;" />
+                    <span asp-validation-for="ApiKey" class="text-danger"></span>
+                </div>
+
+                <!-- Campo ComponentId (Tipo de Componente) -->
+                <div class="mb-3">
+                    <label asp-for="ComponentId" class="form-label">Tipo de Componente</label>
+                    <select asp-for="ComponentId" class="form-control" required
+                            style="background-color: #ffffff; color: #000000; border-color: #ffffff;">
+                        <option value="">Seleccione un tipo de componente</option>
+                        @foreach (var component in ViewBag.Components as List<MDashboard.Models.Component>)
+                        {
+                            <option value="@component.Id">@component.Tipo</option>
+                        }
+                    </select>
+                    <span asp-validation-for="ComponentId" class="text-danger"></span>
+                </div>
+
+                <!-- Campo Estado -->
+                <div class="mb-3">
+                    <label asp-for="Estado" class="form-label"></label>
+                    <select asp-for="Estado" class="form-control"
+                            style="background-color: #ffffff; color: #000000; border-color: #ffffff;">
+                        <option value="true">Activo</option>
+                        <option value="false">Inactivo</option>
+                    </select>
+                    <span asp-validation-for="Estado" class="text-danger"></span>
+                </div>
+
+                <!-- Botón de Guardar -->
+                <div class="d-flex justify-content-end gap-2">
+                    <button type="submit" class="btn btn-success">Guardar</button>
+                    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+                </div>
+            </form>
+        </div>
     </div>
+</div>
 
-    <div class="form-group">
-        <label asp-for="Descripcion"></label>
-        <input asp-for="Descripcion" class="form-control" />
-    </div>
-
-    <div class="form-group">
-        <label asp-for="UrlApi"></label>
-        <input asp-for="UrlApi" class="form-control" required />
-    </div>
-
-    <div class="form-group">
-        <label asp-for="ApiKey"></label>
-        <input asp-for="ApiKey" class="form-control" required />
-    </div>
-
-    <div class="form-group">
-        <label asp-for="ComponentId">Tipo de Componente</label>
-        <select asp-for="ComponentId" class="form-control" required>
-            <option value="">Seleccione un tipo de componente</option>
-            @foreach (var component in ViewBag.Components as List<MDashboard.Models.Component>)
-            {
-                <option value="@component.Id">@component.Tipo</option>
-            }
-        </select>
-    </div>
-
-
-    <div class="form-group">
-        <label asp-for="Estado"></label>
-        <select asp-for="Estado" class="form-control">
-            <option value="true">Activo</option>
-            <option value="false">Inactivo</option>
-        </select>
-    </div>
-
-    <button type="submit" class="btn btn-primary">Guardar</button>
-</form>
-a
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
