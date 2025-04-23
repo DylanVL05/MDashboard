@@ -1,63 +1,172 @@
 ﻿@model IEnumerable<MDashboard.Models.ConfiguracionWidget>
 
 @{
-    ViewBag.Title = "Configuraciones de Widgets";
+    ViewData["Title"] = "Configuraciones de Widgets";
 }
 
-<style>
+<div class="container-fluid py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold text-white mb-0">Configuraciones de Widgets</h2>
+        <a class="btn btn-success btn-lg" href="@Url.Action("Create", "ConfiguracionWidgets")">
+            <i class="fas fa-plus-circle me-2"></i>Agregar Configuración
+        </a>
+    </div>
 
-    table.table-striped td {
-        color: white;
-    }
-</style>
-
-<h2>Configuraciones de Widgets</h2>
-
-<!-- Botón para redirigir a la vista Create -->
-<a href="@Url.Action("Create", "ConfiguracionWidgets")" class="btn btn-primary mb-3">
-    Agregar Configuración
-</a>
-
-<!-- Tabla de configuraciones -->
-<table class="table table-bordered table-striped">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Usuario ID</th>
-            <th>Widget ID</th>
-            <th>Height</th>
-            <th>Width</th>
-            <th>Es Favorito</th>
-            <th>Es Visible</th>
-            <th>Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var config in Model)
-        {
-            <tr>
-                <td>@config.Id</td>
-                <td>@config.UsuarioId</td>
-                <td>@config.WidgetId</td>
-                <td>@config.Height</td>
-                <td>@config.Width</td>
-                <td>@(config.EsFavorito ? "Sí" : "No")</td>
-                <td>@(config.EsVisible ? "Sí" : "No")</td>
-                <td>
-                    <!-- Botón Editar: redirige a la vista Edit -->
-                    <a class="btn btn-warning" href="@Url.Action("Edit", "ConfiguracionWidgets", new { id = config.Id })">Editar</a>
-
-                    <!-- Botón Eliminar: envuelve el botón en un formulario con confirmación -->
-                    @using (Html.BeginForm("Delete", "ConfiguracionWidgets", new { id = config.Id }, FormMethod.Post, null, new { onsubmit = "return confirm('¿Estás seguro que deseas eliminar esta configuración?')" }))
-                    {
-                        @Html.AntiForgeryToken()
-                        <button type="submit" class="btn btn-danger">Eliminar</button>
-                    }
-                </td>
-            </tr>
+    <style>
+        /* Estilos base de la tabla */
+        .widget-table {
+            background-color: #121212 !important;
+            color: white !important;
+            border-collapse: collapse;
+            width: 100%;
         }
-    </tbody>
-</table>
+
+            /* Encabezado de la tabla */
+            .widget-table thead th {
+                background-color: #000000 !important;
+                color: white !important;
+                font-weight: 600;
+                padding: 1rem;
+                border-bottom: 2px solid #333 !important;
+                white-space: nowrap; /* Evita que los encabezados se partan */
+            }
+
+            /* Filas: alternancia de color */
+            .widget-table tbody tr:nth-child(odd) {
+                background-color: #1e1e1e !important;
+            }
+
+            .widget-table tbody tr:nth-child(even) {
+                background-color: #252525 !important;
+            }
+
+            /* Celdas: texto, padding y bordes */
+            .widget-table tbody td {
+                color: white !important;
+                padding: 1rem;
+                border-top: 1px solid #333 !important;
+                word-break: break-word;
+            }
+
+            /* Hover en filas */
+            .widget-table tbody tr:hover {
+                background-color: #333 !important;
+            }
+
+        /* Contenedor para scroll horizontal */
+        .table-responsive {
+            border-radius: 8px;
+            overflow-x: auto;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            -webkit-overflow-scrolling: touch; /* Mejor scroll en dispositivos móviles */
+        }
+
+        /* Para pantallas intermedias y grandes: forzamos un ancho mínimo para activar scroll horizontal */
+        @@media (min-width: 577px) {
+            .widget-table {
+                min-width: 900px; /* Ajustado para acomodar todas las columnas */
+            }
+                /* En formato tabla, los botones se centran */
+                .widget-table tbody td.action-cell div {
+                    justify-content: center;
+                }
+        }
+
+        /* Adaptaciones para vista en dispositivos móviles: formato card */
+        @@media (max-width: 576px) {
+            .widget-table {
+                min-width: 100% !important; /* Reset para móvil */
+            }
+
+                .widget-table thead {
+                    display: none;
+                }
+
+                .widget-table tbody tr {
+                    display: block;
+                    margin-bottom: 1rem;
+                    border: 1px solid #333;
+                    border-radius: 5px;
+                }
+
+                .widget-table tbody td {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 0.75rem;
+                    border: none;
+                }
+
+                    .widget-table tbody td::before {
+                        content: attr(data-label);
+                        font-weight: 600;
+                        color: #aaa;
+                        margin-right: 1rem;
+                        flex-shrink: 0;
+                    }
+                    /* Para el modo card, en la celda de acciones se alinea a la derecha */
+                    .widget-table tbody td.action-cell {
+                        justify-content: flex-end;
+                    }
+        }
+    </style>
+
+    <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0 widget-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Usuario ID</th>
+                    <th>Widget ID</th>
+                    <th>Height</th>
+                    <th>Width</th>
+                    <th>Es Favorito</th>
+                    <th>Es Visible</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.Any())
+                {
+                    foreach (var config in Model)
+                    {
+                        <tr>
+                            <td data-label="ID">@config.Id</td>
+                            <td data-label="Usuario ID">@config.UsuarioId</td>
+                            <td data-label="Widget ID">@config.WidgetId</td>
+                            <td data-label="Height">@config.Height</td>
+                            <td data-label="Width">@config.Width</td>
+                            <td data-label="Es Favorito">@(config.EsFavorito ? "Sí" : "No")</td>
+                            <td data-label="Es Visible">@(config.EsVisible ? "Sí" : "No")</td>
+                            <td data-label="Acciones" class="action-cell text-center">
+                                <div class="d-flex flex-wrap align-items-center gap-2">
+                                    <a class="btn btn-warning" href="@Url.Action("Edit", "ConfiguracionWidgets", new { id = config.Id })">
+                                        <i class="fas fa-edit me-1"></i>Editar
+                                    </a>
+                                    <form action="@Url.Action("Delete", "ConfiguracionWidgets", new { id = config.Id })" method="post" class="d-inline">
+                                        @Html.AntiForgeryToken()
+                                        <button type="submit" class="btn btn-danger" onclick="return confirm('¿Estás seguro que deseas eliminar esta configuración?')">
+                                            <i class="fas fa-trash-alt me-1"></i>Eliminar
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="8" class="text-center">No hay configuraciones disponibles.</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 @section Scripts {
     <!-- jQuery -->
@@ -66,10 +175,10 @@
             crossorigin="anonymous"></script>
     <!-- Popper.js -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3HfN... (actualiza con el hash correcto)"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
             crossorigin="anonymous"></script>
     <!-- Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-            integrity="sha384-OgVRvuATP1z7JjHLkuOU1FZW9LkUy4K8q6bd41+0cQ2Gj/ ... (actualiza con el hash correcto)"
+            integrity="sha384-OgVRvuATP1z7JjHLkuOU7FZW9LkUy4K8q6bd41+0cQ2Gj/..."
             crossorigin="anonymous"></script>
 }

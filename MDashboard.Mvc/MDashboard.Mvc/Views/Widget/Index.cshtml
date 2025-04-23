@@ -29,7 +29,7 @@
                 border-bottom: 2px solid #333 !important;
             }
 
-            /* Filas: Gris oscuro alternado */
+            /* Filas: gris oscuro alternado */
             .widget-table tbody tr:nth-child(odd) {
                 background-color: #1e1e1e !important;
             }
@@ -43,8 +43,8 @@
                 color: white !important;
                 padding: 1rem;
                 border-top: 1px solid #333 !important;
-                word-break: break-word; 
-                white-space: normal; 
+                word-break: break-word;
+                white-space: normal;
             }
 
             /* Hover */
@@ -63,45 +63,65 @@
             color: #dc3545 !important;
         }
 
-        /* Scroll en móvil */
+        /* Contenedor para scroll horizontal */
         .table-responsive {
             border-radius: 8px;
-            overflow: hidden;
+            overflow-x: auto; /* Activa scroll horizontal si la tabla es más ancha que el contenedor */
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
         }
 
-        /* Ajustes para móvil */
+        /* Para pantallas mayores a 768px: se aplica un min-width a la tabla para forzar el scroll horizontal.
+                   Si el contenedor es menor que ese ancho, se mostrará la barra de desplazamiento. */
+        @@media (min-width: 769px) {
+            .table-responsive > table
+
+        {
+            min-width: 800px; /* Ajusta este valor según la cantidad de columnas y el espacio deseado */
+        }
+
+        /* Ajuste del botón de eliminar solo en modo tabla */
+        .btn-action {
+            min-width: 120px;
+            white-space: nowrap;
+        }
+
+        }
+
+        /* Modo card: para dispositivos con viewport de 768px o menos */
         @@media (max-width: 768px) {
-            .widget-table thead {
-                display: none;
-            }
+            .widget-table thead
 
-            .widget-table tbody tr {
-                display: block;
-                margin-bottom: 1rem;
-                border: 1px solid #333;
-                border-radius: 5px;
-            }
+        {
+            display: none;
+        }
 
-            .widget-table tbody td {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 0.75rem;
-                border: none;
-            }
+        .widget-table tbody tr {
+            display: block;
+            margin-bottom: 1rem;
+            border: 1px solid #333;
+            border-radius: 5px;
+        }
 
-                .widget-table tbody td::before {
-                    content: attr(data-label);
-                    font-weight: 600;
-                    color: #aaa !important;
-                    margin-right: 1rem;
-                }
-            /* Mostrar siempre URL API y API Key en móvil */
-            .d-none.d-md-table-cell,
-            .d-none.d-lg-table-cell {
-                display: flex !important;
+        .widget-table tbody td {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem;
+            border: none;
+        }
+
+            .widget-table tbody td::before {
+                content: attr(data-label);
+                font-weight: 600;
+                color: #aaa !important;
+                margin-right: 1rem;
             }
+        /* Mostrar siempre URL API y API Key en móvil */
+        .d-none.d-md-table-cell,
+        .d-none.d-lg-table-cell {
+            display: flex !important;
+        }
+
         }
     </style>
 
@@ -126,12 +146,8 @@
                         <td data-label="ID">@widget.Id</td>
                         <td data-label="Nombre" class="fw-bold">@widget.Nombre</td>
                         <td data-label="Descripción">@widget.Descripcion</td>
-                        <td data-label="URL API" class="d-none d-md-table-cell">
-                            @widget.UrlApi
-                        </td>
-                        <td data-label="API Key" class="d-none d-lg-table-cell">
-                            @widget.ApiKey
-                        </td>
+                        <td data-label="URL API" class="d-none d-md-table-cell">@widget.UrlApi</td>
+                        <td data-label="API Key" class="d-none d-lg-table-cell">@widget.ApiKey</td>
                         <td data-label="Estado">
                             <span class="status-badge @(widget.Estado.HasValue && widget.Estado.Value ? "status-active" : "status-inactive")">
                                 @(widget.Estado.HasValue ? (widget.Estado.Value ? "Activo" : "Inactivo") : "No definido")
