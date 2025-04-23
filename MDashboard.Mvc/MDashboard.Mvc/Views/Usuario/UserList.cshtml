@@ -4,56 +4,164 @@
     ViewData["Title"] = "Lista de Usuarios";
 }
 
-<style>
-    table.table-striped td,
-    table.table-striped th {
-        color: white;
-    }
-</style>
+<div class="container-fluid py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold text-white mb-0">Lista de Usuarios</h2>
+        <a class="btn btn-success btn-lg" href="@Url.Action("AddUser")">
+            <i class="fas fa-plus-circle me-2"></i>Agregar Usuario
+        </a>
+    </div>
 
-<div class="d-flex justify-content-between align-items-center mb-3">
-    <h1>Lista de Usuarios</h1>
-    <a class="btn btn-success" href="@Url.Action("AddUser")">Agregar Usuario</a>
+    <style>
+        /* Estilos base de la tabla */
+        .widget-table {
+            background-color: #121212 !important;
+            color: white !important;
+            border-collapse: collapse;
+        }
+
+            /* Encabezado de la tabla */
+            .widget-table thead th {
+                background-color: #000000 !important;
+                color: white !important;
+                font-weight: 600;
+                padding: 1rem;
+                border-bottom: 2px solid #333 !important;
+            }
+
+            /* Filas: alternancia de color */
+            .widget-table tbody tr:nth-child(odd) {
+                background-color: #1e1e1e !important;
+            }
+
+            .widget-table tbody tr:nth-child(even) {
+                background-color: #252525 !important;
+            }
+
+            /* Celdas: texto, padding y bordes */
+            .widget-table tbody td {
+                color: white !important;
+                padding: 1rem;
+                border-top: 1px solid #333 !important;
+                word-break: break-word;
+                white-space: normal;
+            }
+
+            /* Hover en filas */
+            .widget-table tbody tr:hover {
+                background-color: #333 !important;
+            }
+
+        /* Contenedor para scroll horizontal */
+        .table-responsive {
+            border-radius: 8px;
+            overflow-x: auto;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        /* Para pantallas intermedias y grandes: forzamos un ancho mínimo para activar scroll horizontal */
+        @@media (min-width: 577px) {
+            .widget-table
+
+        {
+            min-width: 800px; /* Ajusta este valor según sea necesario */
+        }
+
+        /* En formato tabla, los botones se centran */
+        .widget-table tbody td.action-cell div {
+            justify-content: center;
+        }
+
+        }
+
+        /* Adaptaciones para vista en dispositivos móviles: formato card y botones a la derecha */
+        @@media (max-width: 576px) {
+            .widget-table thead
+
+        {
+            display: none;
+        }
+
+        .widget-table tbody tr {
+            display: block;
+            margin-bottom: 1rem;
+            border: 1px solid #333;
+            border-radius: 5px;
+        }
+
+        .widget-table tbody td {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem;
+            border: none;
+        }
+
+            .widget-table tbody td::before {
+                content: attr(data-label);
+                font-weight: 600;
+                color: #aaa;
+                margin-right: 1rem;
+            }
+            /* Para el modo card, en la celda de acciones se alinea a la derecha */
+            .widget-table tbody td.action-cell {
+                justify-content: flex-end;
+            }
+
+        }
+    </style>
+
+    <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0 widget-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Rol</th>
+                    <th>Fecha de Registro</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.Any())
+                {
+                    int counter = 1;
+                    foreach (var usuario in Model)
+                    {
+                        <tr>
+                            <td data-label="#">@counter</td>
+                            <td data-label="Nombre">@usuario.Nombre</td>
+                            <td data-label="Email">@usuario.Email</td>
+                            <td data-label="Rol">@usuario.Rol</td>
+                            <td data-label="Fecha de Registro">@usuario.FechaRegistro?.ToString("dd/MM/yyyy")</td>
+                            <!-- Se asigna la clase "action-cell" para poder controlarlo según el responsive -->
+                            <td data-label="Acciones" class="action-cell text-center">
+                                <div class="d-flex flex-wrap align-items-center gap-2">
+                                    <a class="btn btn-primary" href="@Url.Action("EditUser", new { id = usuario.Id })">
+                                        <i class="fas fa-edit me-1"></i>Editar
+                                    </a>
+                                    <form action="@Url.Action("DeleteUser", new { id = usuario.Id })" method="post" class="d-inline">
+                                        <button type="submit" class="btn btn-danger" onclick="return confirm('¿Está seguro de eliminar este usuario?')">
+                                            <i class="fas fa-trash-alt me-1"></i>Eliminar
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                        counter++;
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="6" class="text-center">No hay usuarios disponibles.</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 </div>
 
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>#</th>
-            <th>Nombre</th>
-            <th>Email</th>
-            <th>Rol</th>
-            <th>Fecha de Registro</th>
-            <th>Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        @if (Model != null && Model.Any())
-        {
-            int counter = 1;
-            foreach (var usuario in Model)
-            {
-                <tr>
-                    <td colspan="">@counter</td>
-                    <td>@usuario.Nombre</td>
-                    <td>@usuario.Email</td>
-                    <td>@usuario.Rol</td>
-                    <td>@usuario.FechaRegistro?.ToString("dd/MM/yyyy")</td>
-                    <td>
-                        <a class="btn btn-primary" href="@Url.Action("EditUser", new { id = usuario.Id })">Editar</a>
-                        <form action="@Url.Action("DeleteUser", new { id = usuario.Id })" method="post" style="display:inline;">
-                            <button type="submit" class="btn btn-danger" onclick="return confirm('¿Está seguro de eliminar este usuario?')">Eliminar</button>
-                        </form>
-                    </td>
-                </tr>
-                counter++;
-            }
-        }
-        else
-        {
-            <tr>
-                <td colspan="6" class="text-center">No hay usuarios disponibles.</td>
-            </tr>
-        }
-    </tbody>
-</table>
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
