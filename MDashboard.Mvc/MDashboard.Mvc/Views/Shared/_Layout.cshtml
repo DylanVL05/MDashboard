@@ -35,8 +35,10 @@
                     <!-- Menú para móviles -->
                     <ul class="navbar-nav d-lg-none">
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link" asp-controller="Dashboard" asp-action="Index">Dashboard</a>
                         </li>
+                        @if (User.Identity != null && User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                        {
                         <li class="nav-item">
                             <a class="nav-link" asp-controller="Usuario" asp-action="UserList">Lista de Usuarios</a>
                         </li>
@@ -44,11 +46,11 @@
                             <a class="nav-link" asp-controller="Widget" asp-action="Index">Widgets</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="Dashboard" asp-action="Index">Dashboard</a>
+                             <a class="nav-link" asp-controller="ConfiguracionWidgets" asp-action="Index">Configuración de Widgets</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="ConfiguracionWidgets" asp-action="Index">Configuración de Widgets</a>
-                        </li>
+                        }
+                       
+                        
                         @if (User.Identity != null && User.Identity.IsAuthenticated)
                         {
                             <li class="nav-item dropdown">
@@ -105,6 +107,8 @@
             <a asp-controller="Dashboard" asp-action="Index">
                 <i class="bi bi-speedometer2"></i> Dashboard
             </a>
+            @if (User.Identity != null && User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+            {
             <a asp-controller="Widget" asp-action="Index">
                 <i class="bi bi-grid"></i> Widgets
             </a>
@@ -114,6 +118,7 @@
             <a asp-controller="ConfiguracionWidgets" asp-action="Index">
                 <i class="bi bi-people"></i> Configuración de Widgets
             </a>
+            }
         </div>
     </div>
 
