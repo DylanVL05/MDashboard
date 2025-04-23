@@ -20,7 +20,6 @@
             border-collapse: collapse;
             width: 100%;
         }
-
             /* Encabezado de la tabla */
             .widget-table thead th {
                 background-color: #000000 !important;
@@ -28,9 +27,8 @@
                 font-weight: 600;
                 padding: 1rem;
                 border-bottom: 2px solid #333 !important;
-                white-space: nowrap; /* Evita que los encabezados se partan */
+                white-space: nowrap; /* Evita que se partan los encabezados */
             }
-
             /* Filas: alternancia de color */
             .widget-table tbody tr:nth-child(odd) {
                 background-color: #1e1e1e !important;
@@ -39,7 +37,6 @@
             .widget-table tbody tr:nth-child(even) {
                 background-color: #252525 !important;
             }
-
             /* Celdas: texto, padding y bordes */
             .widget-table tbody td {
                 color: white !important;
@@ -47,67 +44,69 @@
                 border-top: 1px solid #333 !important;
                 word-break: break-word;
             }
-
             /* Hover en filas */
             .widget-table tbody tr:hover {
                 background-color: #333 !important;
             }
-
         /* Contenedor para scroll horizontal */
         .table-responsive {
             border-radius: 8px;
             overflow-x: auto;
             box-shadow: 0 0 20px rgba(0,0,0,0.5);
-            -webkit-overflow-scrolling: touch; /* Mejor scroll en dispositivos móviles */
+            -webkit-overflow-scrolling: touch; /* Mejor scroll en móviles */
+        }
+        /* Para pantallas intermedias y grandes: forzamos un ancho mínimo para activar el scroll horizontal */
+        @@media (min-width: 768px) {
+            .widget-table
+
+        {
+            min-width: 900px; /* Ajustado para acomodar todas las columnas */
+        }
+        /* En formato tabla, los botones se centran */
+        .widget-table tbody td.action-cell div {
+            justify-content: center;
         }
 
-        /* Para pantallas intermedias y grandes: forzamos un ancho mínimo para activar scroll horizontal */
-        @@media (min-width: 577px) {
-            .widget-table {
-                min-width: 900px; /* Ajustado para acomodar todas las columnas */
-            }
-                /* En formato tabla, los botones se centran */
-                .widget-table tbody td.action-cell div {
-                    justify-content: center;
-                }
         }
-
         /* Adaptaciones para vista en dispositivos móviles: formato card */
-        @@media (max-width: 576px) {
-            .widget-table {
-                min-width: 100% !important; /* Reset para móvil */
+        @@media (max-width: 768px) {
+            .widget-table
+
+        {
+            min-width: 100% !important; /* Reset para móvil */
+        }
+
+        .widget-table thead {
+            display: none;
+        }
+
+        .widget-table tbody tr {
+            display: block;
+            margin-bottom: 1rem;
+            border: 1px solid #333;
+            border-radius: 5px;
+        }
+
+        .widget-table tbody td {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem;
+            border: none;
+        }
+
+            .widget-table tbody td::before {
+                content: attr(data-label);
+                font-weight: 600;
+                color: #aaa;
+                margin-right: 1rem;
+                flex-shrink: 0;
+            }
+            /* En modo card, en la celda de acciones se alinea a la derecha */
+            .widget-table tbody td.action-cell {
+                justify-content: flex-end;
             }
 
-                .widget-table thead {
-                    display: none;
-                }
-
-                .widget-table tbody tr {
-                    display: block;
-                    margin-bottom: 1rem;
-                    border: 1px solid #333;
-                    border-radius: 5px;
-                }
-
-                .widget-table tbody td {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    padding: 0.75rem;
-                    border: none;
-                }
-
-                    .widget-table tbody td::before {
-                        content: attr(data-label);
-                        font-weight: 600;
-                        color: #aaa;
-                        margin-right: 1rem;
-                        flex-shrink: 0;
-                    }
-                    /* Para el modo card, en la celda de acciones se alinea a la derecha */
-                    .widget-table tbody td.action-cell {
-                        justify-content: flex-end;
-                    }
         }
     </style>
 
