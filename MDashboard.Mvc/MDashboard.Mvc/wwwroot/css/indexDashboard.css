@@ -271,6 +271,68 @@
         transform: rotate(2deg);
     }
 
+.dark-theme {
+    background-color: #121212;
+    color: #ffffff;
+    border: 1px solid #2d2d2d;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.dark-table {
+    background-color: #1a1a1a !important;
+    color: #ffffff !important;
+}
+
+    .dark-table th {
+        background-color: #2d2d2d !important;
+        border-color: #3d3d3d !important;
+    }
+
+    .dark-table td {
+        border-color: #3d3d3d !important;
+    }
+
+.neu-button {
+    background: #1a1a1a;
+    color: #fff;
+    border: 1px solid #2d2d2d;
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+    .neu-button:hover {
+        background: #2d2d2d;
+        transform: translateY(-2px);
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    }
+
+.scrollable-content {
+    max-height: calc(100% - 60px);
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+.config-widget-icon {
+    color: #666 !important;
+    transition: all 0.3s ease;
+}
+
+    .config-widget-icon:hover {
+        color: #fff !important;
+        transform: rotate(90deg);
+    }
+
+.favorito-toggle {
+    color: #ffd700 !important;
+    transition: transform 0.3s ease;
+}
+
+    .favorito-toggle:hover {
+        transform: scale(1.2);
+    }
+
 /* Estilos para el botón de actualizar */
 @keyframes spin {
     0% {

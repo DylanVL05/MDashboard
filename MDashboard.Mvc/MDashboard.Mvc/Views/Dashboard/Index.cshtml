@@ -23,7 +23,7 @@
 
                 int height = config?.Height ?? 300;
                 int width = config?.Width ?? 300;
-                //En esta parte se puede editar las cards en general 
+                //En esta parte se puede editar las cards en general
                 <div class="col mb-4 widget-item" data-widget-id="@widget.Id" id="widget-@widget.Id">
                     <div class="card h-100 shadow-sm position-relative" style="width: @width px; height: @height px;">
                         @using (Html.BeginForm("ToggleFavorite", "Dashboard", FormMethod.Post))
@@ -433,7 +433,7 @@
 
                                         @switch (widget.ComponentId)
                                         {
-                                            case 1: 
+                                            case 1:
                                                 <div class="meow-widget mt-auto p-3 border rounded bg-light">
                                                     <div class="d-flex align-items-center mb-3">
                                                         <i class="fas fa-paw fs-4 me-2 text-primary"></i>
@@ -443,7 +443,7 @@
                                                 </div>
                                                 break;
 
-                                            case 2: 
+                                            case 2:
                                                 <div class="meow-widget mt-auto p-3 rounded text-white" style="background: #8A4F7D;">
                                                     <div class="d-flex align-items-center mb-3">
                                                         <img src="~/img/cat-silhouette.png" width="40" class="me-2">
@@ -455,7 +455,7 @@
                                                 </div>
                                                 break;
 
-                                            case 3: 
+                                            case 3:
                                                 <div class="meow-widget mt-auto p-3 border rounded bg-light">
                                                     <div class="d-flex justify-content-between align-items-center mb-3">
                                                         <h5 class="mb-0">
@@ -483,7 +483,7 @@
 
                                         @switch (widget.ComponentId)
                                         {
-                                            case 1: 
+                                            case 1:
                                                 <div class="dog-widget mt-auto text-center p-3">
                                                     <h5 class="mb-3">🐶 Foto aleatoria de perro</h5>
                                                     <img src="@dogData.Message" alt="Foto de perro" class="img-fluid rounded shadow" style="max-height: 200px;">
@@ -491,7 +491,7 @@
                                                 </div>
                                                 break;
 
-                                            case 2: 
+                                            case 2:
                                                 <div class="dog-widget mt-auto text-center p-3 border rounded" style="background-color: #f8f9fa;">
                                                     <div class="d-flex justify-content-between align-items-center mb-2">
                                                         <h5 class="mb-0">🐕‍🦺 Amigo canino</h5>
@@ -549,7 +549,7 @@
                                         {
                                             @switch (widget.ComponentId)
                                             {
-                                                case 1: 
+                                                case 1:
                                                     <div class="logo-widget mt-auto p-3 border rounded text-center">
                                                         <img src="@logoData.Logo" alt="@logoData.Name logo" class="img-fluid mb-3" style="max-height: 80px;">
                                                         <h5>@logoData.Name</h5>
@@ -558,7 +558,7 @@
                                                     </div>
                                                     break;
 
-                                                case 2: 
+                                                case 2:
                                                     <div class="logo-widget mt-auto p-3 border rounded bg-light">
                                                         <div class="d-flex align-items-center mb-3">
                                                             <img src="@logoData.Logo" alt="@logoData.Name logo" class="img-fluid me-3" style="max-height: 60px;">
@@ -575,7 +575,7 @@
                                                     </div>
                                                     break;
 
-                                                case 3: 
+                                                case 3:
                                                     <div class="logo-widget mt-auto p-4 border rounded text-center position-relative overflow-hidden"
                                                          style="background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);">
                                                         <div class="logo-hover-effect" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div>
@@ -617,7 +617,7 @@
                                                     <h5 class="fw-bold">Chuck Norris Dice:</h5>
                                                     <p class="fs-4">@ChuckData.Value</p>
                                                     <img src="@ChuckData.IconUrl" alt="Icono Chuck Norris" class="img-fluid">
-                                                    <p class="text-muted small">ID de la Frase: @ChuckData.Id</p> 
+                                                    <p class="text-muted small">ID de la Frase: @ChuckData.Id</p>
                                                     <p class="text-muted">Fuente: Chuck Norris API</p>
                                                 </div>
                                                 break;
@@ -639,7 +639,7 @@
                                                             </tr>
                                                             <tr>
                                                                 <td>ID de la Frase</td>
-                                                                <td>@ChuckData.Id</td> 
+                                                                <td>@ChuckData.Id</td>
                                                             </tr>
                                                             <tr>
                                                                 <td>Icono</td>
@@ -656,7 +656,7 @@
                                                     <h5 class="fw-bold">💥 Chuck Norris</h5>
                                                     <p class="fs-5">"@ChuckData.Value"</p>
                                                     <img src="@ChuckData.IconUrl" alt="Icono Chuck Norris" class="img-fluid" style="max-width: 100px;">
-                                                    <p class="text-muted small">Frase Generada: @ChuckData.Id</p> 
+                                                    <p class="text-muted small">Frase Generada: @ChuckData.Id</p>
                                                     <p class="text-muted">Fuente: Chuck Norris API</p>
                                                 </div>
                                                 break;
@@ -900,8 +900,8 @@
 
                                     <button class="neu-button w-100" onclick="ocultarWidget(@widget.Id)">
                                         <i class="fas fa-eye-slash me-1"></i> Hide
-                                    </button>
-                               
+                                    </button>   
+
                                 </div>
                             </div>
                         </div>
@@ -913,7 +913,7 @@
 
     <div class="modal fade" id="configModal" tabindex="-1" aria-labelledby="configModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
+            <div class="modal-content dark-theme">
                 <div class="modal-header">
                     <h5 class="modal-title" id="configModalLabel">Configuración del Widget</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
@@ -930,7 +930,7 @@
         </button>
 
         <div class="collapse" id="widgetsOcultosContainer">
-            <div class="card card-body bg-light">
+            <div class="card card-body dark-theme">
                 <h4 class="mb-3">Widgets Ocultos</h4>
                 <div class="row row-cols-1 row-cols-md-3 g-4" id="widgetsOcultos">
                     @if (ViewBag.WidgetsOcultos != null)
@@ -961,7 +961,7 @@
 
 <div class="modal fade" id="dimensionesModal" tabindex="-1" aria-labelledby="dimensionesModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-        <div class="modal-content">
+        <div class="modal-content dark-theme">
             <div class="modal-header">
                 <h5 class="modal-title" id="dimensionesModalLabel">Configurar dimensiones</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
