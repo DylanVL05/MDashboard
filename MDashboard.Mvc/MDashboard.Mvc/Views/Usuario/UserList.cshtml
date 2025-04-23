@@ -19,7 +19,6 @@
             color: white !important;
             border-collapse: collapse;
         }
-
             /* Encabezado de la tabla */
             .widget-table thead th {
                 background-color: #000000 !important;
@@ -28,8 +27,7 @@
                 padding: 1rem;
                 border-bottom: 2px solid #333 !important;
             }
-
-            /* Filas: alternancia de color */
+            /* Filas: gris oscuro alternado */
             .widget-table tbody tr:nth-child(odd) {
                 background-color: #1e1e1e !important;
             }
@@ -37,7 +35,6 @@
             .widget-table tbody tr:nth-child(even) {
                 background-color: #252525 !important;
             }
-
             /* Celdas: texto, padding y bordes */
             .widget-table tbody td {
                 color: white !important;
@@ -46,36 +43,42 @@
                 word-break: break-word;
                 white-space: normal;
             }
-
             /* Hover en filas */
             .widget-table tbody tr:hover {
                 background-color: #333 !important;
             }
+        /* (Opcional) Badges de estado */
+        .status-active {
+            background-color: rgba(40, 167, 69, 0.2) !important;
+            color: #28a745 !important;
+        }
 
+        .status-inactive {
+            background-color: rgba(220, 53, 69, 0.2) !important;
+            color: #dc3545 !important;
+        }
         /* Contenedor para scroll horizontal */
         .table-responsive {
             border-radius: 8px;
-            overflow-x: auto;
+            overflow-x: auto; /* Activa scroll horizontal si la tabla es más ancha que el contenedor */
             box-shadow: 0 0 20px rgba(0,0,0,0.5);
         }
-
-        /* Para pantallas intermedias y grandes: forzamos un ancho mínimo para activar scroll horizontal */
-        @@media (min-width: 577px) {
-            .widget-table
+        /* Para pantallas mayores a 768px: se aplica un min-width para forzar el scroll horizontal */
+        @@media (min-width: 769px) {
+            .table-responsive > table
 
         {
-            min-width: 800px; /* Ajusta este valor según sea necesario */
+            min-width: 800px; /* Ajusta este valor según la cantidad de columnas y el espacio deseado */
+        }
+        /* Ajuste del botón de eliminar solo en modo tabla */
+        .btn-action {
+            min-width: 120px;
+            white-space: nowrap;
         }
 
-        /* En formato tabla, los botones se centran */
-        .widget-table tbody td.action-cell div {
-            justify-content: center;
         }
-
-        }
-
-        /* Adaptaciones para vista en dispositivos móviles: formato card y botones a la derecha */
-        @@media (max-width: 576px) {
+        /* Modo card: para dispositivos con viewport de 768px o menos */
+        @@media (max-width: 768px) {
             .widget-table thead
 
         {
@@ -100,19 +103,20 @@
             .widget-table tbody td::before {
                 content: attr(data-label);
                 font-weight: 600;
-                color: #aaa;
+                color: #aaa !important;
                 margin-right: 1rem;
             }
-            /* Para el modo card, en la celda de acciones se alinea a la derecha */
-            .widget-table tbody td.action-cell {
-                justify-content: flex-end;
-            }
+        /* Para mostrar siempre columnas con clases d-none en móvil */
+        .d-none.d-md-table-cell,
+        .d-none.d-lg-table-cell {
+            display: flex !important;
+        }
 
         }
     </style>
 
-    <div class="table-responsive">
-        <table class="table table-hover align-middle mb-0 widget-table">
+    <div class="table-responsive widget-table">
+        <table class="table table-hover align-middle mb-0">
             <thead>
                 <tr>
                     <th>#</th>
@@ -135,15 +139,15 @@
                             <td data-label="Email">@usuario.Email</td>
                             <td data-label="Rol">@usuario.Rol</td>
                             <td data-label="Fecha de Registro">@usuario.FechaRegistro?.ToString("dd/MM/yyyy")</td>
-                            <!-- Se asigna la clase "action-cell" para poder controlarlo según el responsive -->
+                            <!-- Se asigna la clase "action-cell" para controlar la alineación según el responsive -->
                             <td data-label="Acciones" class="action-cell text-center">
                                 <div class="d-flex flex-wrap align-items-center gap-2">
                                     <a class="btn btn-primary" href="@Url.Action("EditUser", new { id = usuario.Id })">
                                         <i class="fas fa-edit me-1"></i>Editar
                                     </a>
                                     <form action="@Url.Action("DeleteUser", new { id = usuario.Id })" method="post" class="d-inline">
-                                        <button type="submit" class="btn btn-danger" onclick="return confirm('¿Está seguro de eliminar este usuario?')">
-                                            <i class="fas fa-trash-alt me-1"></i>Eliminar
+                                        <button type="submit" class="btn btn-danger btn-action" onclick="return confirm('¿Está seguro de eliminar este usuario?')">
+                                            <i class="fas fa-trash-alt me-1"></i> Eliminar
                                         </button>
                                     </form>
                                 </div>
