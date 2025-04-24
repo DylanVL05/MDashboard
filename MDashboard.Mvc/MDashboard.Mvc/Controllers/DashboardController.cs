@@ -43,7 +43,6 @@ namespace MDashboard.Controllers
 
                 var todosLosWidgets = await _widgetRepository.ObtenerWidgetsActivosAsync();
 
-                // Se obtienen las configuraciones para el usuario, asumiendo que incluyen EsFavorito y EsVisible.
                 var configuracionesUsuario = await _context.ConfiguracionWidgets
                     .Where(c => c.UsuarioId == usuarioId)
                     .ToDictionaryAsync(c => c.WidgetId, c => c);
@@ -58,7 +57,7 @@ namespace MDashboard.Controllers
                     {
                         if (!config.EsVisible)
                         {
-                            widgetsOcultos.Add(widget); // Widget oculto, no se muestra.
+                            widgetsOcultos.Add(widget); 
                         }
                         else
                         {
@@ -70,12 +69,10 @@ namespace MDashboard.Controllers
                     }
                     else
                     {
-                        // Si no hay configuración, consideramos al widget visible y sin favorito.
                         noFavoritos.Add(widget);
                     }
                 }
 
-                // Juntamos: primero los favoritos y luego los que no lo son.
                 var widgetsVisibles = favoritos.Concat(noFavoritos).ToList();
 
                 var dynamicData = await _widgetService.ObtenerDatosDeWidgetsAsync();
@@ -106,24 +103,21 @@ namespace MDashboard.Controllers
             {
                 int usuarioId = ObtenerUsuarioActual();
 
-                // Verificamos si ya existe la configuración para este widget y usuario
                 var configuracion = await _context.ConfiguracionWidgets
                     .FirstOrDefaultAsync(c => c.UsuarioId == usuarioId && c.WidgetId == widgetId);
 
                 if (configuracion != null)
                 {
-                    // Alternamos el valor de favorito
                     configuracion.EsFavorito = !configuracion.EsFavorito;
                     _context.ConfiguracionWidgets.Update(configuracion);
                 }
                 else
                 {
-                    // Si no existe la configuración, creamos una nueva con el widget marcado como favorito
                     configuracion = new ConfiguracionWidget
                     {
                         UsuarioId = usuarioId,
                         WidgetId = widgetId,
-                        EsVisible = true,  // Valor predeterminado, según convenga
+                        EsVisible = true, 
                         EsFavorito = true
                     };
                     _context.ConfiguracionWidgets.Add(configuracion);
@@ -131,7 +125,6 @@ namespace MDashboard.Controllers
 
                 await _context.SaveChangesAsync();
 
-                // Redirigimos al Index para que se actualice la lista de widgets
                 return RedirectToAction("Index");
             }
             catch (Exception ex)
@@ -178,33 +171,27 @@ namespace MDashboard.Controllers
 
                 if (configuracion != null)
                 {
-                    // Si existe, actualizamos la visibilidad
                     configuracion.EsVisible = esVisible;
                 }
                 else
                 {
-                    // Si no existe, creamos una nueva entrada
                     _context.ConfiguracionWidgets.Add(new ConfiguracionWidget
                     {
                         UsuarioId = usuarioId,
                         WidgetId = widgetId,
                         EsVisible = esVisible,
-                        // Valores predeterminados para otras propiedades
                         Width = 1,
                         Height = 1,
                         EsFavorito = false
                     });
                 }
 
-                // Guardar cambios en la base de datos
                 _context.SaveChanges();
 
-                // Retornar una respuesta de éxito con información adicional
                 return Json(new { success = true, widgetId = widgetId, esVisible = esVisible });
             }
             catch (Exception ex)
             {
-                // Manejo de excepciones, loguear si es necesario
                 Console.WriteLine($"Error al actualizar la visibilidad del widget: {ex.Message}");
                 return StatusCode(500, "Error al actualizar la visibilidad del widget");
             }
@@ -216,7 +203,6 @@ namespace MDashboard.Controllers
         {
             try
             {
-                // Reutilizamos el método anterior pero estableciendo esVisible a true
                 return ActualizarVisibilidadWidget(widgetId, true);
             }
             catch (Exception ex)
@@ -232,7 +218,6 @@ namespace MDashboard.Controllers
         {
             try
             {
-                // Reutilizamos el método anterior pero estableciendo esVisible a false
                 return ActualizarVisibilidadWidget(widgetId, false);
             }
             catch (Exception ex)
@@ -261,7 +246,7 @@ namespace MDashboard.Controllers
                 var dynamicData = await _widgetService.ObtenerDatosDeWidgetsAsync();
                 ViewBag.DynamicData = dynamicData ?? new Dictionary<string, object>();
 
-                return PartialView("_WidgetPartial", widgets); // nueva vista parcial
+                return PartialView("_WidgetPartial", widgets); 
             }
             catch (Exception ex)
             {
@@ -287,14 +272,14 @@ namespace MDashboard.Controllers
 
         public async Task<IActionResult> ConfigWidget(int id)
         {
-            var widget = await _widgetBusiness.ObtenerWidgetPorIdAsync(id); // <-- await aquí
+            var widget = await _widgetBusiness.ObtenerWidgetPorIdAsync(id);
 
             if (widget == null)
             {
                 return NotFound();
             }
 
-            return PartialView("_ConfigWidgetPartial", widget); // asegúrate de que este nombre esté bien
+            return PartialView("_ConfigWidgetPartial", widget); 
         }
 
 
@@ -306,10 +291,8 @@ namespace MDashboard.Controllers
             {
                 int usuarioId = ObtenerUsuarioActual();
 
-                // Obtener todos los widgets
                 var widgets = await _widgetRepository.ObtenerWidgetsActivosAsync();
 
-                // Obtener configuraciones del usuario
                 var configuraciones = await _context.ConfiguracionWidgets
                     .Where(c => c.UsuarioId == usuarioId)
                     .ToDictionaryAsync(c => c.WidgetId, c => c);
@@ -333,15 +316,13 @@ namespace MDashboard.Controllers
         {
             try
             {
-                // Obtener el widget en la base de datos
                 var widget = await _context.Widgets.FirstOrDefaultAsync(w => w.Id == request.Id);
 
                 if (widget != null)
                 {
-                    // Actualizar solo el ComponentId
                     widget.ComponentId = request.ComponentId;
                     await _context.SaveChangesAsync();
-                    return RedirectToAction("Index"); // Redirige a la vista principal
+                    return RedirectToAction("Index"); 
                 }
                 else
                 {
@@ -364,7 +345,6 @@ namespace MDashboard.Controllers
             {
                 int usuarioId = ObtenerUsuarioActual();
 
-                // Validar dimensiones
                 width = Math.Clamp(width, 300, 1200);
                 height = Math.Clamp(height, 300, 800);
 
@@ -373,14 +353,12 @@ namespace MDashboard.Controllers
 
                 if (configuracion != null)
                 {
-                    // Actualizar configuración existente
                     configuracion.Width = width;
                     configuracion.Height = height;
                     _context.ConfiguracionWidgets.Update(configuracion);
                 }
                 else
                 {
-                    // Crear nueva configuración
                     configuracion = new ConfiguracionWidget
                     {
                         UsuarioId = usuarioId,

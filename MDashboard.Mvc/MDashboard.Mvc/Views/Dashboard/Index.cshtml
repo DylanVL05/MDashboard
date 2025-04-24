@@ -1076,12 +1076,11 @@
                         const widgetElement = $('#widget-' + widgetId);
                         const card = widgetElement.find('.card');
 
-                        // Aplicar las nuevas dimensiones sin cambiar la posición
                         card.css({
                             'width': response.width + 'px',
                             'height': response.height + 'px',
-                            'flex': '0 0 auto', // Esto evita que flexbox intente ajustar el tamaño
-                            'transition': 'all 0.3s ease' // Transición suave
+                            'flex': '0 0 auto', 
+                            'transition': 'all 0.3s ease'
                         });
 
                         // Actualizar los data attributes
@@ -1102,7 +1101,7 @@
 
         function validarDimensionesInput(inputElement) {
             const value = parseInt($(inputElement).val());
-            const min = 300; // Nuevo mínimo
+            const min = 300; 
             const max = $(inputElement).attr('max') || 1200;
 
             if (isNaN(value) || value < min || value > max) {
@@ -1266,7 +1265,6 @@
         }
 
         function mostrarNotificacion(mensaje, tipo = 'success') {
-            // Implementación básica con alert (puedes reemplazar con Toastr)
             alert(mensaje);
         }
 

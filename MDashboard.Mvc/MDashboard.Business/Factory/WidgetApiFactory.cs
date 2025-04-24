@@ -51,7 +51,6 @@ namespace MDashboard.Business.Factory
                 }
             }
 
-            // Fallback: cliente genérico
             return new GenericApiClient(_httpClient, widget.UrlApi, widget.ApiKey);
         }
     }

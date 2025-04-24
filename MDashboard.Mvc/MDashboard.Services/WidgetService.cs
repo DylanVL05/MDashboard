@@ -54,7 +54,7 @@ namespace MDashboard.Business.Services
                             {
                                 ProcesarExchangeRateResponse(x.widget.Nombre, result.Value.ToString(), resultados);
                             }
-                            // In WidgetService.cs, update the ObtenerDatosDeWidgetsAsync method
+                            // Procesamiento para thequotesapi API
                             else if (x.widget.UrlApi.Contains("thequotesapi.onrender.com"))
                             {
                                 ProcesarQuotesApiResponse(x.widget.Nombre, result.Value, resultados);
@@ -69,38 +69,42 @@ namespace MDashboard.Business.Services
                             {
                                 ProcesarNasaApiResponse(x.widget.Nombre, result.Value as NasaApodResponse, resultados);
                             }
+                            // Procesamiento para rickandmortyapi API
                             else if (x.widget.UrlApi.Contains("rickandmortyapi"))
                             {
                                 ProcesarRickAndMortyApiResponse(x.widget.Nombre, result.Value as RickAndMortyApiResponse, resultados);
                             }
+                            // Procesamiento para jokeapi API
                             else if (x.widget.UrlApi.Contains("v2.jokeapi.dev"))
                             {
                                 ProcesarJokeApiResponse(x.widget.Nombre, result.Value as JokeApiResponse, resultados);
                             }
-                            // Add this condition to your existing factory
+                            // Procesamiento para adviceslip API
                             else if (x.widget.UrlApi.Contains("adviceslip.com"))
                             {
                                 ProcesarAdviceSlipResponse(x.widget.Nombre, result.Value as AdviceSlipResponse, resultados);
                             }
-
+                            // Procesamiento para meowfacts API
                             else if (x.widget.UrlApi.Contains("meowfacts"))
                             {
                                 ProcesarMeowFactsApiResponse(x.widget.Nombre, result.Value as MeowFactsAPIResponse, resultados);
                             }
+                            // Procesamiento para dog API
                             else if (x.widget.UrlApi.Contains("dog.ceo"))
                             {
                                 ProcesarDogMeowFactsApiResponse(x.widget.Nombre, result.Value as DogApiResponse, resultados);
                             }
+                            // Procesamiento para logotypes API
                             else if (x.widget.UrlApi.Contains("logotypes.dev"))
                             {
                                 ProcesarLogotypeApiResponse(x.widget.Nombre, result.Value as LogotypesApiResponse, resultados);
                             }
+                            // Procesamiento para chucknorris API
                             else if (x.widget.UrlApi.Contains("api.chucknorris.io"))
                             {
                                 ProcesarChuckNorrisApiResponse(x.widget.Nombre, result.Value as ChuckNorrisApiResponse, resultados);
                             }
-
-                            // Caso genérico para otras APIs
+                            // Procesamiento para otras API`s
                             else
                             {
                                 resultados.Add(x.widget.Nombre, result.Value);
@@ -156,7 +160,6 @@ namespace MDashboard.Business.Services
 
                 if (exchangeResponse != null)
                 {
-                    // Seleccionamos algunas monedas importantes para mostrar
                     var featuredRates = new Dictionary<string, decimal>
     {
         { "EUR", exchangeResponse.ConversionRates["EUR"] },
@@ -404,10 +407,8 @@ namespace MDashboard.Business.Services
         {
             if (chuckResponse != null)
             {
-                // Verificamos que el id tenga un valor válido
                 if (!string.IsNullOrEmpty(chuckResponse.Id))
                 {
-                    // Almacenamos directamente el objeto ChuckNorrisApiResponse
                     resultados.Add(widgetNombre, chuckResponse);
                 }
                 else

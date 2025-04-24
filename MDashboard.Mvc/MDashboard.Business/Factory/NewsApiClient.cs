@@ -29,7 +29,6 @@ namespace MDashboard.Business.Factory
         {
             try
             {
-                // Construcción de la URL para obtener titulares de EE.UU.
                 var url = $"{_apiUrl.TrimEnd('/')}/v2/top-headlines?country=us&apiKey={_apiKey}";
                 Console.WriteLine($"URL utilizada: {url}");
 

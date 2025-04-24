@@ -35,13 +35,10 @@ namespace MDashboard.Business.Factory
 
                 var response = await _httpClient.GetAsync(url);
 
-                // Asegurarse de que la solicitud fue exitosa
                 response.EnsureSuccessStatusCode();
 
-                // Leer el contenido de la respuesta
                 var content = await response.Content.ReadAsStringAsync();
 
-                // Deserializar el contenido JSON
                 var apiResponse = JsonConvert.DeserializeObject<JokeApiResponse>(content);
 
                 return new KeyValuePair<string, object>(name, apiResponse);

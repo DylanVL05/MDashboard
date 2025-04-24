@@ -13,23 +13,23 @@
     </div>
 
     <style>
-        /* Estilos base de la tabla */
+
         .widget-table {
             background-color: #121212 !important;
             color: white !important;
             border-collapse: collapse;
             width: 100%;
         }
-            /* Encabezado de la tabla */
+
             .widget-table thead th {
                 background-color: #000000 !important;
                 color: white !important;
                 font-weight: 600;
                 padding: 1rem;
                 border-bottom: 2px solid #333 !important;
-                white-space: nowrap; /* Evita que se partan los encabezados */
+                white-space: nowrap; 
             }
-            /* Filas: alternancia de color */
+
             .widget-table tbody tr:nth-child(odd) {
                 background-color: #1e1e1e !important;
             }
@@ -37,43 +37,42 @@
             .widget-table tbody tr:nth-child(even) {
                 background-color: #252525 !important;
             }
-            /* Celdas: texto, padding y bordes */
+
             .widget-table tbody td {
                 color: white !important;
                 padding: 1rem;
                 border-top: 1px solid #333 !important;
                 word-break: break-word;
             }
-            /* Hover en filas */
+
             .widget-table tbody tr:hover {
                 background-color: #333 !important;
             }
-        /* Contenedor para scroll horizontal */
+
         .table-responsive {
             border-radius: 8px;
             overflow-x: auto;
             box-shadow: 0 0 20px rgba(0,0,0,0.5);
-            -webkit-overflow-scrolling: touch; /* Mejor scroll en móviles */
+            -webkit-overflow-scrolling: touch;
         }
-        /* Para pantallas intermedias y grandes: forzamos un ancho mínimo para activar el scroll horizontal */
+
         @@media (min-width: 768px) {
             .widget-table
 
         {
-            min-width: 900px; /* Ajustado para acomodar todas las columnas */
+            min-width: 900px;
         }
-        /* En formato tabla, los botones se centran */
         .widget-table tbody td.action-cell div {
             justify-content: center;
         }
 
         }
-        /* Adaptaciones para vista en dispositivos móviles: formato card */
+
         @@media (max-width: 768px) {
             .widget-table
 
         {
-            min-width: 100% !important; /* Reset para móvil */
+            min-width: 100% !important; 
         }
 
         .widget-table thead {
@@ -102,7 +101,7 @@
                 margin-right: 1rem;
                 flex-shrink: 0;
             }
-            /* En modo card, en la celda de acciones se alinea a la derecha */
+
             .widget-table tbody td.action-cell {
                 justify-content: flex-end;
             }
@@ -164,19 +163,19 @@
     </div>
 </div>
 
-<!-- Font Awesome -->
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 @section Scripts {
-    <!-- jQuery -->
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
             integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
             crossorigin="anonymous"></script>
-    <!-- Popper.js -->
+
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
             integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
             crossorigin="anonymous"></script>
-    <!-- Bootstrap JS -->
+
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
             integrity="sha384-OgVRvuATP1z7JjHLkuOU7FZW9LkUy4K8q6bd41+0cQ2Gj/..."
             crossorigin="anonymous"></script>

@@ -178,7 +178,7 @@ namespace MDashboard.Mvc.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CerrarSession()
         {
-            await HttpContext.SignOutAsync("Cookies"); // aquí va "Cookies"
+            await HttpContext.SignOutAsync("Cookies"); 
             return RedirectToAction("Login", "Usuario");
         }
 
@@ -203,11 +203,10 @@ namespace MDashboard.Mvc.Controllers
             {
                 await _usuarioBusiness.UpdateUsuarioByAsync(userId, usuario);
 
-                // 🚀 ACTUALIZA LA IDENTIDAD CON EL NUEVO NOMBRE
                 var claims = new List<Claim>
  {
      new Claim(ClaimTypes.NameIdentifier, usuario.Id.ToString()),
-     new Claim(ClaimTypes.Name, usuario.Nombre), // Nombre actualizado
+     new Claim(ClaimTypes.Name, usuario.Nombre),
      new Claim(ClaimTypes.Email, usuario.Email),
      new Claim(ClaimTypes.Role, usuario.Rol)
  };
@@ -219,7 +218,6 @@ namespace MDashboard.Mvc.Controllers
 
                 TempData["MensajePantalla"] = "Perfil actualizado correctamente";
                 return RedirectToAction("MiPerfil");
-                // o: return RedirectToAction("Index", "Dashboard");
             }
 
             return View("MiPerfil", usuario);

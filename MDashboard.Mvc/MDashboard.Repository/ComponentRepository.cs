@@ -24,10 +24,8 @@ public class ComponentRepository : IComponentRepository
             _context = context;
         }
 
-        // Implementación del método async
         public async Task<List<Component>> ObtenerComponentesAsync()
         {
-            // Obtener todos los componentes de la base de datos de manera asíncrona
             return await _context.Components.ToListAsync();
         }
     }

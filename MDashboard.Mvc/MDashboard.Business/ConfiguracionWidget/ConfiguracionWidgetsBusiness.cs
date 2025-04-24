@@ -39,7 +39,6 @@ namespace MDashboard.Business
 
         public async Task<ConfiguracionWidget> SaveConfiguracionAsync(ConfiguracionWidget configuracion)
         {
-            // Validación básica de negocio
             if (configuracion.Height <= 0 || configuracion.Width <= 0)
             {
                 throw new ArgumentException("Las dimensiones del widget deben ser mayores a cero");
@@ -55,7 +54,6 @@ namespace MDashboard.Business
 
         public async Task<ConfiguracionWidget> UpdateConfiguracionAsync(int id, ConfiguracionWidget configuracion)
         {
-            // Validación de existencia
             var existingConfig = await _configuracionRepository.GetConfiguracionByIdAsync(id);
             if (existingConfig == null)
             {

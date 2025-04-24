@@ -34,21 +34,20 @@ namespace MDashboard.Business.Factory
         {
             try
             {
-                // Construcción de la URL según el formato requerido por la API
-                // Formato esperado: https://v6.exchangerate-api.com/v6/YOUR-API-KEY/latest/USD
+
                 var url = $"{_apiUrl.TrimEnd('/')}/v6/{_apiKey}/latest/{_baseCurrency}";
                 Console.WriteLine($"URL utilizada: {url}");
 
-                // Realizar solicitud HTTP GET
+
                 var response = await _httpClient.GetAsync(url);
 
-                // Asegurarse de que la solicitud fue exitosa
+
                 response.EnsureSuccessStatusCode();
 
-                // Leer el contenido de la respuesta
+
                 var content = await response.Content.ReadAsStringAsync();
 
-                // Devolver los datos obtenidos como un KeyValuePair
+
                 return new KeyValuePair<string, object>(name, content);
             }
             catch (HttpRequestException ex)

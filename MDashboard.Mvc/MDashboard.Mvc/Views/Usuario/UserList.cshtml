@@ -27,7 +27,7 @@
                 padding: 1rem;
                 border-bottom: 2px solid #333 !important;
             }
-            /* Filas: gris oscuro alternado */
+            /* Filas */
             .widget-table tbody tr:nth-child(odd) {
                 background-color: #1e1e1e !important;
             }
@@ -35,7 +35,7 @@
             .widget-table tbody tr:nth-child(even) {
                 background-color: #252525 !important;
             }
-            /* Celdas: texto, padding y bordes */
+            /* Celdas */
             .widget-table tbody td {
                 color: white !important;
                 padding: 1rem;
@@ -47,7 +47,7 @@
             .widget-table tbody tr:hover {
                 background-color: #333 !important;
             }
-        /* (Opcional) Badges de estado */
+        /* Badges de estado */
         .status-active {
             background-color: rgba(40, 167, 69, 0.2) !important;
             color: #28a745 !important;
@@ -60,24 +60,21 @@
         /* Contenedor para scroll horizontal */
         .table-responsive {
             border-radius: 8px;
-            overflow-x: auto; /* Activa scroll horizontal si la tabla es más ancha que el contenedor */
+            overflow-x: auto;
             box-shadow: 0 0 20px rgba(0,0,0,0.5);
         }
-        /* Para pantallas mayores a 768px: se aplica un min-width para forzar el scroll horizontal */
         @@media (min-width: 769px) {
             .table-responsive > table
 
         {
-            min-width: 800px; /* Ajusta este valor según la cantidad de columnas y el espacio deseado */
+            min-width: 800px; 
         }
-        /* Ajuste del botón de eliminar solo en modo tabla */
         .btn-action {
             min-width: 120px;
             white-space: nowrap;
         }
 
         }
-        /* Modo card: para dispositivos con viewport de 768px o menos */
         @@media (max-width: 768px) {
             .widget-table thead
 
@@ -106,7 +103,6 @@
                 color: #aaa !important;
                 margin-right: 1rem;
             }
-        /* Para mostrar siempre columnas con clases d-none en móvil */
         .d-none.d-md-table-cell,
         .d-none.d-lg-table-cell {
             display: flex !important;

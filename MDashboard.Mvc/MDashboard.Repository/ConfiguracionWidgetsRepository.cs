@@ -26,14 +26,14 @@ namespace MDashboard.Repository
             return await ReadAsync();
         }
 
-        // Obtener configuraci贸n por ID
+        // Obtener configuracion por ID
         public async Task<ConfiguracionWidget> GetConfiguracionByIdAsync(int id)
         {
             var configuraciones = await ReadAsync();
             return configuraciones.SingleOrDefault(c => c.Id == id);
         }
 
-        // Guardar configuraci贸n (crear o actualizar)
+        // Guardar configuracion (crear o actualizar)
         public async Task<ConfiguracionWidget> SaveConfiguracionAsync(ConfiguracionWidget configuracion)
         {
             var exists = configuracion.Id > 0;
@@ -50,7 +50,7 @@ namespace MDashboard.Repository
             return updatedConfigs.SingleOrDefault(c => c.Id == configuracion.Id);
         }
 
-        // Eliminar configuraci贸n
+        // Eliminar configuracion
         public async Task<bool> DeleteConfiguracionAsync(int id)
         {
             var configuracion = await GetConfiguracionByIdAsync(id);
@@ -61,7 +61,7 @@ namespace MDashboard.Repository
             return false;
         }
 
-        // Actualizar configuraci贸n
+        // Actualizar configuracion
         public async Task<ConfiguracionWidget> UpdateConfiguracionAsync(int id, ConfiguracionWidget updatedConfiguracion)
         {
             var existingConfig = await GetConfiguracionByIdAsync(id);

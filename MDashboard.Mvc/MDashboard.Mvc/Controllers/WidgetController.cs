@@ -22,9 +22,8 @@ namespace MDashboard.Controllers
         [HttpGet]
         public async Task<IActionResult> Create()
         {
-            // Obtener los componentes disponibles para la lista desplegable
             var components = await _componentRepository.ObtenerComponentesAsync();
-            ViewBag.Components = components; // Pasar la lista de componentes a la vista
+            ViewBag.Components = components;
             return View();
         }
 
@@ -47,12 +46,6 @@ namespace MDashboard.Controllers
             }
             return RedirectToAction("Index");
         }
-
-
-
-
-
-
 
         // 📌 Acción para listar los widgets
         public async Task<IActionResult> Index()

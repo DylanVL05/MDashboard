@@ -24,7 +24,6 @@ namespace MDashboard.Business.Factory
         {
             try
             {
-                // Coordenadas de ejemplo (Nueva York, modificables)
                 double lat = 40.7128;  // Latitud
                 double lon = -74.0060; // Longitud
                 string units = "metric"; // Unidades (metric, imperial o standard)
@@ -34,16 +33,12 @@ namespace MDashboard.Business.Factory
                 var url = $"{_apiUrl}?lat=40.7128&lon=-74.0060&appid={_apiKey}&units=metric";
                 Console.WriteLine($"URL utilizada: {url}");
 
-                // Realizar solicitud HTTP GET
                 var response = await _httpClient.GetAsync(url);
 
-                // Asegurarse de que la solicitud fue exitosa
                 response.EnsureSuccessStatusCode();
 
-                // Leer el contenido de la respuesta
                 var content = await response.Content.ReadAsStringAsync();
 
-                // Devolver los datos obtenidos como un KeyValuePair
                 return new KeyValuePair<string, object>(name, content);
             }
             catch (HttpRequestException ex)
